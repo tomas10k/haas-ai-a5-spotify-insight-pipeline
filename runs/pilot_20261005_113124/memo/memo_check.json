@@ -1,0 +1,29 @@
+{
+  "cited_claims": [
+    "C005",
+    "C006",
+    "C007",
+    "C008",
+    "C009",
+    "C010",
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C015",
+    "C016",
+    "C017",
+    "C018",
+    "C019",
+    "C025",
+    "C026",
+    "C037",
+    "C038"
+  ],
+  "claims": 40,
+  "errors": [
+    "stray curly brace"
+  ],
+  "note": "A person must still read the argument.",
+  "passed": false
+}

@@ -1,0 +1,21 @@
+origin_review_id,text,enrich_topic,verify_topic,enrich_intent,verify_intent,enrich_severity,verify_severity,enrich_needs_review,disagree
+b58dd6f0-ad88-4319-b6db-58afb60c37c1,The only thing Spotify lacks is the ability to organize saved  albums/artists into collections. Would definitely deserve 5 stars if it  included this feature.,usability,usability,request,request,1,1,False,
+01d453b0-dca3-42e9-8aa4-5fc167b08070,I like it but god I hate it when the music Interrupts my ads,usability,usability,complaint,complaint,2,2,False,
+a972945c-6601-4108-882a-afe986866a7b,Phenomenal,other,other,praise,praise,1,1,False,
+47428620-ec21-424d-a515-0b0b0012a5cf,This app is bad work,other,other,complaint,complaint,2,2,False,
+99b93e31-9f15-4daa-88ac-349ab0419c48,This update very bad for everyone.old Spotify. we all want.,other,other,complaint,complaint,2,2,False,
+fc344263-308d-48a1-9715-c380d063b6de,Great...,other,other,unclear,praise,1,1,False,intent
+657f1b77-0183-4b06-bf48-5e6d9ab08f9a,Hate This application 👎,other,other,complaint,complaint,2,2,False,
+46842184-32f8-4088-ac15-2a700a7e94ed,"asem, lirik nya kdang gaada kek mana??",catalog,catalog,complaint,complaint,2,2,True,
+3ddb3f4e-f7b9-430b-b335-eadc6d321f46,"Deleting this App. The new update suck, we can't choose our fvrt songs after some clicks, we can't CHOOSE song after a song played, and we can't turn off shuffle option. They are pushing us to upgrade",billing,usability,cancellation,cancellation,3,4,False,topic;severity
+16d640e9-b281-4746-9562-c7dbcf7126b6,It's my best music app but now it's not...everything basic features is premium....,billing,billing,complaint,complaint,3,3,False,
+283b5843-a992-464f-b1dc-9dc7281ff390,"Beth, we all got to give me a free dollar to go with 3 months, bro I can't be like",billing,other,unclear,unclear,1,1,True,topic
+1d15724a-98ff-400a-8083-0d9afc801098,Good,other,other,praise,praise,1,1,False,
+9034d675-9582-49b6-a1c1-c4ddabf8baf1,Worst app ever too much ad,usability,usability,complaint,complaint,2,2,False,
+1fc8b08f-7d6a-472f-b317-8ceb28d00f22,Duo Premium .... No ads at all!,usability,usability,praise,praise,1,1,False,
+47f1406d-4918-4d60-9647-5ca8e610caca,Very poor updates as we cannot playback the songs and most bad updates are happening it is affecting the spotify quality,playback,playback,complaint,complaint,4,4,False,
+111f9048-f7bd-4be0-813e-76b8fc49f73f,Excellent,other,other,praise,praise,1,1,False,
+0d4f8b48-74c1-4e2a-89b5-11eaa737027e,It's really an amazing experience with Spotify...I love it🥰,other,other,praise,praise,1,1,False,
+ca63dfbe-7120-4e18-af6e-8ea786cd157d,I'm loving the experience with the app,other,other,praise,praise,1,1,False,
+723f07de-9881-4049-8680-1a9e25652914,"Update: I reached out to Spotify Support and with some help from Sarah I was able to get the app working again. Old Post:Normally, the app works great, and I use it constantly. I tried to open it toda",playback,playback,complaint,praise,4,1,False,intent;severity
+6112667b-3d71-475c-b1a4-159b87f73d2b,Super,other,other,praise,praise,1,1,False,

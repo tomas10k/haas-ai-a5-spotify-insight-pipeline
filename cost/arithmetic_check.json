@@ -1,0 +1,8 @@
+{
+  "api_cold_x1": 0.06355762,
+  "api_cold_x2_rates": 0.12711524,
+  "doubles": true,
+  "time_unchanged": true,
+  "projection_doubles_too": true,
+  "measured_unchanged_when_volume_doubles": true
+}

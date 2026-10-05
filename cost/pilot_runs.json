@@ -1,0 +1,43 @@
+{
+  "run_id": "pilot_20261005_113124",
+  "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+  "ids": 100,
+  "unique_texts": 100,
+  "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01",
+  "long_review_ids": [
+    "618d1dbb-0186-4537-923a-7b4dabf19afb",
+    "88439ec2-7c49-4c57-bedb-c5e098692aff",
+    "21915fcd-9a35-48ba-b277-6296c4154603",
+    "2ffdf599-a0d5-4c01-bf26-025215d44c06",
+    "5c9c17d3-9d6a-4fa1-a2a4-ae98eefbbd25",
+    "9e5f9745-f8be-48d3-b9de-4d118507d94a",
+    "89ea2c30-db8b-459d-8ab7-bbcb7f92c774",
+    "d455c11e-c530-4c03-a395-38f5a5cdb8d3",
+    "def34476-7bdc-443a-ab3d-475cdd5ca2f6"
+  ],
+  "cold": {
+    "wall_clock_seconds": 50.0,
+    "stage_seconds": {
+      "prepare": 0.0,
+      "enrich": 15.95,
+      "records": 0.0,
+      "verify": 5.61,
+      "group": 7.24,
+      "rank": 0.01,
+      "memo": 21.18
+    }
+  },
+  "warm": {
+    "wall_clock_seconds": 0.01,
+    "stage_seconds": {
+      "prepare": 0.0,
+      "enrich": 0.0,
+      "records": 0.0,
+      "verify": 0.0,
+      "group": 0.0,
+      "rank": 0.0,
+      "memo": 0.0
+    },
+    "cache_hits": 100
+  }
+}

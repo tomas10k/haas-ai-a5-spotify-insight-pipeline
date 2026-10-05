@@ -1,0 +1,16 @@
+{"stage": "prepare", "seconds": 0.0, "at": "2026-10-05T10:46:45-0700"}
+{"stage": "enrich", "run_id": "pilot_20261005_104644", "phase": "initial", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 0, "completed_now": 100, "quarantined_now": 0, "haiku_fallbacks": 1, "workers": 1, "seconds": 13.16, "spent_usd_total": 0.005514, "stop_reason": "finished", "at": "2026-10-05T10:46:58-0700"}
+{"stage": "enrich", "seconds": 13.18, "at": "2026-10-05T10:46:58-0700"}
+{"stage": "records", "seconds": 0.0, "at": "2026-10-05T10:46:58-0700"}
+{"stage": "verify", "seconds": 6.49, "at": "2026-10-05T10:47:04-0700"}
+{"stage": "group", "seconds": 8.09, "at": "2026-10-05T10:47:12-0700"}
+{"stage": "rank", "seconds": 0.01, "at": "2026-10-05T10:47:12-0700"}
+{"stage": "memo", "seconds": 22.64, "at": "2026-10-05T10:47:35-0700"}
+{"stage": "prepare", "seconds": 0.0, "at": "2026-10-05T10:47:35-0700"}
+{"stage": "enrich", "run_id": "pilot_20261005_104644", "phase": "resume", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 100, "completed_now": 0, "quarantined_now": 0, "haiku_fallbacks": 0, "workers": 1, "seconds": 0.0, "spent_usd_total": 0.034939, "stop_reason": "finished", "at": "2026-10-05T10:47:35-0700"}
+{"stage": "enrich", "seconds": 0.0, "at": "2026-10-05T10:47:35-0700"}
+{"stage": "records", "seconds": 0.0, "at": "2026-10-05T10:47:35-0700"}
+{"stage": "verify", "seconds": 0.0, "at": "2026-10-05T10:47:35-0700"}
+{"stage": "group", "seconds": 0.0, "at": "2026-10-05T10:47:35-0700"}
+{"stage": "rank", "seconds": 0.0, "at": "2026-10-05T10:47:35-0700"}
+{"stage": "memo", "seconds": 0.0, "at": "2026-10-05T10:47:35-0700"}

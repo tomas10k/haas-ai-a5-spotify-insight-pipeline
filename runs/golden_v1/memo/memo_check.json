@@ -1,0 +1,26 @@
+{
+  "cited_claims": [
+    "C001",
+    "C003",
+    "C004",
+    "C005",
+    "C008",
+    "C009",
+    "C011",
+    "C012",
+    "C016",
+    "C017",
+    "C019",
+    "C020",
+    "C021",
+    "C023",
+    "C024",
+    "C028",
+    "C032",
+    "C036"
+  ],
+  "claims": 40,
+  "errors": [],
+  "note": "A person must still read the argument.",
+  "passed": true
+}

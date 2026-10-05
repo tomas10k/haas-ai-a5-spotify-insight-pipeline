@@ -1,0 +1,20 @@
+rank,issue_id,name,topic,complaint_count,severity_sum,mean_severity,priority_score,cancellations,share_of_all_complaints
+1,ISS_OTHER_GENERAL,General App Complaints,other,15,31,2.066667,31,3,28.8%
+2,ISS_USABILITY_UPDATE_LAYOUT,Poor App Layout Updates,usability,6,17,2.833333,17,2,11.5%
+3,ISS_USABILITY_ADS,Excessive or Loud Advertisements,usability,7,16,2.285714,16,1,13.5%
+4,ISS_BILLING_SKIP_LIMIT,Limited Song Skips,billing,5,15,3.000000,15,1,9.6%
+5,ISS_PLAYBACK_CRASH_OPEN,App Crashes on Launch,playback,2,8,4.000000,8,0,3.8%
+6,ISS_DOWNLOADS_DOWNLOADS,Offline Download Problems,downloads,2,7,3.500000,7,1,3.8%
+7,ISS_CATALOG_LYRICS,Inconsistent Lyrics Display,catalog,2,5,2.500000,5,0,3.8%
+8,ISS_CATALOG_RECOMMENDATIONS,Poor Music Recommendations,catalog,2,5,2.500000,5,1,3.8%
+9,ISS_ACCESS_ACCOUNT,Account Access Issues,access,1,4,4.000000,4,0,1.9%
+10,ISS_ACCESS_LOGIN,Login Password Problems,access,1,4,4.000000,4,0,1.9%
+11,ISS_PLAYBACK_GENERAL,General Playback Errors,playback,1,4,4.000000,4,0,1.9%
+12,ISS_BILLING_PRICE,High Subscription Pricing,billing,1,3,3.000000,3,0,1.9%
+13,ISS_BILLING_SHUFFLE_FORCED,Forced Shuffle Without Premium,billing,1,3,3.000000,3,0,1.9%
+14,ISS_BILLING_SONG_CHOICE,Song Selection Requires Premium,billing,1,3,3.000000,3,0,1.9%
+15,ISS_CATALOG_MISSING_CONTENT,Missing Songs in Catalog,catalog,1,3,3.000000,3,0,1.9%
+16,ISS_PLAYBACK_CONNECTION,Internet Connection Issues,playback,1,3,3.000000,3,0,1.9%
+17,ISS_PLAYBACK_STOPS_PAUSES,Playback Stops Unexpectedly,playback,1,3,3.000000,3,0,1.9%
+18,ISS_USABILITY_GENERAL,General Usability Bugs,usability,1,3,3.000000,3,0,1.9%
+19,ISS_BILLING_GENERAL,General Billing Problems,billing,1,2,2.000000,2,0,1.9%

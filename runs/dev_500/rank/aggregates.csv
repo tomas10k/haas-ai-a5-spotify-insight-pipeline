@@ -1,0 +1,30 @@
+rank,issue_id,name,topic,complaint_count,severity_sum,mean_severity,priority_score,cancellations,share_of_all_complaints
+1,ISS_OTHER_GENERAL,General complaints,other,70,134,1.914286,134,11,28.6%
+2,ISS_USABILITY_ADS,Excessive advertisements,usability,29,67,2.310345,67,1,11.8%
+3,ISS_BILLING_PREMIUM_PUSH,Aggressive premium upselling,billing,19,57,3.000000,57,1,7.8%
+4,ISS_PLAYBACK_GENERAL,General playback issues,playback,12,42,3.500000,42,1,4.9%
+5,ISS_BILLING_SKIP_LIMIT,Limited skips per hour,billing,12,37,3.083333,37,1,4.9%
+6,ISS_USABILITY_UPDATE_LAYOUT,Update layout changes,usability,12,34,2.833333,34,2,4.9%
+7,ISS_PLAYBACK_CONNECTION,Device connection problems,playback,9,32,3.555556,32,1,3.7%
+8,ISS_PLAYBACK_CRASH_OPEN,App crashes when opening,playback,8,31,3.875000,31,0,3.3%
+9,ISS_ACCESS_LOGIN,Login failures,access,6,23,3.833333,23,0,2.4%
+10,ISS_PLAYBACK_STOPS_PAUSES,Playback stops unexpectedly,playback,6,22,3.666667,22,2,2.4%
+11,ISS_DOWNLOADS_DOWNLOADS,Download functionality broken,downloads,5,21,4.200000,21,2,2.0%
+12,ISS_USABILITY_GENERAL,General usability issues,usability,8,19,2.375000,19,0,3.3%
+13,ISS_CATALOG_LYRICS,Lyrics not loading,catalog,6,17,2.833333,17,0,2.4%
+14,ISS_BILLING_SONG_CHOICE,Limited song selection control,billing,5,16,3.200000,16,1,2.0%
+15,ISS_USABILITY_QUEUE_PLAYLIST,Playlist and queue issues,usability,5,16,3.200000,16,0,2.0%
+16,ISS_CATALOG_GENERAL,General catalog issues,catalog,5,14,2.800000,14,0,2.0%
+17,ISS_BILLING_SHUFFLE_FORCED,Forced shuffle on free tier,billing,4,12,3.000000,12,1,1.6%
+18,ISS_ACCESS_ACCOUNT,Account access issues,access,2,9,4.500000,9,0,0.8%
+19,ISS_BILLING_PRICE,Premium pricing too high,billing,3,8,2.666667,8,1,1.2%
+20,ISS_CATALOG_RECOMMENDATIONS,Unwanted recommendations,catalog,3,8,2.666667,8,1,1.2%
+21,ISS_DOWNLOADS_GENERAL,General download issues,downloads,3,8,2.666667,8,0,1.2%
+22,ISS_PLAYBACK_RESOURCES,Performance and resource issues,playback,2,7,3.500000,7,0,0.8%
+23,ISS_BILLING_GENERAL,General billing issues,billing,2,6,3.000000,6,0,0.8%
+24,ISS_BILLING_LYRICS_PAYWALL,Lyrics locked behind paywall,billing,2,5,2.500000,5,0,0.8%
+25,ISS_CATALOG_MISSING_CONTENT,Missing songs in catalog,catalog,2,5,2.500000,5,0,0.8%
+26,ISS_USABILITY_CONTROLS,Shuffle feature problems,usability,2,5,2.500000,5,0,0.8%
+27,ISS_ACCESS_GENERAL,General access errors,access,1,4,4.000000,4,1,0.4%
+28,ISS_BILLING_CHARGES,Unexpected charges,billing,1,2,2.000000,2,0,0.4%
+29,ISS_PLAYBACK_AUDIO,Audio quality concerns,playback,1,2,2.000000,2,0,0.4%

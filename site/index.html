@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Insight Pipeline</title>
+<meta name="description" content="Six staged steps turn 660,622 Spotify app reviews into a ranked, cited product recommendation.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232251C7'/><rect x='7' y='17' width='4' height='8' rx='1' fill='white'/><rect x='14' y='11' width='4' height='14' rx='1' fill='white'/><rect x='21' y='7' width='4' height='18' rx='1' fill='white'/></svg>">
+</head>
+<body>
+<nav class="bar"><div class="inner">
+  <a href="#how">How it works</a><a href="#runs">Runs and checks</a><a href="#cost">Cost</a><a href="#answer">Recommendation</a><a href="#explore">Explore reviews</a>
+  <button class="btn theme" id="themeBtn" aria-label="Toggle light or dark theme">◐</button>
+</div></nav>
+<main class="wrap">
+  <section class="hero" id="how" style="padding-top:32px">
+    <div class="eyebrow">MBA 290T · Final assignment · Tomas Diez Canedo</div>
+    <h1>Spotify Insight Pipeline</h1>
+    <p class="q">Where should Spotify put next quarter's product effort: <b>access</b>, <b>usability</b>, <b>playback</b> or <b>billing and support</b>? This program reads 660,622 app reviews, labels each one, groups the complaints, ranks them and writes a memo whose every number traces back to saved files.</p>
+    <div class="flow" id="flow"></div>
+    <div class="checks">
+      <div class="check"><b>Golden 50 · the answer key</b><span class="small muted">I labeled 50 reviews by hand before any model saw them. The pipeline labels the same texts blind and code compares, field by field. My labels never enter a prompt.</span></div>
+      <div class="check"><b>Independent verifier · the second opinion</b><span class="small muted">In every run a different model (Claude Haiku) relabels a random 1% sample without seeing Jev's answer. Code counts where the two disagree.</span></div>
+    </div>
+    <div class="legend"><span class="chip code">Code</span><span class="muted small">exact, free, repeatable</span><span class="chip model">Model</span><span class="muted small">reads language, paid per call</span><span class="chip evid">Both</span><span class="muted small">model proposes, code checks</span></div>
+  </section>
+
+  <section id="runs"><header><div class="eyebrow">Runs and checks</div><h2>Same six steps, bigger inputs</h2>
+    <p class="muted">Each run sends a larger file through all six steps. Pick one to see what happened and how it was checked.</p></header>
+    <div class="runchips" id="runchips"></div>
+    <div class="panel" id="runpanel"></div>
+  </section>
+
+  <section id="cost"><header><div class="eyebrow">Cost calculator</div><h2>What does a run cost?</h2>
+    <p class="muted">Variable costs grow with every review; fixed costs are paid once per run. Choose a model per step and a volume. Measured numbers come from the real 100 review pilot; anything not measured is labeled as an estimate.</p></header>
+    <div class="panel" id="calc"></div>
+  </section>
+
+  <section id="answer"><header><div class="eyebrow">Answer · <span id="answerRun"></span></div><h2>Recommendation and ranking</h2></header>
+    <details class="fold" id="memoFold"><summary>Recommendation memo</summary><div id="memo"></div></details>
+    <details class="fold" id="rankFold"><summary>Ranked issues</summary><div id="rank"></div></details>
+  </section>
+
+  <section id="explore"><header><div class="eyebrow">Explore · <span id="exploreRun"></span></div><h2>Follow any review through the pipeline</h2>
+    <p class="muted">Filter, pick a review, and see each step: what Jev decided, what code changed, what the verifier or I said, and where it landed in the ranking.</p></header>
+    <div class="filters" id="filters"></div>
+    <div class="explorer"><div class="rlist" id="rlist"></div><div id="rpath"></div></div>
+  </section>
+  <footer id="foot"></footer>
+</main>
+<div class="tip" id="tip"></div>
+<script src="app.js"></script>
+</body>
+</html>

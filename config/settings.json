@@ -1,0 +1,52 @@
+{
+  "project": "spotify_insight_pipeline",
+  "enrich": {
+    "jev_model": "jev-1.13.0",
+    "prompt_file": "prompts/enrich_v1.json",
+    "haiku_model": "claude-haiku-4-5-20251001",
+    "haiku_prompt_version": "enrich_haiku_v1",
+    "requests_max_reviews": 1,
+    "quote_whole_text_max_chars": 200,
+    "leaving_threshold": 0.5,
+    "review_band": [
+      0.2,
+      0.8
+    ],
+    "low_confidence": 0.5,
+    "fallback_fraction": 0.01,
+    "haiku_max_output_tokens": 300,
+    "max_retries_invalid": 1,
+    "max_attempts_transient": 4,
+    "workers": 1,
+    "max_requests_per_second": 20
+  },
+  "verify": {
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "verify_v1",
+    "sample_fraction": 0.01,
+    "min_sample": 20,
+    "max_sample": 2000,
+    "reviews_per_call": 10,
+    "seed": "verify-2026",
+    "max_output_tokens": 1200
+  },
+  "group": {
+    "model": "claude-haiku-4-5-20251001",
+    "prompt_version": "group_v1",
+    "examples_per_issue": 5,
+    "max_output_tokens": 2500
+  },
+  "memo": {
+    "model": "claude-sonnet-5",
+    "prompt_version": "memo_v2",
+    "top_issues": 10,
+    "examples_per_issue": 3,
+    "max_output_tokens": 8000,
+    "why": "One call per run, the only free text reasoning step: Sonnet 5 with adaptive thinking at low effort (the lowest setting that still reasons). Thinking tokens are billed as output and logged.",
+    "thinking": "adaptive",
+    "effort": "low"
+  },
+  "budget": {
+    "spend_cap_usd": 45.0
+  }
+}

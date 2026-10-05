@@ -1,0 +1,20 @@
+{
+  "ambiguous_cases_declared": 8,
+  "at": "2026-10-05T10:53:04-0700",
+  "golden_n": 50,
+  "intent_agreement": 0.9,
+  "missing_or_quarantined": 0,
+  "needs_review_precision": 0.4286,
+  "needs_review_recall": 0.5,
+  "note": "50 cases is a small diagnostic sample, not a population accuracy estimate.",
+  "quote_exact_substring_rate": 1.0,
+  "run_id": "golden_v1",
+  "scored": 50,
+  "sentiment_mae": 0.3736,
+  "sentiment_tolerance_declared": 0.25,
+  "sentiment_within_0.25": 0.34,
+  "severity_exact": 0.78,
+  "severity_mae": 0.28,
+  "topic_agreement": 0.88,
+  "topic_macro_f1": 0.7421
+}

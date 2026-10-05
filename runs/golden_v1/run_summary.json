@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-05T11:36:58-0700",
+  "calls_by_stage": [
+    {
+      "attempts": 49,
+      "cost_usd": 0.002334,
+      "failed": 0,
+      "input_tokens": 55570,
+      "model": "jev-1.13.0",
+      "output_tokens": 10668,
+      "role": "enrich",
+      "step": "jev_classify",
+      "succeeded": 49
+    },
+    {
+      "attempts": 1,
+      "cost_usd": 0.000784,
+      "failed": 0,
+      "input_tokens": 539,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 49,
+      "role": "enrich",
+      "step": "haiku_fallback",
+      "succeeded": 1
+    },
+    {
+      "attempts": 2,
+      "cost_usd": 0.005709,
+      "failed": 0,
+      "input_tokens": 1509,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 840,
+      "role": "verify",
+      "step": "verify",
+      "succeeded": 2
+    },
+    {
+      "attempts": 1,
+      "cost_usd": 0.003839,
+      "failed": 0,
+      "input_tokens": 1034,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 561,
+      "role": "group",
+      "step": "group",
+      "succeeded": 1
+    },
+    {
+      "attempts": 5,
+      "cost_usd": 0.067552,
+      "failed": 2,
+      "input_tokens": 15516,
+      "model": "claude-sonnet-5",
+      "output_tokens": 3652,
+      "role": "memo",
+      "step": "memo",
+      "succeeded": 3
+    }
+  ],
+  "run_id": "golden_v1",
+  "status": {
+    "completed": 50,
+    "completed_via_exact_text_reuse": 1
+  },
+  "total_cost_usd": 0.080218
+}

@@ -1,0 +1,414 @@
+{
+  "completed_classifications": 100,
+  "how_to_cite": "Use tokens {Cnnn} (issue claims) and {Tnnn} (topic claims); never type numbers.",
+  "labels_by_intent": {
+    "cancellation": 9,
+    "complaint": 43,
+    "praise": 39,
+    "request": 2,
+    "unclear": 7
+  },
+  "pending_unclassified": 0,
+  "quarantined": 0,
+  "ranked_issues": [
+    {
+      "claim_ids": {
+        "complaint_count": "C001",
+        "mean_severity": "C003",
+        "priority_score": "C004",
+        "severity_sum": "C002"
+      },
+      "complaint_count": "15",
+      "examples": [
+        {
+          "quote": "The update made the app useless .... Uninstall krdia ye app ab bekar hai ... Wynk hi theek h",
+          "review_id": "45c561b9-cc47-4d80-95d3-f0d20bc84af3",
+          "severity": 4
+        },
+        {
+          "quote": "Used to love the app but recent update is very disappointing bye Spotify",
+          "review_id": "b47c203f-366e-4409-922d-cd52aa8bbef6",
+          "severity": 2
+        },
+        {
+          "quote": "Worst app",
+          "review_id": "06a45bd5-3ed9-43af-b7f2-8b9487e2ffff",
+          "severity": 2
+        }
+      ],
+      "issue_id": "ISS_OTHER_GENERAL",
+      "mean_severity": "2.066667",
+      "name": "General App Complaints",
+      "priority_score": "31",
+      "rank": 1,
+      "severity_sum": "31",
+      "topic": "other"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C005",
+        "mean_severity": "C007",
+        "priority_score": "C008",
+        "severity_sum": "C006"
+      },
+      "complaint_count": "6",
+      "examples": [
+        {
+          "quote": "Spotify is great, but the new homescreen update is horrible. You're not tiktok or Instagram. I don't want to scroll through 1 playlist or album or artist at a time.",
+          "review_id": "94c9f2f9-36fa-4c11-936e-660514fe7a35",
+          "severity": 3
+        },
+        {
+          "quote": "Your new features are really bad thing that I found because it plays any song of the Playlist randomly it really really disappointing for and listeners who don't need disturbance in their song pattern",
+          "review_id": "5c9c17d3-9d6a-4fa1-a2a4-ae98eefbbd25",
+          "severity": 3
+        },
+        {
+          "quote": "I am using Spotify from past two years From last update they removed basic features of music player",
+          "review_id": "7084ced1-0428-4093-9328-442f74719b4f",
+          "severity": 3
+        }
+      ],
+      "issue_id": "ISS_USABILITY_UPDATE_LAYOUT",
+      "mean_severity": "2.833333",
+      "name": "Poor App Layout Updates",
+      "priority_score": "17",
+      "rank": 2,
+      "severity_sum": "17",
+      "topic": "usability"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C009",
+        "mean_severity": "C011",
+        "priority_score": "C012",
+        "severity_sum": "C010"
+      },
+      "complaint_count": "7",
+      "examples": [
+        {
+          "quote": "DON'T DOWNLOAD THIS:Such a worst app ... that always plays adds instead of songs ...if want to enjoy music free without adds don't download this app ..",
+          "review_id": "cf6166ae-d71a-4839-9add-088645ad3b78",
+          "severity": 3
+        },
+        {
+          "quote": "Too many ads.... it's literally useless if u hv not taken premium",
+          "review_id": "e5e6c55f-3069-4b7c-9807-f8b5d5bf2726",
+          "severity": 3
+        },
+        {
+          "quote": "I m using this app from 5 to 6 year but now m uninstald this app cz his premium adds are everywhere now .",
+          "review_id": "035213ba-b1b9-411c-b028-70296e5f0e73",
+          "severity": 2
+        }
+      ],
+      "issue_id": "ISS_USABILITY_ADS",
+      "mean_severity": "2.285714",
+      "name": "Excessive or Loud Advertisements",
+      "priority_score": "16",
+      "rank": 3,
+      "severity_sum": "16",
+      "topic": "usability"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C013",
+        "mean_severity": "C015",
+        "priority_score": "C016",
+        "severity_sum": "C014"
+      },
+      "complaint_count": "5",
+      "examples": [
+        {
+          "quote": "to restrict all the features jst so people would purchase premium ..",
+          "review_id": "88439ec2-7c49-4c57-bedb-c5e098692aff",
+          "severity": 3
+        },
+        {
+          "quote": "Na queue m lgte h gaane, na skip kr skte h, na random chla skte h, kya bkchodi h ye???",
+          "review_id": "89ea2c30-db8b-459d-8ab7-bbcb7f92c774",
+          "severity": 3
+        },
+        {
+          "quote": "Recent update really sucks. The ability to skip a song or go to previous song has been removed from non subscribed users.",
+          "review_id": "a3605554-5c3a-441d-836e-e9fdea83eb2e",
+          "severity": 3
+        }
+      ],
+      "issue_id": "ISS_BILLING_SKIP_LIMIT",
+      "mean_severity": "3.000000",
+      "name": "Limited Song Skips",
+      "priority_score": "15",
+      "rank": 4,
+      "severity_sum": "15",
+      "topic": "billing"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C017",
+        "mean_severity": "C019",
+        "priority_score": "C020",
+        "severity_sum": "C018"
+      },
+      "complaint_count": "2",
+      "examples": [
+        {
+          "quote": "The latest update has caused my app to crash I cant open the app please fix.",
+          "review_id": "55cc3abf-c295-4591-8c3a-78085cfdefaa",
+          "severity": 4
+        },
+        {
+          "quote": "App is stuck on loading/logo screen",
+          "review_id": "66a29b3c-c14d-440e-b722-b23e0c99ae82",
+          "severity": 4
+        }
+      ],
+      "issue_id": "ISS_PLAYBACK_CRASH_OPEN",
+      "mean_severity": "4.000000",
+      "name": "App Crashes on Launch",
+      "priority_score": "8",
+      "rank": 5,
+      "severity_sum": "8",
+      "topic": "playback"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C021",
+        "mean_severity": "C023",
+        "priority_score": "C024",
+        "severity_sum": "C022"
+      },
+      "complaint_count": "2",
+      "examples": [
+        {
+          "quote": "Offline not workjng",
+          "review_id": "dcff57c6-abd6-413b-b255-aec3dc34fcbd",
+          "severity": 4
+        },
+        {
+          "quote": "I like the app, but I don't like that it is always stuck downloading songs in the background and gets stuck until I open Spotify.",
+          "review_id": "2ffdf599-a0d5-4c01-bf26-025215d44c06",
+          "severity": 3
+        }
+      ],
+      "issue_id": "ISS_DOWNLOADS_DOWNLOADS",
+      "mean_severity": "3.500000",
+      "name": "Offline Download Problems",
+      "priority_score": "7",
+      "rank": 6,
+      "severity_sum": "7",
+      "topic": "downloads"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C025",
+        "mean_severity": "C027",
+        "priority_score": "C028",
+        "severity_sum": "C026"
+      },
+      "complaint_count": "2",
+      "examples": [
+        {
+          "quote": "sometime the lyrics don't show",
+          "review_id": "e0127547-4edd-44a0-8d5e-e8398bc07086",
+          "severity": 3
+        },
+        {
+          "quote": "It is good but there is a problem that in some songs there is no lyrics and in some songs there is lyrics it's so confusing. However it is good 😊😊.",
+          "review_id": "47becad0-8ae5-4a10-9731-fde8f2091862",
+          "severity": 2
+        }
+      ],
+      "issue_id": "ISS_CATALOG_LYRICS",
+      "mean_severity": "2.500000",
+      "name": "Inconsistent Lyrics Display",
+      "priority_score": "5",
+      "rank": 7,
+      "severity_sum": "5",
+      "topic": "catalog"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C029",
+        "mean_severity": "C031",
+        "priority_score": "C032",
+        "severity_sum": "C030"
+      },
+      "complaint_count": "2",
+      "examples": [
+        {
+          "quote": "I use the premium family sub and I want to listen to my playlist without your recommendation adds.",
+          "review_id": "618d1dbb-0186-4537-923a-7b4dabf19afb",
+          "severity": 3
+        },
+        {
+          "quote": "I love Spotify recommendations music type before more than now. It was more songs and updated to newest song.",
+          "review_id": "1807cc68-ba99-4edc-b6f1-2a1478e69109",
+          "severity": 2
+        }
+      ],
+      "issue_id": "ISS_CATALOG_RECOMMENDATIONS",
+      "mean_severity": "2.500000",
+      "name": "Poor Music Recommendations",
+      "priority_score": "5",
+      "rank": 8,
+      "severity_sum": "5",
+      "topic": "catalog"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C033",
+        "mean_severity": "C035",
+        "priority_score": "C036",
+        "severity_sum": "C034"
+      },
+      "complaint_count": "1",
+      "examples": [
+        {
+          "quote": "It not letting me into my account and there are to many ads",
+          "review_id": "32fb340f-4f9f-4551-8dae-755221e58d6a",
+          "severity": 4
+        }
+      ],
+      "issue_id": "ISS_ACCESS_ACCOUNT",
+      "mean_severity": "4.000000",
+      "name": "Account Access Issues",
+      "priority_score": "4",
+      "rank": 9,
+      "severity_sum": "4",
+      "topic": "access"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C037",
+        "mean_severity": "C039",
+        "priority_score": "C040",
+        "severity_sum": "C038"
+      },
+      "complaint_count": "1",
+      "examples": [
+        {
+          "quote": "Will not except my password",
+          "review_id": "de0a9cdf-8974-48bc-802f-331228df4619",
+          "severity": 4
+        }
+      ],
+      "issue_id": "ISS_ACCESS_LOGIN",
+      "mean_severity": "4.000000",
+      "name": "Login Password Problems",
+      "priority_score": "4",
+      "rank": 10,
+      "severity_sum": "4",
+      "topic": "access"
+    }
+  ],
+  "source_rows": 100,
+  "topic_totals_complaints_and_cancellations": [
+    {
+      "cancellations": 3,
+      "claim_ids": {
+        "cancellations": "T004",
+        "complaint_count": "T001",
+        "mean_severity": "T003",
+        "severity_sum": "T002",
+        "share_of_all_complaints": "T005"
+      },
+      "complaint_count": 14,
+      "mean_severity": "2.571429",
+      "severity_sum": 36,
+      "share_of_all_complaints": "26.9%",
+      "topic": "usability"
+    },
+    {
+      "cancellations": 3,
+      "claim_ids": {
+        "cancellations": "T009",
+        "complaint_count": "T006",
+        "mean_severity": "T008",
+        "severity_sum": "T007",
+        "share_of_all_complaints": "T010"
+      },
+      "complaint_count": 15,
+      "mean_severity": "2.066667",
+      "severity_sum": 31,
+      "share_of_all_complaints": "28.8%",
+      "topic": "other"
+    },
+    {
+      "cancellations": 1,
+      "claim_ids": {
+        "cancellations": "T014",
+        "complaint_count": "T011",
+        "mean_severity": "T013",
+        "severity_sum": "T012",
+        "share_of_all_complaints": "T015"
+      },
+      "complaint_count": 9,
+      "mean_severity": "2.888889",
+      "severity_sum": 26,
+      "share_of_all_complaints": "17.3%",
+      "topic": "billing"
+    },
+    {
+      "cancellations": 0,
+      "claim_ids": {
+        "cancellations": "T019",
+        "complaint_count": "T016",
+        "mean_severity": "T018",
+        "severity_sum": "T017",
+        "share_of_all_complaints": "T020"
+      },
+      "complaint_count": 5,
+      "mean_severity": "3.600000",
+      "severity_sum": 18,
+      "share_of_all_complaints": "9.6%",
+      "topic": "playback"
+    },
+    {
+      "cancellations": 1,
+      "claim_ids": {
+        "cancellations": "T024",
+        "complaint_count": "T021",
+        "mean_severity": "T023",
+        "severity_sum": "T022",
+        "share_of_all_complaints": "T025"
+      },
+      "complaint_count": 5,
+      "mean_severity": "2.600000",
+      "severity_sum": 13,
+      "share_of_all_complaints": "9.6%",
+      "topic": "catalog"
+    },
+    {
+      "cancellations": 0,
+      "claim_ids": {
+        "cancellations": "T029",
+        "complaint_count": "T026",
+        "mean_severity": "T028",
+        "severity_sum": "T027",
+        "share_of_all_complaints": "T030"
+      },
+      "complaint_count": 2,
+      "mean_severity": "4.000000",
+      "severity_sum": 8,
+      "share_of_all_complaints": "3.8%",
+      "topic": "access"
+    },
+    {
+      "cancellations": 1,
+      "claim_ids": {
+        "cancellations": "T034",
+        "complaint_count": "T031",
+        "mean_severity": "T033",
+        "severity_sum": "T032",
+        "share_of_all_complaints": "T035"
+      },
+      "complaint_count": 2,
+      "mean_severity": "3.500000",
+      "severity_sum": 7,
+      "share_of_all_complaints": "3.8%",
+      "topic": "downloads"
+    }
+  ],
+  "window": "2022-05-17 to 2023-11-15 (Google Play reviews)"
+}

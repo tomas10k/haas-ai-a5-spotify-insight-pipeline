@@ -1,0 +1,21 @@
+origin_review_id,text,enrich_topic,verify_topic,enrich_intent,verify_intent,enrich_severity,verify_severity,enrich_needs_review,disagree
+1d3f978e-b31f-4a4b-ab17-ec46ab4966b3,Can't download music for free,downloads,billing,complaint,complaint,4,3,True,topic;severity
+12efd15d-4d4f-4a71-8e71-69d03b6f983a,"I can't login to the app, it keep saying that there's no internet connection, whereas everything else on my phone is connected to the internet.",access,access,complaint,complaint,4,4,False,
+27aeb125-266a-47c9-85f5-bd8a56b4d6c3,Have been a customer for years and have always been satisfied. I have worked remotely without cell or internet and I like that I can still play all my collections.,downloads,downloads,praise,praise,1,1,False,
+01124066-b5dd-4c79-8618-d1bea99d197a,"Sometimes has connection issues with google home and tends to get ""tunnel vision"" with its song picks. If there's a few songs that get listened to that aren't the usual, the next update to release rad",playback,playback,complaint,complaint,3,2,False,severity
+88439ec2-7c49-4c57-bedb-c5e098692aff,I would request to remove all the new features .what's the point if we dont get to go back to the same song or skip songs..or choose .its not fair ..to restrict all the features jst so people would pu,billing,usability,cancellation,cancellation,3,3,False,topic
+c1fe1a70-f5ec-4009-bad6-b75437ba1c0b,"Most fun i have had recently,where music is concerned.",other,other,praise,praise,1,1,False,
+84acb6b0-dd91-4330-944f-2686cbd15ce0,Login problems faced many times. Every time demanding new contact number. Worst experience.,access,access,complaint,complaint,4,3,False,severity
+5bc203df-dac3-41ae-8b8d-ee0e8b9d9f50,Awesome app and music,other,other,praise,praise,1,1,False,
+b7b8c665-4ca5-4123-8ff4-fc874a4a7f93,Nice song app,other,other,praise,praise,1,1,False,
+475aa270-a637-4332-ba8d-48def4869f98,I enjoy it,other,other,praise,praise,1,1,False,
+0b716a9d-85bf-4f4e-8e2e-be71e4a379a6,This is rubbish the app is empty,catalog,catalog,complaint,complaint,4,2,True,severity
+b0fb4c8e-e2be-432d-84bc-b4f30b0d2aa5,Hate this application 😡😡😡👎🏻,other,other,complaint,complaint,2,2,False,
+c7df9cb8-7bec-4036-a6a1-1353d2d705d8,Won't cast to other devices. Gives me random songs I hate. This app should be renamed the helicopter app cuz it doesn't play music and just shows a spinning iconic kind of looks like a helicopter,playback,playback,complaint,complaint,4,4,False,
+d146397f-4a94-4980-be00-ae9212eca3a7,"This was fine till the last update, now you can't even pick a certain song without Spotify premium, and now you can only skip 6 songs, like please just let the songs fit my mood!",billing,billing,complaint,complaint,3,3,False,
+f87fb3d9-501a-4119-bc40-b0669270ae44,It doesn't work with mobile data on my phone!!,playback,playback,complaint,complaint,4,4,True,
+7f1073d4-34a7-45b2-80b8-e0c1edcfaa5e,I love the music on Spotify,other,other,praise,praise,1,1,False,
+e575daac-46ab-4da3-b9f5-723bf4000234,Noiceee,other,other,praise,praise,1,1,False,
+4d327494-7846-481a-bf00-f4b5abc099c4,Just got back into Spotify. Well.. tried to. Terrible. Look up your favorite music and just a 30 second clip? Use youtube music. You. Are. Welcome. Hope this helped.,catalog,catalog,complaint,complaint,3,3,True,
+cf6166ae-d71a-4839-9add-088645ad3b78,DON'T DOWNLOAD THIS:Such a worst app ... that always plays adds instead of songs ...if want to enjoy music free without adds don't download this app ..,usability,usability,complaint,complaint,3,3,False,
+7fd63051-28ec-4e51-a06e-97f7010eae40,I uninstalled this app as a form of protest and boycott due to the fact that the Swedish Government allows the burning of the HOLY QUR'AN.,other,other,cancellation,cancellation,2,1,False,severity

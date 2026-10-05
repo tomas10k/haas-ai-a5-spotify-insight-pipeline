@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-10-05T10:18:52-0700",
+  "distinct_nonempty_texts": 100,
+  "distinct_text_length_chars": {
+    "max": 486,
+    "p50": 46,
+    "p90": 186,
+    "p99": 486,
+    "total": 8042
+  },
+  "duplicate_review_ids": 0,
+  "empty_review_text": 0,
+  "initial_status_counts": {
+    "completed": 0,
+    "pending": 100,
+    "quarantined": 0
+  },
+  "input_bytes": 15466,
+  "input_file": "cost_100.csv",
+  "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+  "matches_official_file": "cost_100.csv",
+  "missing_app_version": 18,
+  "nonempty_review_text": 100,
+  "records": 100,
+  "reviews_by_month": {
+    "2022-06": 5,
+    "2022-07": 5,
+    "2022-08": 6,
+    "2022-09": 5,
+    "2022-10": 4,
+    "2022-11": 1,
+    "2022-12": 2,
+    "2023-01": 4,
+    "2023-02": 4,
+    "2023-03": 7,
+    "2023-04": 4,
+    "2023-05": 5,
+    "2023-06": 4,
+    "2023-07": 11,
+    "2023-08": 3,
+    "2023-09": 6,
+    "2023-10": 19,
+    "2023-11": 5
+  },
+  "reviews_by_rating": {
+    "1": 33,
+    "2": 8,
+    "3": 6,
+    "4": 10,
+    "5": 43
+  },
+  "reviews_covered_by_exact_text_reuse": 0,
+  "seconds": 0.0,
+  "stage": "prepare",
+  "top_duplicate_texts": [],
+  "unique_review_ids": 100,
+  "unparseable_timestamps": 0
+}

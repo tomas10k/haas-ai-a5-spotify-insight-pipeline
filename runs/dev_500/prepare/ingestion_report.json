@@ -1,0 +1,104 @@
+{
+  "created_at": "2026-10-05T10:53:04-0700",
+  "distinct_nonempty_texts": 479,
+  "distinct_text_length_chars": {
+    "max": 499,
+    "p50": 38,
+    "p90": 208,
+    "p99": 468,
+    "total": 39122
+  },
+  "duplicate_review_ids": 0,
+  "empty_review_text": 0,
+  "initial_status_counts": {
+    "completed": 0,
+    "pending": 500,
+    "quarantined": 0
+  },
+  "input_bytes": 76170,
+  "input_file": "checkpoint_500.csv",
+  "input_sha256": "a94e31663ee7b7eaa77e23b7a8425b530cc0c866ed5e714953172a0afef6a12f",
+  "matches_official_file": "checkpoint_500.csv",
+  "missing_app_version": 108,
+  "nonempty_review_text": 500,
+  "records": 500,
+  "reviews_by_month": {
+    "2022-05": 14,
+    "2022-06": 19,
+    "2022-07": 21,
+    "2022-08": 31,
+    "2022-09": 22,
+    "2022-10": 18,
+    "2022-11": 18,
+    "2022-12": 21,
+    "2023-01": 17,
+    "2023-02": 23,
+    "2023-03": 20,
+    "2023-04": 21,
+    "2023-05": 22,
+    "2023-06": 19,
+    "2023-07": 56,
+    "2023-08": 26,
+    "2023-09": 25,
+    "2023-10": 79,
+    "2023-11": 28
+  },
+  "reviews_by_rating": {
+    "1": 187,
+    "2": 33,
+    "3": 19,
+    "4": 45,
+    "5": 216
+  },
+  "reviews_covered_by_exact_text_reuse": 21,
+  "seconds": 0.0,
+  "stage": "prepare",
+  "top_duplicate_texts": [
+    {
+      "count": 7,
+      "text": "Good"
+    },
+    {
+      "count": 4,
+      "text": "Great"
+    },
+    {
+      "count": 3,
+      "text": "Worst app"
+    },
+    {
+      "count": 3,
+      "text": "Nice"
+    },
+    {
+      "count": 3,
+      "text": "Excellent"
+    },
+    {
+      "count": 2,
+      "text": "Very good"
+    },
+    {
+      "count": 2,
+      "text": "Superb"
+    },
+    {
+      "count": 2,
+      "text": "Op"
+    },
+    {
+      "count": 2,
+      "text": "Love it"
+    },
+    {
+      "count": 2,
+      "text": "Hate this application"
+    },
+    {
+      "count": 2,
+      "text": "Awesome"
+    }
+  ],
+  "unique_review_ids": 500,
+  "unparseable_timestamps": 0
+}

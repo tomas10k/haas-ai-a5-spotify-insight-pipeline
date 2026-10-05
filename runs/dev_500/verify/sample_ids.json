@@ -1,0 +1,29 @@
+{
+  "declared_fraction": 0.01,
+  "max": 2000,
+  "min": 20,
+  "n": 20,
+  "origin_review_ids": [
+    "1d3f978e-b31f-4a4b-ab17-ec46ab4966b3",
+    "12efd15d-4d4f-4a71-8e71-69d03b6f983a",
+    "27aeb125-266a-47c9-85f5-bd8a56b4d6c3",
+    "01124066-b5dd-4c79-8618-d1bea99d197a",
+    "88439ec2-7c49-4c57-bedb-c5e098692aff",
+    "c1fe1a70-f5ec-4009-bad6-b75437ba1c0b",
+    "84acb6b0-dd91-4330-944f-2686cbd15ce0",
+    "5bc203df-dac3-41ae-8b8d-ee0e8b9d9f50",
+    "b7b8c665-4ca5-4123-8ff4-fc874a4a7f93",
+    "475aa270-a637-4332-ba8d-48def4869f98",
+    "0b716a9d-85bf-4f4e-8e2e-be71e4a379a6",
+    "b0fb4c8e-e2be-432d-84bc-b4f30b0d2aa5",
+    "c7df9cb8-7bec-4036-a6a1-1353d2d705d8",
+    "d146397f-4a94-4980-be00-ae9212eca3a7",
+    "f87fb3d9-501a-4119-bc40-b0669270ae44",
+    "7f1073d4-34a7-45b2-80b8-e0c1edcfaa5e",
+    "e575daac-46ab-4da3-b9f5-723bf4000234",
+    "4d327494-7846-481a-bf00-f4b5abc099c4",
+    "cf6166ae-d71a-4839-9add-088645ad3b78",
+    "7fd63051-28ec-4e51-a06e-97f7010eae40"
+  ],
+  "seed": "verify-2026"
+}

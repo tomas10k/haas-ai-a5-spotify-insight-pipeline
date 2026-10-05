@@ -1,0 +1,13 @@
+rank,issue_id,name,topic,complaint_count,severity_sum,mean_severity,priority_score,cancellations,share_of_all_complaints
+1,ISS_OTHER_GENERAL,General app functionality problems,other,8,16,2.000000,16,0,34.8%
+2,ISS_USABILITY_ADS,Excessive or disruptive ads,usability,4,10,2.500000,10,0,17.4%
+3,ISS_PLAYBACK_GENERAL,General song playback failures,playback,2,8,4.000000,8,0,8.7%
+4,ISS_DOWNLOADS_DOWNLOADS,Offline download playback failing,downloads,1,4,4.000000,4,0,4.3%
+5,ISS_PLAYBACK_AUDIO,Audio playback quality issues,playback,1,4,4.000000,4,0,4.3%
+6,ISS_PLAYBACK_CRASH_OPEN,App crashes on launch,playback,1,4,4.000000,4,0,4.3%
+7,ISS_BILLING_PREMIUM_PUSH,Basic features locked behind premium,billing,1,3,3.000000,3,0,4.3%
+8,ISS_BILLING_PRICE,Subscription pricing too expensive,billing,1,3,3.000000,3,0,4.3%
+9,ISS_BILLING_SHUFFLE_FORCED,Shuffle mode cannot be disabled,billing,1,3,3.000000,3,1,4.3%
+10,ISS_CATALOG_LYRICS,Lyrics display not loading,catalog,1,3,3.000000,3,0,4.3%
+11,ISS_PLAYBACK_STOPS_PAUSES,Playback stops unexpectedly,playback,1,3,3.000000,3,0,4.3%
+12,ISS_CATALOG_GENERAL,Music catalog content issues,catalog,1,2,2.000000,2,0,4.3%

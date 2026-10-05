@@ -1,0 +1,13 @@
+{
+  "note": "Code assigns each complaint/cancellation to exactly one issue: its topic plus the first subtopic whose pattern appears in the text (list order = priority); otherwise <TOPIC>_GENERAL. Patterns are regular expressions on lowercase text.",
+  "subtopics": {
+    "billing": [["SKIP_LIMIT", "\\bskip"], ["SHUFFLE_FORCED", "shuffl|random"], ["SONG_CHOICE", "choose|choice|pick|select|specific song|play (a|the|one) song|go back|rewind|repeat|previous"], ["LYRICS_PAYWALL", "lyric"], ["PRICE", "price|expensive|cost|money|afford|\\$"], ["CHARGES", "charg|refund|payment|billed|bank|card"], ["PREMIUM_PUSH", "premium|subscri|paid|pay"]],
+    "usability": [["ADS", "\\bads?\\b|advert|commercial|add\\b|adds\\b"], ["UPDATE_LAYOUT", "update|home ?screen|layout|design|interface|\\bui\\b|feed|tiktok"], ["QUEUE_PLAYLIST", "queue|playlist|library|liked songs"], ["CONTROLS", "button|rewind|repeat|seek|back|skip|shuffle|widget|notification"]],
+    "playback": [["CRASH_OPEN", "crash|close|won.?t open|not open|can.?t open|cant open|stuck|loading|black screen|freez"], ["CONNECTION", "internet|connect|network|wifi|wi-fi|offline|no connection"], ["STOPS_PAUSES", "stop|paus|interrupt|cut"], ["AUDIO", "quality|volume|sound|audio|bluetooth|car"], ["RESOURCES", "battery|storage|data|ram|slow|lag"]],
+    "downloads": [["DOWNLOADS", "download|offline|saved"]],
+    "catalog": [["LYRICS", "lyric"], ["MISSING_CONTENT", "not available|missing|removed|not there|can.?t find|cant find|isn.?t|no song|don.?t have|not present"], ["RECOMMENDATIONS", "recommend|suggest|algorithm|discover|mix"], ["SEARCH", "search"], ["PODCASTS", "podcast"]],
+    "access": [["LOGIN", "log ?in|sign ?in|password|login"], ["ACCOUNT", "account|hack|email|sign ?up|verif"]],
+    "support": [],
+    "other": []
+  }
+}

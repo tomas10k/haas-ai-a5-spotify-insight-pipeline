@@ -1,0 +1,403 @@
+{
+  "issues": {
+    "ISS_ACCESS_ACCOUNT": {
+      "description": "Users unable to log into or access their accounts.",
+      "examples": [
+        "It not letting me into my account and there are to many ads",
+        "Top algorithm, but again hacked ,can't even recover the playlists set by me last week ,cost over three hundred dollars,per week for nothing ,"
+      ],
+      "members": 2,
+      "name": "Account access issues",
+      "named_by": "model",
+      "rule": "ACCOUNT",
+      "topic": "access"
+    },
+    "ISS_ACCESS_GENERAL": {
+      "description": "Users encounter unexplained access errors and messages.",
+      "examples": [
+        "Getting no token provided message. Don't understand it, can't fix it and it's making me angry enough to unsusubscribe."
+      ],
+      "members": 1,
+      "name": "General access errors",
+      "named_by": "model",
+      "rule": "GENERAL",
+      "topic": "access"
+    },
+    "ISS_ACCESS_LOGIN": {
+      "description": "Users cannot log in due to password, connection, or verification issues.",
+      "examples": [
+        "I can't login to the app, it keep saying that there's no internet connection, whereas everything else on my phone is connected to the internet.",
+        "Login problems faced many times. Every time demanding new contact number. Worst experience.",
+        "Everything is good about this app but i don't know why the app starts facing issue while i search a song app shows that i don't have an internet connection even though my net is on at a good speed and",
+        "Will not except my password",
+        "@spotifyindia worst one ever my premium account got logged out automatically which was linked with my phone number now when I try to log in using my phone number it shows check your number and try aga"
+      ],
+      "members": 6,
+      "name": "Login failures",
+      "named_by": "model",
+      "rule": "LOGIN",
+      "topic": "access"
+    },
+    "ISS_BILLING_CHARGES": {
+      "description": "Users complain about high costs and unexpected subscription charges.",
+      "examples": [
+        "I am not like now they are so much charges to listen music or replay again the music there is a charger so that's why I don't like it this app now 😕"
+      ],
+      "members": 1,
+      "name": "Unexpected charges",
+      "named_by": "model",
+      "rule": "CHARGES",
+      "topic": "billing"
+    },
+    "ISS_BILLING_GENERAL": {
+      "description": "Users have various concerns about billing and premium requirements.",
+      "examples": [
+        "It's impossible to use the app without prime And the recommended song is so bad",
+        "Aakhir kar spotify ne bhi apni bhikaariyo vali aukaat dikha di \"Gadar karbe\" Chanda mangna got real Bhikaariyo ko training dena bhi shuru kardo haramiyo"
+      ],
+      "members": 2,
+      "name": "General billing issues",
+      "named_by": "model",
+      "rule": "GENERAL",
+      "topic": "billing"
+    },
+    "ISS_BILLING_LYRICS_PAYWALL": {
+      "description": "Lyrics viewing requires premium subscription when previously free.",
+      "examples": [
+        "So now they have stopped the lyrics the app said get premium for the lyrics and this used to be my favourite app but now ......",
+        "Why are lyrics premium!? There is literally no need to keep lyrics premium I'm sorry Spotify 1 star from me. Very disappointed:(."
+      ],
+      "members": 2,
+      "name": "Lyrics locked behind paywall",
+      "named_by": "model",
+      "rule": "LYRICS_PAYWALL",
+      "topic": "billing"
+    },
+    "ISS_BILLING_PREMIUM_PUSH": {
+      "description": "App aggressively pushes users to upgrade to premium.",
+      "examples": [
+        "Well the recent premium updates Suck. I might uninstall soon.. it ruins all the basic music listening experience.",
+        "Worst ever 100 tyms asked to join premium 😖",
+        "nah why man, Spotify used to be the best app ever. Paying to use basic festures is just sad and the stupidest thing.",
+        "Good app but. I cant sign up for individual premium.. Whenever i click on the plan it doesnt give me the prompt to pay :/",
+        "The new update is worst It's like ur are forcing ur customers to buy the premium which is not good"
+      ],
+      "members": 19,
+      "name": "Aggressive premium upselling",
+      "named_by": "model",
+      "rule": "PREMIUM_PUSH",
+      "topic": "billing"
+    },
+    "ISS_BILLING_PRICE": {
+      "description": "Users find subscription costs excessive and unreasonable.",
+      "examples": [
+        "This app the new update has made everthing premium and so usless i thought this app is good but no.",
+        "This app is now not for free users..... they all have just to earn money or nothing else....and now i stop using this app!!",
+        "Why do guys need so much money, like tff just basic things have been done premium now shameful."
+      ],
+      "members": 3,
+      "name": "Premium pricing too high",
+      "named_by": "model",
+      "rule": "PRICE",
+      "topic": "billing"
+    },
+    "ISS_BILLING_SHUFFLE_FORCED": {
+      "description": "Free users cannot disable shuffle and must pay for control.",
+      "examples": [
+        "wow what a nice of them they removed the mix old shuffle now it shuffle s the worst possible songs in so they can sell their premium pack and the removed our right to forward or rewind the song remove",
+        "This new update is not good because I don't agree to to auto shuffle and I want in order in free.",
+        "You can't even listen to music you want it just shuffles it, like what the hell? This app is killing it self and forcing you to pay premium for basic things like just listening to music.",
+        "You need to be a premium user to turn of Shuffle playlist!"
+      ],
+      "members": 4,
+      "name": "Forced shuffle on free tier",
+      "named_by": "model",
+      "rule": "SHUFFLE_FORCED",
+      "topic": "billing"
+    },
+    "ISS_BILLING_SKIP_LIMIT": {
+      "description": "Free users have restricted skip limits requiring premium.",
+      "examples": [
+        "This was fine till the last update, now you can't even pick a certain song without Spotify premium, and now you can only skip 6 songs, like please just let the songs fit my mood!",
+        "With the new update, I lose the pleasure of listening to songs in the application, for example, why do I only have 6 skips per hour",
+        "to restrict all the features jst so people would purchase premium ..",
+        "I love using this app..it lets me use my phone without stopping the music. I only wish it wasn't limited on the skips.",
+        "Eyy fodey, charge me for breathing also. You mad or something? Now I need premium to repeat and skip the song to a certain part."
+      ],
+      "members": 12,
+      "name": "Limited skips per hour",
+      "named_by": "model",
+      "rule": "SKIP_LIMIT",
+      "topic": "billing"
+    },
+    "ISS_BILLING_SONG_CHOICE": {
+      "description": "Free users cannot choose specific songs or use repeat.",
+      "examples": [
+        "The made everything paid at this point they will take money to play the song almost all features are gone limited songs of your choice",
+        "I need to pay to repeat the song I heard .I am uninstalling spotify",
+        "I'm using Spotify since 2020 ,but the latest update doesn't let me do anything thing I can't play the song I want , can't hear the same song on repeat and it doesn't let me change songs too.",
+        "Why it requires premium just to play next music / to choose music ?? And why the specific part of song cannot be played ?",
+        "With every other music streaming app, you can pick what you actually want to listen to and not have to worry about the app deciding to play a song from a completely different artist when you're listen"
+      ],
+      "members": 5,
+      "name": "Limited song selection control",
+      "named_by": "model",
+      "rule": "SONG_CHOICE",
+      "topic": "billing"
+    },
+    "ISS_CATALOG_GENERAL": {
+      "description": "Users report poor content selection and repetitive recommendations.",
+      "examples": [
+        "Just got back into Spotify. Well.. tried to. Terrible. Look up your favorite music and just a 30 second clip? Use youtube music. You. Are. Welcome. Hope this helped.",
+        "Love it, the Dj absolutely sucks he plays the same songs over and over, maybe 1 or two new songs.",
+        "This is rubbish the app is empty",
+        "Stop giving me trashy songs I don't need or want to listen to",
+        "You guys are blatantly corrupt, removing Collab streams from only BTS and their members and keeping other artists stream on the same chart, I just cannot believe you guys are this threatened by bts"
+      ],
+      "members": 5,
+      "name": "General catalog issues",
+      "named_by": "model",
+      "rule": "GENERAL",
+      "topic": "catalog"
+    },
+    "ISS_CATALOG_LYRICS": {
+      "description": "Song lyrics fail to display or load inconsistently.",
+      "examples": [
+        "Also, the song keeps on shuffling ..",
+        "sometime the lyrics don't show",
+        "Nice app but why can't the lyrics of song on my playlist load?",
+        "It is good but there is a problem that in some songs there is no lyrics and in some songs there is lyrics it's so confusing. However it is good 😊😊.",
+        "Look, I love spotify, and I've always done, but suddenly, my songs lyrics stopped loading..?"
+      ],
+      "members": 6,
+      "name": "Lyrics not loading",
+      "named_by": "model",
+      "rule": "LYRICS",
+      "topic": "catalog"
+    },
+    "ISS_CATALOG_MISSING_CONTENT": {
+      "description": "Desired songs or genres unavailable in the library.",
+      "examples": [
+        "It's nice but gospel music isn't much",
+        "Nice app! But many songs are not present here!"
+      ],
+      "members": 2,
+      "name": "Missing songs in catalog",
+      "named_by": "model",
+      "rule": "MISSING_CONTENT",
+      "topic": "catalog"
+    },
+    "ISS_CATALOG_RECOMMENDATIONS": {
+      "description": "App adds unsolicited recommendations to playlists and mixes.",
+      "examples": [
+        "Is good but it always recommends songs on my playlist even when I turn that setting off and remove all recommendations.",
+        "I love Spotify recommendations music type before more than now. It was more songs and updated to newest song.",
+        "I use the premium family sub and I want to listen to my playlist without your recommendation adds."
+      ],
+      "members": 3,
+      "name": "Unwanted recommendations",
+      "named_by": "model",
+      "rule": "RECOMMENDATIONS",
+      "topic": "catalog"
+    },
+    "ISS_DOWNLOADS_DOWNLOADS": {
+      "description": "Downloaded content fails to play or is deleted unexpectedly.",
+      "examples": [
+        "Generally nice - but integrations buggy, offline mode USELESS, and moving storage failed and deleted everything.",
+        "Offline not workjng",
+        "I like the app, but I don't like that it is always stuck downloading songs in the background and gets stuck until I open Spotify.",
+        "I spend ages downloading my favourite content, then every couple of months, usually when I'm out of data range, i go to listen to downloaded content and it's ALL GONE.",
+        "Can't download music for free"
+      ],
+      "members": 5,
+      "name": "Download functionality broken",
+      "named_by": "model",
+      "rule": "DOWNLOADS",
+      "topic": "downloads"
+    },
+    "ISS_DOWNLOADS_GENERAL": {
+      "description": "Users have problems with offline playback and storage.",
+      "examples": [
+        "The musics are dowp man",
+        "Can no longer listen to music off line or even log in.",
+        "Waste of Data and Storage in our phone"
+      ],
+      "members": 3,
+      "name": "General download issues",
+      "named_by": "model",
+      "rule": "GENERAL",
+      "topic": "downloads"
+    },
+    "ISS_OTHER_GENERAL": {
+      "description": "Broad dissatisfaction with app quality and experience.",
+      "examples": [
+        "Worst app ever they only care about money",
+        "I hate application",
+        "Worst experience for listening song",
+        "Useless Now😑",
+        "Bad"
+      ],
+      "members": 70,
+      "name": "General complaints",
+      "named_by": "model",
+      "rule": "GENERAL",
+      "topic": "other"
+    },
+    "ISS_PLAYBACK_AUDIO": {
+      "description": "Users want better audio quality and less recommendation spam.",
+      "examples": [
+        "Could be doing with hi-res audio don't like getting bombarded with playlist recommendations when the option is turned off"
+      ],
+      "members": 1,
+      "name": "Audio quality concerns",
+      "named_by": "model",
+      "rule": "AUDIO",
+      "topic": "playback"
+    },
+    "ISS_PLAYBACK_CONNECTION": {
+      "description": "App fails to connect to other devices or shows false no-connection errors.",
+      "examples": [
+        "Sometimes it's a pain to connect to other devices live a gaming console or the PC",
+        "Iam a premium user. But this app if i using wifi not able to connect Internet. But if using mobile data it will work. Some songs quality also very poor comparing to the YouTube music.",
+        "Horrible. I put the alarm on to connect with and it doesn't. Rather YouTube music",
+        "Very bad doesn't work properly even if you network connection is best",
+        "Latest update is stupid. App says no internet connection available, but clearly I do otherwise how else did would I have downloaded the update? Magic??"
+      ],
+      "members": 9,
+      "name": "Device connection problems",
+      "named_by": "model",
+      "rule": "CONNECTION",
+      "topic": "playback"
+    },
+    "ISS_PLAYBACK_CRASH_OPEN": {
+      "description": "App crashes or shows black screen on startup or use.",
+      "examples": [
+        "Have been using Spotify for a very long time but now the app is just crashing since the latest update.",
+        "I can't open my spotify wrap 2022...",
+        "Black screen of death. Having to Uninstaller and reinstall after closing and opening app 5x to see if it would work.",
+        "This app is so glitchy and barely even works half the time.",
+        "The latest update has caused my app to crash I cant open the app please fix."
+      ],
+      "members": 8,
+      "name": "App crashes when opening",
+      "named_by": "model",
+      "rule": "CRASH_OPEN",
+      "topic": "playback"
+    },
+    "ISS_PLAYBACK_GENERAL": {
+      "description": "App plays wrong songs or stops unexpectedly during playback.",
+      "examples": [
+        "When I playing song the app is shoutdowning",
+        "I press a song but it automatically played another song out of nowhere most of the time..it's irritating",
+        "I have a Samsung and after a week of using this app it like wouldn't let me listen to music",
+        "I keep on running into issues where I click on songs in my liked music and they don't play.",
+        "I can give only 1stare because the Spotify app not allow to skip the music after update and not play a single song and remove the repeat option please Spotify give back this many options i shall reque"
+      ],
+      "members": 12,
+      "name": "General playback issues",
+      "named_by": "model",
+      "rule": "GENERAL",
+      "topic": "playback"
+    },
+    "ISS_PLAYBACK_RESOURCES": {
+      "description": "App lags, requires excessive resources, or fails on certain connections.",
+      "examples": [
+        "It doesn't work with mobile data on my phone!!",
+        "Paying for premium and certain podcasts are suddenly lagging. Unacceptable"
+      ],
+      "members": 2,
+      "name": "Performance and resource issues",
+      "named_by": "model",
+      "rule": "RESOURCES",
+      "topic": "playback"
+    },
+    "ISS_PLAYBACK_STOPS_PAUSES": {
+      "description": "Music pauses or stops mid-song without user action.",
+      "examples": [
+        "The very second I signed up for premium it stopped letting me play anything.. lol . Fastest cancelation of a service I've done, ever. Bye bye Spotify. Hello old friend, Bittorrent",
+        "So this app has become unusable on ipads.",
+        "keeps stopping mid show",
+        "Even if you have \"premium\", this app kinda garbage. Also \"30 minutes of uninterrupted listening\" ?????? Try 5. Try again.",
+        "Keep stopping halfway while playing music and it dun go back to where they stop and start playing a new song for you."
+      ],
+      "members": 6,
+      "name": "Playback stops unexpectedly",
+      "named_by": "model",
+      "rule": "STOPS_PAUSES",
+      "topic": "playback"
+    },
+    "ISS_USABILITY_ADS": {
+      "description": "Free users experience too many ads interrupting music.",
+      "examples": [
+        "This app is full worse And contains a lot of ads I request you for don't download it",
+        "I am kind of disappointed that they play music in between ad's",
+        "One star for the songs availability, I like underrated songs which sometimes not available on other app but this app have, otherwise this app is worst it have adds every sec",
+        "Listen to my music almost everyday,this app is great. But the bad thing is that it gives too many ads, i would have hiven it 5 stars. Apart from that this app is great",
+        "I HATE the new update , the app is also not showing lyrics and I also can't add songs to queue. Listening to music on Spotify is now a painful experience."
+      ],
+      "members": 29,
+      "name": "Excessive advertisements",
+      "named_by": "model",
+      "rule": "ADS",
+      "topic": "usability"
+    },
+    "ISS_USABILITY_CONTROLS": {
+      "description": "Shuffle function behaves unpredictably or plays repetitive songs.",
+      "examples": [
+        "I put my selection on shuffle plays same songs over and over",
+        "Take off Smart Shuffle Take that off now, it's so annoying"
+      ],
+      "members": 2,
+      "name": "Shuffle feature problems",
+      "named_by": "model",
+      "rule": "CONTROLS",
+      "topic": "usability"
+    },
+    "ISS_USABILITY_GENERAL": {
+      "description": "App interface is difficult to navigate or understand.",
+      "examples": [
+        "not very user friendly",
+        "The new Lyrics font is so bad.",
+        "Can't switch between video and audio only podcasts.",
+        "Great except for the comercials",
+        "This app is so hard to navigate on phone if I click a a song a have liked it goes to didn't song I never heard or it might play a demo of the song that is dumb it should play the song"
+      ],
+      "members": 8,
+      "name": "General usability issues",
+      "named_by": "model",
+      "rule": "GENERAL",
+      "topic": "usability"
+    },
+    "ISS_USABILITY_QUEUE_PLAYLIST": {
+      "description": "Users cannot manage playlists, queues, or search within them.",
+      "examples": [
+        "For free subscription I find this to be a cancerous and even dangerous app while driving.",
+        "Liked songs list is not viewing do something",
+        "Sometimes the shuffle doesn't work. The app will play a total of 3 songs from my library, figured out how to fix this issue. Back to being a great app.",
+        "I want to listen to the music I click on NOT whatever other stuff you throw into my playlists.",
+        "Please bring back the search function in my playlist I don't know why you ever got rid of it epic fail bring it back."
+      ],
+      "members": 5,
+      "name": "Playlist and queue issues",
+      "named_by": "model",
+      "rule": "QUEUE_PLAYLIST",
+      "topic": "usability"
+    },
+    "ISS_USABILITY_UPDATE_LAYOUT": {
+      "description": "New updates make app less user-friendly and harder to navigate.",
+      "examples": [
+        "I've loved Spotify but it's baffling to me how every update they make seems to make the app LESS user friendly.",
+        "Your new features are really bad thing that I found because it plays any song of the Playlist randomly it really really disappointing for and listeners who don't need disturbance in their song pattern",
+        "The new layout is awful. I have oversized icons and I have to scroll forever to get to my daily mixes, please go back.",
+        "The new home screen is terrible, I was listening to a playlist I had found the previous day and now I am unable to find it again because of the new update.",
+        "Because it also removed where it appeared on the Album in the UI which is how I kept track of songs I liked and disliked."
+      ],
+      "members": 12,
+      "name": "Update layout changes",
+      "named_by": "model",
+      "rule": "UPDATE_LAYOUT",
+      "topic": "usability"
+    }
+  },
+  "rules_file": "config/issues.json"
+}

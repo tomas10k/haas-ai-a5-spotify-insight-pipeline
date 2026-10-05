@@ -1,0 +1,77 @@
+{
+  "prompt_version": "enrich_v1",
+  "schema_version": "s1",
+  "note": "Jev questions sent with every review. state = review_text only (no stars, dates or versions). Code maps answers into the common schema.",
+  "questions": {
+    "topic": {
+      "type": "choice",
+      "instructions": "Which part of the Spotify app is this review mainly about? If several problems are mentioned, pick the most serious one; if equally serious, the first one mentioned. For a positive review, pick the first specific feature praised; general praise is other. Mentioning a paid plan alone is not billing.",
+      "criteria": {
+        "access": "Login, signup, password or account access problems",
+        "usability": "Navigation, controls, layout, queue or playlist management, ad interruptions and ad frequency",
+        "playback": "Music fails to play, app crashes or will not open, lag, connection failures, audio quality, battery or data use",
+        "downloads": "Downloading songs, saved music, offline listening, downloads disappearing",
+        "catalog": "Missing songs or artists, search and discovery, recommendations, lyrics availability",
+        "billing": "Price, charges, subscriptions, paywalls, premium entitlement, and controls that are explicitly premium only (skip limits, forced shuffle, choosing songs, lyrics locked behind premium)",
+        "support": "Contacting Spotify support and the support response",
+        "other": "General praise or criticism with no specific feature, unrelated content, or no supported specific topic"
+      }
+    },
+    "intent": {
+      "type": "choice",
+      "instructions": "What is the writer doing in this review?",
+      "criteria": {
+        "cancellation": "Explicitly says they are leaving, uninstalling, cancelling, switching apps, or threatening to do so",
+        "complaint": "Describes a negative experience, including mixed praise and criticism, or generic statements like bad app",
+        "request": "Asks for a change or new feature without reporting a failure",
+        "praise": "Only positive about the app",
+        "unclear": "Meaningless or unrelated text, or a bare boycott slogan with no product complaint and no personal departure"
+      }
+    },
+    "severity": {
+      "type": "choice",
+      "instructions": "How bad is the problem the writer reports? Judge only the reported impact, not angry language, stars or cancellation threats. Do not invent impact that is not stated.",
+      "criteria": {
+        "1": "No reported problem: praise, neutral or unclear content, or a pure feature request",
+        "2": "Dislike, generic criticism, minor annoyance or cosmetic issue, with no stated loss of function",
+        "3": "A function is degraded or restricted but some use or a workaround remains",
+        "4": "A core task is clearly blocked, such as being unable to log in, open the app, or play music",
+        "5": "Explicit serious financial, privacy or data harm, such as being charged wrongly or losing data; an expensive plan, a crash or angry language alone is not enough"
+      }
+    },
+    "sentiment": {
+      "type": "score",
+      "instructions": "What is the overall tone of the review toward Spotify?",
+      "criteria": [
+        "Very negative",
+        "Somewhat negative",
+        "Neutral or mixed",
+        "Somewhat positive",
+        "Very positive"
+      ]
+    },
+    "leaving": {
+      "type": "noul",
+      "instructions": "Does the writer explicitly say they are leaving, uninstalling, cancelling, switching to another app, or threatening to do so?",
+      "criteria": {
+        "true": "An explicit personal statement or threat of departure, e.g. 'uninstalling', 'bye Spotify', 'I'm leaving', 'switching to YouTube Music'",
+        "false": "No explicit departure; general anger, low stars or a boycott slogan without a personal departure"
+      }
+    }
+  },
+  "code_rules": {
+    "sentiment": "score / 2 - 1, rounded to 2 decimals (0..4 maps to -1..1)",
+    "intent_precedence": "if leaving >= LEAVING_THRESHOLD then cancellation; else Jev intent choice; order cancellation > complaint > request > praise > unclear",
+    "severity": "integer from the choice label",
+    "needs_review": "true when any of: topic confidence < 0.5, severity confidence < 0.5, leaving between 0.2 and 0.8",
+    "evidence_quote": "whole review if 200 characters or fewer; otherwise Jev picks one of the review's own sentences (extra Choice question in the same request); code checks it is an exact substring. Haiku writes the quote only for capped fallback cases.",
+    "entities": "code keyword list, kept only when the term appears in the text (config/entities.json)"
+  },
+  "questions_for_long_reviews": {
+    "quote": {
+      "type": "choice",
+      "instructions": "Which sentence of the review best shows the main reported problem, or the main praised feature if there is no problem? This is the sentence that decides the topic.",
+      "criteria": "built per review by code: s1..sN = the review's own sentences, split on sentence punctuation and line breaks"
+    }
+  }
+}

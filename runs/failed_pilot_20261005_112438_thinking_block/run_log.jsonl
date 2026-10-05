@@ -1,0 +1,7 @@
+{"stage": "prepare", "seconds": 0.0, "at": "2026-10-05T11:24:38-0700"}
+{"stage": "enrich", "run_id": "pilot_20261005_112438", "phase": "initial", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 0, "completed_now": 100, "quarantined_now": 0, "haiku_fallbacks": 1, "workers": 1, "seconds": 12.4, "spent_usd_total": 0.005514, "stop_reason": "finished", "at": "2026-10-05T11:24:50-0700"}
+{"stage": "enrich", "seconds": 12.41, "at": "2026-10-05T11:24:50-0700"}
+{"stage": "records", "seconds": 0.0, "at": "2026-10-05T11:24:50-0700"}
+{"stage": "verify", "seconds": 5.77, "at": "2026-10-05T11:24:56-0700"}
+{"stage": "group", "seconds": 8.73, "at": "2026-10-05T11:25:05-0700"}
+{"stage": "rank", "seconds": 0.01, "at": "2026-10-05T11:25:05-0700"}

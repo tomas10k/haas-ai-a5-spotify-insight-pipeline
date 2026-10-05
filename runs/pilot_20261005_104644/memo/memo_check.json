@@ -1,0 +1,25 @@
+{
+  "cited_claims": [
+    "C002",
+    "C005",
+    "C006",
+    "C007",
+    "C009",
+    "C010",
+    "C011",
+    "C013",
+    "C014",
+    "C017",
+    "C018",
+    "C019",
+    "C029",
+    "C033"
+  ],
+  "claims": 40,
+  "errors": [
+    "C002 cites 15 but saved value is 31",
+    "C005 cites 13 but saved value is 6"
+  ],
+  "note": "A person must still read the argument.",
+  "passed": false
+}

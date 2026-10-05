@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-05T10:47:35-0700",
+  "disagreements": 5,
+  "disagreements_flagged_needs_review": 1,
+  "intent_agreement": 0.95,
+  "n": 20,
+  "sentiment_mae": 0.1255,
+  "severity_exact": 0.85,
+  "severity_mae": 0.15,
+  "topic_agreement": 0.95
+}

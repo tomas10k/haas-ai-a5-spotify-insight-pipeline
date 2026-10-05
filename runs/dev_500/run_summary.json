@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-05T11:37:23-0700",
+  "calls_by_stage": [
+    {
+      "attempts": 479,
+      "cost_usd": 0.022938,
+      "failed": 0,
+      "input_tokens": 546136,
+      "model": "jev-1.13.0",
+      "output_tokens": 104599,
+      "role": "enrich",
+      "step": "jev_classify",
+      "succeeded": 479
+    },
+    {
+      "attempts": 5,
+      "cost_usd": 0.003631,
+      "failed": 0,
+      "input_tokens": 2481,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 230,
+      "role": "enrich",
+      "step": "haiku_fallback",
+      "succeeded": 5
+    },
+    {
+      "attempts": 2,
+      "cost_usd": 0.006512,
+      "failed": 0,
+      "input_tokens": 1667,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 969,
+      "role": "verify",
+      "step": "verify",
+      "succeeded": 2
+    },
+    {
+      "attempts": 1,
+      "cost_usd": 0.010701,
+      "failed": 0,
+      "input_tokens": 4036,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 1333,
+      "role": "group",
+      "step": "group",
+      "succeeded": 1
+    },
+    {
+      "attempts": 1,
+      "cost_usd": 0.009508,
+      "failed": 0,
+      "input_tokens": 5593,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 783,
+      "role": "memo",
+      "step": "memo",
+      "succeeded": 1
+    },
+    {
+      "attempts": 5,
+      "cost_usd": 0.10291,
+      "failed": 1,
+      "input_tokens": 27345,
+      "model": "claude-sonnet-5",
+      "output_tokens": 4822,
+      "role": "memo",
+      "step": "memo",
+      "succeeded": 4
+    }
+  ],
+  "run_id": "dev_500",
+  "status": {
+    "completed": 500,
+    "completed_via_exact_text_reuse": 21
+  },
+  "total_cost_usd": 0.1562
+}
