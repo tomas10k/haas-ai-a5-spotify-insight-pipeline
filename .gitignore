@@ -1,0 +1,21 @@
+# secrets: never commit real keys
+.env
+.env.*
+!.env.example
+# raw data is large and public; we link it and record its checksum instead
+data/*.csv
+# local scratch
+__pycache__/
+*.pyc
+.DS_Store
+self-check.json
+local-reference.json
+runs/*/tmp/
+# full file ingestion (337 MB, rebuilt in 25 s by the prepare stage)
+runs/dev_full/
+runs/dev_100/
+runs/_doctor/
+~$*
+.venv/
+runs/smoke/
+runs/smoke_all/
