@@ -501,14 +501,17 @@ flowchart LR
   | `/api/issue?run=final&id=ISS_...` | one issue's numbers, claims and member reviews |
   | `/api/reviews?run=final&topic=&intent=&severity=&diff=&q=` | explorer queries |
   | `/api/review?run=final&id=<review_id>` | the trace of any review ID |
-- **Dashboard.** [`site/`](site/) shows:
-  - overall metrics
-  - the AI written recommendation (Claude Sonnet 5, numbers checked by code, reviewed by a person) next to the ranking
-  - each issue's supporting reviews
-  - every run's checks (golden, verifier, system tests)
-  - an interactive cost calculator
-  - an explorer that follows any review through all six steps
+- **Dashboard.** [`site/`](site/) is laid out top to bottom:
+  1. a run toggle (golden 50, pilot 100, dev 500, budget 10,000, final 100,000)
+  2. KPI tiles: classified, reused labels, distinct texts sent to the model, full-file rows
+  3. three donut charts (intent, the four areas, severity), each slice with total and percentage
+  4. the recommendation callout and the full AI-written memo (Sonnet, number checked by code, reviewed by a person)
+  5. a walk-through toggle: three ready-made examples (clean path, fallback rescue, verifier disagreement) plus keyword, filter and review-ID search, each traced through all six steps
+  6. ranked issues: click an issue to see its reviews in the walk-through
+  7. the cost calculator
+  8. a visual "How it works": the flow, the cost split, golden and verifier meters, system tests, and method notes
 
+  Steps 5–8 are collapsible toggles; add `?open=1` to the URL to expand them all.
   The dashboard has no static data file: if the backend is down, it shows an error instead of numbers.
 - **Check that the dashboard matches saved calculations.** `/api/ranking?run=final` returns the same rows as [`grading/ranking.csv`](grading/ranking.csv), and the checker recomputes those from records and membership.
 

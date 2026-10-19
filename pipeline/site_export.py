@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from .common import ROOT, read_jsonl, write_json, now
 
-REPO = "https://github.com/tomas10k/spotify-insight-pipeline"
+REPO = "https://github.com/tomas10k/haas-ai-a5-spotify-insight-pipeline"
 MAX_REVIEWS = 1500
 
 

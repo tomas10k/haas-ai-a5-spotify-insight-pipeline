@@ -12,6 +12,7 @@ Routes (GET):
   /api/issue?run=KEY&id=ISS_...   one issue: numbers, claim IDs and member reviews (highest severity first)
   /api/reviews?run=KEY&...        explorer page: filters diff/topic/intent/severity/issue/q, offset, limit
   /api/review?run=KEY&id=ID       trace one source review ID: record -> labels -> verifier -> issue -> rank -> memo
+  /api/examples?run=KEY           three walk-through examples: clean path, fallback rescue, verifier disagreement
 """
 import gzip, json, os, re, shutil, sqlite3, threading
 from http.server import BaseHTTPRequestHandler
@@ -105,11 +106,12 @@ def r_metrics(p):
                   GROUP BY month ORDER BY month""", (k,))
     for mth in months:
         mth["complaint_share"] = round(mth["complaints"] / mth["completed"], 4) if mth["completed"] else None
+    by_severity = {str(r["severity"]): r["n"] for r in q("SELECT severity, COUNT(*) AS n FROM records WHERE run_key = ? AND status = 'completed' GROUP BY severity ORDER BY severity", (k,))}
     ratings = q("""SELECT rating, COUNT(*) AS n, SUM(intent IN ('complaint','cancellation')) AS complaints
                    FROM records WHERE run_key = ? AND status = 'completed' GROUP BY rating ORDER BY rating""", (k,))
     total = sum(status.values())
     return {"run": k, "rows": total, "status": status, "completed_via_exact_text_reuse": reuse, "quarantine_reasons": reasons,
-            "by_intent": by_intent, "topics": topics, "months": months, "ratings": ratings,
+            "by_intent": by_intent, "by_severity": by_severity, "topics": topics, "months": months, "ratings": ratings,
             "note": "Computed by SQL over the records table on every request. First and last months are partial; "
                     "complaint share = complaint or cancellation records / completed records in that month."}
 
@@ -185,7 +187,38 @@ def r_review(p):
     return out
 
 
-ROUTES = {"health": r_health, "site": r_site, "metrics": r_metrics, "ranking": r_ranking, "issue": r_issue,
+TRACE_EXAMPLE = "48901b0a-0bbc-4664-bdc8-5ed15da1d014"  # the README's end to end trace (final run)
+EXAMPLES = [
+    ("clean", "Clean path", "Jev was confident, the blind verifier agreed on every field, and the review joined a ranked issue.",
+     "has_verify = 1 AND verify_diff = 0 AND intent IN ('complaint','cancellation') AND issue_id IS NOT NULL"),
+    ("rescued", "Safety net", "Jev was unsure (low confidence), so code sent it to the capped Claude Haiku fallback, which relabeled it from the text.",
+     "decided_by = 'haiku_fallback' AND intent IN ('complaint','cancellation')"),
+    ("disputed", "Checks catch doubt", "The blind verifier disagreed with Jev on at least one field. The disagreement is reported, never hidden.",
+     "verify_diff = 1 AND intent IN ('complaint','cancellation')"),
+]
+
+
+def r_examples(p):
+    """Three ready made walk-through examples for the selected run, picked deterministically by SQL."""
+    k = run_key(p)
+    out, used = [], {""}
+    for kind, title, why, cond in EXAMPLES:
+        cond += " AND review_id NOT IN (" + ",".join("?" * len(used)) + ")"
+        rows = []
+        if kind == "clean":
+            rows = q(f"SELECT * FROM reviews WHERE run_key = ? AND review_id = ? AND {cond}", (k, TRACE_EXAMPLE, *used))
+        if not rows:
+            rows = q(f"SELECT * FROM reviews WHERE run_key = ? AND {cond} AND length(text) BETWEEN 40 AND 260 ORDER BY k LIMIT 1", (k, *used))
+        if not rows and kind == "disputed":  # runs without a verifier sample: fall back to golden disagreements
+            rows = q("SELECT * FROM reviews WHERE run_key = ? AND human_diff = 1 AND review_id NOT IN (" + ",".join("?" * len(used)) + ") ORDER BY k LIMIT 1", (k, *used))
+            why = "My golden label and the pipeline disagree on at least one field; the miss counts against agreement."
+        if rows:
+            used.add(rows[0]["review_id"])
+        out.append({"kind": kind, "title": title, "why": why, "review": item(rows[0]) if rows else None})
+    return {"run": k, "examples": out}
+
+
+ROUTES = {"examples": r_examples, "health": r_health, "site": r_site, "metrics": r_metrics, "ranking": r_ranking, "issue": r_issue,
           "reviews": r_reviews, "review": r_review}
 
 

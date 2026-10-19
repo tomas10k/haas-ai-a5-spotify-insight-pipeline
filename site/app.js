@@ -1,4 +1,4 @@
-/* Spotify Insight Pipeline dashboard (v3). Every number comes from the deployed backend (/api, site/api/index.py),
+/* Spotify Insight Pipeline dashboard (v4). Every number comes from the deployed backend (/api, site/api/index.py),
    which runs SQL over the SQLite database built from saved pipeline outputs by `python3 -m pipeline db`.
    No keys and no model calls in the browser or the backend. */
 const API = (route, params = {}) => fetch("/api/" + route + "?" + new URLSearchParams(Object.entries(params).filter(([, v]) => v !== "" && v != null)))
@@ -17,96 +17,238 @@ const tip = $("#tip");
 document.addEventListener("mousemove", e => { const t = e.target.closest("[data-tip]"); if (!t) { tip.style.display = "none"; return; }
   tip.textContent = t.dataset.tip; tip.style.display = "block"; tip.style.left = Math.min(e.clientX + 12, innerWidth - 320) + "px"; tip.style.top = e.clientY + 14 + "px"; });
 
-/* ---------- 1. how it works ---------- */
-const PHASES = [
-  ["code", "Prepare", "Read all rows, fingerprint each, find identical texts, set empty ones aside", "Code"],
-  ["model", "Classify", "Jev answers 5 fixed questions per review: topic, intent, severity, tone, leaving?", "Jev + code checks"],
-  ["model", "Verify", "Haiku relabels a random 1% blind; code compares", "Haiku + code"],
-  ["mix", "Group", "Code puts each complaint into one issue; Haiku only names issues", "Code + Haiku"],
-  ["code", "Rank", "Score = complaints × average severity, in SQL", "Code"],
-  ["mix", "Recommend", "Claude Sonnet 5 writes the memo from the saved totals; code checks every number", "Sonnet + code"]];
-function how() {
-  $("#flow").innerHTML = PHASES.map(([c, t, s, w], i) => `<div class="phase ${c}"><span class="n">${i + 1} · ${w}</span><span class="t">${t}</span><span class="s">${s}</span></div>`).join("");
-}
+/* Layout: run toggle -> KPI tiles -> three donuts -> recommendation callout -> memo
+   -> [toggle] walk-through -> [toggle] ranked issues -> [toggle] cost calculator -> [toggle] how it works */
+const TOPICS = ["access", "usability", "playback", "downloads", "catalog", "billing", "support", "other"];
+const INTENTS = ["cancellation", "complaint", "request", "praise", "unclear"];
+const diffV = i => i.verify && ["topic", "intent", "severity"].some(f => String(i.verify[f]) !== String(i[f]));
+const diffH = i => i.human && ["topic", "intent", "severity"].some(f => String(i.human[f]) !== String(i[f]));
+const pct1 = (n, d) => d ? (100 * n / d).toFixed(1) + "%" : "–";
 
-/* ---------- 2. runs ---------- */
+/* ---------- run toggle ---------- */
 function runs() {
-  $("#runchips").innerHTML = D.runs.map((r, i) => `<button class="runchip ${r.status}" data-i="${i}" aria-selected="false"><b>${esc(r.label)}</b><span>${r.status === "done" ? n0(r.rows_read) + " reviews · " + usd(r.total_cost_usd) : "pending"}</span></button>`).join("");
+  $("#runchips").innerHTML = D.runs.map((r, i) => `<button class="runchip ${r.status}" role="tab" data-i="${i}" aria-selected="false"><b>${esc(r.label)}</b><span>${r.status === "done" ? n0(r.rows_read) + " reviews · " + usd(r.total_cost_usd) : "pending"}</span></button>`).join("");
   $("#runchips").onclick = e => { const b = e.target.closest(".runchip"); if (b) selectRun(+b.dataset.i); };
-  const def = D.runs.map((r, i) => [r, i]).filter(([r]) => r.status === "done").pop();
-  selectRun(def ? def[1] : 0);
+  const fin = D.runs.findIndex(r => r.key === D.final_run && r.status === "done");
+  selectRun(fin >= 0 ? fin : D.runs.map((r, i) => [r, i]).filter(([r]) => r.status === "done").pop()?.[1] ?? 0);
 }
 function selectRun(i) {
   RUN = D.runs[i];
   document.querySelectorAll(".runchip").forEach((b, k) => b.setAttribute("aria-selected", k === i));
-  const r = RUN, p = $("#runpanel");
-  if (r.status !== "done") { p.innerHTML = `<p><b>${esc(r.label)}</b>: ${esc(r.role)}</p><p class="muted">Not run yet. Command: <code>python3 -m pipeline run --input &lt;file&gt; --run-id ${esc(r.run_id)}</code></p>`; answer(); explore(); return; }
-  const c = r.calls, s = r.stage_seconds || {}, st = r.records_status || {};
-  const call = k => c[k] ? `${n0(c[k].attempts)} call${c[k].attempts === 1 ? "" : "s"} · ${usd(c[k].cost_usd)}` : "no calls";
-  const v = r.verify, g = r.golden?.summary;
-  const mini = [
-    ["Prepare", n0(r.rows_read) + " rows", `${n0(r.distinct)} distinct texts · ${n0(r.reuse)} reused · ${n0(r.empty)} empty`],
-    ["Classify", n0(st.completed) + " labeled", `${call("jev_classify")}${c.haiku_fallback ? " · " + n0(c.haiku_fallback.attempts) + " Haiku fallback" : ""} · ${n0(r.flagged)} flagged`],
-    ["Verify", v ? pct(v.topic_agreement) + " agree" : "not run", v ? `${n0(v.n)} sampled · ${n0(v.disagreements)} disagreements` : "run all stages to add it"],
-    ["Group", r.ranking.length ? n0(Object.keys(r.issues).length) + " issues" : "not run", r.ranking.length ? n0(r.ranking.reduce((a, x) => a + +x.complaint_count, 0)) + " complaints placed" : ""],
-    ["Rank", r.ranking[0] ? "#1 score " + n0(r.ranking[0].priority_score) : "not run", r.ranking[0] ? esc(r.issues[r.ranking[0].issue_id]?.name || r.ranking[0].issue_id) : ""],
-    ["Recommend", r.memo_check ? (r.memo_check.passed ? "check passed" : "check failed") : "not run", r.memo_check ? n0(r.memo_check.cited_claims?.length) + " cited numbers" : ""]];
-  let evalHtml = "";
-  if (g) {
-    const conf = r.golden.confusion, head = conf[0].slice(1), mx = Math.max(1, ...conf.slice(1).flatMap(x => x.slice(1).map(Number)));
-    evalHtml += `<div class="card"><h3>Golden 50: my labels vs the pipeline</h3>
-      <p class="explain">I labeled these 50 reviews by hand first. The pipeline labeled the same texts without seeing my answers. Agreement is the share of the 50 where we chose the same label; a missing label counts as wrong.</p>
-      <div class="tiles">${[["Topic", pct(g.topic_agreement)], ["Intent", pct(g.intent_agreement)], ["Severity exact", pct(g.severity_exact)], ["Severity avg gap", n2(g.severity_mae) + " levels"], ["Tone within ±0.25", pct(g["sentiment_within_0.25"])], ["Quotes exact", pct(g.quote_exact_substring_rate)]].map(([l, x]) => `<div class="tile"><b>${x}</b><span>${l}</span></div>`).join("")}</div>
-      <p class="explain">Reading it: topic and intent are strong; severity is usually off by one level; tone is the weakest field because I scored praise mildly while Jev scores it strongly. 50 reviews is a small diagnostic sample, and 8 of them I marked as ambiguous.</p>
-      <details><summary>Topic confusion table</summary><div class="tablewrap"><table class="heat"><tr><th>me \\ pipeline</th>${head.map(h => `<th class="num">${h}</th>`).join("")}</tr>
-      ${conf.slice(1).map(x => `<tr><th>${x[0]}</th>${x.slice(1).map((y, k) => `<td class="num" style="background:color-mix(in srgb,var(--code) ${Math.round(60 * y / mx)}%,var(--surface))" data-tip="me ${x[0]}, pipeline ${head[k]}: ${y}">${y === "0" ? "" : y}</td>`).join("")}</tr>`).join("")}</table></div></details>
-      <button class="btn" data-go="human">See each disagreement in the explorer ↓</button></div>`;
+  $("#runrole").textContent = RUN.role || "";
+  ["rankRun", "howRun"].forEach(id => $("#" + id).textContent = RUN.label);
+  if (RUN.status !== "done") {
+    $("#kpis").innerHTML = `<p class="muted">Not run yet.</p>`; ["donuts", "reco", "memo", "rank", "examples", "rpath"].forEach(id => $("#" + id).innerHTML = "");
+    return;
   }
-  if (v) evalHtml += `<div class="card"><h3>Independent verifier: Jev vs Haiku</h3>
-      <p class="explain">Haiku relabeled ${n0(v.n)} randomly chosen reviews from this run without seeing Jev's answer. High agreement between two different models suggests the labels are not one model's quirk; disagreements show where the definitions are hard.</p>
-      <div class="tiles">${[["Topic", pct(v.topic_agreement)], ["Intent", pct(v.intent_agreement)], ["Severity exact", pct(v.severity_exact)], ["Severity avg gap", n2(v.severity_mae) + " levels"], ["Disagreements", n0(v.disagreements)]].map(([l, x]) => `<div class="tile"><b>${x}</b><span>${l}</span></div>`).join("")}</div>
-      <button class="btn" data-go="verify">See the disagreements in the explorer ↓</button></div>`;
-  if (!evalHtml) evalHtml = `<p class="muted">No checks saved for this run yet.</p>`;
-  p.innerHTML = `<p><b>${esc(r.label)}</b> · ${esc(r.role)}</p>
-    <div class="tiles">${[["Reviews in", n0(r.rows_read)], ["Labeled", n0(st.completed)], ["Set aside", n0(st.quarantined || 0)], ["API cost", usd(r.total_cost_usd)], ["Wall clock", dur(r.wall_clock_seconds || 0)]].map(([l, x]) => `<div class="tile"><b>${x}</b><span>${l}</span></div>`).join("")}</div>
-    <div class="mini">${mini.map(([l, b, sub], k) => `<div data-tip="${esc(PHASES[k][2])}"><span class="lab">${k + 1} · ${l}</span><b>${b}</b><span class="sub">${sub}</span><span class="sub">${s[["prepare", "enrich", "verify", "group", "rank", "memo"][k]] != null ? n2(s[["prepare", "enrich", "verify", "group", "rank", "memo"][k]]) + " s" : ""}</span></div>`).join("")}</div>
-    ${evalHtml}`;
-  p.querySelectorAll("[data-go]").forEach(b => b.onclick = () => { FILTER.diff = b.dataset.go; explore(); $("#explore").scrollIntoView({ behavior: "smooth" }); });
-  answer(); explore(); metrics();
+  overview(); answer(); ranking(); examples(); searchSetup(); how();
 }
 
-/* ---------- overall metrics: SQL over the records table, per request ---------- */
-function metrics() {
-  const r = RUN; $("#metricsRun").textContent = r.label;
-  if (r.status !== "done") { $("#metrics").innerHTML = `<p class="muted">Pending run.</p>`; return; }
-  $("#metrics").innerHTML = `<p class="muted small">Loading from the database…</p>`;
+/* ---------- KPI tiles + donuts: one /api/metrics call ---------- */
+function tile(label, value, sub) { return `<div class="tile kpi"><b>${value}</b><span>${label}</span>${sub ? `<span class="sub">${sub}</span>` : ""}</div>`; }
+function overview() {
+  const r = RUN;
+  $("#kpis").innerHTML = `<p class="small muted">Loading from the database…</p>`; $("#donuts").innerHTML = "";
   API("metrics", { run: r.key }).then(m => {
     if (RUN !== r) return;
-    const st = m.status, cc = (m.by_intent.complaint || 0) + (m.by_intent.cancellation || 0);
-    const mx = Math.max(...m.months.map(x => x.complaint_share || 0), 0.01);
-    $("#metrics").innerHTML = `
-      <div class="tiles">${[["Review IDs in scope", n0(m.rows)], ["Classified", n0(st.completed || 0)], ["Quarantined", n0(st.quarantined || 0)], ["Pending", n0(st.pending || 0)],
-        ["Labels reused from identical text", n0(m.completed_via_exact_text_reuse)], ["Complaints + cancellations", n0(cc)], ["Cancellation intent", n0(m.by_intent.cancellation || 0)]]
-        .map(([l, x]) => `<div class="tile"><b>${x}</b><span>${l}</span></div>`).join("")}</div>
-      ${m.quarantine_reasons.length ? `<p class="small muted">Quarantine reasons: ${m.quarantine_reasons.map(q => `<code>${esc(q.reason)}</code> ${n0(q.n)}`).join(" · ")}. Quarantined and pending rows are accounted for but are not classifications.</p>` : ""}
-      <div class="card"><h3>By topic (completed records)</h3><div class="tablewrap"><table><tr><th>Topic</th><th class="num">Classified</th><th class="num">Complaints + cancellations</th><th class="num">Cancellation intent</th><th class="num">Severity sum</th><th class="num">Avg severity of complaints</th><th class="num">Avg sentiment</th></tr>
-        ${m.topics.map(t => `<tr><td>${esc(t.topic)}</td><td class="num">${n0(t.completed)}</td><td class="num">${n0(t.complaints)}</td><td class="num">${n0(t.cancellations)}</td><td class="num">${n0(t.severity_sum)}</td><td class="num">${t.complaints ? (t.severity_sum / t.complaints).toFixed(2) : "–"}</td><td class="num">${n2(t.mean_sentiment)}</td></tr>`).join("")}</table></div></div>
-      <div class="card"><h3>Complaint share by month</h3><p class="explain">Complaint or cancellation records divided by classified records in that month (the denominator is shown). The first and last months are partial. Reviews are self selected, so this is a trend in what reviewers write, not in all users.</p>
-        <div class="tablewrap"><table><tr><th>Month</th><th class="num">Classified</th><th class="num">Complaints</th><th>Share</th></tr>
-        ${m.months.map(x => `<tr><td>${esc(x.month)}</td><td class="num">${n0(x.completed)}</td><td class="num">${n0(x.complaints)}</td><td class="barcell"><div class="hbarrow"><span class="track"><div class="hbar" style="width:${(100 * (x.complaint_share || 0) / mx).toFixed(1)}%"></div></span><span class="val">${pct(x.complaint_share)}</span></div></td></tr>`).join("")}</table></div></div>
-      <p class="small muted">${esc(m.note)} Source: <code>/api/metrics?run=${esc(r.key)}</code></p>`;
-  }).catch(e => $("#metrics").innerHTML = `<div class="banner warn">Backend error: ${esc(e.message)}</div>`);
+    const st = m.status, done = st.completed || 0, full = D.full_file?.records;
+    $("#kpis").innerHTML =
+      tile("Reviews classified", n0(done), `of ${n0(m.rows)} in this run · ${n0(st.quarantined || 0)} quarantined${st.pending ? " · " + n0(st.pending) + " pending" : ""}`) +
+      tile("Labels reused from identical text", n0(m.completed_via_exact_text_reuse), `${pct1(m.completed_via_exact_text_reuse, done)} of classified reviews, no model call`) +
+      tile("Distinct texts sent to the model", n0(r.distinct), "one label per distinct text") +
+      tile("Full file rows profiled", n0(full), full && m.rows < full ? `this run classifies ${pct1(done, full)} of them` : "the whole file");
+    const cc = m.topics.reduce((a, t) => a + t.complaints, 0), T = Object.fromEntries(m.topics.map(t => [t.topic, t]));
+    const c = t => T[t]?.complaints || 0;
+    const intent = INTENTS.map((k, j) => ({ label: k, n: m.by_intent[k] || 0, color: `var(--s${j + 1})` }));
+    const areas = [["Usability", c("usability")], ["Billing + support", c("billing") + c("support")], ["Playback", c("playback")], ["Access", c("access")]]
+      .map(([label, n], j) => ({ label, n, color: `var(--s${j + 1})` }))
+      .concat([{ label: "Not one of the four areas", n: c("other") + c("catalog") + c("downloads"), color: "var(--s-other)", note: "generic criticism, catalog, downloads" }]);
+    const sev = [1, 2, 3, 4, 5].map(k => ({ label: "Severity " + k, n: m.by_severity[k] || 0, color: `var(--o${k})`, note: ["no problem, praise, unclear or a request", "annoyance or generic criticism", "degraded function, some use remains", "core task blocked", "serious financial, privacy or data harm"][k - 1] }));
+    $("#donuts").innerHTML =
+      donut("What customers say", "Intent of every classified review", intent, done, "reviews") +
+      donut("Area comparison", "Complaints and cancellations by area", areas, cc, "complaints") +
+      donut("Severity", "Severity of every classified review", sev, done, "reviews");
+  }).catch(e => $("#kpis").innerHTML = `<div class="banner warn">Backend error: ${esc(e.message)}</div>`);
+}
+function donut(title, sub, parts, total, unit) {
+  const R = 70, r0 = 46, cx = 90, cy = 90, sum = parts.reduce((a, p) => a + p.n, 0) || 1;
+  let a0 = -Math.PI / 2;
+  const arcs = parts.filter(p => p.n > 0).map(p => {
+    const a1 = a0 + 2 * Math.PI * p.n / sum, large = a1 - a0 > Math.PI ? 1 : 0;
+    const P = (rad, a) => `${(cx + rad * Math.cos(a)).toFixed(2)} ${(cy + rad * Math.sin(a)).toFixed(2)}`;
+    const d = p.n === sum ? `M ${P(R, 0)} A ${R} ${R} 0 1 1 ${P(R, Math.PI)} A ${R} ${R} 0 1 1 ${P(R, 0)} M ${P(r0, 0)} A ${r0} ${r0} 0 1 0 ${P(r0, Math.PI)} A ${r0} ${r0} 0 1 0 ${P(r0, 0)} Z`
+      : `M ${P(R, a0)} A ${R} ${R} 0 ${large} 1 ${P(R, a1)} L ${P(r0, a1)} A ${r0} ${r0} 0 ${large} 0 ${P(r0, a0)} Z`;
+    a0 = a1;
+    return `<path d="${d}" fill="${p.color}" class="slice" data-tip="${esc(p.label)}: ${n0(p.n)} ${unit} (${pct1(p.n, sum)})"></path>`;
+  }).join("");
+  return `<figure class="donut card"><figcaption><h3>${esc(title)}</h3><span class="small muted">${esc(sub)}</span></figcaption>
+    <div class="donut-body"><svg viewBox="0 0 180 180" role="img" aria-label="${esc(title)} donut chart">${arcs}
+      <text x="90" y="86" text-anchor="middle" class="d-total">${n0(total)}</text><text x="90" y="104" text-anchor="middle" class="d-unit">${esc(unit)}</text></svg>
+    <table class="legend"><tbody>${parts.map(p => `<tr data-tip="${esc(p.note || p.label)}"><td><span class="sw" style="background:${p.color}"></span>${esc(p.label)}</td><td class="num">${n0(p.n)}</td><td class="num muted">${pct1(p.n, sum)}</td></tr>`).join("")}</tbody></table></div></figure>`;
 }
 
-function systests() {
-  const T = D.system_tests;
-  if (!T) { $("#systests").innerHTML = `<p class="muted">System tests not run yet: <code>python3 -m pipeline systest</code></p>`; return; }
-  $("#systests").innerHTML = `<p class="explain">Real model calls on synthetic reviews (ids SYN-…) with faults injected in code; kept out of every business number. ${T.passed} of ${T.total} passed; API spend ${usd(T.api_spend_usd)}.</p>
-    <div class="tablewrap"><table><tr><th>Test</th><th>What we did</th><th>Observed</th><th>Result</th></tr>
-    ${T.results.map(x => `<tr><td><code class="small">${esc(x.test)}</code></td><td class="small">${esc(x.what)}</td><td class="small"><code class="small">${esc(JSON.stringify(x.observed).slice(0, 260))}</code></td><td>${x.passed ? '<span class="chip evid">pass</span>' : '<span class="chip warn">FAIL</span>'}</td></tr>`).join("")}</table></div>`;
+/* ---------- recommendation callout + memo ---------- */
+function md(s) { const L = s.split("\n"); let h = "", ul = false;
+  const inl = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\[([CTF]\d{3})\]/g, '<code class="small cite" data-tip="saved number: $1 in claims.csv or topic_claims.csv">$1</code>');
+  for (const l of L) { if (/^\s*[-*] /.test(l)) { if (!ul) { h += "<ul>"; ul = true; } h += "<li>" + inl(l.replace(/^\s*[-*] /, "")) + "</li>"; continue; }
+    if (ul) { h += "</ul>"; ul = false; }
+    if (l.startsWith("## ")) h += "<h2>" + inl(l.slice(3)) + "</h2>"; else if (l.startsWith("# ")) h += "<h1>" + inl(l.slice(2)) + "</h1>"; else if (l.trim()) h += "<p>" + inl(l) + "</p>"; }
+  return h + (ul ? "</ul>" : ""); }
+function answer() {
+  const r = RUN;
+  if (!r.memo) { $("#reco").innerHTML = ""; $("#memo").innerHTML = `<div class="memo"><p class="muted">No memo for this run (the memo step was not run).</p></div>`; return; }
+  const rec = (r.memo.split(/^## Recommendation\s*$/m)[1] || "").split(/^## /m)[0].trim();
+  const area = (rec.match(/\*\*(.+?)\*\*/) || [])[1];
+  const sents = rec.split(/(?<=\.)\s+(?=[A-Z])/), why = sents.length > 1 ? sents[1] : sents[0];  // sentence 1 names the area (shown as the headline)
+  $("#reco").innerHTML = `<div class="callout"><span class="eyebrow">Recommended focus for next quarter</span>
+    <div class="callout-area">${esc(area ? area[0].toUpperCase() + area.slice(1) : "See memo")}</div>
+    <p><b>Why:</b> ${md(why).replace(/^<p>|<\/p>$/g, "")}</p><a class="small" href="#memo-s">Read the full memo ↓</a></div>`;
+  const mc = r.memo_check;
+  $("#memo").innerHTML = `<div class="memo"><div class="tags"><span class="chip model">AI written by ${esc({ "gpt-6-luna": "GPT-6 Luna", "claude-sonnet-5": "Claude Sonnet 5" }[r.memo_model] || (r.memo_model || "model").replace(/-/g, " "))} from saved totals only</span><span class="chip ${mc?.passed ? "evid" : "warn"}">Number check ${mc?.passed ? "passed" : "failed"}</span>${mc?.human_review ? `<span class="chip code" data-tip="The model's exact output is saved as memo_model_output.md; review_notes.md lists each edit">Reviewed by a person: ${mc.human_review.edits} edits, check ${mc.human_review.check_after_edits_passed ? "passed" : "failed"} after edits</span>` : ""}</div>
+    ${mc && !mc.passed ? `<p class="small bad">Code found: ${esc(mc.errors.join("; "))}</p>` : ""}${md(r.memo)}
+    <p class="small muted">Codes like C009 are saved numbers in <code>claims.csv</code> (one issue); T and F codes are in <code>topic_claims.csv</code> (areas, trends, coverage). Code, not the model, wrote each number.</p></div>`;
 }
 
-/* ---------- 3. calculator ---------- */
+/* ---------- ranked issues (toggle) ---------- */
+let HIDE_OTHER = false, SHOW_ALL = false;
+const OPEN_ALL = new URLSearchParams(location.search).has("open");  // ?open=1 expands every toggle (handy for review)
+function ranking() {
+  const r = RUN;
+  if (!r.ranking.length) { $("#rank").innerHTML = `<p class="muted">No ranking for this run.</p>`; return; }
+  const all = r.ranking.filter(x => !(HIDE_OTHER && x.issue_id.startsWith("ISS_OTHER")));
+  const rows = SHOW_ALL ? all : all.slice(0, 12);
+  const mx = Math.max(...all.map(x => +x.priority_score));
+  $("#rank").innerHTML = `<div class="rankhead"><p class="explain">Score = complaints × average severity (1 to 5) = sum of severities. Only complaints and cancellations count; ties break by issue ID. Click an issue to see its reviews.</p>
+      <label class="inline"><input type="checkbox" id="hideOther" ${HIDE_OTHER ? "checked" : ""}> Hide the generic “other” bucket</label></div>
+    <div class="tablewrap"><table><tr><th class="num">#</th><th>Issue</th><th>Area</th><th class="num">Complaints</th><th class="num">Avg severity</th><th>Score</th></tr>
+    ${rows.map(x => { const is = r.issues[x.issue_id] || {}, gen = x.issue_id.startsWith("ISS_OTHER"); return `<tr class="${gen ? "generic" : ""}"><td class="num">${x.rank}</td><td><button class="linkbtn" data-issue="${esc(x.issue_id)}"><b>${esc(is.name)}</b></button>${gen ? ' <span class="tag" data-tip="Generic criticism with no specific product area; not one of the four areas in the question">not an area</span>' : ""}<br><code class="small" data-tip="${esc(is.description)}">${esc(x.issue_id)}</code></td><td>${esc(is.topic)}</td><td class="num">${n0(x.complaint_count)}</td><td class="num">${(+x.mean_severity).toFixed(2)}</td>
+      <td class="barcell"><div class="hbarrow"><span class="track"><div class="hbar ${gen ? "muted-bar" : ""}" style="width:${(100 * x.priority_score / mx).toFixed(1)}%"></div></span><span class="val">${n0(x.priority_score)}</span></div></td></tr>`; }).join("")}</table></div>
+    ${all.length > 12 ? `<button class="btn" id="showAll">${SHOW_ALL ? "Show top 12" : `Show all ${all.length} issues`}</button>` : ""}
+    <div id="issuePanel"></div>`;
+  if ($("#showAll")) $("#showAll").onclick = () => { SHOW_ALL = !SHOW_ALL; ranking(); };
+  $("#hideOther").onchange = e => { HIDE_OTHER = e.target.checked; ranking(); };
+  $("#rank").querySelectorAll("[data-issue]").forEach(b => b.onclick = () => issue(b.dataset.issue));
+}
+function issue(id) {
+  const r = RUN, P = $("#issuePanel"); P.innerHTML = `<p class="muted small">Loading ${esc(id)}…</p>`;
+  API("issue", { run: r.key, id, limit: 25 }).then(d => {
+    const I = d.issue, cl = Object.fromEntries(d.claims.map(c => [c.metric, c.claim_id]));
+    const cite = (m, v) => `${v}${cl[m] ? ` <code class="small" data-tip="claims.csv">${cl[m]}</code>` : ""}`;
+    P.innerHTML = `<div class="card"><h3>#${I.rank} ${esc(I.name || id)} <code class="small">${esc(id)}</code></h3><p class="explain">${esc(I.description || "")}</p>
+      <div class="tiles">${[["Complaints", cite("complaint_count", n0(I.complaint_count))], ["Severity sum = score", cite("severity_sum", n0(I.severity_sum))], ["Mean severity", cite("mean_severity", I.mean_severity)], ["Cancellation intent", n0(I.cancellations)]].map(([l, x]) => `<div class="tile"><b>${x}</b><span>${l}</span></div>`).join("")}</div>
+      <p class="small muted">Severity mix: ${d.severity_counts.map(s => `sev ${s.severity}: ${n0(s.n)}`).join(" · ")}. Highest severity first; ×N = identical texts sharing one label. Click one to open it in the walk-through.</p>
+      <div class="rlist" style="max-height:340px">${d.members.map((m, k) => `<button class="ritem" data-m="${k}"><span class="txt">${esc(m.text)}</span><span class="tags"><span class="tag">sev ${m.severity}</span><span class="tag">${m.intent}</span>${m.member_rows > 1 ? `<span class="tag">×${m.member_rows}</span>` : ""}</span></button>`).join("")}</div></div>`;
+    P.querySelectorAll("[data-m]").forEach(b => b.onclick = () => openWalk(d.members[+b.dataset.m]));
+  }).catch(e => P.innerHTML = `<div class="banner warn">${esc(e.message)}</div>`);
+}
+
+/* ---------- walk-through (toggle) ---------- */
+function openWalk(item, banner) { $("#walk").open = true; path(item, banner); $("#rpath").scrollIntoView({ behavior: "smooth", block: "start" }); }
+function examples() {
+  const r = RUN; $("#examples").innerHTML = `<p class="small muted">Loading examples…</p>`;
+  API("examples", { run: r.key }).then(d => {
+    if (RUN !== r) return;
+    $("#examples").innerHTML = d.examples.map((e, k) => `<button class="excard ${e.kind}" data-x="${k}" ${e.review ? "" : "disabled"}>
+      <span class="exkind">${k + 1} · ${esc(e.title)}</span><span class="small">${esc(e.why)}</span>
+      ${e.review ? `<span class="extext">“${esc(e.review.text.slice(0, 140))}${e.review.text.length > 140 ? "…" : ""}”</span><span class="tags"><span class="tag">${e.review.topic}</span><span class="tag">${e.review.intent}</span><span class="tag">sev ${e.review.severity}</span></span>` : `<span class="small muted">No review of this kind in this run.</span>`}</button>`).join("");
+    $("#examples").querySelectorAll("[data-x]").forEach(b => b.onclick = () => {
+      document.querySelectorAll(".excard").forEach(x => x.setAttribute("aria-pressed", x === b));
+      path(d.examples[+b.dataset.x].review);
+    });
+    if (OPEN_ALL && d.examples[0].review) { $("#examples [data-x]").setAttribute("aria-pressed", "true"); path(d.examples[0].review); }
+  }).catch(e => $("#examples").innerHTML = `<div class="banner warn">${esc(e.message)}</div>`);
+}
+function searchSetup() {
+  const opt = (id, vals) => $(id).innerHTML = `<option value="">all</option>` + vals.map(v => `<option>${v}</option>`).join("");
+  opt("#ftopic", TOPICS); opt("#fintent", INTENTS); opt("#fsev", [1, 2, 3, 4, 5]);
+  $("#fdiff").innerHTML = `<option value="">all reviews</option>${RUN.verify ? `<option value="verify">Jev vs verifier disagreed</option><option value="verified">checked by the verifier</option>` : ""}${RUN.golden ? `<option value="human">my golden label disagreed</option>` : ""}<option value="flagged">flagged needs_review</option>`;
+  $("#rlist").innerHTML = ""; $("#rpath").innerHTML = ""; $(".explorer").classList.remove("has-list");
+}
+let LIST = [];
+function search() {
+  const r = RUN;
+  $(".explorer").classList.add("has-list");
+  $("#rlist").innerHTML = `<p class="small muted">Querying the database…</p>`;
+  API("reviews", { run: r.key, q: $("#qtext").value.trim(), topic: $("#ftopic").value, intent: $("#fintent").value, severity: $("#fsev").value, diff: $("#fdiff").value, limit: 200 }).then(d => {
+    if (RUN !== r) return;
+    LIST = d.reviews;
+    $("#rlist").innerHTML = `<p class="small muted">${n0(d.total)} of ${n0(r.reviews_total)} distinct reviews match${d.total > LIST.length ? ` (first ${n0(LIST.length)} shown)` : ""}</p>` +
+      LIST.map((i, k) => `<button class="ritem" data-k="${k}"><span class="txt">${hlWord(i.text, $("#qtext").value.trim())}</span>
+        <span class="tags"><span class="tag">${i.topic}</span><span class="tag">${i.intent}</span><span class="tag">sev ${i.severity}</span>${diffV(i) ? '<span class="tag warn">Jev ≠ verifier</span>' : ""}${diffH(i) ? '<span class="tag human">me ≠ Jev</span>' : ""}${i.copies > 1 ? `<span class="tag">×${i.copies}</span>` : ""}</span></button>`).join("");
+    $("#rlist").onclick = e => { const b = e.target.closest(".ritem"); if (!b) return; document.querySelectorAll("#rlist .ritem").forEach(x => x.setAttribute("aria-selected", x === b)); path(LIST[+b.dataset.k]); };
+    if (!LIST.length) $("#rpath").innerHTML = `<p class="muted">No reviews match. Try another word or clear a filter.</p>`;
+  }).catch(e => $("#rlist").innerHTML = `<div class="banner warn">Backend error: ${esc(e.message)}</div>`);
+}
+function hlWord(t, w) { if (!w) return esc(t); const i = t.toLowerCase().indexOf(w.toLowerCase()); return i < 0 ? esc(t) : esc(t.slice(0, i)) + "<mark>" + esc(t.slice(i, i + w.length)) + "</mark>" + esc(t.slice(i + w.length)); }
+function trace(id) {
+  API("review", { run: RUN.key, id }).then(d => {
+    const rec = d.record;
+    if (!d.review) { $("#rpath").innerHTML = `<div class="card"><h3>${esc(rec.review_id)}</h3><p>Status <b>${esc(rec.status)}</b>${rec.reason ? `, reason <code>${esc(rec.reason)}</code>` : ""}. Not classified, so it joins no issue and no aggregate.</p></div>`; return; }
+    path(d.review, `<div class="banner info small">Record <code>${esc(rec.review_id)}</code> · status <b>${esc(rec.status)}</b> · ${rec.cache_source_id ? `labels reused from identical text in <code>${esc(rec.cache_source_id)}</code>` : "labeled directly"} · ${esc(rec.rating)} stars · ${esc(rec.month)}${d.issue ? ` · issue <code>${esc(d.issue.issue_id)}</code> rank #${d.issue.rank}, claims ${d.claims.map(c => `<code>${c.claim_id}</code>`).join(" ")}` : ""}${d.cited_in_memo ? " · <b>cited in the memo</b>" : ""}</div>`);
+  }).catch(e => $("#rpath").innerHTML = `<div class="banner warn">${esc(e.message)}</div>`);
+}
+function hl(t, q) { const i = q ? t.indexOf(q) : -1; return i < 0 ? esc(t) : esc(t.slice(0, i)) + "<mark>" + esc(q) + "</mark>" + esc(t.slice(i + q.length)); }
+function path(i, banner = "") {
+  if (!i) return;
+  const j = i.jev || {}, probs = Object.entries(j.topic_probs || {}).sort((a, b) => b[1] - a[1]).slice(0, 3);
+  const cmpRow = (a, b) => `<td class="${String(a) === String(b) ? "" : "d"}">${esc(b)}</td>`;
+  const cols = [["Pipeline (Jev + code)", i]].concat(i.verify ? [["Verifier, blind (Haiku)", i.verify]] : []).concat(i.human ? [["Golden label (me)", i.human]] : []);
+  const step = (n, c, t, who, b) => `<div class="step"><div class="badge ${c}">${n}</div><div class="body"><h3>${t} <span class="chip ${c === "evid" ? "evid" : c}">${who}</span></h3>${b}</div></div>`;
+  const bars = probs.map(([k, v]) => `<div class="pbar"><span>${k}</span><span class="track"><span class="fill" style="width:${(v * 100).toFixed(0)}%"></span></span><span class="num">${(v * 100).toFixed(0)}%</span></div>`).join("");
+  $("#rpath").innerHTML = banner + `<div class="steps">` +
+    step(1, "code", "Prepare", "code", `<div class="quote">${hl(i.text, i.quote)}</div><p class="small muted">${esc(i.stars)} stars (kept as metadata, never shown to a model) · ${esc(i.date)} · ${i.copies > 1 ? `this exact text appears ${n0(i.copies)} times: labeled once, reused for the rest` : "unique text"}. Highlight = the saved evidence quote.</p>`) +
+    step(2, "model", "Classify", "Jev + code rules", `${bars ? `<div class="pbars"><span class="small muted">Jev's top topics</span>${bars}</div>` : ""}<p class="small">Departure probability ${n2(j.leaving)} (≥ 0.5 sets cancellation). ${i.decided_by === "haiku_fallback" ? "<b>Jev was unsure, so the capped Haiku fallback relabeled it.</b>" : "Decided by Jev."}</p>
+      <p class="small">Result: <b>${esc(i.topic)}</b> · <b>${esc(i.intent)}</b> · severity <b>${esc(i.severity)}</b> · sentiment ${n2(i.sentiment)}. Flags: ${i.reasons.length ? i.reasons.map(x => `<code>${esc(x)}</code>`).join(" ") : "none"}</p>`) +
+    step(3, "model", "Verify and compare", "Haiku + code", `<div class="tablewrap"><table class="cmp"><tr><th></th>${cols.map(c => `<th>${c[0]}</th>`).join("")}</tr>
+      ${["topic", "intent", "severity", "sentiment"].map(f => `<tr><td>${f}</td>${cols.map(([, o], k) => k === 0 ? `<td>${esc(f === "sentiment" ? n2(o[f]) : o[f])}</td>` : cmpRow(f === "sentiment" ? n2(i[f]) : i[f], f === "sentiment" ? n2(o[f]) : o[f])).join("")}</tr>`).join("")}</table></div>
+      ${cols.length === 1 ? `<p class="small muted">Not in the random verifier sample${RUN.key === "golden" ? "" : " and not a golden review"}; only about 1% of texts are double checked.</p>` : `<p class="small muted">Red = different from the pipeline.</p>`}`) +
+    step(4, "code", "Group", "code (+ Haiku names)", !RUN.ranking.length ? `<p class="muted">Grouping was not run for this run.</p>` : i.issue ? `<p>Joins issue <code>${esc(i.issue)}</code>: <b>${esc(i.issue_name)}</b></p>` : `<p class="muted">Intent is ${esc(i.intent)}, not a complaint or cancellation, so it joins no issue.</p>`) +
+    step(5, "code", "Rank", "SQL", i.issue_rank ? `<p>That issue ranks <b>#${i.issue_rank}</b>; this review adds ${i.severity} to its score.</p>` : `<p class="muted">Not ranked.</p>`) +
+    step(6, "evid", "Recommend", "Sonnet + code check", `<p>${i.in_memo ? "<b>Quoted in the memo.</b>" : i.issue_rank && i.issue_rank <= 10 ? "Its issue is in the memo's evidence pack." : "Not cited in the memo."}</p>`) + `</div>`;
+}
+
+/* ---------- how it works (toggle, visual) ---------- */
+const PHASES = [
+  ["code", "Prepare", "Read every row, fingerprint it, group identical texts, set empty ones aside", "Code", "CSV → texts to label"],
+  ["model", "Classify", "Jev answers 5 fixed questions per review; code validates and maps; unsure cases get a capped Haiku second look", "Jev + code", "text → topic, intent, severity, quote"],
+  ["model", "Verify", "Haiku relabels a random 1% without seeing Jev's answer; code compares", "Haiku + code", "sample → agreement report"],
+  ["mix", "Group", "Code puts each complaint into exactly one issue; Haiku only suggests names", "Code + Haiku", "complaints → issues"],
+  ["code", "Rank", "Score = complaints × average severity, computed in SQL", "Code", "issues → ranking"],
+  ["mix", "Recommend", "Sonnet writes the memo from saved totals only; code checks every number and ID; a person reviews", "Sonnet + code", "ranking → memo"]];
+function how() {
+  const r = RUN, c = r.calls || {}, v = r.verify, g = r.golden?.summary, T = D.system_tests;
+  const flow = `<div class="flow">${PHASES.map(([cl, t, s, w, io], i) => `<div class="phase ${cl}"><span class="n">${i + 1} · ${w}</span><span class="t">${t}</span><span class="s">${s}</span><span class="pio">${io}</span></div>`).join("")}</div>
+    <div class="legend-row"><span class="chip code">Code</span><span class="muted small">exact, free, repeatable</span><span class="chip model">Model</span><span class="muted small">reads language, paid per call</span><span class="chip evid">Both</span><span class="muted small">model proposes, code checks</span></div>`;
+  const stages = [["Classify (Jev)", "jev_classify"], ["Hard cases (Haiku)", "haiku_fallback"], ["Verify (Haiku)", "verify"], ["Group names (Haiku)", "group"], ["Memo (Sonnet)", "memo"]].filter(([, k]) => c[k]);
+  const tot = stages.reduce((a, [, k]) => a + c[k].cost_usd, 0) || 1;
+  const spend = `<div class="card"><h3>Where the money went in this run · ${usd(r.total_cost_usd)}</h3>
+    <div class="costbar">${stages.map(([l, k], j) => `<span style="width:${Math.max(0.6, 100 * c[k].cost_usd / tot)}%;background:var(--s${j + 1})" data-tip="${esc(l)}: ${usd(c[k].cost_usd)} · ${n0(c[k].attempts)} calls"></span>`).join("")}</div>
+    <table class="legend"><tbody>${stages.map(([l, k], j) => `<tr><td><span class="sw" style="background:var(--s${j + 1})"></span>${esc(l)}</td><td class="num">${n0(c[k].attempts)} calls</td><td class="num">${n0(c[k].failed)} failed</td><td class="num">${usd(c[k].cost_usd)}</td><td class="num muted">${pct1(c[k].cost_usd, tot)}</td></tr>`).join("")}</tbody></table>
+    <p class="small muted">Prepare, records and rank are code only and cost nothing. Failed attempts are retried with backoff; every attempt is logged.</p></div>`;
+  const meter = (label, x, sub) => `<div class="meter"><div class="mhead"><span>${label}</span><b>${pct(x)}</b></div><div class="mtrack"><span style="width:${(100 * x).toFixed(0)}%"></span></div>${sub ? `<span class="small muted">${sub}</span>` : ""}</div>`;
+  let checks = "";
+  if (g) {
+    const conf = r.golden.confusion, head = conf[0].slice(1), mx = Math.max(1, ...conf.slice(1).flatMap(x => x.slice(1).map(Number)));
+    checks += `<div class="card"><h3>Golden 50 · my hand labels vs the pipeline</h3>
+      <div class="meters">${meter("Topic", g.topic_agreement)}${meter("Intent", g.intent_agreement)}${meter("Severity exact", g.severity_exact, "average gap " + n2(g.severity_mae) + " levels")}${meter("Quote is an exact substring", g.quote_exact_substring_rate)}</div>
+      <p class="small muted">I labeled these 50 before any model saw them; my labels never enter a prompt. 50 is a small diagnostic sample.</p>
+      <details><summary>Topic confusion table</summary><div class="tablewrap"><table class="heat"><tr><th>me \\ pipeline</th>${head.map(h => `<th class="num">${h}</th>`).join("")}</tr>
+      ${conf.slice(1).map(x => `<tr><th>${x[0]}</th>${x.slice(1).map((y, k) => `<td class="num" style="background:color-mix(in srgb,var(--code) ${Math.round(60 * y / mx)}%,var(--surface))" data-tip="me ${x[0]}, pipeline ${head[k]}: ${y}">${y === "0" ? "" : y}</td>`).join("")}</tr>`).join("")}</table></div></details></div>`;
+  }
+  if (v) checks += `<div class="card"><h3>Independent verifier · Jev vs Haiku on ${n0(v.n)} random texts</h3>
+      <div class="meters">${meter("Topic", v.topic_agreement)}${meter("Intent", v.intent_agreement)}${meter("Severity exact", v.severity_exact, "average gap " + n2(v.severity_mae) + " levels")}</div>
+      <p class="small muted">${n0(v.disagreements)} texts disagree on at least one field; search them in the walk-through with “Jev vs verifier disagreed”.</p></div>`;
+  const tests = T ? `<div class="card"><h3>System tests · ${T.passed} of ${T.total} passed</h3><p class="small muted">Real model calls on synthetic reviews with faults injected in code (${usd(T.api_spend_usd)}); kept out of every business number.</p>
+      <div class="testgrid">${T.results.map(x => `<div class="testcell ${x.passed ? "ok" : "bad"}" data-tip="${esc(x.what)} → ${esc(JSON.stringify(x.observed).slice(0, 220))}"><span class="mark">${x.passed ? "✓" : "✗"}</span><span>${esc((t => t[0].toUpperCase() + t.slice(1))(x.test.replace(/_/g, " ").replace(/\bapi\b/, "API").replace(/\bcsv\b/, "CSV")))}</span></div>`).join("")}</div></div>` : "";
+  const notes = `<div class="notes">${[
+    ["Scope", "The full file (660,622 rows) is profiled. The final run classifies a seeded 100,000 review sample that contains the golden 50 and the 10,000 development sample; the other 560,609 nonempty reviews are not classified."],
+    ["Resume", "Every result is saved as it arrives. The final run was stopped on purpose at 25,000 texts and resumed without paying again for finished reviews, then recovered from a real network outage."],
+    ["Limits", "Reviews are self selected; cancellation language is intent, not churn. The generic “other” bucket includes boycott posts. Severity tends to be one level high on premium restrictions."]]
+    .map(([t, s]) => `<div class="note"><b>${t}</b><span class="small">${s}</span></div>`).join("")}</div>`;
+  $("#howBody").innerHTML = flow + `<div class="howgrid">${spend}${checks}${tests}</div>` + notes;
+}
+
+/* ---------- cost calculator (unchanged logic) ---------- */
 let PR = {}, CH = {}, CTL = {};
 const rate = (m, item) => PR[m + "|" + item] ?? 0;
 const OPTIONS = {
@@ -193,99 +335,12 @@ function recalc() {
       <div class="line"><span>Write and check memo ${tag("memo")}</span><span>${usd(memo)}</span></div></div>`;
 }
 
-/* ---------- 4. answer ---------- */
-function md(s) { const L = s.split("\n"); let h = "", ul = false;
-  const inl = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\[([CT]\d{3})\]/g, '<code class="small" data-tip="saved number, see claims.csv">$1</code>');
-  for (const l of L) { if (/^\s*[-*] /.test(l)) { if (!ul) { h += "<ul>"; ul = true; } h += "<li>" + inl(l.replace(/^\s*[-*] /, "")) + "</li>"; continue; }
-    if (ul) { h += "</ul>"; ul = false; }
-    if (l.startsWith("## ")) h += "<h2>" + inl(l.slice(3)) + "</h2>"; else if (l.startsWith("# ")) h += "<h1>" + inl(l.slice(2)) + "</h1>"; else if (l.trim()) h += "<p>" + inl(l) + "</p>"; }
-  return h + (ul ? "</ul>" : ""); }
-function answer() {
-  const r = RUN; $("#answerRun").textContent = r.label;
-  if (r.status !== "done" || !r.memo) { $("#memo").innerHTML = `<p class="muted">No memo for this run${r.status === "done" ? " (run all six stages to create one)" : ""}.</p>`; }
-  else { const mc = r.memo_check;
-    $("#memo").innerHTML = `<div class="memo"><div class="tags"><span class="chip model">AI written by ${esc({ "gpt-6-luna": "GPT-6 Luna", "claude-sonnet-5": "Claude Sonnet 5" }[r.memo_model] || (r.memo_model || "model").replace(/-/g, " "))} from saved totals only</span><span class="chip ${mc?.passed ? "evid" : "warn"}">Number check ${mc?.passed ? "passed" : "failed"}</span>${mc?.human_review ? `<span class="chip code" data-tip="The model's exact output is saved as memo_model_output.md; review_notes.md lists each edit">Reviewed by a person: ${mc.human_review.edits} edits, check ${mc.human_review.check_after_edits_passed ? "passed" : "failed"} after edits</span>` : ""}</div>
-      ${mc && !mc.passed ? `<p class="small bad">Code found: ${esc(mc.errors.join("; "))}</p>` : ""}${md(r.memo)}
-      <p class="small muted">Codes like C005 are saved numbers in <code>claims.csv</code> (one issue) and T003 in <code>topic_claims.csv</code> (one area). Code, not the model, wrote each number.</p></div>`; }
-  if (r.status !== "done" || !r.ranking.length) { $("#rank").innerHTML = `<p class="muted">No ranking for this run.</p>`; return; }
-  const mx = Math.max(...r.ranking.map(x => +x.priority_score));
-  $("#rank").innerHTML = `<p class="explain">Score = complaints × average severity (1 to 5) = sum of severities. Only complaints and cancellations count. Ties break by issue ID.</p>
-    <div class="tablewrap"><table><tr><th class="num">#</th><th>Issue</th><th>Area</th><th class="num">Complaints</th><th class="num">Avg severity</th><th>Score</th></tr>
-    ${r.ranking.map(x => { const is = r.issues[x.issue_id] || {}; return `<tr><td class="num">${x.rank}</td><td><button class="linkbtn" data-issue="${esc(x.issue_id)}"><b>${esc(is.name)}</b></button><br><code class="small" data-tip="${esc(is.description)}">${esc(x.issue_id)}</code></td><td>${esc(is.topic)}</td><td class="num">${n0(x.complaint_count)}</td><td class="num">${(+x.mean_severity).toFixed(2)}</td>
-      <td class="barcell"><div class="hbarrow"><span class="track"><div class="hbar" style="width:${(100 * x.priority_score / mx).toFixed(1)}%"></div></span><span class="val">${n0(x.priority_score)}</span></div></td></tr>`; }).join("")}</table></div>
-    <p class="small muted">Click an issue to load its member reviews from the database.</p><div id="issuePanel"></div>`;
-  $("#rank").querySelectorAll("[data-issue]").forEach(b => b.onclick = () => issue(b.dataset.issue));
-}
-function issue(id) {
-  const r = RUN, P = $("#issuePanel"); P.innerHTML = `<p class="muted small">Loading ${esc(id)}…</p>`;
-  API("issue", { run: r.key, id, limit: 25 }).then(d => {
-    const I = d.issue, cl = Object.fromEntries(d.claims.map(c => [c.metric, c.claim_id]));
-    const cite = (m, v) => `${v}${cl[m] ? ` <code class="small" data-tip="claims.csv">${cl[m]}</code>` : ""}`;
-    P.innerHTML = `<div class="card"><h3>#${I.rank} ${esc(I.name || id)} <code class="small">${esc(id)}</code></h3><p class="explain">${esc(I.description || "")}</p>
-      <div class="tiles">${[["Complaints", cite("complaint_count", n0(I.complaint_count))], ["Severity sum = score", cite("severity_sum", n0(I.severity_sum))], ["Mean severity", cite("mean_severity", I.mean_severity)], ["Cancellation intent", n0(I.cancellations)]].map(([l, x]) => `<div class="tile"><b>${x}</b><span>${l}</span></div>`).join("")}</div>
-      <p class="small muted">Severity mix: ${d.severity_counts.map(s => `sev ${s.severity}: ${n0(s.n)}`).join(" · ")}. Highest severity examples first; each line is a distinct text (×N = identical texts sharing one label).</p>
-      <div class="rlist" style="max-height:340px">${d.members.map((m, k) => `<button class="ritem" data-m="${k}"><span class="txt">${esc(m.text)}</span><span class="tags"><span class="tag">sev ${m.severity}</span><span class="tag">${m.intent}</span>${m.member_rows > 1 ? `<span class="tag">×${m.member_rows}</span>` : ""}<code class="small">${esc(m.id)}</code></span></button>`).join("")}</div></div>`;
-    P.querySelectorAll("[data-m]").forEach(b => b.onclick = () => { path(d.members[+b.dataset.m]); $("#explore").scrollIntoView({ behavior: "smooth" }); });
-  }).catch(e => P.innerHTML = `<div class="banner warn">${esc(e.message)}</div>`);
-}
 
-/* ---------- 5. explorer ---------- */
-const FILTER = { diff: "any", topic: "", intent: "", severity: "", q: "" };
-const diffV = i => i.verify && ["topic", "intent", "severity"].some(f => String(i.verify[f]) !== String(i[f]));
-const diffH = i => i.human && ["topic", "intent", "severity"].some(f => String(i.human[f]) !== String(i[f]));
-let LIST = [];
-function explore() {
-  const r = RUN; $("#exploreRun").textContent = r.label;
-  if (r.status !== "done") { $("#filters").innerHTML = ""; $("#rlist").innerHTML = `<p class="muted">Pending run.</p>`; $("#rpath").innerHTML = ""; return; }
-  const sel = (k, vals) => `<label>${k}<select data-f="${k}"><option value="">all</option>${vals.map(v => `<option ${String(FILTER[k]) === String(v) ? "selected" : ""}>${v}</option>`).join("")}</select></label>`;
-  const hasH = !!r.golden, hasV = !!r.verify;
-  if ((FILTER.diff === "human" && !hasH) || ((FILTER.diff === "verify" || FILTER.diff === "verified") && !hasV)) FILTER.diff = "any";
-  $("#filters").innerHTML = `<label>Show<select data-f="diff">
-      <option value="any" ${FILTER.diff === "any" ? "selected" : ""}>all reviews</option>
-      ${hasV ? `<option value="verify" ${FILTER.diff === "verify" ? "selected" : ""}>Jev vs Haiku disagreed</option><option value="verified" ${FILTER.diff === "verified" ? "selected" : ""}>checked by Haiku</option>` : ""}
-      ${hasH ? `<option value="human" ${FILTER.diff === "human" ? "selected" : ""}>me vs Jev disagreed</option>` : ""}
-      <option value="flagged" ${FILTER.diff === "flagged" ? "selected" : ""}>flagged needs_review</option></select></label>
-    ${sel("topic", ["access", "usability", "playback", "downloads", "catalog", "billing", "support", "other"])}${sel("intent", ["cancellation", "complaint", "request", "praise", "unclear"])}${sel("severity", [1, 2, 3, 4, 5])}
-    <label>Text contains<input id="qtext" value="${esc(FILTER.q || "")}" placeholder="e.g. offline"></label>`;
-  $("#filters").onchange = e => { if (e.target.dataset.f) { FILTER[e.target.dataset.f] = e.target.value; explore(); } else if (e.target.id === "qtext") { FILTER.q = e.target.value; explore(); } };
-  $("#rlist").innerHTML = `<p class="small muted">Querying the database…</p>`;
-  API("reviews", { run: r.key, diff: FILTER.diff === "any" ? "" : FILTER.diff, topic: FILTER.topic, intent: FILTER.intent, severity: FILTER.severity, q: FILTER.q, limit: 200 }).then(d => {
-    if (RUN !== r) return;
-    LIST = d.reviews;
-    $("#rlist").innerHTML = `<p class="small muted">${n0(d.total)} of ${n0(r.reviews_total)} distinct reviews match${d.total > LIST.length ? ` (showing the first ${n0(LIST.length)}, disagreements first)` : ""} · <code class="small">/api/reviews</code></p>` +
-      LIST.map((i, k) => `<button class="ritem" data-k="${k}" aria-selected="${k === 0}"><span class="txt">${esc(i.text)}</span>
-        <span class="tags"><span class="tag">${i.topic}</span><span class="tag">${i.intent}</span><span class="tag">sev ${i.severity}</span>${diffV(i) ? '<span class="tag warn">Jev ≠ Haiku</span>' : ""}${diffH(i) ? '<span class="tag human">me ≠ Jev</span>' : ""}${i.copies > 1 ? `<span class="tag">×${i.copies}</span>` : ""}</span></button>`).join("");
-    $("#rlist").onclick = e => { const b = e.target.closest(".ritem"); if (!b) return; document.querySelectorAll("#rlist .ritem").forEach(x => x.setAttribute("aria-selected", x === b)); path(LIST[+b.dataset.k]); };
-    LIST.length ? path(LIST[0]) : ($("#rpath").innerHTML = `<p class="muted">No reviews match these filters.</p>`);
-  }).catch(e => $("#rlist").innerHTML = `<div class="banner warn">Backend error: ${esc(e.message)}</div>`);
-}
-function trace(id) {
-  API("review", { run: RUN.key, id }).then(d => {
-    const rec = d.record;
-    if (!d.review) { $("#rpath").innerHTML = `<div class="card"><h3>${esc(rec.review_id)}</h3><p>Status <b>${esc(rec.status)}</b>${rec.reason ? `, reason <code>${esc(rec.reason)}</code>` : ""}. Not classified, so it joins no issue and no aggregate.</p></div>`; return; }
-    path(d.review, `<div class="banner info small">Record <code>${esc(rec.review_id)}</code> · status <b>${esc(rec.status)}</b> · ${rec.cache_source_id ? `labels reused from identical text in <code>${esc(rec.cache_source_id)}</code> (cache_source_id)` : "labeled directly"} · ${esc(rec.rating)} stars · ${esc(rec.month)}${d.issue ? ` · issue <code>${esc(d.issue.issue_id)}</code> rank #${d.issue.rank}, claims ${d.claims.map(c => `<code>${c.claim_id}</code>`).join(" ")}` : ""}${d.cited_in_memo ? " · <b>cited in the memo</b>" : ""}</div>`);
-  }).catch(e => $("#rpath").innerHTML = `<div class="banner warn">${esc(e.message)}</div>`);
-}
-function hl(t, q) { const i = q ? t.indexOf(q) : -1; return i < 0 ? esc(t) : esc(t.slice(0, i)) + "<mark>" + esc(q) + "</mark>" + esc(t.slice(i + q.length)); }
-function path(i, banner = "") {
-  const j = i.jev || {}, probs = Object.entries(j.topic_probs || {}).sort((a, b) => b[1] - a[1]).slice(0, 3);
-  const cmpRow = (f, a, b) => `<td class="${String(a) === String(b) ? "" : "d"}">${esc(b)}</td>`;
-  const cols = [["Pipeline (Jev + code)", i]].concat(i.verify ? [["Haiku verifier (blind)", i.verify]] : []).concat(i.human ? [["Me (golden label)", i.human]] : []);
-  const step = (n, c, t, b) => `<div class="step"><div class="badge ${c}">${n}</div><div class="body"><h3>${t}</h3>${b}</div></div>`;
-  $("#rpath").innerHTML = banner + `<div class="steps">` +
-    step(1, "code", "Prepare", `<div class="quote">${hl(i.text, i.quote)}</div><p class="small muted">${esc(i.stars)} stars (kept as metadata, never shown to a model) · ${esc(i.date)} · ${i.copies > 1 ? `this exact text appears ${n0(i.copies)} times: labeled once, reused for the rest` : "unique text"}</p>`) +
-    step(2, "model", "Classify", `<p class="small">Jev's top topics: ${probs.map(([k, v]) => `<b>${k}</b> ${(v * 100).toFixed(0)}%`).join(" · ") || "n/a"}. Leaving probability ${n2(j.leaving)}. ${i.decided_by === "haiku_fallback" ? "<b>Jev was unsure, so Haiku relabeled it</b> (capped fallback)." : ""}</p>
-      <p class="small">Code rules: ${i.reasons.length ? i.reasons.map(x => `<code>${esc(x)}</code>`).join(" ") : "no flags"}. Highlighted text = the saved evidence quote.</p>`) +
-    step(3, "model", "Verify and compare", `<div class="tablewrap"><table class="cmp"><tr><th></th>${cols.map(c => `<th>${c[0]}</th>`).join("")}</tr>
-      ${["topic", "intent", "severity", "sentiment"].map(f => `<tr><td>${f}</td>${cols.map(([, o], k) => k === 0 ? `<td>${esc(f === "sentiment" ? n2(o[f]) : o[f])}</td>` : cmpRow(f, f === "sentiment" ? n2(i[f]) : i[f], f === "sentiment" ? n2(o[f]) : o[f])).join("")}</tr>`).join("")}</table></div>
-      ${cols.length === 1 ? `<p class="small muted">Not in the random verifier sample${RUN.key === "golden" ? "" : ", and not a golden review"}.</p>` : `<p class="small muted">Red = different from the pipeline.</p>`}`) +
-    step(4, "code", "Group", !RUN.ranking.length ? `<p class="muted">Grouping was not run for this run.</p>` : i.issue ? `<p>Issue <code>${esc(i.issue)}</code>: <b>${esc(i.issue_name)}</b></p>` : `<p class="muted">Intent is ${esc(i.intent)}, not a complaint or cancellation, so it joins no issue.</p>`) +
-    step(5, "code", "Rank", i.issue_rank ? `<p>That issue ranks <b>#${i.issue_rank}</b>; this review adds ${i.severity} to its score.</p>` : `<p class="muted">Not ranked.</p>`) +
-    step(6, "evid", "Recommend", `<p>${i.in_memo ? "<b>Quoted in the memo.</b>" : i.issue_rank && i.issue_rank <= 10 ? "Its issue is in the memo's evidence." : "Not cited in the memo."}</p>`) + `</div>`;
-}
-
+/* ---------- boot ---------- */
 API("site").then(d => {
-  D = d; how(); calc(); systests(); runs();
-  $("#traceForm").onsubmit = e => { e.preventDefault(); const v = $("#traceId").value.trim(); if (v) { trace(v); } };
+  D = d; calc(); runs();
+  if (OPEN_ALL) document.querySelectorAll("details.toggle").forEach(x => x.open = true);
+  $("#searchForm").onsubmit = e => { e.preventDefault(); search(); };
+  $("#traceForm").onsubmit = e => { e.preventDefault(); const v = $("#traceId").value.trim(); if (v) trace(v); };
   $("#foot").innerHTML = `Served by the backend (<code>/api</code>, Python) from a SQLite database built from saved run files by <code>python3 -m pipeline db</code> on ${esc(D.db_built_at)}. No API keys and no model calls on this page or in the backend. Data: BwandoWando, 3.4 Million Spotify Google Store Reviews (CC0), May 2022 to Nov 2023. Reviews are self selected; cancellation language is expressed intent, not observed churn. <a href="${esc(D.repo)}">Source code</a> · <a href="/api/health">/api/health</a>`;
 }).catch(e => document.querySelector("main").insertAdjacentHTML("afterbegin", `<div class="banner warn">Could not reach the backend (/api/site): ${esc(e.message)}</div>`));
