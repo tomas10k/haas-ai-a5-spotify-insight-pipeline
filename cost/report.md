@@ -87,7 +87,7 @@ Fixed overhead (group naming, memo) is counted once, never per review. Workers s
 ## 4. Controls
 
 * Spend cap: **$10.00**, enforced by one shared ledger that reserves worst case cost before every call and stops admitting work at the cap (progress is saved).
-* Output token caps: Haiku calls 300, memo (GPT-6 Luna, reasoning included) 6000. Jev output is free and has no output cap.
+* Output token caps: Haiku calls 300, memo (Claude Sonnet 5, thinking included) 8000. Jev output is free and has no output cap.
 * Maximum workers: 8; maximum requests per second: 20.
 * Haiku fallback fraction cap: 1% of processed texts. Invalid output: one retry then quarantine. Transient errors: up to 4 attempts with backoff and jitter, each logged.
 * Decision rule: refresh the projection after 500 and 10,000 reviews (section 3), then start the final run only if the conservative scenario for the declared scope stays under the cap.

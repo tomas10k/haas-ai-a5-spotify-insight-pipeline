@@ -1,0 +1,720 @@
+{
+  "coverage_and_quality": {
+    "completed_classifications": {
+      "token": "{F002}",
+      "value_for_reasoning_only": "100000"
+    },
+    "full_file_nonempty_reviews": {
+      "token": "{F006}",
+      "value_for_reasoning_only": "660609"
+    },
+    "full_file_nonempty_reviews_not_classified_outside_scope": {
+      "token": "{F007}",
+      "value_for_reasoning_only": "560609"
+    },
+    "full_file_rows": {
+      "token": "{F005}",
+      "value_for_reasoning_only": "660622"
+    },
+    "golden_intent_agreement": {
+      "token": "{F019}",
+      "value_for_reasoning_only": "90%"
+    },
+    "golden_reviews": {
+      "token": "{F017}",
+      "value_for_reasoning_only": "50"
+    },
+    "golden_severity_exact": {
+      "token": "{F020}",
+      "value_for_reasoning_only": "78%"
+    },
+    "golden_topic_agreement": {
+      "token": "{F018}",
+      "value_for_reasoning_only": "88%"
+    },
+    "intent_cancellation": {
+      "token": "{F008}",
+      "value_for_reasoning_only": "4145"
+    },
+    "intent_complaint": {
+      "token": "{F009}",
+      "value_for_reasoning_only": "40268"
+    },
+    "intent_praise": {
+      "token": "{F010}",
+      "value_for_reasoning_only": "42489"
+    },
+    "intent_request": {
+      "token": "{F011}",
+      "value_for_reasoning_only": "2902"
+    },
+    "intent_unclear": {
+      "token": "{F012}",
+      "value_for_reasoning_only": "10196"
+    },
+    "pending_unclassified": {
+      "token": "{F004}",
+      "value_for_reasoning_only": "0"
+    },
+    "quarantined": {
+      "token": "{F003}",
+      "value_for_reasoning_only": "13"
+    },
+    "source_rows": {
+      "token": "{F001}",
+      "value_for_reasoning_only": "100013"
+    },
+    "trend_2022_jun_oct_access_complaint_share": {
+      "token": "{F023}",
+      "value_for_reasoning_only": "1.0%"
+    },
+    "trend_2022_jun_oct_billing_complaint_share": {
+      "token": "{F026}",
+      "value_for_reasoning_only": "3.8%"
+    },
+    "trend_2022_jun_oct_classified_reviews": {
+      "token": "{F021}",
+      "value_for_reasoning_only": "22414"
+    },
+    "trend_2022_jun_oct_complaint_share_all_topics": {
+      "token": "{F022}",
+      "value_for_reasoning_only": "30.9%"
+    },
+    "trend_2022_jun_oct_playback_complaint_share": {
+      "token": "{F025}",
+      "value_for_reasoning_only": "8.0%"
+    },
+    "trend_2022_jun_oct_support_complaint_share": {
+      "token": "{F027}",
+      "value_for_reasoning_only": "0.1%"
+    },
+    "trend_2022_jun_oct_usability_complaint_share": {
+      "token": "{F024}",
+      "value_for_reasoning_only": "10.8%"
+    },
+    "trend_2023_jun_oct_access_complaint_share": {
+      "token": "{F030}",
+      "value_for_reasoning_only": "1.8%"
+    },
+    "trend_2023_jun_oct_billing_complaint_share": {
+      "token": "{F033}",
+      "value_for_reasoning_only": "13.2%"
+    },
+    "trend_2023_jun_oct_classified_reviews": {
+      "token": "{F028}",
+      "value_for_reasoning_only": "41461"
+    },
+    "trend_2023_jun_oct_complaint_share_all_topics": {
+      "token": "{F029}",
+      "value_for_reasoning_only": "57.4%"
+    },
+    "trend_2023_jun_oct_playback_complaint_share": {
+      "token": "{F032}",
+      "value_for_reasoning_only": "4.4%"
+    },
+    "trend_2023_jun_oct_support_complaint_share": {
+      "token": "{F034}",
+      "value_for_reasoning_only": "0.1%"
+    },
+    "trend_2023_jun_oct_usability_complaint_share": {
+      "token": "{F031}",
+      "value_for_reasoning_only": "9.4%"
+    },
+    "verifier_intent_agreement": {
+      "token": "{F015}",
+      "value_for_reasoning_only": "90%"
+    },
+    "verifier_sample_size": {
+      "token": "{F013}",
+      "value_for_reasoning_only": "781"
+    },
+    "verifier_severity_exact": {
+      "token": "{F016}",
+      "value_for_reasoning_only": "81%"
+    },
+    "verifier_topic_agreement": {
+      "token": "{F014}",
+      "value_for_reasoning_only": "83%"
+    }
+  },
+  "how_to_cite": "Use tokens {Cnnn} (issue claims), {Tnnn} (topic claims) and {Fnnn} (coverage and quality facts); never type numbers.",
+  "orderings_computed_by_code": {
+    "areas_by_complaint_count": [
+      "area_usability",
+      "area_billing_and_support",
+      "area_playback",
+      "area_access"
+    ],
+    "areas_by_mean_severity": [
+      "area_access",
+      "area_playback",
+      "area_billing_and_support",
+      "area_usability"
+    ],
+    "areas_by_severity_sum": [
+      "area_usability",
+      "area_billing_and_support",
+      "area_playback",
+      "area_access"
+    ],
+    "topics_by_cancellations": [
+      "billing",
+      "other",
+      "usability",
+      "playback",
+      "catalog",
+      "access",
+      "downloads",
+      "support"
+    ],
+    "topics_by_complaint_count": [
+      "other",
+      "usability",
+      "billing",
+      "playback",
+      "catalog",
+      "access",
+      "downloads",
+      "support"
+    ],
+    "topics_by_mean_severity": [
+      "access",
+      "downloads",
+      "playback",
+      "billing",
+      "catalog",
+      "support",
+      "usability",
+      "other"
+    ],
+    "topics_by_severity_sum": [
+      "other",
+      "usability",
+      "billing",
+      "playback",
+      "catalog",
+      "access",
+      "downloads",
+      "support"
+    ]
+  },
+  "quality_note": "Labels come from Jev; a second model (Claude Haiku) relabeled a random sample blind, and the owner hand labeled 50 golden reviews; the agreement rates are in coverage_and_quality.",
+  "question_areas": [
+    {
+      "cancellations": 75,
+      "claim_ids": {
+        "cancellations": "T044",
+        "complaint_count": "T041",
+        "mean_severity": "T043",
+        "severity_sum": "T042",
+        "share_of_all_complaints": "T045"
+      },
+      "complaint_count": 1473,
+      "mean_severity": "3.941616",
+      "severity_sum": 5806,
+      "share_of_all_complaints": "3.3%",
+      "topic": "area_access"
+    },
+    {
+      "cancellations": 919,
+      "claim_ids": {
+        "cancellations": "T049",
+        "complaint_count": "T046",
+        "mean_severity": "T048",
+        "severity_sum": "T047",
+        "share_of_all_complaints": "T050"
+      },
+      "complaint_count": 10748,
+      "mean_severity": "2.592110",
+      "severity_sum": 27860,
+      "share_of_all_complaints": "24.2%",
+      "topic": "area_usability"
+    },
+    {
+      "cancellations": 578,
+      "claim_ids": {
+        "cancellations": "T054",
+        "complaint_count": "T051",
+        "mean_severity": "T053",
+        "severity_sum": "T052",
+        "share_of_all_complaints": "T055"
+      },
+      "complaint_count": 6069,
+      "mean_severity": "3.445708",
+      "severity_sum": 20912,
+      "share_of_all_complaints": "13.7%",
+      "topic": "area_playback"
+    },
+    {
+      "cancellations": 1342,
+      "claim_ids": {
+        "cancellations": "T059",
+        "complaint_count": "T056",
+        "mean_severity": "T058",
+        "severity_sum": "T057",
+        "share_of_all_complaints": "T060"
+      },
+      "complaint_count": 8712,
+      "mean_severity": "2.880051",
+      "severity_sum": 25091,
+      "share_of_all_complaints": "19.6%",
+      "topic": "area_billing_and_support"
+    }
+  ],
+  "ranked_issues": [
+    {
+      "claim_ids": {
+        "complaint_count": "C001",
+        "mean_severity": "C003",
+        "priority_score": "C004",
+        "severity_sum": "C002"
+      },
+      "complaint_count": "14108",
+      "examples": [
+        {
+          "quote": "Eh. It does what it's supposed to... while paying artist's significantly less than any other streaming platform.",
+          "review_id": "28c93bad-ad08-4e79-9db3-49099566e55e",
+          "severity": 5
+        },
+        {
+          "quote": "Would have been 5 stars if there was a way to turn off all the 3rd party tracking and privacy invasion on the Android version of this app.",
+          "review_id": "37fcb540-9ed1-4382-8c7a-8c0609f7a063",
+          "severity": 5
+        },
+        {
+          "quote": "4452 app tracking attempts from 62 different advertising companies on Spotify .",
+          "review_id": "3eb26f71-b184-4787-9361-9e402eb0d8ea",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_OTHER_GENERAL",
+      "mean_severity": "1.980224",
+      "name": "General app performance issues",
+      "priority_score": "27937",
+      "rank": 1,
+      "severity_sum": "27937",
+      "topic": "other"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C005",
+        "mean_severity": "C007",
+        "priority_score": "C008",
+        "severity_sum": "C006"
+      },
+      "complaint_count": "5825",
+      "examples": [
+        {
+          "quote": "When asked to watch an ad for 30 minutes of uninterrupted listening upon clicking ok it will play 3 or 4 ads and not ten minutes later play another.",
+          "review_id": "ee11e1df-cb73-4c3a-b5e8-7268c7872b01",
+          "severity": 5
+        },
+        {
+          "quote": "Honestly I've been using this app for some years and was amazing but since the last update there's a bug or something I can't add music to favorites, and cool, now all songs i liked disappeared,",
+          "review_id": "1d0981ca-43ed-473a-9dbc-5723554a4cb6",
+          "severity": 5
+        },
+        {
+          "quote": "Ads every 2 songs with volume up loud and forcing you to pay for a reasonable amount after selling your info anyway",
+          "review_id": "1e4d3214-63de-4ba0-9870-a4ee8aa32942",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_USABILITY_ADS",
+      "mean_severity": "2.345408",
+      "name": "Excessive and disruptive ad breaks",
+      "priority_score": "13662",
+      "rank": 2,
+      "severity_sum": "13662",
+      "topic": "usability"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C009",
+        "mean_severity": "C011",
+        "priority_score": "C012",
+        "severity_sum": "C010"
+      },
+      "complaint_count": "3457",
+      "examples": [
+        {
+          "quote": "Today you have deducted the amount without any reminder beforehand.",
+          "review_id": "1be24878-5115-490a-bb7f-dad95d0630ab",
+          "severity": 5
+        },
+        {
+          "quote": "We followed all the steps, and it worked for a week, but then his plan was downgraded with ads and couldn't search music.",
+          "review_id": "02b758ad-3b5b-4db6-afca-205e4f1b8f40",
+          "severity": 5
+        },
+        {
+          "quote": "I paid for the ad free but there's ad's",
+          "review_id": "a835c23b-3e27-493c-a9df-1a9b5ee04f09",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_BILLING_PREMIUM_PUSH",
+      "mean_severity": "2.798091",
+      "name": "Aggressive premium upgrade prompts",
+      "priority_score": "9673",
+      "rank": 3,
+      "severity_sum": "9673",
+      "topic": "billing"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C013",
+        "mean_severity": "C015",
+        "priority_score": "C016",
+        "severity_sum": "C014"
+      },
+      "complaint_count": "2381",
+      "examples": [
+        {
+          "quote": "My downloaded music keeps deleting &, more importantly, whenever the app is playing music in the background it's causing stability issues in my phone & causing it to restart, constantly, it's very irr",
+          "review_id": "4a49d8ba-bb87-4abd-b508-38f34dfbcb84",
+          "severity": 5
+        },
+        {
+          "quote": "Don't know what happened but I no matter what I do, I can't play music, nothing loads or is even clickable anymore.",
+          "review_id": "c46bc3b8-7a46-4920-8c97-7fda39d0a615",
+          "severity": 5
+        },
+        {
+          "quote": "It shuts down on me every once in a while and when I deleted by accident I re downloaded it and it couldn't find my account so I had do start a new one which is fine but it sucked that I lost the list",
+          "review_id": "ac7d156c-fab7-4999-8732-8c4a6e1da018",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_PLAYBACK_GENERAL",
+      "mean_severity": "3.497270",
+      "name": "General playback and app functionality",
+      "priority_score": "8327",
+      "rank": 4,
+      "severity_sum": "8327",
+      "topic": "playback"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C017",
+        "mean_severity": "C019",
+        "priority_score": "C020",
+        "severity_sum": "C018"
+      },
+      "complaint_count": "1749",
+      "examples": [
+        {
+          "quote": "La app en general me encanta pero algo que suele pasarme es que cuando cambió rápido de canción o me equivoco donde hago click para pasar a la siguiente canción le quito el \"me gusta\" a mis canciones.",
+          "review_id": "d1e63db7-4197-4516-ba03-a830706d5f3f",
+          "severity": 5
+        },
+        {
+          "quote": "I go to listen to my liked music playlist and over 70% is gone.",
+          "review_id": "16f4505c-8b84-41e3-8cb8-2cef60b269f1",
+          "severity": 5
+        },
+        {
+          "quote": "But you have updated and changed the whole app and the look of Spotify as of yesterday, and I can't see any of my songs in my playlist I had over 47hrs of songs now I only have 31hrs?!",
+          "review_id": "abbaae58-fa49-48c6-a973-f71a978be85d",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_USABILITY_UPDATE_LAYOUT",
+      "mean_severity": "2.876501",
+      "name": "Layout changes and navigation issues",
+      "priority_score": "5031",
+      "rank": 5,
+      "severity_sum": "5031",
+      "topic": "usability"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C021",
+        "mean_severity": "C023",
+        "priority_score": "C024",
+        "severity_sum": "C022"
+      },
+      "complaint_count": "1149",
+      "examples": [
+        {
+          "quote": "Lots of problems: Horrible library management tools.",
+          "review_id": "d3a435b4-7801-49d4-910e-2a804c6eb525",
+          "severity": 5
+        },
+        {
+          "quote": "yet starts itself & plays when it can connect to a paired device (even when app is closed).",
+          "review_id": "449f6f11-119e-4b12-9c5d-b9dbfc1548b4",
+          "severity": 5
+        },
+        {
+          "quote": "Takes forever to load half the time I'm stuck on a black screen or the Spotify logo Also has deleted my downloaded songs multiple times which is a pain This has only started happening this year so wha",
+          "review_id": "3896312d-c6a1-41a2-89b6-f69ac8319bff",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_PLAYBACK_CRASH_OPEN",
+      "mean_severity": "3.697128",
+      "name": "App crashes on launch or during playback",
+      "priority_score": "4248",
+      "rank": 6,
+      "severity_sum": "4248",
+      "topic": "playback"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C025",
+        "mean_severity": "C027",
+        "priority_score": "C028",
+        "severity_sum": "C026"
+      },
+      "complaint_count": "1007",
+      "examples": [
+        {
+          "quote": "My account was hacked multiple times in different countries.",
+          "review_id": "ac12ca34-cd9d-4aa4-b041-dc3c661dbdc9",
+          "severity": 5
+        },
+        {
+          "quote": "Spotify app keeps logging me out of my account and not letting me log in again until I delete the app and reinstall.",
+          "review_id": "b34c1283-253f-48ac-be51-a6dec4e8ccf5",
+          "severity": 5
+        },
+        {
+          "quote": "The login credentials changed suddenly.",
+          "review_id": "1cc037b3-e219-49cc-b017-9a2cd2badf5d",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_ACCESS_LOGIN",
+      "mean_severity": "3.979146",
+      "name": "Login authentication failures",
+      "priority_score": "4007",
+      "rank": 7,
+      "severity_sum": "4007",
+      "topic": "access"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C029",
+        "mean_severity": "C031",
+        "priority_score": "C032",
+        "severity_sum": "C030"
+      },
+      "complaint_count": "1064",
+      "examples": [
+        {
+          "quote": "Stopped playing on my Samsung A50 phone after Android 11 update.",
+          "review_id": "07f59bbd-a997-47f6-b91e-4a9a5c645c32",
+          "severity": 5
+        },
+        {
+          "quote": "5gb worth of data again this month regardless of the fact that I was using a function designed so it wouldn't do that.",
+          "review_id": "a302dab7-2b29-48b4-b559-93d34a668835",
+          "severity": 5
+        },
+        {
+          "quote": "Easy to use and great selection of artistz now it keeps stopping, wont even open and I have premium had to uninstall, lost my downloads and dont have a few songs I would like.",
+          "review_id": "c0a9b95d-43c0-4ff9-b585-50256baee2fe",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_PLAYBACK_STOPS_PAUSES",
+      "mean_severity": "3.412594",
+      "name": "Music playback stops unexpectedly",
+      "priority_score": "3631",
+      "rank": 8,
+      "severity_sum": "3631",
+      "topic": "playback"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C033",
+        "mean_severity": "C035",
+        "priority_score": "C036",
+        "severity_sum": "C034"
+      },
+      "complaint_count": "1291",
+      "examples": [
+        {
+          "quote": "But instead, when the chapter ended and I pressed play on my earbud to listen to one more, the thing kept going on until the end of the book, and I wasted all my time.",
+          "review_id": "1558273c-1176-4b65-9d40-1c346736e276",
+          "severity": 5
+        },
+        {
+          "quote": "They've been deleting many albums recently!!",
+          "review_id": "416a8fb6-0e5b-4c61-b324-49740c2e9f17",
+          "severity": 5
+        },
+        {
+          "quote": "Don't ever hide songs, I accidently did and it's gone forever and there isn't a way to find it again. Thx spodify I am reconsidering using this platform",
+          "review_id": "27aa8b25-fec9-4408-9a7e-e582f98e24bb",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_USABILITY_GENERAL",
+      "mean_severity": "2.753679",
+      "name": "General usability and feature changes",
+      "priority_score": "3555",
+      "rank": 9,
+      "severity_sum": "3555",
+      "topic": "usability"
+    },
+    {
+      "claim_ids": {
+        "complaint_count": "C037",
+        "mean_severity": "C039",
+        "priority_score": "C040",
+        "severity_sum": "C038"
+      },
+      "complaint_count": "1166",
+      "examples": [
+        {
+          "quote": "It also keeps getting rid of my liked songs.",
+          "review_id": "9581a175-9da8-4523-89ac-6ae066c95532",
+          "severity": 5
+        },
+        {
+          "quote": "I thought the some songs just got deleted from my playlist, turns out this idiot app removed a lot of good songs 🤬🤬🤬😡😡😡",
+          "review_id": "12856471-acdc-44c5-8f4f-612e4ac878da",
+          "severity": 5
+        },
+        {
+          "quote": "It just deleted all my liked songs out of nowhere and said I only had 10 when I had over 800 before.",
+          "review_id": "f2c11a77-9616-4d3c-9ea9-85895f42ea7c",
+          "severity": 5
+        }
+      ],
+      "issue_id": "ISS_USABILITY_QUEUE_PLAYLIST",
+      "mean_severity": "3.042882",
+      "name": "Playlist modifications and song additions",
+      "priority_score": "3548",
+      "rank": 10,
+      "severity_sum": "3548",
+      "topic": "usability"
+    }
+  ],
+  "topic_totals_complaints_and_cancellations": [
+    {
+      "cancellations": 1031,
+      "claim_ids": {
+        "cancellations": "T004",
+        "complaint_count": "T001",
+        "mean_severity": "T003",
+        "severity_sum": "T002",
+        "share_of_all_complaints": "T005"
+      },
+      "complaint_count": 14108,
+      "mean_severity": "1.980224",
+      "severity_sum": 27937,
+      "share_of_all_complaints": "31.8%",
+      "topic": "other"
+    },
+    {
+      "cancellations": 919,
+      "claim_ids": {
+        "cancellations": "T009",
+        "complaint_count": "T006",
+        "mean_severity": "T008",
+        "severity_sum": "T007",
+        "share_of_all_complaints": "T010"
+      },
+      "complaint_count": 10748,
+      "mean_severity": "2.592110",
+      "severity_sum": 27860,
+      "share_of_all_complaints": "24.2%",
+      "topic": "usability"
+    },
+    {
+      "cancellations": 1330,
+      "claim_ids": {
+        "cancellations": "T014",
+        "complaint_count": "T011",
+        "mean_severity": "T013",
+        "severity_sum": "T012",
+        "share_of_all_complaints": "T015"
+      },
+      "complaint_count": 8600,
+      "mean_severity": "2.881512",
+      "severity_sum": 24781,
+      "share_of_all_complaints": "19.4%",
+      "topic": "billing"
+    },
+    {
+      "cancellations": 578,
+      "claim_ids": {
+        "cancellations": "T019",
+        "complaint_count": "T016",
+        "mean_severity": "T018",
+        "severity_sum": "T017",
+        "share_of_all_complaints": "T020"
+      },
+      "complaint_count": 6069,
+      "mean_severity": "3.445708",
+      "severity_sum": 20912,
+      "share_of_all_complaints": "13.7%",
+      "topic": "playback"
+    },
+    {
+      "cancellations": 128,
+      "claim_ids": {
+        "cancellations": "T024",
+        "complaint_count": "T021",
+        "mean_severity": "T023",
+        "severity_sum": "T022",
+        "share_of_all_complaints": "T025"
+      },
+      "complaint_count": 2249,
+      "mean_severity": "2.808804",
+      "severity_sum": 6317,
+      "share_of_all_complaints": "5.1%",
+      "topic": "catalog"
+    },
+    {
+      "cancellations": 75,
+      "claim_ids": {
+        "cancellations": "T029",
+        "complaint_count": "T026",
+        "mean_severity": "T028",
+        "severity_sum": "T027",
+        "share_of_all_complaints": "T030"
+      },
+      "complaint_count": 1473,
+      "mean_severity": "3.941616",
+      "severity_sum": 5806,
+      "share_of_all_complaints": "3.3%",
+      "topic": "access"
+    },
+    {
+      "cancellations": 72,
+      "claim_ids": {
+        "cancellations": "T034",
+        "complaint_count": "T031",
+        "mean_severity": "T033",
+        "severity_sum": "T032",
+        "share_of_all_complaints": "T035"
+      },
+      "complaint_count": 1054,
+      "mean_severity": "3.462998",
+      "severity_sum": 3650,
+      "share_of_all_complaints": "2.4%",
+      "topic": "downloads"
+    },
+    {
+      "cancellations": 12,
+      "claim_ids": {
+        "cancellations": "T039",
+        "complaint_count": "T036",
+        "mean_severity": "T038",
+        "severity_sum": "T037",
+        "share_of_all_complaints": "T040"
+      },
+      "complaint_count": 112,
+      "mean_severity": "2.767857",
+      "severity_sum": 310,
+      "share_of_all_complaints": "0.3%",
+      "topic": "support"
+    }
+  ],
+  "trend_note": "trend_* facts compare the same calendar months (June to October) of 2022 and 2023; share = complaints about that area / all classified reviews in the period. A rising share in self selected reviews is a signal, not proof of a population change.",
+  "window": "2022-05-17 to 2023-11-15 (Google Play reviews)"
+}

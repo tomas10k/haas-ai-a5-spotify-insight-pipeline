@@ -1,0 +1,11 @@
+{
+  "allow_multi_issue": false,
+  "analysis_count": 100013,
+  "analysis_file": "scope_100k.csv",
+  "analysis_sha256": "4e356111c8f680155ef782727f9aaa2d5ba0b39b53fe13a600e2bb3c217c83f0",
+  "classification_input_fields": [
+    "review_text"
+  ],
+  "run_id": "final_100k",
+  "version": "a5-audit-v1"
+}

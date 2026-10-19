@@ -4,6 +4,7 @@ number in the memo must appear in the evidence pack. One retry with the error li
 Out: runs/<run>/memo/{evidence_pack.json, claims.csv, memo.md, memo_check.json}
 """
 import csv, hashlib, json, re
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from .common import ROOT, read_jsonl, write_json
 from .clients import Runtime, FAKE, anthropic_call, openai_call
@@ -34,8 +35,18 @@ def build_pack(run_dir, cfg):
                        **{k: row[k] for k in ("complaint_count", "severity_sum", "mean_severity", "priority_score")},
                        "claim_ids": cids,
                        "examples": [{"review_id": r["review_id"], "severity": r["severity"], "quote": r["evidence_quote"][:200]} for r in cand]})
+    # the brief's four areas; billing and support form one area. Computed by code from the topic totals.
+    by_t = {t["topic"]: t for t in topics["topics"]}
+    areas = []
+    for name, members_ in (("access", ["access"]), ("usability", ["usability"]), ("playback", ["playback"]), ("billing_and_support", ["billing", "support"])):
+        n = sum(by_t.get(m_, {}).get("complaint_count", 0) for m_ in members_)
+        sv = sum(by_t.get(m_, {}).get("severity_sum", 0) for m_ in members_)
+        c = sum(by_t.get(m_, {}).get("cancellations", 0) for m_ in members_)
+        areas.append({"topic": "area_" + name, "complaint_count": n, "severity_sum": sv, "cancellations": c,
+                      "mean_severity": str((Decimal(sv) / Decimal(n)).quantize(Decimal("0.000001"), rounding=ROUND_HALF_UP)) if n else "0",
+                      "share_of_all_complaints": str((Decimal(n) * 100 / Decimal(topics["complaint_and_cancellation_records"])).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)) + "%"})
     tclaims = []
-    for t in topics["topics"]:
+    for t in topics["topics"] + areas:
         tc = {}
         for metric in ("complaint_count", "severity_sum", "mean_severity", "cancellations", "share_of_all_complaints"):
             tid = f"T{len(tclaims) + 1:03d}"
@@ -44,6 +55,12 @@ def build_pack(run_dir, cfg):
     # coverage and quality facts: every number the memo may mention gets a token, so the model never types one
     facts_src = [("source_rows", ingest["records"]), ("completed_classifications", status.get("completed", 0)),
                  ("quarantined", status.get("quarantined", 0)), ("pending_unclassified", status.get("pending", 0))]
+    full = ROOT / "grading" / "ingestion.json"
+    if full.exists():  # declared scope vs the full file (profiled by the checker helper)
+        fc = json.loads(full.read_text())["counts"]
+        if fc["records"] > ingest["records"]:
+            facts_src += [("full_file_rows", fc["records"]), ("full_file_nonempty_reviews", fc["records"] - fc["empty_review_text"]),
+                          ("full_file_nonempty_reviews_not_classified_outside_scope", fc["records"] - fc["empty_review_text"] - status.get("completed", 0))]
     facts_src += [(f"intent_{k}", v) for k, v in sorted(topics["labels_by_intent"].items())]
     vs = json.loads((run_dir / "verify" / "summary.json").read_text()) if (run_dir / "verify" / "summary.json").exists() else None
     if vs:
@@ -56,9 +73,27 @@ def build_pack(run_dir, cfg):
         facts_src += [("golden_reviews", g["golden_n"]), ("golden_topic_agreement", f"{round(100 * g['topic_agreement'])}%"),
                       ("golden_intent_agreement", f"{round(100 * g['intent_agreement'])}%"),
                       ("golden_severity_exact", f"{round(100 * g['severity_exact'])}%")]
+    tr = run_dir / "rank" / "trend.json"
+    if tr.exists():  # comparable period trend, computed by code in the rank stage
+        T = json.loads(tr.read_text())
+        for pname, P in T["periods"].items():
+            facts_src += [(f"trend_{pname}_classified_reviews", P["classified"]),
+                          (f"trend_{pname}_complaint_share_all_topics", P["complaint_share_all_topics"])]
+            facts_src += [(f"trend_{pname}_{t}_complaint_share", P["by_topic"][t]["share_of_classified"])
+                          for t in ("access", "usability", "playback", "billing", "support")]
     facts = [{"claim_id": f"F{i + 1:03d}", "name": n, "value": str(v)} for i, (n, v) in enumerate(facts_src)]
     pack = {"window": "2022-05-17 to 2023-11-15 (Google Play reviews)",
-            "coverage_and_quality": {f["name"]: "{" + f["claim_id"] + "}" for f in facts},
+            "coverage_and_quality": {f["name"]: {"token": "{" + f["claim_id"] + "}", "value_for_reasoning_only": f["value"]} for f in facts},
+            "question_areas": areas,
+            "orderings_computed_by_code": {
+                "topics_by_complaint_count": [t["topic"] for t in sorted(topics["topics"], key=lambda t: -t["complaint_count"])],
+                "topics_by_severity_sum": [t["topic"] for t in sorted(topics["topics"], key=lambda t: -t["severity_sum"])],
+                "topics_by_mean_severity": [t["topic"] for t in sorted(topics["topics"], key=lambda t: -float(t["mean_severity"]))],
+                "topics_by_cancellations": [t["topic"] for t in sorted(topics["topics"], key=lambda t: -t["cancellations"])],
+                "areas_by_complaint_count": [a["topic"] for a in sorted(areas, key=lambda a: -a["complaint_count"])],
+                "areas_by_severity_sum": [a["topic"] for a in sorted(areas, key=lambda a: -a["severity_sum"])],
+                "areas_by_mean_severity": [a["topic"] for a in sorted(areas, key=lambda a: -float(a["mean_severity"]))]},
+            "trend_note": "trend_* facts compare the same calendar months (June to October) of 2022 and 2023; share = complaints about that area / all classified reviews in the period. A rising share in self selected reviews is a signal, not proof of a population change.",
             "quality_note": "Labels come from Jev; a second model (Claude Haiku) relabeled a random sample blind, and the owner hand labeled 50 golden reviews; the agreement rates are in coverage_and_quality.",
             "ranked_issues": ranked, "topic_totals_complaints_and_cancellations": topics["topics"],
             "how_to_cite": "Use tokens {Cnnn} (issue claims), {Tnnn} (topic claims) and {Fnnn} (coverage and quality facts); never type numbers."}
@@ -152,7 +187,7 @@ def run_memo(run_dir, cfg, log=print, phase="initial"):
             text, _ = rt.call(provider=m.get("provider", "anthropic"), model=m["model"], role="memo", review_ids=[], label_config=f"{m['model']}:{m['prompt_version']}",
                           prompt_version=m["prompt_version"], fn=fn, worst_case_usd=worst, max_attempts=4,
                           extra={"input_artifact": "memo/evidence_pack.json", "attempt_kind": "draft" if attempt == 1 else "fix",
-                                 "thinking": m.get("thinking"), "reasoning_effort": m.get("effort")})
+                                 "thinking": m.get("thinking"), "effort": m.get("effort")})
         except ValueError as ex:  # billed but unusable reply: logged by rt.call; try once more, then save the failure
             errors, text = [f"no usable memo text: {ex}"], ""
             continue

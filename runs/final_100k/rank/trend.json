@@ -1,0 +1,87 @@
+{
+  "periods": {
+    "2022_jun_oct": {
+      "by_topic": {
+        "access": {
+          "complaints": 225,
+          "share_of_classified": "1.0%"
+        },
+        "billing": {
+          "complaints": 851,
+          "share_of_classified": "3.8%"
+        },
+        "catalog": {
+          "complaints": 403,
+          "share_of_classified": "1.8%"
+        },
+        "downloads": {
+          "complaints": 327,
+          "share_of_classified": "1.5%"
+        },
+        "other": {
+          "complaints": 872,
+          "share_of_classified": "3.9%"
+        },
+        "playback": {
+          "complaints": 1799,
+          "share_of_classified": "8.0%"
+        },
+        "support": {
+          "complaints": 14,
+          "share_of_classified": "0.1%"
+        },
+        "usability": {
+          "complaints": 2430,
+          "share_of_classified": "10.8%"
+        }
+      },
+      "classified": 22414,
+      "complaint_share_all_topics": "30.9%",
+      "complaints_all_topics": 6921,
+      "from": "2022-06",
+      "to": "2022-10"
+    },
+    "2023_jun_oct": {
+      "by_topic": {
+        "access": {
+          "complaints": 749,
+          "share_of_classified": "1.8%"
+        },
+        "billing": {
+          "complaints": 5492,
+          "share_of_classified": "13.2%"
+        },
+        "catalog": {
+          "complaints": 997,
+          "share_of_classified": "2.4%"
+        },
+        "downloads": {
+          "complaints": 305,
+          "share_of_classified": "0.7%"
+        },
+        "other": {
+          "complaints": 10513,
+          "share_of_classified": "25.4%"
+        },
+        "playback": {
+          "complaints": 1813,
+          "share_of_classified": "4.4%"
+        },
+        "support": {
+          "complaints": 40,
+          "share_of_classified": "0.1%"
+        },
+        "usability": {
+          "complaints": 3910,
+          "share_of_classified": "9.4%"
+        }
+      },
+      "classified": 41461,
+      "complaint_share_all_topics": "57.4%",
+      "complaints_all_topics": 23819,
+      "from": "2023-06",
+      "to": "2023-10"
+    }
+  },
+  "rule": "share = complaint or cancellation records with that topic / all classified records in the period; same calendar months in both years; first and last calendar months of the window are partial and excluded"
+}

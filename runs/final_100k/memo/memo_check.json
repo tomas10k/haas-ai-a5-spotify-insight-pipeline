@@ -1,0 +1,20 @@
+{
+  "cited_claims": [
+    "C005",
+    "C006",
+    "C009",
+    "C010"
+  ],
+  "claims": 40,
+  "errors": [],
+  "human_review": {
+    "check_after_edits_passed": true,
+    "edits": 5,
+    "errors_after_edits": [],
+    "model_output": "memo/memo_model_output.md",
+    "notes": "memo/review_notes.md",
+    "status": "reviewed and corrected"
+  },
+  "note": "A person must still read the argument.",
+  "passed": true
+}

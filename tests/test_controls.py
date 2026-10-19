@@ -127,7 +127,7 @@ def test_mean_uses_decimal_half_up():
 
 def test_ranking_regenerates_identically_from_saved_files(tmp_path):
     src = ROOT / "runs" / "dev_500"
-    for sub in ("records", "group"):
+    for sub in ("prepare", "records", "group"):
         shutil.copytree(src / sub, tmp_path / sub)
     run_rank(tmp_path, log=lambda *a: None)
     assert (tmp_path / "rank" / "ranking.csv").read_text() == (src / "rank" / "ranking.csv").read_text()

@@ -15,7 +15,7 @@
     "max_workers": 8,
     "fallback_fraction_cap": 0.01,
     "max_requests_per_second": 20,
-    "memo_output_token_cap": 6000
+    "memo_output_token_cap": 8000
   },
   "verification": {
     "sample_reviews": 2000

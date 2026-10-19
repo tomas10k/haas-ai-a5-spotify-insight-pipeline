@@ -24,7 +24,7 @@ const PHASES = [
   ["model", "Verify", "Haiku relabels a random 1% blind; code compares", "Haiku + code"],
   ["mix", "Group", "Code puts each complaint into one issue; Haiku only names issues", "Code + Haiku"],
   ["code", "Rank", "Score = complaints × average severity, in SQL", "Code"],
-  ["mix", "Recommend", "GPT-6 Luna writes the memo from the saved totals; code checks every number", "Luna + code"]];
+  ["mix", "Recommend", "Claude Sonnet 5 writes the memo from the saved totals; code checks every number", "Sonnet + code"]];
 function how() {
   $("#flow").innerHTML = PHASES.map(([c, t, s, w], i) => `<div class="phase ${c}"><span class="n">${i + 1} · ${w}</span><span class="t">${t}</span><span class="s">${s}</span></div>`).join("");
 }
@@ -114,13 +114,13 @@ const OPTIONS = {
   fallback: [["haiku", "Claude Haiku 4.5, capped (measured)"], ["sonnet", "Claude Sonnet 5, capped (estimate)"], ["off", "Off"]],
   verify: [["haiku", "Claude Haiku 4.5 (measured)"], ["sonnet", "Claude Sonnet 5 (estimate)"]],
   group: [["haiku", "Claude Haiku 4.5 (measured)"], ["sonnet", "Claude Sonnet 5 (estimate)"]],
-  memo: [["luna", "GPT-6 Luna, reasoning low (measured)"], ["sonnet", "Claude Sonnet 5 (earlier pilot)"], ["haiku", "Claude Haiku 4.5"]]};
+  memo: [["sonnet", "Claude Sonnet 5 (measured)"], ["luna", "GPT-6 Luna (estimate)"], ["haiku", "Claude Haiku 4.5 (estimate)"]]};
 const MODEL = { haiku: "claude-haiku-4-5-20251001", sonnet: "claude-sonnet-5", luna: "gpt-6-luna" };
 function calc() {
   const C = D.cost;
   if (!C.available) { $("#calc").innerHTML = `<p class="muted">The paid pilot has not been run yet: <code>python3 cost/calculator.py pilot</code></p>`; return; }
   C.rates.forEach(r => PR[r.model + "|" + r.item] = +r.price_per_unit_usd);
-  CH = { classify: "jev", fallback: "haiku", verify: "haiku", group: "haiku", memo: "luna" };
+  CH = { classify: "jev", fallback: "haiku", verify: "haiku", group: "haiku", memo: "sonnet" };
   const A = C.assumptions;
   CTL = { n: 100013, reuse: true, workers: A.scenarios.base.workers, cap: A.controls.spend_cap_usd, fbcap: A.controls.fallback_fraction_cap, rps: A.controls.max_requests_per_second };
   const E = C.estimates;
@@ -204,7 +204,7 @@ function answer() {
   const r = RUN; $("#answerRun").textContent = r.label;
   if (r.status !== "done" || !r.memo) { $("#memo").innerHTML = `<p class="muted">No memo for this run${r.status === "done" ? " (run all six stages to create one)" : ""}.</p>`; }
   else { const mc = r.memo_check;
-    $("#memo").innerHTML = `<div class="memo"><div class="tags"><span class="chip model">AI written by ${esc({ "gpt-6-luna": "GPT-6 Luna", "claude-sonnet-5": "Claude Sonnet 5" }[r.memo_model] || (r.memo_model || "model").replace(/-/g, " "))} from saved totals only</span><span class="chip ${mc?.passed ? "evid" : "warn"}">Number check ${mc?.passed ? "passed" : "failed"}</span></div>
+    $("#memo").innerHTML = `<div class="memo"><div class="tags"><span class="chip model">AI written by ${esc({ "gpt-6-luna": "GPT-6 Luna", "claude-sonnet-5": "Claude Sonnet 5" }[r.memo_model] || (r.memo_model || "model").replace(/-/g, " "))} from saved totals only</span><span class="chip ${mc?.passed ? "evid" : "warn"}">Number check ${mc?.passed ? "passed" : "failed"}</span>${mc?.human_review ? `<span class="chip code" data-tip="The model's exact output is saved as memo_model_output.md; review_notes.md lists each edit">Reviewed by a person: ${mc.human_review.edits} edits, check ${mc.human_review.check_after_edits_passed ? "passed" : "failed"} after edits</span>` : ""}</div>
       ${mc && !mc.passed ? `<p class="small bad">Code found: ${esc(mc.errors.join("; "))}</p>` : ""}${md(r.memo)}
       <p class="small muted">Codes like C005 are saved numbers in <code>claims.csv</code> (one issue) and T003 in <code>topic_claims.csv</code> (one area). Code, not the model, wrote each number.</p></div>`; }
   if (r.status !== "done" || !r.ranking.length) { $("#rank").innerHTML = `<p class="muted">No ranking for this run.</p>`; return; }

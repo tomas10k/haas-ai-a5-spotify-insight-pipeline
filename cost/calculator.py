@@ -145,7 +145,7 @@ def replay(write=True, rate_multiplier=1.0, assumptions=None, quiet=False):
       f"elapsed time is capped by {C['max_requests_per_second']} requests/s shared across workers.\n")
     P("## 4. Controls\n")
     P(f"* Spend cap: **${C['spend_cap_usd']:.2f}**, enforced by one shared ledger that reserves worst case cost before every call and stops admitting work at the cap (progress is saved).")
-    P(f"* Output token caps: Haiku calls {C['haiku_output_token_cap']}, memo (GPT-6 Luna, reasoning included) {C.get('memo_output_token_cap')}. Jev output is free and has no output cap.")
+    P(f"* Output token caps: Haiku calls {C['haiku_output_token_cap']}, memo (Claude Sonnet 5, thinking included) {C.get('memo_output_token_cap')}. Jev output is free and has no output cap.")
     P(f"* Maximum workers: {C['max_workers']}; maximum requests per second: {C['max_requests_per_second']}.")
     P(f"* Haiku fallback fraction cap: {C['fallback_fraction_cap']:.0%} of processed texts. Invalid output: one retry then quarantine. Transient errors: up to 4 attempts with backoff and jitter, each logged.")
     P(f"* Decision rule: refresh the projection after 500 and 10,000 reviews (section 3), then start the final run only if the conservative scenario for the declared scope stays under the cap.")

@@ -53,5 +53,32 @@ def run_rank(run_dir, log=print):
         "topics": [{"topic": t, "complaint_count": n, "severity_sum": s, "mean_severity": mean6(s, n), "cancellations": c,
                     "share_of_all_complaints": str((Decimal(n) * 100 / Decimal(total)).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)) + "%"}
                    for t, n, s, c in topic_rows]})
+    write_trend(run_dir, db)
     log(f"[rank] {len(rows)} issues ranked; top 3: " + ", ".join(f"{r[0]}={r[2]}" for r in rows[:3]))
     return rows
+
+
+PERIODS = {"2022_jun_oct": ("2022-06", "2022-10"), "2023_jun_oct": ("2023-06", "2023-10")}  # same calendar months, full months only
+
+
+def pct1(n, d):
+    return str((Decimal(n) * 100 / Decimal(d)).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)) + "%" if d else None
+
+
+def write_trend(run_dir, db):
+    """Complaint share by area in comparable periods (code only). Denominator = classified records in the period."""
+    month = {s["review_id"]: s["review_timestamp"][:7] for s in read_jsonl(run_dir / "prepare" / "source_index.jsonl")}
+    db.execute("CREATE TABLE months(review_id TEXT PRIMARY KEY, month TEXT)")
+    db.executemany("INSERT INTO months VALUES (?,?)", month.items())
+    out = {"rule": "share = complaint or cancellation records with that topic / all classified records in the period; "
+                   "same calendar months in both years; first and last calendar months of the window are partial and excluded",
+           "periods": {}}
+    for name, (a, b) in PERIODS.items():
+        tot = db.execute("SELECT COUNT(*) FROM labels l JOIN months m USING (review_id) WHERE m.month BETWEEN ? AND ?", (a, b)).fetchone()[0]
+        by = dict(db.execute("""SELECT l.topic, COUNT(*) FROM labels l JOIN months m USING (review_id)
+                               WHERE m.month BETWEEN ? AND ? AND l.intent IN ('complaint','cancellation') GROUP BY l.topic""", (a, b)).fetchall())
+        out["periods"][name] = {"from": a, "to": b, "classified": tot, "complaints_all_topics": sum(by.values()),
+                                "complaint_share_all_topics": pct1(sum(by.values()), tot),
+                                "by_topic": {t: {"complaints": by.get(t, 0), "share_of_classified": pct1(by.get(t, 0), tot)}
+                                             for t in ("access", "usability", "playback", "downloads", "catalog", "billing", "support", "other")}}
+    write_json(run_dir / "rank" / "trend.json", out)
