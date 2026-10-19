@@ -120,7 +120,11 @@ Rerunning `run` with the same `--run-id` resumes. Completed texts are never sent
 
 ## Scope
 
-The course allows the final run to classify at least 100,000 reviews instead of all 660,609. We classified a **declared scope of 100,013 rows** and kept the total API budget under $10.
+The assignment allows the final run to classify at least 100,000 reviews instead of all 660,609:
+- The brief says: "full pipeline run covering all 660,622 (or at least 100,000) original review IDs. Classify 660,609 (or at least 100,000) nonempty reviews". The Definition of Done repeats "(or at least 100,000)" for both ingestion and classification.
+- The instructor confirmed this option to the whole class in Class 7.
+
+We classified a **declared scope of 100,013 rows** and kept the total API budget under $10. Please read coverage against this declared scope: `grading/run.json` declares `analysis_count = 100013`.
 
 - **How the 100,000 were chosen** ([`pipeline/scope.py`](pipeline/scope.py), `python3 -m pipeline scope --n 100000`):
   - The rule is the course's own published sampling rule (`data/manifest.json` → `samples.method`): the lowest `SHA-256("berkeley-fall-2026-assignment-5-v1:" + review_id)` among unique, nonempty, valid-rating records.
@@ -364,6 +368,12 @@ Resume is built into enrichment ([`pipeline/enrich.py`](pipeline/enrich.py)):
 4. **Rerun once the network was back:**
    - `3_resume_after_network_outage.typescript`
    - Enrichment made **zero** calls (`pending_now=0`); verify reused its 40 saved predictions and finished; group and rank ran.
+
+**Recording.** [`demo/resume_demo.sh`](demo/resume_demo.sh) (`bash demo/resume_demo.sh`) has two parts:
+1. It replays the final run's interruption and resume from its saved logs, checkpoints and checker result (free).
+2. It runs a fresh, live stop-and-resume on `cost_100.csv` (real Jev calls, less than $0.01). It proves that zero reviews were sent again.
+
+A screen recording of this script is linked here: *(video link to be added)*.
 
 The 10,000 review budget run (`runs/dev_10000`) also stopped at 2,000 texts with 2 workers and resumed with 4. Its two real `502 Bad Gateway` errors were retried successfully.
 
