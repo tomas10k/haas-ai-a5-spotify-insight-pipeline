@@ -4,7 +4,7 @@ Code compares. Out: runs/<run>/verify/{sample_ids.json, verifier_predictions.jso
 import csv, hashlib, json, re
 from pathlib import Path
 from .common import ROOT, TOPICS, INTENTS, read_jsonl, write_json, append_jsonl, now
-from .clients import Runtime, FAKE, anthropic_call, ReplyError
+from .clients import Runtime, FAKE, anthropic_call, ReplyError, SpendCapReached, _is_transient
 from .records import load_texts_results
 
 
@@ -47,6 +47,7 @@ def run_verify(run_dir, cfg, log=print, phase="initial"):
     system = (ROOT / "prompts" / f"{v['prompt_version']}.md").read_text()
     worst = 6000 * rt.rates.get((v["model"], "input"), 0) + v["max_output_tokens"] * rt.rates.get((v["model"], "output"), 0)
     k = v["reviews_per_call"]
+    stopped = None
     for b in range(0, len(todo), k):
         chunk = todo[b:b + k]
         body = "\n".join(f'<review i="{i + 1}">\n{texts[ts]}\n</review>' for i, ts in enumerate(chunk))
@@ -73,6 +74,13 @@ def run_verify(run_dir, cfg, log=print, phase="initial"):
                 break
             except (ValueError, TypeError, AttributeError) as ex:
                 log(f"[verify] invalid verifier output ({ex}), attempt {attempt}")
+            except SpendCapReached as ex:
+                stopped = f"spend_cap: {ex}"; break
+            except Exception as ex:  # transient retries exhausted (e.g. network down) or fatal: keep saved work, stop
+                stopped = f"{'transient_exhausted' if _is_transient(ex) else 'fatal'}: {type(ex).__name__}: {ex}"; break
+        if stopped:
+            log(f"[verify] STOP after {len(have)} saved predictions ({stopped}); rerun the same command to resume")
+            break
         if got is None:
             continue
         for i, ts in enumerate(chunk):
@@ -80,7 +88,10 @@ def run_verify(run_dir, cfg, log=print, phase="initial"):
             row = {"text_sha": ts, "origin_review_id": res[ts]["origin_review_id"], "topic": o["topic"], "intent": o["intent"],
                    "severity": int(o["severity"]), "sentiment": float(o["sentiment"]), "request_id": rec["request_id"]}
             append_jsonl(pred_path, row); have[ts] = row
-    return compare(run_dir, res, have, texts, log)
+    summary = compare(run_dir, res, have, texts, log)
+    if stopped:
+        summary["stopped"] = stopped
+    return summary
 
 
 def compare(run_dir, res, have, texts, log=print, out_name="comparison.csv", summary_name="summary.json"):

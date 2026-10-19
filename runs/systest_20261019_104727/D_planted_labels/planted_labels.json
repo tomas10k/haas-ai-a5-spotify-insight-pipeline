@@ -1,0 +1,61 @@
+{
+  "note": "TEST COPY ONLY; the real run is untouched",
+  "planted": [
+    {
+      "origin_review_id": "a5c92303-09ca-47b9-8e17-24b0b6cc9787",
+      "original": {
+        "severity": 1,
+        "topic": "other"
+      },
+      "planted": {
+        "severity": 5,
+        "topic": "support"
+      }
+    },
+    {
+      "origin_review_id": "3e1f46cb-ec60-4c9c-9057-0b84c344d875",
+      "original": {
+        "severity": 4,
+        "topic": "access"
+      },
+      "planted": {
+        "severity": 5,
+        "topic": "support"
+      }
+    },
+    {
+      "origin_review_id": "3a610309-6f88-4bdc-af84-02a1e5f06ff4",
+      "original": {
+        "severity": 2,
+        "topic": "usability"
+      },
+      "planted": {
+        "severity": 5,
+        "topic": "support"
+      }
+    },
+    {
+      "origin_review_id": "783fb41f-b852-47e1-9b5a-0c3409579565",
+      "original": {
+        "severity": 2,
+        "topic": "other"
+      },
+      "planted": {
+        "severity": 5,
+        "topic": "support"
+      }
+    },
+    {
+      "origin_review_id": "adc11aa2-672f-45b1-9f0b-91cce1f5a0b0",
+      "original": {
+        "severity": 3,
+        "topic": "usability"
+      },
+      "planted": {
+        "severity": 5,
+        "topic": "support"
+      }
+    }
+  ],
+  "source_run": "dev_10000"
+}

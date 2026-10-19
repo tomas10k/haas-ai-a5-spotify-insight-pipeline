@@ -1,5 +1,5 @@
 """Check setup without ever printing a key. Run: python3 -m pipeline.doctor
-Makes at most one tiny Anthropic call (about 20 tokens, a fraction of a cent) and one tiny Jev call."""
+Makes a few tiny calls (a fraction of a cent): Anthropic, the memo model (OpenAI) with memo settings, and Jev."""
 import os, sys, platform
 from pathlib import Path
 
@@ -15,7 +15,7 @@ def main():
         load_dotenv(env)
     except ImportError:
         print("python-dotenv not installed: run  pip install -r requirements.txt")
-    for k in ("ANTHROPIC_API_KEY", "TYPESAFE_API_KEY"):
+    for k in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "TYPESAFE_API_KEY"):
         v = os.environ.get(k, "")
         print(f"{k}: {'set (' + str(len(v)) + ' characters)' if v else 'MISSING'}")
 
@@ -28,18 +28,18 @@ def main():
             print(f"Anthropic OK: model={r.model} reply={r.content[0].text!r} usage in/out={r.usage.input_tokens}/{r.usage.output_tokens}")
         except Exception as e:
             print(f"Anthropic FAILED: {type(e).__name__}: {e}")
+
+    import json as _j
+    cfg = _j.loads((ROOT / "config" / "settings.json").read_text())
+    m = cfg["memo"]
+    if m.get("provider") == "openai" and os.environ.get("OPENAI_API_KEY"):
         try:
-            import json as _j
-            cfg = _j.loads((ROOT / "config" / "settings.json").read_text())
-            ids = [m.id for m in anthropic.Anthropic().models.list(limit=50).data]
-            print("Anthropic models on this key:", ", ".join(ids))
-            mm = cfg["memo"]["model"]
-            from .clients import Runtime, anthropic_call
+            from .clients import Runtime, openai_call
             rt = Runtime(ROOT / "runs" / "_doctor", 1.0)
-            txt, u, _ = anthropic_call(rt, model=mm, max_tokens=cfg["memo"]["max_output_tokens"], system="Answer briefly.",
-                                       user="Reply with the word ok.", thinking=cfg["memo"].get("thinking"), effort=cfg["memo"].get("effort"))
-            print(f"Memo model OK with memo settings (thinking={cfg['memo'].get('thinking')}, effort={cfg['memo'].get('effort')}): "
-                  f"{mm} reply={txt!r} usage in/out={u['input']}/{u['output']}")
+            txt, u, _ = openai_call(rt, model=m["model"], max_tokens=200, system="Answer briefly.",
+                                    user="Reply with the word ok.", effort=m.get("effort"))
+            print(f"Memo model OK with memo settings (reasoning.effort={m.get('effort')}): {m['model']} reply={txt!r} "
+                  f"usage in/out={u['input']}/{u['output']} (reasoning {u['reasoning_in_output']})")
         except Exception as e:
             print(f"Memo model check FAILED: {type(e).__name__}: {e}")
 

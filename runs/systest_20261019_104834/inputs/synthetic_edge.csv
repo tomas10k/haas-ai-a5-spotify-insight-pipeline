@@ -1,0 +1,7 @@
+review_id,review_text,review_rating,review_likes,app_version,review_timestamp
+SYN-E1,,1,0,8.8.0.0,2023-10-01 12:00:00
+SYN-E2,   ,2,0,8.8.0.0,2023-10-02 12:00:00
+SYN-ML,"Line one of a review
+line two, with ""quotes"", commas and an emoji 🎧",3,0,8.8.0.0,2023-10-03 12:00:00
+SYN-D1,good,4,0,8.8.0.0,2023-10-04 12:00:00
+SYN-D2,good,5,0,8.8.0.0,2023-10-05 12:00:00

@@ -1,15 +1,57 @@
 {
-  "note": "Editable. Measured pilot numbers never change when you edit these; only the projections do.",
-  "full_run": {"rows": 660622, "nonempty": 660609, "empty_quarantined": 13, "distinct_texts": 484189,
-               "share_long_texts_over_200_chars": 0.1437, "prepare_seconds_measured_full_file": 23,
-               "source": "runs/dev_full/prepare (measured on the full CSV, no model)"},
-  "controls": {"spend_cap_usd": 45.0, "haiku_output_token_cap": 300, "max_workers": 8,
-               "fallback_fraction_cap": 0.01, "max_requests_per_second": 20},
-  "verification": {"sample_reviews": 2000},
+  "note": "Editable. Measured pilot numbers never change when you edit these; only the projections do. Scope decision 2026-10-19: the final run classifies the declared 100,000 review scope (course allows at least 100,000) under a $10 total cap; full corpus projection kept for comparison.",
+  "full_run": {
+    "rows": 660622,
+    "nonempty": 660609,
+    "empty_quarantined": 13,
+    "distinct_texts": 484189,
+    "share_long_texts_over_200_chars": 0.1437,
+    "prepare_seconds_measured_full_file": 23,
+    "source": "runs/dev_full/prepare (measured on the full CSV, no model)"
+  },
+  "controls": {
+    "spend_cap_usd": 10.0,
+    "haiku_output_token_cap": 300,
+    "max_workers": 8,
+    "fallback_fraction_cap": 0.01,
+    "max_requests_per_second": 20,
+    "memo_output_token_cap": 6000
+  },
+  "verification": {
+    "sample_reviews": 2000
+  },
   "group_scale_factor": 3,
   "scenarios": {
-    "base":         {"token_multiplier": 1.0,  "min_retry_rate": 0.0,  "fallback_rate": "measured", "workers": 4, "memo_attempts": 1},
-    "conservative": {"token_multiplier": 1.25, "min_retry_rate": 0.05, "fallback_rate": "cap",      "workers": 2, "memo_attempts": 2}
+    "base": {
+      "token_multiplier": 1.0,
+      "min_retry_rate": 0.0,
+      "fallback_rate": "measured",
+      "workers": 4,
+      "memo_attempts": 1
+    },
+    "conservative": {
+      "token_multiplier": 1.25,
+      "min_retry_rate": 0.05,
+      "fallback_rate": "cap",
+      "workers": 2,
+      "memo_attempts": 2
+    }
   },
-  "local_compute": {"device": "MacBook Pro M5 (orchestration only, no local model)", "cost_usd": "unknown (not metered)"}
+  "local_compute": {
+    "device": "MacBook Pro M5 (orchestration only, no local model)",
+    "cost_usd": "unknown (not metered)"
+  },
+  "declared_scope": {
+    "rows": 100013,
+    "nonempty": 100000,
+    "empty_quarantined": 13,
+    "distinct_texts": 78099,
+    "share_long_texts_over_200_chars": 0.1335,
+    "prepare_seconds_measured_full_file": 3,
+    "source": "data/scope_100k.csv built by `python3 -m pipeline scope` (lowest seeded hashes, nests golden 50 and analysis_10000); counts measured by code"
+  },
+  "refresh_runs": {
+    "500": "runs/dev_500",
+    "10000": "runs/dev_10000"
+  }
 }

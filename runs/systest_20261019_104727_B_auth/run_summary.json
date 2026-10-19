@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-19T10:47:32-0700",
+  "calls_by_stage": [
+    {
+      "attempts": 1,
+      "cost_usd": 0.0,
+      "failed": 1,
+      "input_tokens": 0,
+      "model": "jev-1.13.0",
+      "output_tokens": 0,
+      "role": "enrich",
+      "step": "jev_classify",
+      "succeeded": 0
+    }
+  ],
+  "run_id": "systest_20261019_104727_B_auth",
+  "status": {},
+  "total_cost_usd": 0.0
+}

@@ -132,41 +132,23 @@ def replay(write=True, rate_multiplier=1.0, assumptions=None, quiet=False):
     memo = sum(c["_cost"] for c in cold if c["role"] == "memo")
     enrich_secs = runs["cold"]["stage_seconds"].get("enrich", 1)
     thr1 = texts / enrich_secs  # texts per second, one worker
-    P("\n## 2. Full run projection (estimates, not measurements)\n")
-    P(f"Scope: {F['rows']:,} rows; {F['nonempty']:,} nonempty classifications; {F['empty_quarantined']} empty texts quarantined by code; "
-      f"{F['distinct_texts']:,} distinct texts after valid exact text reuse. Share of distinct texts over 200 characters (Jev also picks a quote sentence): {F['share_long_texts_over_200_chars']:.2%}.\n")
+    P("\n## 2. Projections (estimates, not measurements)\n")
     P(f"Measured inputs: Jev input tokens per short text {mean(tok_short):.0f}, per long text {mean(tok_long):.0f}; Jev attempts per text {attempts_per_text:.3f}; "
       f"Haiku fallback rate {fb_texts / texts:.2%} at {money(fb_cost_each)} per call; verification {money(ver_each)} per review; group {money(grp)} and memo {money(memo)} once; "
       f"enrichment throughput {thr1:.2f} texts/s at 1 worker.\n")
-    P("| Scenario | Reuse | Jev classify | Haiku fallback | Verify | Group | Memo | **Total API** | Enrich hours | Over budget? |")
-    P("|---|---|---|---|---|---|---|---|---|---|")
     out = {}
-    for name, S in A["scenarios"].items():
-        for reuse in (True, False):
-            n = F["distinct_texts"] if reuse else F["nonempty"]
-            tok = (1 - F["share_long_texts_over_200_chars"]) * mean(tok_short) + F["share_long_texts_over_200_chars"] * (mean(tok_long) or mean(tok_short))
-            att = max(attempts_per_text, 1 + S["min_retry_rate"])
-            c_jev = n * tok * S["token_multiplier"] * att * jev_rate
-            fr = C["fallback_fraction_cap"] if S["fallback_rate"] == "cap" else min(fb_texts / texts, C["fallback_fraction_cap"])
-            c_fb = n * fr * fb_cost_each * S["token_multiplier"]
-            c_ver = A["verification"]["sample_reviews"] * ver_each * S["token_multiplier"]
-            c_grp = grp * A["group_scale_factor"]
-            c_memo = memo * S["memo_attempts"]
-            total = c_jev + c_fb + c_ver + c_grp + c_memo
-            eff = min(thr1 * S["workers"], C["max_requests_per_second"] / max(att, 1))
-            hours = n / eff / 3600 + F["prepare_seconds_measured_full_file"] / 3600
-            over = "**YES: exceeds cap**" if total > C["spend_cap_usd"] else "no"
-            out[(name, reuse)] = total
-            P(f"| {name} ({S['workers']} workers) | {'exact text reuse' if reuse else 'no reuse'} | {money(c_jev)} | {money(c_fb)} | {money(c_ver)} | "
-              f"{money(c_grp)} | {money(c_memo)} | **{money(total)}** | {hours:.1f} | {over} |")
+    for label, F in (("Declared final scope (100,000 reviews)", A["declared_scope"]), ("Full corpus (for comparison, not run)", A["full_run"])):
+        out.update(_project(P, label, F, A, C, mean(tok_short), mean(tok_long), attempts_per_text, jev_rate, fb_texts / texts,
+                            fb_cost_each, ver_each, grp, memo, thr1, money, prefix="" if F is A["declared_scope"] else "full_"))
+    _refresh(P, A, money)
     P(f"\nFixed overhead (group naming, memo) is counted once, never per review. Workers shorten elapsed time but do not lower cost; "
       f"elapsed time is capped by {C['max_requests_per_second']} requests/s shared across workers.\n")
-    P("## 3. Controls\n")
+    P("## 4. Controls\n")
     P(f"* Spend cap: **${C['spend_cap_usd']:.2f}**, enforced by one shared ledger that reserves worst case cost before every call and stops admitting work at the cap (progress is saved).")
-    P(f"* Output token cap (Haiku calls): {C['haiku_output_token_cap']}. Jev output is free and has no output cap.")
+    P(f"* Output token caps: Haiku calls {C['haiku_output_token_cap']}, memo (GPT-6 Luna, reasoning included) {C.get('memo_output_token_cap')}. Jev output is free and has no output cap.")
     P(f"* Maximum workers: {C['max_workers']}; maximum requests per second: {C['max_requests_per_second']}.")
     P(f"* Haiku fallback fraction cap: {C['fallback_fraction_cap']:.0%} of processed texts. Invalid output: one retry then quarantine. Transient errors: up to 4 attempts with backoff and jitter, each logged.")
-    P(f"* Decision: refresh this projection after 500 and 10,000 reviews, then start the full run only if the conservative scenario stays under the cap.")
+    P(f"* Decision rule: refresh the projection after 500 and 10,000 reviews (section 3), then start the final run only if the conservative scenario for the declared scope stays under the cap.")
     txt = "\n".join(L) + "\n"
     if write:
         (COST / "report.md").write_text(txt)
@@ -176,13 +158,67 @@ def replay(write=True, rate_multiplier=1.0, assumptions=None, quiet=False):
             "projection": {f"{k[0]}_{'reuse' if k[1] else 'noreuse'}": v for k, v in out.items()}}
 
 
+def _project(P, label, F, A, C, tok_s, tok_l, attempts_per_text, jev_rate, fb_rate, fb_cost_each, ver_each, grp, memo, thr1, money, prefix=""):
+    P(f"### {label}\n")
+    P(f"Scope: {F['rows']:,} rows; {F['nonempty']:,} nonempty classifications; {F['empty_quarantined']} empty texts quarantined by code; "
+      f"{F['distinct_texts']:,} distinct texts after valid exact text reuse. Share of distinct texts over 200 characters (Jev also picks a quote sentence): {F['share_long_texts_over_200_chars']:.2%}.\n")
+    P("| Scenario | Reuse | Jev classify | Haiku fallback | Verify | Group | Memo | **Total API** | Enrich hours | Over budget? |")
+    P("|---|---|---|---|---|---|---|---|---|---|")
+    out = {}
+    for name, S in A["scenarios"].items():
+        for reuse in (True, False):
+            n = F["distinct_texts"] if reuse else F["nonempty"]
+            share = F["share_long_texts_over_200_chars"]
+            tok = (1 - share) * tok_s + share * (tok_l or tok_s)
+            att = max(attempts_per_text, 1 + S["min_retry_rate"])
+            c_jev = n * tok * S["token_multiplier"] * att * jev_rate
+            fr = C["fallback_fraction_cap"] if S["fallback_rate"] == "cap" else min(fb_rate, C["fallback_fraction_cap"])
+            c_fb = n * fr * fb_cost_each * S["token_multiplier"]
+            sample = min(A["verification"]["sample_reviews"], max(20, round(0.01 * F["distinct_texts"])))
+            c_ver = sample * ver_each * S["token_multiplier"]
+            c_grp = grp * A["group_scale_factor"]
+            c_memo = memo * S["memo_attempts"]
+            total = c_jev + c_fb + c_ver + c_grp + c_memo
+            eff = min(thr1 * S["workers"], C["max_requests_per_second"] / max(att, 1))
+            hours = n / eff / 3600 + F["prepare_seconds_measured_full_file"] / 3600
+            over = "**YES: exceeds cap**" if total > C["spend_cap_usd"] else "no"
+            out[(prefix + name, reuse)] = total
+            P(f"| {name} ({S['workers']} workers) | {'exact text reuse' if reuse else 'no reuse'} | {money(c_jev)} | {money(c_fb)} | {money(c_ver)} | "
+              f"{money(c_grp)} | {money(c_memo)} | **{money(total)}** | {hours:.1f} | {over} |")
+    P("")
+    return out
+
+
+def _refresh(P, A, money):
+    """Section 3: the projection refreshed from real larger runs (measured, not modeled)."""
+    P("## 3. Refresh from larger measured runs\n")
+    P("| Run | Distinct texts enriched | Enrich attempts | Failed attempts | Enrich API cost | Cost per distinct text | Haiku fallback calls | Workers | Enrich texts/s | Projected declared scope enrich cost at this rate |")
+    P("|---|---|---|---|---|---|---|---|---|---|")
+    for size, rd in A.get("refresh_runs", {}).items():
+        d = ROOT / rd
+        if not (d / "calls.jsonl").exists():
+            P(f"| {size} (`{rd}`) | not run yet | | | | | | | | |"); continue
+        calls = [json.loads(l) for l in open(d / "calls.jsonl")]
+        en = [c for c in calls if c["role"] == "enrich"]
+        cost = sum(c.get("cost_usd") or 0 for c in en)
+        texts = sum(1 for _ in open(d / "enrich" / "enriched_texts.jsonl")) if (d / "enrich" / "enriched_texts.jsonl").exists() else 0
+        logs = [json.loads(l) for l in open(d / "run_log.jsonl") if '"stage": "enrich"' in l and '"completed_now"' in l]
+        speed = "; ".join(f"{g['workers']}w: {g['completed_now'] / g['seconds']:.1f}" for g in logs if g.get("seconds") and g["completed_now"])
+        per = cost / max(texts, 1)
+        P(f"| {size} (`{rd}`) | {texts:,} | {len(en):,} | {sum(c['outcome'] == 'failed' for c in en)} | {money(cost)} | ${per:.6f} | "
+          f"{sum(c.get('step') == 'haiku_fallback' for c in en)} | {', '.join(sorted({str(g['workers']) for g in logs}))} | {speed} | "
+          f"{money(per * A['declared_scope']['distinct_texts'])} |")
+    P("")
+
+
 def check():
     """The instructor's arithmetic checks, offline: doubling API rates doubles API spend and leaves time unchanged;
     changing projected volume leaves the measured pilot unchanged."""
     a = replay(write=False, quiet=True)
     b = replay(write=False, rate_multiplier=2.0, quiet=True)
     A = json.loads((COST / "assumptions.json").read_text())
-    A["full_run"]["distinct_texts"] *= 2; A["full_run"]["nonempty"] *= 2
+    for k in ("full_run", "declared_scope"):
+        A[k]["distinct_texts"] *= 2; A[k]["nonempty"] *= 2
     c = replay(write=False, assumptions=A, quiet=True)
     res = {"api_cold_x1": round(a["cold"], 8), "api_cold_x2_rates": round(b["cold"], 8),
            "doubles": abs(b["cold"] - 2 * a["cold"]) < 1e-12, "time_unchanged": a["cold_seconds"] == b["cold_seconds"],
@@ -223,11 +259,12 @@ def pilot():
             for r in read_jsonl(run_dir / "records" / name):
                 f.write(json.dumps({k: r[k] for k in keep if k in r}, ensure_ascii=False) + "\n"); n += 1
     texts = list(read_jsonl(run_dir / "prepare" / "texts.jsonl"))
-    json.dump({"run_id": run_id, "input_sha256": sha, "ids": n, "unique_texts": len(texts), "label_config": m_cold["label_config"],
+    with open(COST / "pilot_runs.json", "w") as fh:
+        json.dump({"run_id": run_id, "input_sha256": sha, "ids": n, "unique_texts": len(texts), "label_config": m_cold["label_config"],
                "long_review_ids": [t["first_review_id"] for t in texts if len(t["review_text"]) > 200],
                "cold": {"wall_clock_seconds": m_cold["wall_clock_seconds"], "stage_seconds": m_cold["stage_seconds"]},
                "warm": {"wall_clock_seconds": m_warm["wall_clock_seconds"], "stage_seconds": m_warm["stage_seconds"],
-                        "cache_hits": len(texts)}}, open(COST / "pilot_runs.json", "w"), indent=2)
+                        "cache_hits": len(texts)}}, fh, indent=2)
     replay()
 
 

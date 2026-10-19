@@ -1,1 +1,5 @@
-{ "cleanUrls": true, "headers": [{ "source": "/data/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }] }
+{
+  "cleanUrls": true,
+  "rewrites": [{ "source": "/api/:route*", "destination": "/api/index?route=:route*" }],
+  "functions": { "api/index.py": { "includeFiles": "api/_db/**", "maxDuration": 30 } }
+}

@@ -1,0 +1,782 @@
+origin_review_id,text,enrich_topic,verify_topic,enrich_intent,verify_intent,enrich_severity,verify_severity,enrich_needs_review,disagree
+dd75c7d3-5404-4d5e-9dbb-c9c0c42bb210,This is worst app ever I seen latest update is ruined our happiness,other,other,complaint,complaint,2,2,False,
+283e5b71-0109-452e-a2f0-c944afb11628,"I love Spotify you can search any songs you want ,but the problem is I can't install it fast",playback,playback,complaint,complaint,2,2,True,
+b618b6d9-4dfd-4028-97fb-5b76bbd34576,Very disappointing experience ' always crashes and pauses for every song played. It is annoying to the point where I uninstalled it. I recommend if u face same problems just remove it.,playback,playback,cancellation,cancellation,4,4,False,
+146a3646-ce6c-4063-b3e4-4c0d5fd050fa,I love this app but the new update ruined everything... Let people turn off the shuffle option and not just switch between shuffle and other less useful shuffle.,usability,usability,complaint,request,3,2,False,intent;severity
+fd33f75f-ee60-444f-b7ff-01bb41be2366,The worst. YOU HAVE TO BUY PREMIUM just to see the lyrics. Can't play music without shuffle anymore. It's just a become a paid app where you have to pay for evening listening to music ! Literally ever,billing,billing,complaint,complaint,3,4,False,severity
+219c8ad4-ae7d-43cf-8eef-056a6458bea2,All different songs are very different and very nice.,other,other,praise,praise,1,1,False,
+89cb4782-7f1c-4a70-8b0c-4523bae674f6,Great App For Music,other,other,praise,praise,1,1,False,
+8111b313-26ce-46d0-ba86-fe9db05ce7d2,"Great app overall.The best platform ever created to listen to music , no bugs no problems except one , spotify keeps redownloading the songs like every 2 days , can you help me with this?",downloads,downloads,complaint,request,3,3,False,intent
+59034dd7-0292-4d47-80a8-9636916c6980,Ads interrupting podcast DESPITE Premium subscription???? Remind me why I pay my premium family subscription each month if you're going to shove ads in my face anyway??? Really dissatisfied,usability,usability,complaint,complaint,3,3,False,
+64bd3d44-ad1b-46d5-a3bf-5a9bb32692a5,Spreading Hate,other,other,unclear,unclear,1,1,False,
+9913b050-1cd6-4411-87f1-995493d4706b,"So Much to listen to! New stuff, old stuff, all the stuff in between! And Podcasts, too!",other,catalog,praise,praise,1,1,False,topic
+9595eac8-3320-405f-8316-3ac629249fff,Excellent online music app. Best one ever.,other,other,praise,praise,1,1,False,
+5fbd876b-78c7-4f68-bcc4-f0c627d2166a,"I found that my premium account has just been recently renewed. Now, I can't play downloaded songs offline? WTH! WHAT IS PREMIUM FOR?!",downloads,downloads,complaint,complaint,4,4,False,
+26a0fe3e-1868-4dcb-9369-88dd51bf4265,Hite this application 🖕,other,other,unclear,complaint,1,2,False,intent;severity
+4399774b-c6bd-4d9e-8ffc-fa340d41546a,Don't like new update..... We want our old Spotify features.,other,usability,complaint,complaint,2,2,False,topic
+01e158b8-3ef8-4637-8813-dd3fc30e209f,"The best music service out there.I don't get why people are complaining. I didn't like the ads,the limited skip so i went with a year long subscription. After that,all things i hated disappeared. Peop",billing,billing,praise,praise,1,1,False,
+c5c4fb28-6432-40a6-b151-cc530a4c0b9f,Every time I want to listen to a song Spotify plays something else that I have never even heard.,catalog,playback,complaint,complaint,3,3,True,topic
+ab51c9b2-b7b0-4eff-bb2f-519a656a3724,This is so bad I can't even listen to my fav songs,playback,playback,complaint,complaint,4,4,True,
+8fd314d4-f887-4dab-aa94-658d03c20f57,Awesome music!,other,other,praise,praise,1,1,False,
+3b7b9e98-a526-4b27-9a01-08ba4c77e66c,Scam,other,other,complaint,complaint,1,2,True,severity
+6f50f062-f3e3-4b54-8051-b0cc28bfc3f7,Love it! I'm able to broadcast from my phone to my stereo with no degradation to the sound.,playback,playback,praise,praise,1,1,False,
+4fb25a07-9932-414e-8c8d-782d5a738414,कुरान को जलाया गया स्वीडन में और ये ऐप स्वीडन का है इसलिए baycot स्वीडन,other,other,unclear,unclear,2,1,False,severity
+f2fbf742-3931-4236-a420-1e983c70c193,This app is awesome but they will give us 3months free after adds will irritate us but this app is awesome anyway,usability,usability,complaint,complaint,2,2,False,
+cc80a110-be74-48bd-8e76-53e3ccd8dbf2,Some how,other,other,unclear,unclear,1,1,False,
+e86c8bab-3bbd-4ef4-940e-a8b5f313cc8c,Top par ayega yeha ap meri music app ki list mai Bas bottom se ayega 🤣,usability,other,complaint,complaint,2,2,False,topic
+61759719-9084-45fe-a7d5-c4419f96f89e,Why the lyrics are not available for most of the songs....,catalog,catalog,complaint,complaint,3,2,True,severity
+84cf6654-b8cf-4c4b-8600-fc51263659c6,I like this app no need to download many songs in my device.playlists are accordingly and knowledge of most songs that i wasn't aware of. Being on premium membership makes a lot of sense from what i g,downloads,downloads,praise,praise,1,1,False,
+d7eb3405-557b-48f3-88c1-10b2082fd81a,"I have Spotify Premium because I use this app constantly- I have tons of playlists and I love it, but I hate the new changes. What new changes, you ask? Well, it changes all the time! Premium recently",billing,billing,complaint,complaint,2,2,True,
+4ca49bed-b637-410f-a846-eaf12fbea961,Great services👏👏,other,other,praise,praise,1,1,False,
+5f4c3439-ff3e-4559-9464-6c1819906eec,Nice app. Very good to use and the songs are really good.,usability,other,praise,praise,1,1,True,topic
+e8f7973b-5a42-43f7-84be-3333ab3b2601,"as a paying member, i feel like there should be more options for non premium members",billing,billing,request,request,1,1,False,
+8d5f81b0-c11b-42b6-86b5-d9ce0f0206bd,"Nah, the app is useless now. All basic features a music player app supposed to have is a premium feature now. I pray for this downfall of yours.",billing,billing,complaint,complaint,3,4,False,severity
+236c77f8-b611-4cc0-be90-19d0bd6f7ac2,Torr makechodo land app tor maai ke bur mai land hati ke land kahnki maghi tor mai a bur dhrobojit ar land gowala ka gu khayega,billing,other,cancellation,unclear,5,1,True,topic;intent;severity
+5c6520c3-461a-4db9-af64-c4344ca7f750,Hate this app👎👎👎👎👎👎👎👎👎👎👎👎,other,other,complaint,complaint,2,2,False,
+4136adff-b968-4848-94dd-c1cd1a374e95,"It's fun for a while, then suddenly my music playlist gets shuffled and i can't control what i want to listen to. I hate it, very much... It says free but it forces you to buy premium nevertheless. Ni",billing,usability,complaint,complaint,3,3,False,topic
+1f1913d0-df12-4ec8-adec-5ad2afce8e9b,Well too many ads even after premium,usability,usability,complaint,complaint,2,2,True,
+31adc164-287c-44ca-b2b4-f0d64bf3720e,I've installed this app once again but it's not opening even keeping it on for hrs.....,playback,playback,complaint,complaint,4,4,False,
+24afb8ea-c185-48dd-8daf-d161732f48f2,Its not instaling,other,playback,complaint,complaint,4,4,False,topic
+40dba06f-de44-44cf-9827-16f451d76b4a,"Tbh, this is a great app. I love it. It's like my favourite Music app",other,other,praise,praise,1,1,False,
+6df4c23e-5e99-48a8-bfc5-c9d9b9984df4,🥺❤️🤝,other,other,unclear,unclear,1,1,False,
+513aa2b8-e260-44ce-a717-aef611fe369e,"Remove your f smart shuffle I don't want random songs of band I hate like ghost, ghost is not fkn metal",usability,usability,request,complaint,2,2,False,intent
+f50044f3-4a10-4aef-84f4-76fe7a1634b3,It annyoes me that i cant listen to my playlist in order other then that its okay,usability,usability,complaint,complaint,2,2,False,
+01564a1a-d3fb-468c-b968-06daa9395e19,Greatest music app ever. I just wish it had more the Soul Candi collections.,catalog,catalog,request,praise,1,1,False,intent
+7e5eae5d-38ce-42b3-b2c8-f5193f4ba3f9,There are too many apps and no queue is allowed disappointed spotify,usability,usability,complaint,complaint,2,2,True,
+82e63104-9de7-40ac-8a2f-e71a476c40eb,It's like being on an island and the only thing you could have is Spotify.,other,other,praise,praise,1,1,False,
+0a41cf06-24dc-48c1-ba24-955bfa4ee5a7,अच्छा,other,other,praise,unclear,1,1,False,intent
+41b3b762-368d-49f7-a669-7e02701edd7b,I GET TO LISTEN TO ALL MY FAV SONGZ RAAAA I LUV THIS APP!!! >_<,other,other,praise,praise,1,1,False,
+21e4cb6f-f34e-4fee-91af-1f98fe1c99ab,Watch app is not working properly I hit the play button and it sends me to bluetooth but if I skip the song it will play and is able to play on watch with quick control buttons,playback,playback,complaint,complaint,3,3,False,
+766c96d8-eb0b-4215-b9af-110514ab2871,Beats of every song are very clear and that's the peace of song lovers 😇,playback,playback,praise,praise,1,1,False,
+b84a9e1f-3a8c-48e5-97d1-cee561603491,My suggestions for improvement: 1) Allow a drag-and-drop rearranging of playlist items on the phone app. 2) Display song lengths when viewing a playlist in the app. 3) Identify songs with slurs as cle,usability,usability,request,request,1,1,False,
+c94f91bc-3c27-4487-adca-02143381e1d2,"Great app for both free and premium users, never had any problems with it. Great selection of music including some more obscure stuff. I listen to extreme metal and was surprised at how much is on her",catalog,catalog,praise,praise,1,1,False,
+45bb526d-c990-4306-a0a9-6e4810bb2cfd,Very nice:-),other,other,praise,praise,1,1,False,
+4098e9dc-b2e5-4159-a8e6-dd243e8db6c7,"What's the point if I'm limited to access music I want, better listening radio than this",catalog,catalog,complaint,complaint,3,3,False,
+2ae7927d-cba2-4051-9016-f018a000cb27,Beautiful and simple to use. Also love the quality of music in it. The issues however are that songs I didn't expect to be very censored especially when I look know they're explicit. And that's even a,catalog,catalog,complaint,complaint,3,2,False,severity
+57bcdd57-abc6-48d0-9726-7782fcc4b712,Probably the worst app I have ever used. I pay good money for premium however the songs take forever to load (I have good internet speeds) and it takes so long to access my own liked songs. Am conside,playback,playback,cancellation,cancellation,3,3,False,
+1532899d-ad37-483d-99df-35b8ff3bf914,التطبيق ابدا ابدا مب حلو خصوصا بعد التحديث الجديد ما نبغى التحديث الجديد رجعوا القديم الاغاني عندي ما تفتح,playback,playback,complaint,complaint,4,3,False,severity
+484bfcc6-aee5-4e9a-b10e-231ed0afb9a8,Absolutely rubbish!! 😡,other,other,complaint,complaint,2,2,False,
+acb6a8c7-f10e-4529-b7e1-56acbc203fdb,Love great music selection,catalog,catalog,praise,praise,1,1,False,
+9d570965-0507-4dd3-9fb6-008246491e6a,lo amo muchooo,other,other,praise,praise,1,1,False,
+67ea416e-3ede-4f5a-a397-da68de291108,"Update! It now wants to work offline! The uninstalled it worked. You're app works completely fine, it's just that I have premium and when I downloaded the songs. Some of them completely acted like the",downloads,downloads,complaint,complaint,3,4,True,severity
+eae84e14-0d71-4b71-bbcd-950dac5299ac,"Can't even play a specific part of song, can't play last song, and can't loop songs?",playback,usability,complaint,complaint,3,3,True,topic
+ceccec2a-7e90-41ff-9c2c-2318dcfb069b,Ruim,other,other,unclear,complaint,1,2,False,intent;severity
+0f201181-42cf-4d40-ba97-703e8b34efae,I bycot this swedan app because swedan government allowed to burn holyquran,other,other,cancellation,unclear,2,1,True,intent;severity
+b1205a93-bce9-4800-90d2-dc37cbba6ea1,The new update really really irritating 😣😣😣😣 please change it to old Spotify where we can play any song any time and many time without shuffle play and also we can't restart the song by our choice ple,billing,usability,complaint,complaint,3,3,False,topic
+50c9ebad-64f2-4311-810e-abc4b03991e9,should we listen to the songs u decide? What the hell is wrong with the app after the update...are u mad or smthng,playback,usability,complaint,complaint,2,3,True,topic;severity
+2673ed48-e279-4b09-96e7-425540871a55,Mnike uya Sizwa lesi gubu sanga madla sazo pila mnika mnikaaa hike hike hike,other,other,unclear,unclear,1,1,True,
+43878157-b26f-42c8-ada2-0a629bae0645,Using the app it's like this music is some what low then a ad pops up being like DID YOU KNOW THAT like way louder then the music that just previously played and to many ads the 9.99 isn't worth it if,usability,usability,complaint,complaint,3,3,True,
+4ae260da-ee6b-40d4-81b9-8cd7bf5b5c41,"i love it sm,,, except sa ads ☹️☹️",usability,usability,complaint,praise,2,1,False,intent;severity
+bec25555-202d-415b-b497-02c9647a12c4,They put a lot of effort into makin this app worse for the user with everyupdate.,other,other,complaint,complaint,2,2,False,
+d900bf09-d722-4d78-87e4-0f57dab7bb03,Just Hate It .,other,other,complaint,complaint,2,2,False,
+af3551d1-606a-4884-8170-4edf8d426487,Seriously update it I can't even play the songs I want it won't let me if I click on it all it does is play I tiny bit of the song,playback,playback,complaint,complaint,4,4,False,
+2063ad4e-3e28-45eb-ab94-12a12a95dfaf,♥️,other,other,praise,praise,1,1,False,
+a2d657bb-6e0a-4e3d-bf1c-be426f774f12,Really good listening,other,other,praise,praise,1,1,False,
+cf25e402-d08f-467e-a68e-78bd4fd35022,You must provide good service even if we are not paying for it. the ads are enough but you must let us enjoy the music we like and not the other stuff that we don't even know. I hate that you have to ,billing,usability,complaint,complaint,3,3,False,topic
+0368be4b-82f8-4fe2-8402-81ef34a9a4f8,"So good with lyrics but it will be perfect if the app add option for romaji lyrics for Korean, Chinese, and Japanese song...",catalog,catalog,request,request,1,1,False,
+847b42f0-35d9-46f0-bf63-e81a4c0965b0,Mind blowing. A must have,other,other,praise,praise,1,1,False,
+9a58b80e-0249-4395-b251-04af13f15fd0,"I've loved the app in the past, but recently it seems to crash frequently. It'll play a couple of songs, then suddenly stop playing.",playback,playback,complaint,complaint,3,4,False,severity
+5bc1bc31-97ff-442a-bfa0-ffb7374dbcb4,"Recently returned to Spotify after getting really annoyed with all the ads on YouTube. It's not like it used to be, and not in a good way. Now I see there is an update which will probably make things ",usability,usability,complaint,complaint,2,2,False,
+d37e53d8-d1b4-4a43-883d-cafdab520522,Advertisement😠Advertisement😠Advertisement 😡,usability,usability,complaint,complaint,2,2,False,
+d76625fb-ad9a-4ff7-9325-4d0c0082606e,"My favorite music app, now my least favorite app",other,other,complaint,complaint,2,2,False,
+d6510d55-f220-4611-bd10-05312c08ecee,why is the latest update so buggy? when close the app the queue disappears and whenever i reshuffle it automatically goes to smart shuffle and i cant disable it,usability,usability,complaint,complaint,3,3,False,
+c5f17d4f-f6d2-41d9-9fe5-d4ab99ca9e85,Good good to have on your mobile,other,other,praise,praise,1,1,False,
+fb414c08-7ba6-41a8-8fef-76eb28c19901,Very often losing downloaded songs,downloads,downloads,complaint,complaint,5,3,False,severity
+156e0b5a-f05e-468e-9768-021f10fb48b7,This the best music player i have ever seen it gives me the vibe out of the world,other,other,praise,praise,1,1,False,
+455a16b9-e7fd-45b4-9cfa-553011c2428e,Hi Spotify Plz fix the bug or whatever problem occurred in my spotify or let me know what am i suppose to do ..my Spotify is stuck on update payment page ..I m trying to update but its not accepting m,billing,billing,complaint,complaint,4,4,False,
+e2efca82-39e9-4426-8a49-05046a01e073,Lovee itttt,other,other,praise,praise,1,1,False,
+05fe2cb0-537f-4de0-ac8e-34da2b2b043d,"I've had since I was 16, 3400+ songs just in my liked songs! Fantastic",other,other,praise,praise,1,1,False,
+a213510a-444a-468c-8277-85f12d09c3e2,"Initially, it was working fine but recently app closes automatically after playing 2-3 songs.",playback,playback,complaint,complaint,3,4,False,severity
+e81205e5-c685-46ae-9acf-d4ca4f5f129e,Chutiyaapp ever,other,other,complaint,complaint,1,2,False,severity
+5edf448f-de1c-4d5b-bf81-d9837978990a,Not a very good app ... first of all you can't play the song you want to play ... leading with you can't skip back to a song .... to continue with they keep choosing the song for you ... Every time yo,usability,usability,complaint,complaint,3,3,False,
+9dceef41-a902-45a6-a405-a12b23578c58,The broadcast status is now not available for android users which is a very bad thing....only IOS users are having it.,other,usability,complaint,complaint,3,3,True,topic
+9c7c6639-dcc0-4dcb-8804-0011ad8690ed,Annoying when I get the same ad twice. But this is honestly the only app I actually care about.,usability,usability,complaint,complaint,2,2,False,
+f82c31d6-4a85-4ad6-98ea-e47235b28adc,Was the best music app. Not any more,other,other,complaint,complaint,2,2,False,
+dfb4fbe4-d0d5-4559-936f-a0225aacf293,Rocking...smiling..groovin,other,other,praise,praise,1,1,False,
+f967e55d-36fb-4f89-b737-baec9e26eba8,Not gonna buy premium at any cost when 100s of other music apps are available in the market 🤣,billing,billing,unclear,complaint,1,2,True,intent;severity
+62d5ca2e-37b1-46bf-b742-458cef0e13f5,Worst I've ever used,other,other,complaint,complaint,2,2,False,
+9932e215-e6d6-4944-9a77-78632ec8cd2b,Pretty good stuff here..,other,other,praise,praise,1,1,False,
+1d47f268-c226-45ee-a443-79a621681f0a,Please band Karo is app ko,other,other,unclear,unclear,1,1,True,
+119ba169-d4eb-411a-859e-3dbf84bd5f38,"Like recommendations, ability to download and lyrics feature.",catalog,catalog,praise,praise,1,1,False,
+a4bb8275-6400-4d54-a4b7-bfa87b474323,"Best music app ever imo, sure ads are annoying but with premium it's a lot better. 10/10 for sure though, better than Pandora and other music streaming apps",other,usability,praise,praise,2,1,False,topic;severity
+57ed2010-a3c8-4be1-adc1-fb35098314a7,"Spotify doesn't work anymore on my pc. It tells me it can't play the music right now. It was uninstalled and reinstalled twice, and it still doesn't work! Help, please.",playback,playback,complaint,complaint,4,4,False,
+01b83f1d-df58-4f97-b91b-0dfde6dd9473,Very poor experience sometimes feels like i came to hear advertisement not songs in short there are too many ads,usability,usability,complaint,complaint,2,3,False,severity
+0ec5ddf7-be19-4312-bc85-c6392458c8d7,Basic features now got changed into premium features how is this even possible to do something like that and our choice of music is also limited by the amount of music been played. Don't think this wi,billing,billing,complaint,complaint,3,3,False,
+7eba1521-c47d-4a34-9d98-ff62560f0540,"Why did you disable the current widget with a placeholder that doesn't work, neither button does anything and the replacement is too big. Total fail as the widget is how I use it. Put it back",usability,usability,complaint,complaint,4,3,False,severity
+7d12f44d-c2b8-4a5e-a14f-42956fef9321,"The app used to be good once. Now with the new update the basic features are coined as *premium features*, the experience with this app now is pathetic and annoying. Just for the sake of sales, the fr",billing,billing,complaint,complaint,3,3,False,
+8ffe3584-7e5f-41d7-8061-da9b2c4ed9d4,I started using Spotify again when they fixed the problem re stopping music at 11 seconds. I cannot live without Spotify. :D,playback,playback,praise,praise,4,1,False,severity
+2e520545-1aab-4a12-a02c-19ce6bd671d4,Where is the lyrics????,catalog,catalog,complaint,request,1,1,True,intent
+b9f41f2b-b353-4ab0-9d91-e1408640022c,app works great always have a great selection of music,catalog,other,praise,praise,1,1,False,topic
+525ac275-d088-4f73-a198-ef0ef8d3c5a2,It has lots of options to choose from and I Ise it a lot.,catalog,other,praise,praise,1,1,False,topic
+41212a8c-1d64-4e5c-ad6d-3aa8bd15de08,I like spotify so much coz it eases everything in a way that whatever u want is always available thank you so much ..,catalog,other,praise,praise,1,1,True,topic
+d3a5a4c7-008e-441d-8f8a-5602f4444f04,Awesome music app. Never disappointed,other,other,praise,praise,1,1,False,
+c4e4607e-8538-4f98-aa0b-a47f0709fc9c,Very puare,other,other,praise,unclear,1,1,False,intent
+78ccefd8-3987-4dc0-9539-153f32c1db90,"Having spotify without premium is good for what it is, with a wide selection of music to listen to. The ads are ads (annoying) and you only get 3 skips during a playlist, which i think is very annoyin",billing,usability,complaint,complaint,2,2,True,topic
+936e00ae-5977-4d74-8770-54a99c121f1a,The best decision,other,other,praise,praise,1,1,False,
+729e90cf-260c-4b67-880a-75cb08b31df4,"Great app, especially the paid version. That said, giving errors since the last few days, not working at all.. I'm a paid subscriber.. kindly help.. The screen suddenly closes within a second of playi",playback,playback,complaint,complaint,4,4,False,
+72197e6c-b038-49f9-b1aa-95f028884bd5,Bakar raadi app never gonna delete it,other,other,praise,praise,1,1,False,
+a91dcd28-31a8-4a15-908b-6c0aabe7fe7d,it was a good app but now I get ads like every 10 mins and it won't load the songs lyrics.,usability,usability,complaint,complaint,3,2,False,severity
+d0be428c-4882-4fc6-bb25-2d11b659432c,recommend,catalog,other,praise,praise,1,1,False,topic
+9479927f-7720-401b-9d15-7377865ac3d8,Não aparece a letra da musica mais,catalog,catalog,complaint,complaint,3,3,True,
+d7849a67-f2ef-46ae-988f-da6c66d4c48c,"In new update, we can not ask the song again, we can't play queue songs. Worst update ever. Feeling basic feature is dropped. Quiting this app🙏🙏",usability,usability,cancellation,cancellation,4,4,False,
+82366258-7ddf-4c1c-9bd4-df40eeef7eaf,So much songs.,other,catalog,praise,praise,1,1,False,topic
+4c18f77b-3c32-4dde-afd3-a7a6568f3dac,There is showing not play list found. I can't able to play the songs fix this problem!,usability,playback,complaint,complaint,4,4,True,topic
+74ed038d-905e-49eb-8e3f-3b333a5ee1aa,It's chill.,other,other,unclear,praise,1,1,False,intent
+f5cf83a5-d9e6-49c3-96dd-9b68feda6cb9,Easy to find new songs,catalog,catalog,praise,praise,1,1,False,
+ae18f541-8907-424a-bd44-7d331de32803,"These are issues that has gotten worse over the last few months. App continuously runs in background even when closed, and will randomly start playing. Or, app will refuse to close. App will ""forget"" ",playback,playback,complaint,complaint,3,3,False,
+3fbacf1d-7614-49fc-bce5-8b3e487dec56,"ഒരു അടിപൊളി ആപ്പിൾകേഷൻ, അന്ന്",other,other,praise,praise,1,1,False,
+77316975-7ffe-40e0-b749-a466582357d2,"(1) I have to deal with anglicised names which offer no clue to the original Chinese, and HK, Taiwan transliteration plus Mainland China pinyin. (2) Search in Playlist doesn't work (3) Playlists canno",usability,usability,complaint,complaint,3,3,False,
+49287ff8-c04d-47ef-ab2c-2eb2b9793166,This is my best app,other,other,praise,praise,1,1,False,
+d9abc74b-656c-488a-a5c6-43e449433644,I hate the adds,usability,usability,complaint,complaint,2,2,False,
+94848b62-c614-4727-b388-93c912cf2c6b,"I enjoy the app for the most part, I have been a Premium user for around 10 years. The only annoyance is that commercials/ads are at a minimum 3 times louder than the podcast I am listening to. Good t",usability,usability,complaint,complaint,2,3,True,severity
+5cb9b451-be48-406f-abd9-1aef98ed8eff,"PREMIUM IS WORTH IT♡ I don't go long without using Spotify, sleep podcast content, audio theater, great bredth of music content. CAN WE PLEASE ""LIKE"" PODCAST EPISODES!?!? Needs more non-USA content an",catalog,catalog,request,request,1,1,False,
+b2ec1fcd-b619-42d5-b48e-61d696bdc684,Hate this 👎👎👎,other,other,complaint,complaint,2,2,False,
+fbdb1028-0c4c-494b-9890-52401169523d,The best music app available I love it,other,other,praise,praise,1,1,False,
+7ec07ac7-438e-4283-ac41-c0fd80dbfbd9,Good when adds are not present,other,usability,praise,complaint,1,2,False,topic;intent;severity
+de939314-74f0-4a03-bc8b-ef2230a391d5,"Without any doubt , go and install 👍",other,other,praise,praise,1,1,False,
+f2811863-1d62-404c-9665-5398b6035b20,Happy. So lovely to have such a selection of my favourite music,catalog,other,praise,praise,1,1,False,topic
+c8f4de10-b188-467f-8ca0-10874e6ee09d,There is so many changes and all things require premium this is not good . I always listen music from this app and my all Playlist was there . I love this app pls remain this app the previous on pls 🙏,billing,billing,complaint,complaint,3,3,False,
+61fd4dfd-3cb6-48f6-a684-229ae78fa36a,Omgomgomg great but pricey,billing,billing,complaint,complaint,2,2,False,
+583b5a01-8e7d-4328-8914-e95bf96b6d86,This app is getting worse day by day and giving all the features of the app to premium users is seriously violating.I refer switching to another app as this is looting.,billing,billing,cancellation,cancellation,3,3,False,
+4f629484-f658-499f-80c3-18f99416a23d,Legit...no caps,other,other,praise,praise,1,1,False,
+b3eecf99-7d08-49d0-8383-da8cbdc94277,o p,other,other,unclear,unclear,1,1,False,
+a288f462-38e0-4227-ae01-be289ac1f1f7,Many ads I face when I listen songs Reduce ads,usability,usability,complaint,request,2,1,False,intent;severity
+577fe1ca-1056-4f4c-a43a-a76b97cbedc4,I have deleted my account because it wouldn't allow me to play my playlist unless I went to another one played that and would have to go back and play the one I wanted to play and now I can't even mak,access,playback,cancellation,cancellation,4,4,True,topic
+3d4e17e7-c768-4d6a-967f-f4a3fdcee78e,Bring back the earlier spotify,usability,other,request,request,2,1,True,topic;severity
+a1a52508-1b15-478f-8582-d39dfe0df66c,"I'm an account manager for a family plan, who suddenly doesn't have access to their account. I've been trying for days to login through Facebook, on every device I own, which is the only way I have ev",access,access,complaint,complaint,4,4,True,
+bb563781-124e-46d1-8563-2a6f377ee042,THE BEST BANG FOR YOUR BUCK.,billing,other,praise,praise,1,1,False,topic
+8f9cf68c-a6eb-4a2e-915c-b8e5915def67,Terrible i had to delete because of all the frustration. First of all many songs that aren't even from the artists im looking for popping up(many copies of one song). Secondly it forces you to listen ,catalog,catalog,cancellation,cancellation,4,4,False,
+b04a60e1-1710-417a-8036-85e5bd60b743,Some restrictions if you don't have premium.,billing,billing,complaint,complaint,3,2,False,severity
+7b6e9957-a402-4fd7-a00c-c0d30e79de1b,Dont use,other,other,unclear,unclear,1,1,True,
+82c9306a-dd0c-4d79-9322-ccc1ae72e3e3,It's great.,other,other,praise,praise,1,1,False,
+c0f89710-0b4b-4e1f-89d5-909a801205f6,I hate Spotify everytime I play a song it just shuffles it and plays a different song can you please fix it,playback,playback,complaint,complaint,3,4,True,severity
+6f7eadad-d2b9-455f-8710-2bfb6770e541,App is becoming shittier day by day . Removes the basic things and started charging for it . RIP spotify (that's why you shouldn't sponsor Barcelona),billing,billing,complaint,complaint,3,2,False,severity
+a5da310f-2500-43a8-b988-9f6d5c06012c,Great place to find almost any song!,catalog,catalog,praise,praise,1,1,False,
+7cd13629-0e6a-48e7-80e9-afedb2ed5e59,"Y : . \ .. ~I . . .I .?. .- I .of .-/ ' . .. . o I "" o . . . . / :thin.k 1 s \ \ . 1!.13'.0x.am i .\: / . -. | q . . 1 .',and r",other,other,unclear,unclear,1,1,False,
+5da7e835-fea0-447f-ba6a-d8729ef9a022,I started using this app this not one holl month ago and it went from great to absolutely disgraceful for one whenever I try to play one of my liked songs it only plays about 10 seconds of it on repea,playback,playback,complaint,complaint,3,4,True,severity
+8f5c6d37-b4bb-439d-9275-a3c79b2d893c,Great for your favourites.,other,catalog,praise,praise,1,1,False,topic
+e1039046-603b-4e05-89b2-2297eb79c5e3,This Is The Best Music Streaming App Ever Developed,other,other,praise,praise,1,1,False,
+87991d2b-7d43-43d9-bcc9-0b2d2a66dd0d,Best music🎶 app on earth🌎,other,other,praise,praise,1,1,False,
+227261dd-8acf-4cce-86fc-fcaf2efc2807,Most of the time I can't even play a song on my Xbox when I used to be able to and it also pauses my music all the time it used to be an amazing app please fix,playback,playback,complaint,complaint,4,3,False,severity
+05ad356c-bd4a-49b3-8fb8-b18b95721ba3,Great app. Enjoying listening to all my old favourite music,other,other,praise,praise,1,1,False,
+4d621472-d804-4df9-8293-da90c53f9736,I'm cancelling my account. This app should apologize because of what happen to Lisa after their wrong announcement and do some damage control.,other,other,cancellation,cancellation,2,1,False,severity
+eb20fe3f-608d-4707-89bc-3cc7542e97d5,This very good app no add only enjoy over favourite music's,other,other,praise,praise,1,1,False,
+13a347e2-1255-434b-8af0-98e5e8bfe04b,Otbso cool I,other,other,unclear,unclear,1,1,False,
+ef7c4c0d-e6f5-4601-9907-2e2c8e0d93bc,Paise lootne ke kaam kar rahe ye,billing,billing,complaint,complaint,5,2,False,severity
+a13e7ae6-9c32-46fb-a678-1f20230fec9a,"Number one I don't care about podcast why are they at the top every time I open the app. Number two why are there genres of mood such as heartbreak and depression, thanks for ruining my day and making",catalog,usability,complaint,complaint,2,2,True,topic
+cbed438a-7269-48f5-b567-8eafb75858f6,Tata bye bye bolne ka time aa gaya hai,other,other,cancellation,cancellation,1,1,True,
+50bccc9c-0035-4637-88fd-ccf997655ede,Worse experience ever,other,other,complaint,complaint,2,2,False,
+5189e330-40a3-4114-9aa7-222db0712147,I request to the Indian government to ban 🚫 this application,other,other,request,unclear,1,1,False,intent
+e8cbca2b-710e-4f80-a0b0-7e5966fb033d,No Hi-Fi support.,playback,catalog,complaint,request,1,1,True,topic;intent
+67c295bd-21c2-4e19-887b-f922ab1c808f,Can't even edit playlists anymore....or even veiw what's on it.,usability,usability,complaint,complaint,4,3,False,severity
+eb1358f4-d0c5-459c-b1b5-4ca7bfc331aa,App keeps freezing. What's up with that?,playback,playback,complaint,complaint,4,3,True,severity
+9e48657b-d3b9-454e-b954-bb693c40a8c9,if you pause a song for too long en then keep listting or skip to the next song it stops playing anything en you have to click a new song before it works again,playback,playback,complaint,complaint,3,3,False,
+48901b0a-0bbc-4664-bdc8-5ed15da1d014,Worst music app.....we can't even chose a specific part of the song for this also we need premium membership,billing,billing,complaint,complaint,3,3,False,
+ba595867-67e2-4452-85d0-91842fd037a9,I just love Spotify does exactly what I want,other,other,praise,praise,1,1,False,
+8b057172-ca37-4a73-b101-2a91a645dbfb,app wont open since new update,playback,playback,complaint,complaint,4,4,False,
+b024de2c-0080-4009-8484-d8b2facad11a,"Bhai kya notanki h ye ,, premium le lo, premium le lo ..gana aage peeche nahi karne deta ,, bekaar app h koi matlb nahi isse achha gana hee download kar lo",billing,billing,complaint,complaint,3,3,False,
+b5b42b9f-b2ea-46a1-bc2b-d64c887fc147,Good selection of music but they seem to charge me twice every month. Tried to get it figured out but had no luck. Guess that's just how it goes.,billing,billing,complaint,complaint,5,4,False,severity
+9fc7d969-10d7-4af9-8467-62e2df6f0508,Okay,other,other,unclear,unclear,1,1,False,
+7ac9afb5-b660-4471-ae21-a4cee45bfc14,Hit the music 🎶,other,other,unclear,praise,1,1,False,intent
+38b28b79-ea28-4db6-8b6b-8ba3d799a66a,"I'd never recommend this app, they like to use you for your money.",billing,billing,complaint,complaint,2,2,False,
+a3d2ff5b-beab-4173-96cd-64bdcd6fc8c5,Don't use it,other,other,unclear,complaint,1,2,False,intent;severity
+cf7af0ba-859f-47fa-94fd-a3c8c7ddfca3,"It's giving problem since a month while deleting my account, I want to close my account on Spotify",access,access,cancellation,cancellation,4,3,True,severity
+5c996fb6-346f-4ea1-b411-4b5b262c01c2,"What the heck happened to the shuffle option ,,,why pause and play only. I almost got into a wreck trying to shuffle on thru the music... getting ready to uninstall and pay someone else",usability,usability,cancellation,cancellation,3,3,True,
+17b2f140-1e08-4df1-9543-b81e2df67abb,Best app to use,other,other,unclear,praise,1,1,False,intent
+981d129c-ead1-4ad3-b1eb-5ee40f55d0dc,Its not a good aapp,other,other,complaint,complaint,2,2,False,
+a3dd7ba1-fb59-49ce-80c3-8634e39f306f,"I mean come on,it's Spotify!!!!!",other,other,unclear,unclear,1,1,False,
+c5b8e68e-d516-40d0-831c-6ad540a75eaf,Worse than piracy. Pay for premium? Pop-up ads anyways. Don't waste your time.,billing,billing,complaint,complaint,3,3,True,
+2ec12ee7-a140-4d71-87ef-4f0f66c41c21,It was very good music app now it's the worst ever music app,other,other,complaint,complaint,2,2,False,
+3f015cc9-0784-4a8c-a81b-40b36aa271e7,It just stopped working I can't skip or play a new song on my PlayStation it just stopped out of nowhere,playback,playback,complaint,complaint,4,4,False,
+f57ba9e3-2ac7-4d75-99b4-e9d7e0e06411,🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠🫠😗😗🫠🫠🫠,other,other,unclear,unclear,1,1,False,
+5345d8ef-ecb9-4445-b0fb-686af46a0f0e,"At the start I really enjoyed the app. However, when more updates got released the whole app got incredibly difficult to use. Recently an update came out and I'm not able to preview the song, it's cha",playback,usability,complaint,complaint,3,3,True,topic
+3d1567f6-a19e-4a88-b4f1-a96dbe4dce3e,"The best app for music but worst app to be on device. Last year I installed the app on my tablet Used almost 8 months smoothly,but for last couple of months it started showing 'there is no internet co",access,playback,complaint,complaint,4,4,True,topic
+1388c274-2997-4abc-a14e-55e07ff8652a,I like this app but this days the lyrics of my songs are not loading no matter how many time i try to load it it will not load,catalog,catalog,complaint,complaint,4,3,False,severity
+8de27f18-3ff4-46ca-88d3-fd1ab0b7799a,Very good app it is a best app for playing music,other,other,praise,praise,1,1,False,
+de6754e8-152b-461d-a1a8-bc46890ebcaa,Excellent work ❤️,other,other,praise,praise,1,1,False,
+1a06b6f0-4b06-461e-9f29-f241c7c3a3d6,Very useful to interest in work,other,other,praise,praise,1,1,False,
+274d710c-6553-45e3-9075-0285e2ef0483,"Such an insanely slow app, it's making me consider other options. Also which one fell on the head and decided that smart shuffle was a good idea. Takes ages to turn shuffle on and off, because smart s",playback,playback,complaint,complaint,3,2,True,severity
+7be602f2-aa5f-4c4c-ac02-e8bcaf95dd02,Parts the same songs over and over. If I wanted that I'd listen to radio.,usability,catalog,complaint,complaint,2,2,True,topic
+16901b27-82b1-4b45-a330-ac98b927e271,sweet!,other,other,praise,praise,1,1,False,
+e1c4dcd3-4983-4fc7-86cb-f0fead6bbd1e,WORDS CAN'T EXPRESS SPOTIFY LOVE IT,other,other,praise,praise,1,1,False,
+5aedbdd4-9c15-4b08-8d39-e065a49e0059,"Ad after every song, too much ad this days",usability,usability,complaint,complaint,2,2,False,
+c6c4faee-e896-4028-acf8-9d2bce881b43,It's a great app that just needs a clearer bass boost option for the bass lovers out there that are on Android,playback,usability,request,request,1,1,False,topic
+4aabf270-e437-4aaa-babe-d79c73a6ff76,This is the best app for song 😉,other,other,praise,praise,1,1,False,
+f7627b88-43d1-4f45-bb51-486f93251c06,It's awesome platform for music. But I am having problems lately in searching for new songs. it is always showing no internet connection even when the connection is very much there.,playback,playback,complaint,complaint,4,3,False,severity
+1b87f354-9b0a-4af2-9418-83cb8a4fadda,Good adds kinda lame but I'm to cheap to pay,billing,usability,complaint,complaint,2,2,False,topic
+cb883ee5-2ab2-4340-be5d-ad694392a9ae,This new version is not pleasing 😭😭😭😭😭😭😭,other,other,complaint,complaint,2,2,False,
+4a2b3fc9-a600-4551-9d3a-f79936486468,Sensation,other,other,unclear,unclear,1,1,False,
+a2e7d140-fd60-4ff4-ba30-d6fd930e9442,Mast h,other,other,unclear,unclear,1,1,False,
+dbe5449b-ffaf-4556-b8e9-20e3f9bec50e,Go Premium! It's the best you'll get out of Spotify,billing,other,praise,praise,1,1,True,topic
+209c7742-66d9-4425-aa13-ac4ca7899382,Very bad experience At ad,usability,usability,complaint,complaint,2,2,False,
+7152ffff-cb60-4c60-9978-d0ea27b4278b,This so amazing I love it,other,other,praise,praise,1,1,False,
+783fb41f-b852-47e1-9b5a-0c3409579565,Very Bad Application👎,other,other,complaint,complaint,2,2,False,
+e202d909-99ff-4bcf-90a4-9fd5db9e4c37,Even I have better internet connection it says you're offline,playback,playback,complaint,complaint,4,3,False,severity
+1e417482-a960-464e-93a7-a0621adba7d0,"Hey, used to love this app but my phone got formatted and ever since then I'm unable to install the app from Playstore, shows error after the download finishes. Error: ""Couldn't install Spotify: Play ",other,playback,complaint,complaint,4,4,False,topic
+e54167bc-01f3-429b-9659-43d2b2527e34,One day that day will gonna come when spotify gonna say. want you install spotify? Buy premium first 👍,billing,other,complaint,unclear,1,1,False,topic;intent
+2b6384ae-ce30-4d82-8b85-b843219ac0f5,VERY DISAPPOINTED. Why havent you done anything about the children being targeted by pedophiles on your app? Absolutely disgraceful.,other,other,complaint,complaint,5,5,False,
+8b0e06b5-92f3-4142-90b0-2501cfc71261,Spotify is opening very slow,playback,playback,complaint,complaint,3,2,True,severity
+4cef15e2-19b7-4335-9108-d6fa6de9ea4c,No need for the video clips just wastage of data.,playback,usability,complaint,complaint,2,2,False,topic
+00083a5f-fd13-4f2c-b2ef-6a167cff30ed,"Worst update from spotify,totally disappointed,gonna uninstall this app",other,other,cancellation,cancellation,2,2,False,
+5c79f08d-f095-47ae-ac87-e3cdb1045805,I request everybody don't use this app.becoz u will listen only ads here instead of songs .second thing is that it is only usable when ur internet is on otherwise u can't listen anything here ......so,usability,playback,complaint,cancellation,3,3,False,topic;intent
+3daaf412-41ad-403e-af21-5a2751a90a6e,"I have spotted a bug where the music doesn't play as soon as the user presses play. It stays at 0:00 for a couple of seconds and then starts playing. It isn't a major issue, just annoying.",playback,playback,complaint,complaint,2,2,False,
+9c54b2e9-1ca8-4022-80c7-da6020ab59e0,I love Spotify. This app is genius!,other,other,praise,praise,1,1,False,
+c093a91d-70c2-41cc-ba74-e9c8a5e8acd3,আগে ভালো ছিল এখন মনে হয় গাঁজা খাইসে,other,other,complaint,complaint,2,2,False,
+19b49459-5bd6-4db6-b088-6a524bc3a903,"Always using this app, have done for years it's great!",other,other,praise,praise,1,1,False,
+1d3f978e-b31f-4a4b-ab17-ec46ab4966b3,Can't download music for free,downloads,billing,complaint,complaint,4,3,True,topic;severity
+abdd2bdb-a62b-4ddd-9bea-4d56e2b32a3b,soon this music app will disappear due to unprofessional staffs,other,other,complaint,complaint,2,2,True,
+c10132a8-ddf6-42bb-a80b-934444935283,Better than pendora !,other,other,praise,praise,1,1,False,
+bb1973a5-a4bd-4c44-8401-d7604db8eeb9,"BEAUTIFUL IN ALL CAPS!!!! Honestly the best music platform it's really cool and the premium is even better , super satisfied with my experience in Spotify",other,other,praise,praise,1,1,False,
+a808f098-b9fd-43d0-ab84-d58e97741b17,How desperate you people are for wanting people to pay for premium...,billing,billing,complaint,complaint,2,2,False,
+29be7de2-9c11-45ad-94bd-48044aed51cd,"It'$ so esay to use, i love this app🙂🙂♥️",other,usability,praise,praise,1,1,True,topic
+0a5aebe5-c768-4ef2-8f4b-c6838297e7bc,It's amazing!,other,other,praise,praise,1,1,False,
+269ef14d-aa91-4461-90f3-52e95adfb2b9,Fantastic it's like when I come to Spotify I'm comfortable that's my place that's my that's my getaway of the getaways the list is phenomenal as well as just the platform altogether,other,other,praise,praise,1,1,False,
+5a5907d2-23de-4c1c-a039-ab04769cc638,This was the best music app ever but some recent updates I think this 1 star is giving too much respect bruh you just removed the basic features of this app if gonna rate this out of 5 I will rate 0.2,other,usability,complaint,complaint,3,4,False,topic;severity
+3656330f-1b77-48da-9002-9c02b2f38cee,Can't watch playlist to select a starting song. Can't skip through playlist for more than six times.,billing,usability,complaint,complaint,3,3,False,topic
+9569cb8c-8599-4999-a647-935583bf9811,I absolutely LOVE this app.....if you enjoy listening too music??THIS IS THE APP..highly-rated & highly recommended,other,other,praise,praise,1,1,False,
+0ec9434a-b616-4740-8bf5-b245e4e99756,Absolutely 💯% great music app,other,other,praise,praise,1,1,False,
+30490420-9d3f-4941-8d15-b8356dab2e0a,We have may other alternative apps for listening music so i dont need this application anymore especially after your recent updates,other,other,complaint,cancellation,2,1,True,intent;severity
+39179f4c-818b-40a0-919e-a7dd3287a2eb,"aplikasi streaming musik terbaik, kualitas baik",playback,other,praise,praise,1,1,False,topic
+f6748b2d-db7e-4fe4-9e44-2c2a525fa8ea,Remove the damn shuffle lock it's so annoying and u guys want us to buy premium just to turn a shuffle off like that's so unfair.,billing,billing,complaint,complaint,2,2,False,
+c2cbd478-c969-4113-9c62-82b152dc96e5,I bycout all swdeen apps,other,other,cancellation,unclear,1,1,True,intent
+05fc1219-30de-4f64-b387-2416195dfce9,I have been trying to subscribe for a month now but the payment details never come up. It just keeps loading for hours. I tried your website also. I also don't like the fact you can't go back on the f,billing,billing,complaint,complaint,4,4,False,
+517f18b4-2813-4aa9-99fc-e95b69018e5a,Worst app.. it removed the feature of playing any perticular part of the song which is very bad... these people only want money from us. I am very disappointed with this..,billing,usability,complaint,complaint,3,3,True,topic
+2049f243-51d0-4919-af55-87f984d9e134,Very poor. Always asking for premium,billing,billing,complaint,complaint,2,2,False,
+914b75a9-c71e-434c-a0f2-b14fed013ed8,"What the hell is wrong with this algorithm, when ever I some sad song when it's end the nxt song was always some kind of happy vibe song, it's soo irritating, yll should look into this kindly please i",catalog,catalog,complaint,request,2,1,False,intent;severity
+cabfb79e-bae5-4361-bb82-aff1f5d6362a,Spotify is not working anymore,playback,playback,complaint,complaint,4,4,False,
+ec4fe6d5-83fa-45e9-9043-09461cb0ef47,Worst app advertisings more distrubed when listening songs,usability,usability,complaint,complaint,2,2,False,
+05090f66-2517-40f6-b54a-94ae8e8d3aab,"To o much break don,t download this 😡",downloads,usability,complaint,complaint,2,2,True,topic
+711ed5ba-2c70-496c-9a57-07875b3449f2,Very very nice music app,other,other,praise,praise,1,1,False,
+14e73f04-39fd-43fa-bee4-0e423111076e,Works well on a pixel 4a,other,other,praise,praise,1,1,False,
+8f834406-bc45-4577-a66a-4f9ef85efa08,Good overall except the past two weeks it's been freezing cold every song,playback,playback,complaint,complaint,3,3,True,
+1a2d0b50-0066-4628-ab6e-19aca7a9cab0,"Garbage free trial bs, garbage straight hot garbage, the sooner this fails the better",billing,billing,complaint,cancellation,2,2,False,intent
+312503cc-fd03-4ecf-9331-253f6cda4178,I feel relaxed with this aap,other,other,praise,praise,1,1,False,
+a2a3d820-3a0e-4183-81fd-ec846712d4af,Happy with Spotify premium,other,other,praise,praise,1,1,False,
+9c87b91a-3af8-4517-91e6-7f23448a68b7,Nowords other than badwords for this app please use some alternative of this instead,other,other,request,complaint,1,2,False,intent;severity
+25d9fb11-fb59-4792-9430-110bad5b59d8,👀💀🧽😭🙏🧽😉🎧👹🤓👍🏻❤️🙄😂🐱🎧💀🙏🐶📦🎧,other,other,unclear,unclear,1,1,False,
+4de14eec-072f-43b7-bc68-83944a44dd20,It would be great for listening to music but they decided to give you at least 4 ads every 5 or so songs so you can't actually enjoy your music. They also limit the amount of skips you have to 6 which,usability,usability,complaint,complaint,3,3,False,
+988a6089-21c0-4681-88bd-b8d9c61ca546,"The new update won't let you shuffle the playlist and you can't put the song in loop!!!!!! Really?!!?!?!? That's a very bad update. You can not force people to buy premium, you can only give more feat",billing,usability,complaint,complaint,3,4,False,topic;severity
+a5c92303-09ca-47b9-8e17-24b0b6cc9787,the music and the vide is 10/10,other,other,praise,praise,1,1,False,
+776c67f7-f456-4478-b77a-dc520545e0e5,A j00oòòìjĵuĵĵaprogram 0 u T,other,other,unclear,unclear,1,1,False,
+2ce4b6d9-dbd9-4510-9991-5192b23f14a7,Spotify doesn't pay it's artists what they're worth. I would advise against using this platform if you want to financially support the artists you like.,other,other,complaint,complaint,2,2,False,
+eac67686-8a90-4352-b84a-c3cc8ec84efc,I don't want to use this app anymore but it was my favorite app for listening music if you not pay premium you will not able to listen music why you guys making this app to pay for premium compulsary🤬,billing,billing,cancellation,cancellation,4,4,True,
+13f95fa1-8ce6-42f6-9d2a-d5a7e5d72d87,Bedha app,other,other,unclear,unclear,1,1,False,
+13a14d84-c598-4ccb-a734-a4bdf8e39873,I like that you can make your on playlist.,usability,usability,praise,praise,1,1,False,
+ff0c4326-26d8-4812-8957-23c3677f3cf6,When it comes to music... You guys are best 😍😍,other,other,praise,praise,1,1,False,
+7f96ac1a-d207-4dee-9f50-a3df197333cb,Very beautiful songs ever And I love bts songs!!,other,other,praise,praise,1,1,False,
+7b46aef8-1279-4165-a7c2-c46d4c63f43a,the worst app ever ....worst ever ever ever,other,other,complaint,complaint,2,2,False,
+fc003101-84df-48ff-b38e-212391c3fa46,I enjoy listening Spotify Music,other,other,praise,praise,1,1,False,
+9662f691-8cb1-4032-aad1-3ccd8b26ce04,Iam not liking the recent update at all we can't repeat a single song and also we aren't able to adjust the song bar like we can't go back to a particular part in the song. Please rectify it,usability,usability,complaint,complaint,3,3,False,
+12efd15d-4d4f-4a71-8e71-69d03b6f983a,"I can't login to the app, it keep saying that there's no internet connection, whereas everything else on my phone is connected to the internet.",access,playback,complaint,complaint,4,4,False,topic
+a9fe2140-15a1-4d7b-a189-31993b05ef17,Have loved this app for years now. Top Knotch!,other,other,praise,praise,1,1,False,
+ef931eb7-4f78-4685-a687-2a251d3a3d6f,"Unfair business practices forcing to buy premium or you won't abe to use the app. Some basic features like skip, forward the song, repeat the song are disable.",billing,billing,complaint,complaint,3,4,False,severity
+6870faf3-29a4-4244-8172-a70549e4eb3a,It is a very good app. I enjoy it a lot cuz I can listen to any music I like even at my very lowest.,downloads,catalog,praise,praise,1,1,True,topic
+11e68f19-ee41-489a-8bd4-01254aa693fa,I love the app and all the different things you can listen to but without the premium the adds just get out of hand. They'll pop up every two songs at times and it gets ridiculous. And I think you sho,usability,usability,complaint,complaint,3,3,False,
+1b55584c-057f-4e7b-98a3-4bdb26a1dea7,Amazing App No Issues at all,other,other,praise,praise,1,1,False,
+9fccab2f-8ea5-410d-831b-6f3b5ddabc4c,Ads to much ads,usability,usability,complaint,complaint,2,2,False,
+69745103-c8c3-4a24-bc09-01867803b701,For whatever reason I can't scroll to see the different genres/moods for my liked songs.,usability,usability,complaint,complaint,3,3,False,
+525adf36-1784-4228-acd8-96e03cf072c7,Best app of it kind,other,other,praise,praise,1,1,False,
+facfb7dc-0897-4e3e-9bc7-807b1097e2de,I hate sweetan,other,other,complaint,unclear,2,1,False,intent;severity
+5346093c-b571-4674-a552-975c78d62be8,"App is overall good, for 11 Euro/month. Except it crashes nonstop. I hoped the last update would fix this, but unfortunately that's not the case. And yes, I have tried to uninstall/reinstall, same iss",playback,playback,complaint,complaint,4,4,False,
+ea260548-0646-4464-b93f-b40242b9ba3d,It's easy to find songs,catalog,catalog,praise,praise,1,1,False,
+88809603-d52d-451c-b5a4-2e2e77745e39,It's really good!,other,other,praise,praise,1,1,False,
+bd8e5fd0-95c3-4a77-ba59-d24e037469ba,Spotify rocks!,other,other,praise,praise,1,1,False,
+8ba640c7-0241-484f-8f33-8e1aa3338b15,سویڈن پر لاکھوں کروڑوں لعنت ان کی اس ایپ پر بی لعنت,other,other,unclear,complaint,2,2,False,intent
+19b382be-b494-485b-99fb-d1c159f9d4e9,The best music application I have ever came across.....Loving it from the day one......it's been almost 3 years I am using it....👍,other,other,praise,praise,1,1,False,
+65cd8697-b21e-43d7-ad28-3135811d1d6f,It sucks,other,other,complaint,complaint,2,2,False,
+8124d6d7-9bbd-4a61-ad44-759fda67631f,my no. Is not logged in with My mobile no. Which I had already log in before,access,access,complaint,complaint,4,3,False,severity
+5a586b68-e9f2-43bb-bfec-180af8d8d0c9,good without pay and some adds😄👍,other,billing,praise,praise,1,1,True,topic
+69e2068f-7346-4fd0-9a35-7c844b7dbfa8,Love it! I've discovered so many new music artists!,catalog,catalog,praise,praise,1,1,False,
+83d226f3-0b91-4c95-a060-0285de14f315,"Hideous layout, the new update is pure, ripe garbage. Very user unfriendly, and I HATE all the popups. Not to mention it deleted all of my downloads.",downloads,usability,complaint,complaint,5,4,False,topic;severity
+ee182b1b-2171-4566-b04f-e139b3a055ed,U can make your own music's list five star for me,other,usability,request,request,1,1,False,topic
+59e4c456-6923-41e7-ac65-a16c70f79349,Y would u make basic features premium? Iean everything is premium what's the use ? And we can't even listen to our songs in order. U PPL don't even reply to our review this shows that u just don't giv,billing,billing,complaint,complaint,3,3,False,
+b1c1a73d-26b4-4fa0-be0f-3d378995ab94,Love the instant choice of music,usability,catalog,praise,praise,1,1,False,topic
+6153af9f-d062-4c6f-bd40-2389309a1907,My Spotify wrap up isn't playing!,playback,playback,complaint,complaint,4,3,False,severity
+3cea9084-e4f2-457c-8f7c-498bb1f33ed8,pangit ugali niyo Spotify,other,other,complaint,complaint,2,2,False,
+866d4f2d-74a7-4773-b628-4c3020574b3f,Semma vera level😉,other,other,praise,praise,1,1,False,
+f6b72fc4-b02c-473a-95a3-c96433003236,Its a awome app i love that i can lison to any music on it tho when i select a sog to play on my liked i only get 10 secobds of it and i have to lison to it on shuffle but i dont mind but the poblem i,usability,playback,complaint,complaint,3,3,True,topic
+e3d061b0-c9a6-454b-82df-75ab71b0850e,Too much premium recommendation,billing,usability,complaint,complaint,2,2,True,topic
+a8e3a2e8-fe5b-4d08-8a02-68e443320445,Such a worst decision from your side! 👎 Uninstall and move on guyz!!!!!,other,other,cancellation,cancellation,2,2,True,
+dc6153bc-51e3-4a39-b893-6bd269748f00,I just love this app .,other,other,praise,praise,1,1,False,
+046cc57e-44a7-44b1-9d86-4c5e7437e9cd,lots of adds and always shows to take their subscription.. which is not relevant yet....even you can't skip songs. for some time which show to take subscription 😂 ..... really very bad experience.... ,billing,usability,complaint,complaint,3,3,True,topic
+93f02a82-fb5d-4725-afab-ff6a3f8cc5ef,Its good because i can listen to songs but the downside is you have to get adds,usability,usability,complaint,complaint,2,2,False,
+5260442b-2f63-45fe-bda9-7d7a859891aa,Worst app after the new update. I am going to delete this app if the features are not changed further.,other,usability,cancellation,cancellation,2,2,False,topic
+481cf19a-8471-4fa3-bf2d-1bee0a1c6d65,Install if you want to listen a song in middle of too many ads :),usability,usability,praise,complaint,2,2,True,intent
+1e05edd7-45e6-4491-8c30-f88d42e02e4d,Bring back play in order playlist,usability,usability,request,request,1,1,False,
+dae6ab22-634b-4f38-9e53-cb7af6ccd4a1,"A good app for music, the family subscription works well for us.",billing,other,praise,praise,1,1,False,topic
+1329f883-1c1d-4970-b583-ae992e0b602f,Its the best app ever for music although it has bugs,other,other,complaint,praise,2,1,False,intent;severity
+faf6f199-ce1c-4ab0-abe8-b261b58f3add,I boysott all sueden apps,other,other,cancellation,unclear,1,1,True,intent
+ab09fed0-8833-4be0-b255-86a1996dc7fa,Gg iannyo...,other,other,unclear,unclear,1,1,False,
+66d28f87-775c-4a18-aa8a-c25cff52fd15,Smashing,other,other,praise,praise,1,1,False,
+e8b6842a-3980-42ec-a247-ab2949b2b5c3,Amazing application all you need inside,other,other,praise,praise,1,1,False,
+ad7ffb2a-f786-4948-9087-efa336d5c7ec,This app is bad not install love 💕😘 Asllam,other,other,complaint,complaint,2,2,True,
+ed0eb9ce-95a0-44c2-a304-b5e9eeadc26c,Its impossible to listen to a song when i click on a song it plays a completely different song not even by the same artist i cant even make a playlist without it adding random songs that ive never lis,playback,playback,complaint,complaint,4,4,False,
+9206d8ea-cb5b-4a55-8374-b523ccd07bab,Not so bad (good)!,other,other,praise,praise,1,1,False,
+be4a90d5-aad1-44a0-b091-3b53c39d26c0,Beautiful music app😘😘😘,other,other,praise,praise,1,1,False,
+e59e37d6-9938-4d5f-9314-3a5670a713f5,10 out of 10 easy to use and great service and excellent quality of songs 🎵 👌 UB40 . NORTHERN SOUL THE.BEST,usability,other,praise,praise,1,1,False,topic
+dd1f8921-8567-49b4-81eb-01fb0122e9e9,Pathetic level of asking to pay. Worst user experience.,billing,billing,complaint,complaint,2,2,False,
+34dcb2c0-09a6-4f65-b074-ad08b5ef5b1e,"It's a great app dont get me wrong, but my music is stuck on shuffle and it's annoying because I cant choose a song, I just have to hit play and hope for the best",billing,usability,complaint,complaint,3,3,False,topic
+480c15c0-9219-43b4-bf02-f12f264930cb,So goodddddd,other,other,praise,praise,1,1,False,
+238b1032-947e-47cb-8e72-c900105ee240,This is the worst music ap in the world one day it works but then it never works again I would never recommend this to my friends,playback,playback,complaint,complaint,4,4,False,
+2334c8c4-eafd-4635-bacd-334913051d07,i cant download with the app,downloads,downloads,complaint,complaint,4,4,False,
+a0f7f011-6627-4c3a-9028-1e75489a7fc2,Nice one.,other,other,praise,praise,1,1,False,
+9bf28489-05c8-4dd7-8306-000e8fedf8cc,"I've mainly used this app for podcasts, so much so that I forget how flexible it can be with music. And that's just the free version. While I'm sure the bonuses to the premium version have their perks",playback,playback,complaint,complaint,3,3,False,
+cee2f8aa-272f-41af-ab18-535e3d58c384,Excellent app if you're a music lover. I especially love that I can access worldwide music and get to find new sounds. Great interaction with friends and love the playlists. It's also opened up a new ,catalog,usability,praise,praise,1,1,False,topic
+0a6bd7ae-0597-4277-a883-892b594f0abd,Really upset after the new update,other,other,complaint,complaint,2,2,False,
+8b55f628-75d0-43e5-9d24-df32384e8628,Very pleased,other,other,praise,praise,1,1,False,
+88b5859a-312c-4dc1-a15a-67c5cbfc8e1e,Spotify was legit the best music app ever but rn the new update is just trash. It removed the basic necessities.. Like listening to specific parts of music etc.. If this update doesnt change we are le,usability,usability,cancellation,cancellation,3,4,True,severity
+5bbaaa8b-1cbe-4e19-8920-8d1a9920f684,"After update App is nothing I,m using prime or jio savaan",playback,usability,cancellation,cancellation,4,4,True,topic
+9ea7fa23-5fa8-4d20-8a70-000bcd0ad7c8,"Great music allows me to get my fav music premium or not, and is cheap when it comes to getting premium.",billing,other,praise,praise,1,1,False,topic
+0ffbc544-1a1b-4651-8f72-564f3248c745,പൊളി സാനം 🥰,other,other,praise,praise,1,1,False,
+cc5bc7dc-8db5-473f-8750-ea954b7a4930,Really loved the app... Like u can find songs of small artist aswell but the thing is i am a free user and i get ads just after 2 songs... But it suppose to be after 30 min ..... And i dont like that,usability,usability,complaint,complaint,3,3,True,
+55622904-7cd2-47bf-8170-f1cd9747c4b7,Bekar h,other,other,unclear,unclear,1,1,False,
+06e41dc0-d57e-4246-88dc-b441aaf6d224,I love it ♡,other,other,praise,praise,1,1,False,
+1c4998e3-3a37-47bd-be38-2e75c0e73579,"Has been great, using this app. Imo, I prefer the older version of the app, I do Not like the updated UI.",usability,usability,complaint,complaint,2,2,False,
+4e5e5d78-8885-4d78-9fb5-2cdb1dbddd90,Amazing service,other,other,praise,praise,1,1,False,
+96c43e7b-e11f-4232-8c6b-8843764a145d,The new update is terrible why did you do this to us,other,usability,complaint,complaint,2,2,False,topic
+d88248d5-dd19-4115-9267-89da1f24c5dd,👍👍 great,other,other,praise,praise,1,1,False,
+fd63d998-e45a-49e7-9287-f05f14e12a76,Music when you want it,other,other,praise,praise,1,1,False,
+e19df801-743d-4e50-92f3-1552e7bd5a01,This is so unfair they've brought every basic features under Premium. Couldn't even skip to previous song. I am done with it.,billing,billing,cancellation,cancellation,3,4,True,severity
+1953b937-daf5-4b0d-b528-50dcd5d2ee6e,"It's good, I like listening to music.but I don't like the consistent reminders or ads ""you should buy premium!"" I'm not going to 🤷🏽‍♀️ but yeah, music Is something alout of people use to exape the wor",usability,usability,complaint,complaint,2,2,False,
+95afd536-fd85-46cd-a79d-a6f5c01e0b03,Fix podcasts! Come up muffled on each one like on slow mo. This is my last month paying if not fixed. Been like this for months on end,playback,playback,cancellation,cancellation,3,4,True,severity
+3e1f46cb-ec60-4c9c-9057-0b84c344d875,"Sir this days i am facing a lot of login problem from my phone no , please try to update the app and add some option in spotifoty settings to link and show account username . It will be very helpful f",access,access,complaint,complaint,4,3,False,severity
+b317eb7b-4193-4da0-80e8-5446da2f7beb,I could give a zero for the new update I would but I have to do it a stupid one first of all why the heck why can't I play songs that I want to and if I play a song it just goes to a different song in,billing,playback,complaint,complaint,3,3,False,topic
+b66c645e-4d83-4cb6-a067-699ee7bc9dea,Shawn Ryan show with Dr Greer sold me I bought Spotify and became a shay Ryan show Patreon supporter,other,other,praise,praise,1,1,False,
+b3e707c2-71cf-48a7-85de-f8c1ec4ec156,❤️❤️,other,other,praise,praise,1,1,False,
+3b580770-a900-410a-9d2c-86925df195ac,Ilysm you made my life complete,other,other,praise,praise,1,1,False,
+64684d3a-d16c-4aa1-a869-4ad23ebd1da1,"It is a cool app!Better hearing sound quality, All songs with all artists or groups, very famous and also many more captions we can use",playback,catalog,praise,praise,1,1,False,topic
+49ac1f4d-0b1d-43cf-a991-e12aee5bc6fb,"Please fix the phone number login issue, my Spotify account is quite precious to me but i can't relogin coz my own valid phone number is shown to be incorrect, i sincerely hope this is fixed ASAP",access,access,complaint,complaint,4,4,False,
+bd5c0a67-5047-49b4-b4cd-94d84c9f8e0e,"Spotify is also not cruelty free nowadays, It was the best in its previous version, we can play in any order, shuffle, or can play any song no limits were there... but I clearly don't like the new upd",usability,usability,complaint,complaint,3,3,True,
+994368dd-4d78-46b4-8a1e-6cf49fbde0fd,Spotify's good reputation is well deserved. Their recommendation system is first rate; the user experience is very strong and is regularly improved with updates.,catalog,other,praise,praise,1,1,False,topic
+256fdd47-685f-4357-bdc0-a6a12d3ab712,I've been using Spotify for more than 3 yrs but the new features and updates has ruined the experience of listening music on this platform. Mostly in every song there are no lyrics. From being the bes,catalog,catalog,cancellation,cancellation,3,3,False,
+0f5de0c7-8223-4438-bdaa-20935e74f5ce,Brilliant works great,other,other,praise,praise,1,1,False,
+fc1ac1cf-9d7a-4451-82a8-4ad38d9a93e2,Thank,other,other,unclear,unclear,1,1,False,
+f3524a8d-373e-4749-8452-c0e6dcbdb510,Had to change my rating because they have fixed the issues I had and I have continued to be a subscriber and even have a family account. It is very helpful to be able to sher with someone and they are,usability,other,praise,praise,1,1,False,topic
+1f1f034a-a8d5-4587-951b-85dbae2d3bbb,Outstanding! Amazon Music is better,other,other,praise,complaint,1,2,False,intent;severity
+f9cf356a-5537-4ba7-a9de-437339e65130,Music is my medicine,other,other,praise,praise,1,1,False,
+7f78f100-260c-45ca-97a9-30c88d3a5453,This is pretty great. Not only do they play a lot of music I like but I've found a ton of new ones I'm in too as well,catalog,catalog,praise,praise,1,1,False,
+7c490ae2-49e0-46ab-933e-7418353e52bc,Loved the app,other,other,praise,praise,1,1,False,
+eaf27354-4afc-4dce-a078-5a702b456564,This app is great! I love getting to listen to music on a daily basis. Also it is great for when I am feeling nervous or stressed because music always makes me feel better!,other,other,praise,praise,1,1,False,
+05eff083-e320-426e-9e91-2dabd34b2fe9,Now you see the power of Muslims now get lost😈😈😈,other,other,unclear,unclear,1,1,False,
+f3e7b898-197d-40d6-abf9-746b7211325b,I'm a paid premium member and it's annoying that I'm paying for this service and the app isn't functioning well everytime I play my music it immediately stops then when I reopen it my music goes back ,playback,playback,complaint,cancellation,4,4,True,intent
+f8eb81c2-8b70-46f2-ac67-f57770ceaa6b,Get of my contrary,other,other,unclear,unclear,1,1,False,
+aa0ec75b-000f-406a-9d76-a6a8b3c82ff1,"this app was good before but now it's TOTALLY USELESS, the new updates are absolutely horrible, i was holding out till they added the update for not being able to hear certain parts of the song on our",billing,usability,complaint,complaint,3,3,True,topic
+87b5a4cf-7942-4ee6-a976-67dc41270804,New update sucks.,other,other,complaint,complaint,2,2,False,
+e966d786-56a2-4267-bda8-cafd20c606f3,It's a great app for long ride,other,other,praise,praise,1,1,False,
+15dfa02c-b0c9-423a-b361-d84584bb08bf,If there were 0 stars I would have not regretted to give it to.spotify. the app gets worser everyday,other,other,complaint,complaint,2,2,False,
+dd924e5a-bc4e-46b0-aaf7-49f7c6d1cb58,Would pay double for their services.,other,billing,praise,praise,1,1,False,topic
+fb49e784-439b-4458-b828-7ea93bb4edfa,"You're better off using the computer app. It's harder to play specific songs in a playlist as songs in playlists have to be listened to on shuffle. Furthermore, there is a five skip limit, which isn't",usability,usability,complaint,complaint,3,3,True,
+b91ee827-4520-4c7f-909a-ec1d6f9ca51b,It's great music app specially bcoz it has music from all around the world so any music fan could freely enjoy this app,catalog,catalog,praise,praise,1,1,False,
+cbf33a70-a025-460c-9779-4039da0702cd,Video never works. Always crashes and just doesn't work properly. My podcast will cut out and start over randomly. I love when it randomly loses my place and what I'm listening to and plays something ,playback,playback,complaint,complaint,4,4,True,
+2b790573-77c8-4338-86a9-3fbcbb6a7481,"Lots of advt even if they say ""enjoy next 30 mins of advt free music"" what a nonsense. Walk a talk.",usability,usability,complaint,complaint,2,3,False,severity
+1f9f94d1-d6d8-4b82-bfb6-668c321c9f53,Spotify app is really nice but this news hit me hard... You people don't deserve a good rating....,other,other,complaint,complaint,1,2,False,severity
+602309ff-0819-4df7-9ffe-e18c372ce387,"Bloatware garbage, unsolicited & pushed onto people with Samsung phones just like the Facebook & Netflix apps. Any app/business that forces itself onto customers of other products obviously isn't cust",other,other,cancellation,cancellation,2,2,False,
+9f053c9d-c853-42f5-ac67-99e4ed127c74,Litaboromeo,other,other,unclear,unclear,1,1,False,
+518fe004-926f-445c-9c55-a5de5c281069,Would've been 5 star but the shuffle music isnt needed I'm trying to listen to specific song instead it plays a different song,usability,usability,complaint,complaint,3,3,True,
+b1e697a0-0da4-4e86-815e-b375dfe5a861,😡 basic feature are premium,billing,billing,complaint,complaint,2,3,False,severity
+6f837351-e170-48dc-98bd-210954d11ab2,Audio quality getting improved Give somemore features to the premium users like special app icon. This feature is must needed,playback,playback,request,praise,1,1,True,intent
+44edf6db-bc43-41af-b56e-8506bd745796,Awesome ap. Not to many ad Interruptions.,usability,usability,praise,praise,1,1,False,
+2b77e77c-5ba2-409c-a506-f3b852761382,Up to the flipping world 🌍,other,other,unclear,unclear,1,1,False,
+dcc57ff1-429a-4a24-9ea3-ad578378401b,this app is nice but I gave it a 4 star because it glitches,playback,playback,complaint,complaint,2,2,False,
+2664e78e-3043-4495-8efa-27cc1c6ea142,"When I want to listen to my ""liked songs"" playlist it keeps adding songs I haven't liked. I don't mind this feature when using A.I DJ but not when I want to listen to music I know and love",usability,usability,complaint,complaint,3,3,False,
+90be69a9-59aa-4068-9454-52fa0e408f5a,Iklan shopee mulu anjg,other,usability,complaint,complaint,2,2,True,topic
+22aa8b7c-c48e-4a5a-954c-0646e0f55324,This app is very good and i wish this app is very progress thank you Spotify,other,other,praise,praise,1,1,False,
+ba6de95b-eb42-4794-ac3d-7f4eda49a5af,I make a playlist and it will play through normally on my computer but on my phone it will just randomly play music NOT in my playlist. Makes it hard to go to sleep when I can't listen to the music I ,usability,playback,complaint,complaint,3,4,True,topic;severity
+768f7db1-f2f7-4b04-bc8f-fe80d7092c55,Ads ads ads,usability,usability,complaint,complaint,2,2,True,
+cf430f95-03a8-4130-86f7-e10075e10e56,@Ch nadeem88,other,other,unclear,unclear,1,1,False,
+1452ccc8-49c3-47e8-8a14-31132b31c77d,This app Sweden I boycott Here the holy book was burnt Boycott Sweden,other,other,unclear,unclear,2,1,True,severity
+bbb51045-1298-4d45-a593-345c4113ef2b,worst music app rn,other,other,complaint,complaint,2,2,False,
+3da2e005-d44a-4157-b086-4752e89d8fe9,Love it. Easy to use.,other,usability,praise,praise,1,1,False,topic
+7e02993d-e52f-4d1c-a2e7-c25f0aeacfba,"Zg,,khan",other,other,unclear,unclear,1,1,False,
+727b4e92-c878-4beb-9688-f3c47e86ade2,Fantastic site great music.,other,other,praise,praise,1,1,False,
+729c2076-a1a0-48e0-9bbe-968bfdd3741a,@chaian716 i. . 4 w4 3. E e e3,other,other,unclear,unclear,1,1,False,
+ec3cf4c8-c23a-458d-a863-7317b2f1bdc7,Best app for music,other,other,unclear,praise,1,1,False,intent
+496995b8-af73-4566-8e6a-d82c2dd8db14,Please save my sisters form for the month to date before you were bought from the beginning when you first started working together with your partner in my life so you know what you need any help us t,other,other,unclear,unclear,1,1,False,
+e5cf2e87-20e0-40e0-bc73-887ce7521488,"Keeps all my favourite music in one place, easy to use, love using this app.",usability,usability,praise,praise,1,1,True,
+2d531429-3aa9-44f7-a900-03dbd4836c69,"It wasn't easy changing from a single account to a family and to this day I can't change my email address, but apart from that it's great. It's linked to my Google music player (like elexar) so it pla",access,access,complaint,complaint,3,2,False,severity
+6d468cc0-17b2-4507-bd84-de333d58d099,"Been using Spotify for years. It's by far the best app for music consumption out there. I haven't seen another app that has so much unknown and known music, amazing algorithms and AI recommendations a",catalog,catalog,praise,praise,1,1,False,
+1220da7c-5eb4-4507-9b25-3bb1838a1260,You guys are going through the same things with,other,other,unclear,unclear,1,1,False,
+54092eae-0fed-4fad-b393-68cfa31834a5,Two ads after every two songs? No thanks. Maybe if you paid your artists I would consider it.,usability,usability,complaint,complaint,2,2,False,
+c5d3ace8-d53a-4509-b7d5-4cf51b85e3e7,Excellent!!!,other,other,praise,praise,1,1,False,
+cf5e9741-5120-4014-9c77-f9e8d5a5dd4d,Always just what I want to hear!!...and always here n clear.,other,playback,praise,praise,1,1,False,topic
+09abc7ea-6c72-46b8-830c-a48e58efc129,The songs are good but here lots of add in playing songs,usability,usability,complaint,complaint,2,2,False,
+134c8af8-695d-478f-a2eb-b66e8ac646a6,Best music app specifically with the lyrics added but please add a button to pause downloading,downloads,downloads,request,praise,1,1,False,intent
+762fbe1d-445c-4ae9-97b1-f85bf5815b38,It is better than what i thought about it,other,other,praise,praise,1,1,False,
+9e2d2f47-32a6-4eef-99ac-e5e68f0da770,Nise,other,other,praise,praise,1,1,False,
+8e661a6d-dd71-47c0-bd4a-467dc599d1b3,No puedo loguearme aunque este poniendo correctamente la contraseña,access,access,complaint,complaint,4,4,False,
+56334be1-e423-40ee-8be7-24275de3d0be,"Hate the new updates made on the app, totally unnecessary & confusing. The home page I'm not happy with it's look, why did they remove the bell & timer icons, which you could easily access to see your",usability,usability,complaint,complaint,3,3,False,
+c0867dd7-57f8-44ba-b4b3-5d0af146ac8e,Whoever came up with the idea of making everything premium in this app was either really jealous of how much good spotify was so far or just was making it for themselves because not everyone have mone,billing,billing,complaint,complaint,2,3,False,severity
+1c83a8d6-ad36-4de6-9bcf-71bf17890712,Why I rate Spotify 5 stars because I can listen to music like YouTube premium free,billing,other,praise,praise,1,1,False,topic
+208e45d0-8a39-49f9-8922-2e1b5abc766a,"It was a good songs app ever but now if you have to waste your time and mb than plz install this app and get premium for do all basic things that you can easily do on YouTube 😂 ( very useless app now,",billing,billing,complaint,complaint,3,3,False,
+2294fed7-6911-40b7-baf2-7ebb4d710733,Tandfh,other,other,unclear,unclear,1,1,False,
+599eb5f5-5f25-4dd7-a1aa-d525f087f42f,Trash update,other,other,complaint,complaint,1,2,False,severity
+f8093796-1d5c-4c99-beeb-c451becfd7f4,Verry bad,other,other,complaint,complaint,2,2,False,
+a6f94953-72a5-4af4-8479-c158166b0e5a,"I love my tunes, the heartbeat of America",other,other,praise,praise,1,1,False,
+d8dd6319-dc27-4ccd-b949-1f2fcdeed14b,Like that,other,other,praise,praise,1,1,False,
+adc11aa2-672f-45b1-9f0b-91cce1f5a0b0,Recent update getting worsening it remove skip bar..,usability,usability,complaint,complaint,3,3,False,
+1d6b2333-0d00-46eb-8321-5a9bf1a90cd3,Once my most favourite app to listen music now became most pathetic after horrible update. Spotify please fix this soon else you guys will be vanished out from the playstore.,other,usability,complaint,complaint,2,3,True,topic;severity
+62dcd4c7-95d7-485a-bc8d-26cb0e3ed7f4,I dislike Spotify. the new update onnwhere theres auto shuffle and no loop is furious. I found it easier when there was loop and shuffle which you can ACTUALLY CONTROLL.,usability,usability,complaint,complaint,3,3,False,
+df00bb47-acae-4af0-af68-f2b13cbf4071,Add more in this app,other,other,request,request,1,1,False,
+bc79e0e0-77f2-44fc-bdfb-715ab59e8466,very bad app please don't download this app you cannot login to this app wrost app,access,access,complaint,complaint,4,4,False,
+ac4c5426-c60f-49c7-a206-0fee8f24b29a,"Was one of the best apps but recently became worse, like what I can't skip the song or else I have to opt for premium. Seriously?",billing,billing,complaint,complaint,3,4,False,severity
+1c266019-d0ce-4671-bda9-3708a9ead40f,"Horrible interface, podcast will skip mid way through and start playing something random. Music selection is good.",playback,playback,complaint,complaint,3,4,False,severity
+89bbe7ce-84ea-4684-a461-37cb2463629d,Best.app.ever,other,other,praise,praise,1,1,False,
+2cbac261-3cba-481c-b89c-4a14127f7402,جامد,playback,other,unclear,praise,1,1,False,topic;intent
+6bda6c18-7396-4db2-b85c-95af158e422e,Its amazing but the ads are a little annoying,usability,usability,complaint,complaint,2,2,False,
+9be8da3c-df7d-4748-84a5-c47a74b444d7,The most inconvenient app ever.,other,other,complaint,complaint,2,2,False,
+b09bec88-c3f6-4a26-82b7-ad0a9686794e,It's just the greatest music app ever...after you've tried it you'll never look back I promise,other,other,praise,praise,1,1,False,
+045143ef-7248-47ba-9069-2507a8e2583f,Excellent musical choices!,other,catalog,praise,praise,1,1,False,topic
+65fc03b1-7a7e-4789-acd7-e81eed3845fe,Easy to navigate and have found every artist or song I have searched.,usability,usability,praise,praise,1,1,False,
+e6b1fd4e-dcd1-4ae5-91ea-ab3db4215862,OMG after updating Spotify recommendation is the worst😩,catalog,catalog,complaint,complaint,2,2,False,
+34d3c463-90c4-412d-a598-fb5ba9e569c1,This is a personalized app.🔥,other,other,praise,praise,1,1,False,
+bfdec721-db7c-4d6b-898a-042ded15c576,"I love Spotify. I pay, so I don't have ads and I highly recommend that.",usability,other,praise,praise,1,1,False,topic
+08e6cfd3-9a95-448b-88e8-dfa47a2e26bf,Definitely earns its place as one of the best music apps out there.,other,other,praise,praise,1,1,False,
+921660ef-12b8-495e-9e85-18e2e59e7769,"People in this country aren't used to the idea of ""paying for music"" and its kinda sad tbh. SpotifyPremium in India is worth every rupee imo and its much, MUCH cheaper than what it costs in literally ",billing,other,praise,praise,2,1,False,topic;severity
+14ebb204-46eb-49fa-9f0f-6465787d44f7,The best in my opinion. Just not a fan of Barcelona.,other,other,praise,praise,1,1,False,
+d017898f-d520-40de-85f7-be22596dfcae,So many advertisement,usability,usability,complaint,complaint,2,2,False,
+2370dac5-a8d1-4687-a513-8e2c0f3f5e30,PLEASE ADD LIKE A BIRD BY TIFFANY TRUMP PLEASE🙏🙏🙏🙏🙏🙏🙏🙏 also the ad's are annoying,catalog,usability,request,complaint,2,2,True,topic;intent
+b46e26df-8cc7-4623-8ac9-01bb514213ae,I listen to my fav music podcasts,other,other,praise,praise,1,1,False,
+2e519476-a4b9-460f-9c11-7956c64e67a9,Wooooooow,other,other,unclear,unclear,1,1,False,
+a1a9004b-7238-479b-809a-51047af69d7a,"The app is highly degraded. Launching new features should be for good but since the new features are so bad, one would prefer uninstalling the app itself. Please go for some good features which would ",other,playback,cancellation,complaint,3,3,True,topic;intent
+084d9552-b1f9-4e2d-9851-1689ad184867,"I hear a lot of the most recent songs I added to my list, but barely hear the ones I added a year ago. The shuffle really needs some work. I heard 2 ads, 1 song, 4 ads, 2 songs, 1 ad, 2 songs, 3 ads..",usability,usability,complaint,complaint,3,3,False,
+ac511b2e-8ecb-4fee-9887-dbdb49749294,💢😡😡,other,other,complaint,complaint,1,2,False,severity
+c5e304c3-af6f-4489-9284-f1394b35c4a4,It's a nice app for music💫,other,other,praise,praise,1,1,False,
+ed623653-b684-417a-9e21-282646125880,Need some way to have it play on one device at a time I'm out on all devices battery draining,playback,playback,request,request,3,1,False,severity
+af70b6f2-39a7-4401-918e-6813b7175485,"I love Spotify, it has all different music and is so easy to use. If your not sure about a song you can listen to a short clip to see if that's the song you wanted.",catalog,catalog,praise,praise,1,1,False,
+695bd1ce-12f3-4ee8-92a0-0c52480d0d66,I enjoy using this app,other,other,praise,praise,1,1,False,
+1f7a3c1d-3e60-49f8-8328-785a6986e22a,An excellent platform per say.,other,other,praise,praise,1,1,False,
+4db85c08-4ad8-448e-98da-fba1e53f000a,Connecting to different device than specified by user. Very irritating experience. Uninstalling the App.,playback,playback,cancellation,cancellation,2,3,True,severity
+2fb0f7bb-16b9-40c5-a1c4-975087ec6c88,Uninstalling and canceling my premium account until Spotify stops hijacking my bluetooth whenever it connects. Give me the ability to set my own permissions for Bluetooth connection! When Spotify star,playback,playback,cancellation,cancellation,3,3,False,
+7c8df94a-d3db-4c24-b18b-8b8382ae9a47,For everything you need to buy premium 🥱,billing,billing,complaint,complaint,1,2,True,severity
+16e8f7f0-76e0-44e8-8cb8-056ee0e6ad74,I loved Spotify until the most recent update. Now it's just becoming pay to listen. You can't skip through more then about 5 songs without premium and you can't choose a specific song to listen too. I,billing,billing,complaint,complaint,3,4,False,severity
+8c06252d-4390-4ede-9169-e9eb56ca463d,Ligma balls,other,other,unclear,unclear,1,1,False,
+51d28bc8-af35-4709-977a-6dfc7febb0a1,This app is very nice,other,other,praise,praise,1,1,False,
+20041976-6267-4724-bbb1-d82bce557dbf,High-teir music app with fair Premium pricings and tons of content. Highly recommend.,billing,catalog,praise,praise,1,1,False,topic
+6fb14392-1b4a-4bd6-9267-54c227188f43,It's absolutely amazing I love it I will recommend it to everybody I know,other,other,praise,praise,1,1,False,
+543f5f12-ef4d-419d-a625-fc552e9293d1,It's the best app for music but I came across this issue where auto play is on but songs aren't playing it's only playing the song I played and then it stops I hope this issue is fixed and hopefully I,playback,playback,complaint,complaint,3,4,False,severity
+f9ba53cb-709a-41be-bdf7-29342fcbbacc,"I like Spotify, and use it all the time, but had to reduce my 5 stars to 2: I have premium, but I keep seeing full screen ads for podcast. I am not interested, but I can't get rid of these ""recommenda",usability,usability,complaint,complaint,2,3,False,severity
+54d0114c-5140-4f50-97cb-3fb447fd0a42,Excellent music source. You can always find what you are looking for. Many thanks. PJK,catalog,catalog,praise,praise,1,1,False,
+13c4b8ac-9a22-4065-a32c-682e122d1fec,Kinda the worst thing if you not going to pay for it,billing,billing,complaint,complaint,2,2,False,
+29161b27-ebc0-482a-9f20-b9f2ac1434dc,Spotify is a trash now 🤢🤮,other,other,complaint,complaint,2,2,False,
+15437db1-43a5-46e9-a0e0-e86cd133399d,Unknown App so far First Time User,other,other,unclear,unclear,1,1,False,
+abf64090-2ddf-4b4f-a8dc-307a7665a540,This app was the most that I use to listen music....and after the update all the functions of the app requires premium.....and this is not nice .... I am fedupt of this app now..... I am going to unin,billing,billing,cancellation,cancellation,4,4,True,
+165abdb0-16d5-48cb-8e67-014a5d52042f,Very poor option to switch from one premium plan to another. Huge bug on the app.,billing,billing,complaint,complaint,2,3,True,severity
+56359c75-9bc1-4949-b54d-659aa9bbe7ac,Good music options ...but a lot of advertising......I cant't understand why people are not using sound cloud instead? SoundCloud is free and you can listen to any song offline after one stream,usability,usability,complaint,complaint,2,2,False,
+bf6231fd-3115-4c7c-aeb8-f92d357ec908,exceptional exceptional,other,other,praise,praise,1,1,False,
+58fb2118-f6a7-4b68-ba97-515c46937e7a,I have,other,other,unclear,unclear,1,1,False,
+5dc150c8-9887-41f2-8e0e-0717d01c91fc,Cool 🖤,other,other,praise,praise,1,1,False,
+ec82573c-2098-4292-a17b-4690612181a1,Worst music app ever,other,other,complaint,complaint,2,2,False,
+1274406f-4805-4371-b07f-b58ed4941ca1,Stop forcing people for premium.,billing,billing,complaint,complaint,2,3,False,severity
+2b23ac58-4fbb-4a31-bb5b-8f943715c4b3,Love it. Best music streaming app out there.,other,other,praise,praise,1,1,False,
+17e89128-e37d-49ef-8c50-fc53dac79332,"Good ap but the ads are unbearable, 3 ads that are 30 seconds long? No thanks",usability,usability,complaint,complaint,2,2,False,
+a127fc47-8ffe-4db2-b2f0-b3e6e03da963,Smart shuffle is trash. Please remove it,usability,usability,complaint,request,2,2,False,intent
+51251f38-1d1d-4c40-ae3d-0bc7f63d2943,Last update was the worst update. Can't play any music can't play previous song etc.what is this rubbish you made it. If any read this don't use Spotify,playback,playback,complaint,complaint,4,4,False,
+23eb5c04-8577-44b4-a72f-1401bdbd4e14,Music 🎵🎵🎵🎵🎶,other,other,unclear,praise,1,1,False,intent
+de57c2a3-2539-4c0e-be8a-8f7c64fe2b80,Best app for music because low MB an all songs,other,other,praise,praise,1,1,True,
+958055df-6721-409b-865a-4f784b6e3000,No preferred for me 😒,other,other,complaint,unclear,2,1,False,intent;severity
+7ab008da-e2c3-42d7-86f5-b65a2ed60a89,Worst app Hope your app gets 1 star ratings,other,other,complaint,complaint,2,2,False,
+9997419a-dc2e-4248-8383-3c6e7d5ba921,Used every day,other,other,praise,praise,1,1,False,
+d6d82243-1a49-4dda-86be-a41907fcf67a,It works really well. I mean i feel like we should get unlimited skips but its okay,billing,billing,request,request,1,1,False,
+3c9cb961-6a00-448e-87f7-899b4b6fd860,Its really dope....,other,other,praise,praise,1,1,False,
+61d6376e-2d5a-4e75-9ddd-e9e2b2b75529,just get soundcloud,other,other,complaint,unclear,1,1,True,intent
+484e90a8-6775-41c0-baae-95f2713df4d3,Indeed,other,other,unclear,unclear,1,1,False,
+7f6b81bc-5b58-48a8-94a9-dbb1ebfa1906,Please some songs should be free. Not everyone can buy songs.,billing,billing,request,request,1,1,False,
+77173bab-9d7a-4dbc-a419-0e004ca1fc00,GOD APP,other,other,unclear,praise,1,1,False,intent
+bc0185ca-acd9-4292-89c5-426d3b03e9f5,Ban This app motherfcr,other,other,unclear,cancellation,1,2,False,intent;severity
+095bd663-7fc7-46b2-87cd-5e7576f28acb,I've had the Same Spotify Account since high school. I Love that it was never lost. I can listen to my favorites from then and now!,access,other,praise,praise,1,1,False,topic
+3a610309-6f88-4bdc-af84-02a1e5f06ff4,It's ok but the adds are annoying,usability,usability,complaint,complaint,2,2,False,
+973b3251-5cd3-474f-87dd-37a84a02fc6a,I love using this but reason for not giving 5 star is it irritates me by forcing me to get premium and ads takes more time and not provide skip button,billing,usability,complaint,complaint,3,3,False,topic
+514eea2a-582d-4392-b09b-d7b1188f168c,2 year's completed since I am using this app it was good before but it is useless now as we have to pay money they just want to grab out money I am really disappointed by the app,billing,billing,complaint,complaint,3,3,True,
+95d371a9-3034-4cb1-8d05-a290f8a04c77,Hate this app 👎🏾👎🏾👎🏾,other,other,complaint,complaint,2,2,False,
+6919a254-5d3f-44f3-90e3-d57b419af91c,Pathetic..... only ad's no relevance of songs,usability,usability,complaint,complaint,2,2,True,
+842c6f03-2329-4c74-9b5d-24c2692fc9ba,"I am using Spotify app since 3 years now. It was all good on free plan. I can listen anytime anysong on loop/repeat.But now, this update is so disgusting..am hating this app now...cause i can't choose",billing,billing,complaint,complaint,3,4,False,severity
+24989571-0f53-4aa3-855c-b9b799bd2d32,not a user friendly app. doesn't send the email for password recovery when it says it will.,access,access,complaint,complaint,4,3,False,severity
+00d00b51-5149-46a4-89c8-809258fe0044,Worst app for now...just to earn some sort of money even the basic features need premium membership. Please fix it with the new update and get back the old version of spotify.,billing,billing,complaint,complaint,3,4,False,severity
+be25f70d-22b0-4352-89b6-eb4976b6d86d,I have a playlist of Armenian music and my 90's music compiled and I love it.,other,catalog,praise,praise,1,1,False,topic
+82bb13d2-7923-4c05-b5ba-98006083c05b,Too many ads otherwise its a nice app,usability,usability,complaint,complaint,2,2,False,
+eeb30304-ca91-45fb-a7a1-da086fac397d,Music suggestions great. Music quality better on premium?,billing,catalog,request,praise,1,1,True,topic;intent
+840b3aa3-7b9a-491e-b285-74382f45b82c,"Great, always find what I want!",other,other,praise,praise,1,1,False,
+c93391c9-4066-42ae-9a4b-353ec1d15458,The new update is wrost,other,other,complaint,complaint,2,2,False,
+6859f349-3922-4d98-9a07-68f2dc3b240f,"Only Givin' 3 stars coz, Can't listen music offline",downloads,downloads,complaint,complaint,3,3,True,
+6b95a590-0340-44fa-8022-19ca4e79f286,Iski bhenki kya h yeh har chiz m premium,billing,billing,complaint,complaint,2,2,False,
+69f5c3f0-a0dc-4539-aa75-78ad2da4ceaa,Great app. Other apps don't have my stations or people I listen to.,catalog,catalog,praise,praise,1,1,False,
+0ff942eb-86c7-46cc-971c-66bb7e4b0cb5,Occasionally glitches fatally and won't let me access any songs and I can't do anything. Takes a while to fix and they currently haven't acknowledged it but when it does work it's very good.,playback,playback,complaint,complaint,4,4,False,
+9b10fd88-71db-4bbb-a2ea-7702e699607a,Very hot player,other,other,praise,praise,1,1,False,
+dbf64622-d2d9-41ab-a294-cbed0577544b,Best music streaming service I have used.,other,other,praise,praise,1,1,False,
+8ba4efd7-49e4-462b-a4dc-562357cdb283,"Spotify is really great overall, but I've dealt with a couple disturbances where Spotify is a little 'skippy'? The song recommendations are actually phenomenal, letting me experience new songs I love ",playback,playback,complaint,praise,2,1,True,intent;severity
+3c414727-7399-4753-82e7-d82db4109762,Overall a good service,other,other,praise,praise,1,1,False,
+6d35c751-e1c3-434a-ae1f-4c989c27af87,The recent update🤮🤮🤮🤮,other,usability,complaint,complaint,2,2,False,topic
+32d0a502-75a8-4ac5-a525-298acfb653a2,Very bad app experience so mu ads,usability,usability,complaint,complaint,2,2,False,
+b984b72f-a478-42f4-b378-c75be2e3a487,I can't watch videos ⁉️,other,other,complaint,complaint,4,2,True,severity
+4e78e2ba-3750-45a1-94f7-633a43074999,"Very bad app, app doesn't work on mobile data but works on WiFi, I'll never use this app again!",playback,playback,cancellation,cancellation,3,4,True,severity
+b1134341-3c9f-4bfb-91bf-17c8759fbafb,Wide array of genres. We got the family plan.,catalog,catalog,praise,praise,1,1,False,
+bb40453a-b05d-4716-8eea-f328b1def970,"Now we can't paly next song without subscription, now this worst music listing app I have ever seen",billing,billing,complaint,complaint,4,4,False,
+b0783436-8759-4a3f-807d-4501cc646db8,disgusting new update,other,other,complaint,complaint,2,2,False,
+0f29b0f3-bfac-4194-bcd1-dd7c5935d292,FLAWLESS APP FOR MUSIC,other,other,praise,praise,1,1,False,
+a8da19d3-8823-45ce-aa67-8048b137a994,This app jhus works fine for every mood and day you're in I'm so in love with the playlists 🙃,other,catalog,praise,praise,1,1,True,topic
+91eafeb4-60f3-4854-9286-f0f4b0a8e102,"Okay I get Spotify wants u to get premium, standard. BUT to go to the point of not being able to choose ur songs without premium is so bad!!!! I'm 13 so I like music but can't pay for it so I can't en",billing,billing,complaint,complaint,3,4,False,severity
+d3041980-e2e8-476e-b34d-dfb417fb3747,Not too bad not too good just In-between,other,other,complaint,unclear,1,1,False,intent
+4c7ff648-cea5-40e1-8c5c-d9ddc833a218,I dont like ads,usability,usability,complaint,complaint,2,2,False,
+7f03b126-8798-444d-a89f-3821217b5117,👍(Idk why I add the thumb emoji for-.😭🥲),other,other,unclear,unclear,1,1,False,
+81081d54-5747-482b-9ebd-03ce45262333,... . 7,other,other,unclear,unclear,1,1,False,
+101fb276-defc-4ef6-bda9-277ea75a6f50,Been premium member for years app keeps freezing have to close it out multiple times and force close just to select a song.,playback,playback,complaint,complaint,3,4,False,severity
+bbacf020-dc2f-49ea-86d5-9fc2eacc6466,Sort,other,other,unclear,unclear,1,1,True,
+a293cfcb-d26e-4ba8-993c-d410e88c6617,Its a good app,other,other,praise,praise,1,1,False,
+4a4b632a-d3e9-4864-be2b-0abcb20e658d,Potangina na app,other,other,complaint,complaint,2,2,False,
+d877a613-bf26-42c6-9b5b-3442a045a2f5,"Very good app, I don't think I have encountered a problem with it, and if I did I really don't remember since it rarely messes up",other,other,praise,praise,1,1,False,
+a2516ecc-43e7-4829-b5d8-620787348617,The worst app ever i have came to know and experienced,other,other,complaint,complaint,2,2,False,
+a05d54d3-2148-4a6a-8a4b-2cf644e2e1a7,good but premium hahaha,other,other,praise,complaint,1,2,False,intent;severity
+db1f1c9e-47f6-43cf-ad15-178a13a88264,best selection,other,catalog,praise,praise,1,1,False,topic
+4e42dafa-85ef-463b-b321-b139cc4ed5ba,bakwas,other,other,unclear,complaint,1,2,False,intent;severity
+24fec3b4-c93d-48e7-9796-0e210f83cc74,I hite this application from pak,other,other,unclear,complaint,1,2,True,intent;severity
+5ee6da27-fa75-42de-a2f0-6cdd76417c68,The app is not working and the song also not playing my account name is naresh Hope you fix the bug,playback,playback,complaint,complaint,4,4,False,
+add0de57-92e9-4117-9c2f-cde24583d40b,Absolutely the best love it 5 star,other,other,praise,praise,1,1,False,
+16953683-a165-410a-99e2-e6f747e9c33c,Too much ads deleting this app now for displaying ad at every song,usability,usability,cancellation,cancellation,3,3,True,
+74b6040e-26b5-4325-8fc6-0cd482dd436e,"Poor app use wynk instead, they are telling us what to listen and we can't have options here . Full of ads and restrictions 🥲",billing,usability,cancellation,complaint,3,3,True,topic;intent
+3368b5ca-d2ed-4e57-8bb5-51468e79742d,this app helps me at call of duty get in my flow state i give this an five stars,other,other,praise,praise,1,1,False,
+c117ac6e-da46-4baa-a461-76bcbe95b1f8,Xxx ssex open vjdeos,other,other,unclear,unclear,1,1,False,
+7adc3bed-3e08-4e03-855a-93dfccfcf2e8,Not Good App 😕,other,other,complaint,complaint,2,2,False,
+f195d6b9-4ab2-4051-917f-e17f03cecb5d,Best music app for listening adds Time is money and i wested it on this app by watching 10 ads for 1 sang i uninstalled this app now bcz i don't want to irritate myself 🤕,usability,usability,cancellation,cancellation,3,3,True,
+b9cb045b-9ac5-4b94-8522-ddf200f53b22,I hate spotify I love QURAN,other,other,unclear,unclear,2,1,False,severity
+b42111a3-9210-4afd-a392-a78e67c7ad1d,Worst after latest update,other,other,complaint,complaint,2,2,False,
+56bfc34f-4ecb-4100-abb0-2b51dc95f9c9,"I honestly love Spotify- But, without premium its not that enjoyable, limited skips and ads every 10ish minutes. If premium was a bit cheaper this would be the best music app out there. I guess you wi",billing,billing,complaint,request,3,2,False,intent;severity
+e194fd20-22c7-4acb-9ea5-a48a2c739e63,The best app for music. I love it.,other,other,praise,praise,1,1,False,
+5682e125-f986-4d8b-b362-b4afe4842e36,It is fake 😭 Dont download,other,other,complaint,complaint,2,2,False,
+1b4b5312-21ce-4b84-84a1-1de00945194c,Too many adds for free users,usability,usability,complaint,complaint,2,2,False,
+478453d4-22fd-4a90-a6ea-1aacac7a69e8,Nice music listening app just abit much ads these days,usability,usability,complaint,complaint,2,2,False,
+49cc51c0-4099-43cd-98f7-196f93b65a8f,Not able to login with mobile number,access,access,complaint,complaint,4,4,False,
+d7a98fe8-1cfe-4cf6-bd1f-db125359ad63,I really enjoyed softify:music,other,other,praise,unclear,1,1,False,intent
+c7409633-1acc-4499-a6b9-a32a8a255b0a,Says watch ad for 30 mins uninterrupted and then plays 5 ads after 1 song. Plays a 2003 song in 70s genre.,usability,usability,complaint,complaint,2,3,True,severity
+4b5cb93b-b766-439b-9e33-357fa4b430a5,Great overall experience. Just need to make the queue more accessible. It's somewhat hidden even in plain sight.,usability,usability,complaint,request,2,2,False,intent
+f177ca9a-a8b5-4dd3-b139-599e15dc9d57,Because it burn our Quran,other,other,complaint,complaint,5,2,False,severity
+5442ffc8-66df-423d-8fc5-eef0d99b0f7d,"I've had premium for a week or two, I'm literally PAYING for this, and today i get on the app and every album to ever exist is gone. i only have my playlists. this is absurd I'm PISSED. I'm PAYING for",catalog,catalog,complaint,complaint,4,4,True,
+b24c9ac4-8d3f-4867-b248-b13487c725c3,I didn't even want to give 1 star but legit Spotify *was* the best before the recent update but now we cannot even loop out songs for free like bro-,billing,usability,complaint,complaint,3,3,False,topic
+45127a44-de62-4b90-b622-7d46539ba6c8,My lyrics is not there like,catalog,catalog,complaint,complaint,1,2,True,severity
+b83b8779-00f9-4eee-b035-27deed6363de,could be better,other,other,complaint,complaint,2,2,False,
+45b545de-fd6d-46f5-8563-18c545a5c37f,Hell yes,other,other,praise,praise,1,1,False,
+6373a2af-5ebd-4424-8475-83d6bf4eefa7,Spotify has been acting weird and slow and multiple bugs. The app in general is messing up and not doing what is programmed. As in when I try to view songs or albums the screen would just go blank and,playback,playback,complaint,complaint,4,3,False,severity
+a5d973eb-7e1a-4c9b-a679-59b9656436dd,very worst app only premium option come in front of any song 🤮,billing,billing,complaint,complaint,2,2,True,
+ebecfd3c-fac3-431d-a6c3-f699acac88c6,this app so boring not good app this app is so bad all function bad 🤮🤮 please not dawload ...Quran is my life... 💕💕,other,other,complaint,complaint,2,2,False,
+7c22ac6c-8800-400b-ad75-4fb11d2687a0,"Operator, oh could you help me place this call? See the number on the match book is old and faded..",other,other,request,unclear,3,1,True,intent;severity
+ba8719e0-31a9-41bd-9557-d8ffd124cd62,Great selection process and easy to create Playlists.,catalog,usability,praise,praise,1,1,True,topic
+73b82258-6da9-4923-842e-ce535b7bd451,I really like it because it's free,billing,other,praise,praise,1,1,False,topic
+8da81c1f-8178-48b8-9290-d421b5dffdcd,Very poor class performance,other,other,complaint,complaint,2,2,False,
+bb21d8fe-beb8-4c92-946e-cd4807f122f9,fix your premium feature doesnt even work,billing,billing,complaint,complaint,4,4,False,
+59d1e2cd-526e-4dea-86b5-964667c7c45e,Tooo many adds,usability,usability,complaint,complaint,2,2,False,
+1c1e28fe-5f5e-4bff-a590-1705791f0972,Super good and effective for my spiritual podcast.,other,other,praise,praise,1,1,False,
+b31d75e7-aa0d-4fe6-83a9-d35fe4d67248,please stop playing songs that aren't on my playlist when I pay for premium.. the new shuffle option sucks,billing,usability,complaint,complaint,3,3,False,topic
+f2de7e25-4dce-4c21-8d7f-49986654cd9d,"Audio quality is good, it's easy to use. But free version SUCKS SO MUCH. I can no longer hear 30sec previews of songs, and I can't view the list of songs for artists and bands, can't even see the art ",billing,billing,cancellation,cancellation,3,4,True,severity
+4f884cd5-5d7a-41dc-b75a-ccbc3ce2e290,wow it's a wonderful music App I have seen,other,other,praise,praise,1,1,False,
+71851ff2-857b-4038-b6ee-1e5e79443f41,Lalalala,other,other,unclear,unclear,1,1,False,
+a2a3124b-e3ff-4853-b50e-7b2be5a65139,"Great product, not worth premium tho",billing,other,complaint,praise,2,1,False,topic;intent;severity
+39c83f97-83c6-4bd1-9e44-aa4ee1fea1da,"Great app, nice quality music. You could allow us to view the auto generated queue like we can in the desktop version, it's weird that I add songs to that queue but can't even view it. A play next but",usability,usability,request,request,1,1,True,
+2876d9e4-2fbc-4d2e-9607-7be1ecac5a3b,"Try not to miss updates. You will Love Spotify premium. I'd love to speak with a live representative about one matter. I don't remember my old account information at all, or my new account information",access,access,complaint,complaint,5,4,True,severity
+90b1c82e-aa75-44d8-8c45-4d53b04b70ff,Kinda shocked that Spotify is this desperate for making people get premium.,billing,billing,complaint,complaint,2,2,False,
+2ec2e7bb-12ac-4b39-b22f-0daa4eb8fca5,Very fantastic with all the varieties I need for my devotional and inspirational,catalog,other,praise,praise,1,1,False,topic
+bd819925-4658-448b-98ce-941a9f0e81fa,"With the new update, the home page doesn't feel like a home page. We don't need a clunky tictok-style scrolling feature to discover new music, if anything it makes it harder. Now it's difficult to fin",usability,usability,complaint,complaint,3,3,False,
+db360fa3-3023-4fc3-b52a-f6f2e379a8bc,Loving it so far!!!,other,other,praise,praise,1,1,False,
+69ffc1c3-797b-438d-a6fd-c03c0d1e5fa4,App does not seem to work on Samsung Galaxy A50! Cannot search for music. App crashes if I attempt to add a song to a Playlist and cannot see Playlist after adding songs on the web. No option appears ,playback,playback,complaint,complaint,4,4,False,
+0aa303f0-320b-4031-ba1e-d447c686f286,"The best Spotify Music All Songs you want are there, and you download to your phone ,",downloads,downloads,praise,praise,1,1,False,
+17f56c93-aae7-49f1-920a-bb46fbdf7edf,Login issues alot off bugs,access,access,complaint,complaint,4,3,True,severity
+6bab5664-93cd-4d48-b0f1-86eddb89d592,This app is to werid,other,other,complaint,complaint,2,2,False,
+0ccdb01e-530e-498e-8a0d-080cd8eb94a2,I search for a song on Spotify and play it.. I want to listen to the next song automatically.. to listen not in the playlist.. but I can't listen like that... after one song the next song doesn't play,playback,playback,cancellation,complaint,3,4,True,intent;severity
+6a73c38b-2c5f-409b-a6fd-0a55b6f11db2,I s good,other,other,praise,praise,1,1,False,
+921d7248-ffe5-46e4-aa3f-45253a437f7e,It a very good app I so much love it better than audiomack,other,other,praise,praise,1,1,False,
+af929d08-7cc5-4b58-9ef0-bda5482a9ab6,"Brilliant app, found even old stuff like Al Bowlly",catalog,catalog,praise,praise,1,1,False,
+6c739742-f30c-48e5-aab4-3f76786cbd8c,"Mostly great. 3 stars though because lately whenever it connects to my car, it'll jump to something completely random, usually some politically charged podcast I have no interest in. Or it will jump b",usability,playback,complaint,complaint,3,3,False,topic
+d52d33ea-a226-450a-b5ee-de96fef55077,"Spotify allows me the freedom to create, discover, and share all in one place! The definitive streaming app. You don't want to debate me about it because I probably have a playlist to prove my point!",usability,other,praise,praise,1,1,False,topic
+c2c28d37-7846-40f4-9317-d3e40d40c8bb,Spotify is literally the most irritating Music app now. I've to pay 119 rupees just to remove that shuffle icon. Are you mentally ill or something? Get some help.,billing,billing,complaint,complaint,2,2,False,
+1fc6ddeb-d4c0-41d4-9f4d-4e7a88298c0e,its just the best app for mee.,other,other,praise,praise,1,1,False,
+5eaf2fae-bbd2-472f-a15d-23d69ca1af0c,It's have so many bugs I can't login,access,access,complaint,complaint,4,4,False,
+dd78f0b7-c94d-4dd2-b829-c14e818b087b,Awesome is great,other,other,praise,praise,1,1,False,
+c17b4c37-ecd7-4663-993b-9735d0ef20d9,I use it daily,other,other,praise,praise,1,1,False,
+4ec5467a-ab1c-4fdf-abc4-5e2680d25b08,Great especially when connected to Alexa,other,other,praise,praise,1,1,False,
+fb3944fc-74eb-4e9f-833a-f1d562db5803,Good songs fun but you need money to have repeat or to delete all song and other stuff on mobile I think it's still good but the repeat button is the biggest,billing,billing,complaint,complaint,3,2,False,severity
+d5d56ae4-06df-4c27-a722-40db7dda00f9,Yes I Love It,other,other,praise,praise,1,1,False,
+361cedea-ceb5-4d1e-8755-af97c14bf611,Awesome app for a good price for premium,billing,other,praise,praise,1,1,False,topic
+89c5e4f4-dc68-444a-9197-e40802a55b65,I like the old version after the new update u need premium for everything which is so annoying,billing,billing,complaint,complaint,3,2,False,severity
+2ff53b45-7e72-4efd-acc7-b922c1713163,Everybody knows,other,other,unclear,unclear,1,1,False,
+81ffee8e-7ab7-4089-88c2-10d4956285b7,Good but please make skips free,billing,billing,request,request,1,1,False,
+bb1f9bf2-8dfb-44cf-898c-244d63202a7f,Best music app ever no cap,other,other,praise,praise,1,1,False,
+3c16b320-5c85-47f2-a4d9-48c182b37228,The quality of the app is great it gives out a great experience for me,other,other,praise,praise,1,1,False,
+f1969d5b-3268-4eed-9dd8-055068c6fb52,Wish Spotify Was Completely Free!,billing,billing,request,request,1,1,False,
+fbe4c3df-145e-430c-ac5a-b4a094bedd71,I can only listen to previews of songs. Also I can not replay songs,billing,playback,complaint,complaint,3,4,False,topic;severity
+b891c80d-b9fa-41c7-9c1b-5a8119e7ca80,Too much adds bro,other,usability,complaint,complaint,2,2,False,topic
+e4092d2f-8399-4ee0-9432-3910e74901bf,Beautiful appp,other,other,praise,praise,1,1,False,
+03baecf5-378c-4fb7-9959-6197b12f87ee,HIDDEN SONGS STILL PLAY IN THE PLAYLIST? What's even the point of hidding them then? YouTube has covers of songs I like but Spotify doesn't. When listening to a playlist I don't want to listen to othe,usability,catalog,complaint,complaint,3,3,False,topic
+bbfba810-40b0-4c48-8da0-cbdfdb9eba64,It's actually not that bad to us upcoming artistes so download it bro it's awesome take it from me Lil Tentacion 6ix rich,other,other,praise,praise,1,1,False,
+3245b5c4-43cc-4714-9172-32881a3c84db,Too expensive but good,billing,billing,complaint,complaint,2,2,False,
+1890134c-f81a-4c6f-a581-e37350470604,Jyada khas nahi he,other,other,unclear,complaint,1,2,True,intent;severity
+5e0a00e2-2498-476a-b926-7902c4660540,Something went wrong. Something went wrong. Something went wrong. Something went wrong. Something went wrong. Something went wrong......that's my experience with spotify.,other,playback,complaint,complaint,2,4,False,topic;severity
+b4806c83-6369-4db5-ba6c-01adf28c1771,This is way better than any other music app!,other,other,praise,praise,1,1,False,
+6bd5c666-1620-4d9e-8e1e-8a5564fc7492,"The app is not working, whenever I try to play any music the app is just crashed or closed.",playback,playback,complaint,complaint,4,4,False,
+f51bd367-29b0-4006-baf0-d65b6bbb1d59,the musis is ik layout again again,usability,other,complaint,unclear,2,1,False,topic;intent;severity
+966be6e1-60d2-44fc-bf53-6079fc512040,Not proper working,other,other,complaint,complaint,4,2,False,severity
+825baf20-1360-4b4a-96cc-ddc1cbfa4b8f,Nice qpp,other,other,praise,praise,1,1,False,
+f25ebaad-8ee9-47ae-9abb-49e96c4328b3,Good 👍👍👍👍👍 app,other,other,praise,praise,1,1,False,
+0568136e-bd8a-4906-8f97-048020deeea7,Very Very nice musical app,other,other,praise,praise,1,1,False,
+a4617174-d085-468a-8999-118ca71a1ad2,Love Spotify. All the music I love in one place. Playlist for every occasion.,catalog,catalog,praise,praise,1,1,True,
+1236aeed-f996-427d-a08e-86c8614bc1e7,At times the app doesn't connect automatically through Bluetooth and glitches when loading play lists at times,playback,playback,complaint,complaint,3,3,False,
+7f09f7f4-828f-4581-9292-2b28e6f5510c,It has so many great songs and albums. I couldn't live without this app it's the greatest in the world I love music and Spotify is the shiznit :-),catalog,catalog,praise,praise,1,1,False,
+36415e41-5518-4815-98d4-50d0a403be36,"removing mohammad assaf song, dami falastini, and supporting zionism in deleting and erasing the palstiniane identity will never ever be acceptable, spotify has crossed the line.",catalog,catalog,complaint,complaint,2,2,True,
+f50ea1c7-22ff-40c1-928c-008855c17ebb,🥰🥰🥰,other,other,praise,praise,1,1,False,
+381cb544-7862-40c2-99cb-df1ab9ae8004,"After the update everything is ruined,it used to be my favorite, but now 😠",other,other,complaint,complaint,2,2,False,
+01c294e9-b2e3-437b-abbf-0156a4637f4c,the ads are bad as i cant skip them,usability,usability,complaint,complaint,3,3,False,
+1b8048b4-0fca-4734-9a67-e3a8e8572091,What's not to like,other,other,praise,praise,1,1,False,
+8e634d08-e925-4a7c-ad0a-be0cd5788c95,Can't reapeat can't go back to previous song can't play random song if song is playing but premium????? Go to hell,billing,usability,complaint,complaint,3,4,False,topic;severity
+7f5cd53e-35a1-4082-b6e9-5b7e2d5ad2d9,Over Power,other,other,unclear,unclear,1,1,False,
+9a50a25b-6a7b-403a-856c-1220ca1d2d34,So many Ads,usability,usability,complaint,complaint,2,2,False,
+f02ec6f0-0b6a-4a75-8cbb-2fc2e6e808f7,Awesome quality and relaxing,other,other,praise,praise,1,1,False,
+75bc710e-1e77-4440-a471-c3a636f2e7c5,Nice but cat get the ai to work I'M SO LONLY,other,other,complaint,complaint,4,2,True,severity
+0fa90c97-87dd-43cb-91e6-549d2d9cdff4,"it's good, doesn't have all the songs tho but eh",catalog,catalog,complaint,complaint,2,2,False,
+3d291e84-bb7a-4286-94fe-09833cbfca1f,I click on a song I want and it plays a random song,playback,playback,complaint,complaint,4,4,True,
+0c477bf6-f87d-4cf5-a3ad-74a2bc952af8,Best app for song,other,other,unclear,praise,1,1,False,intent
+eb135d8e-b3e6-42c1-9029-56e48e8a7e0e,It's just awesome 👌 👍🏻🤙🏻🤙🏻🥃🥃,other,other,praise,praise,1,1,False,
+15ff50dc-b813-40d5-90d7-e7a7f2426613,I can't log into my account even though I uninstalled it and reinstalled it. It still says something went wrong please try again,access,access,complaint,complaint,4,4,True,
+c8ef14cb-7e08-4d20-a614-dece8ff8a14a,"Great quality and range of music, but the are quite a few adds if you don't have premium and only 6 skips an hour on the free version. I don't mind, however, and I really enjoy the app.",billing,usability,complaint,praise,3,1,True,topic;intent;severity
+7025e150-f977-4563-9fee-15135de8c051,"Removed the swipe to add to queue feature for no reason, i used it alot, now i have to hold on the song and then press add to queue.",usability,usability,complaint,complaint,3,2,False,severity
+bb79f6e1-a654-4e87-916e-5dc6001d3e20,Worst music app ever created in history by a human.... Please this asap. Rather I would like to listen to singing myself...this app doesn't plays music it plays ads...mannn how can someone make such w,usability,usability,complaint,complaint,4,2,False,severity
+74f175bc-e0f5-4361-a6c6-86f76dd686fe,It's a very krinch application,other,other,complaint,complaint,2,2,False,
+4da2cf8f-b70a-4a44-b8a1-ca564bd6c756,Tooo many ads...it is user experience of 4 years,usability,usability,complaint,complaint,2,2,False,
+ce809e28-4988-4ffb-b78a-64d083acc8d7,Make everything free it's music,billing,other,request,request,1,1,False,topic
+8d3e0ead-67a3-4be4-9117-fbba6f83657a,Fun and easy listening platform with a wide selection of music.,other,other,praise,praise,1,1,True,
+a0cfed9d-8821-46cb-8865-e7d08540621c,"Dang, what happened Spotify 😭😭 why is your lyrics for the musics can't load??🤦🏽‍♀️",catalog,catalog,complaint,complaint,3,3,False,
+cfd56b59-f7ae-4f25-a1f3-a82095f2f39d,I can't get rid of shuffle and sometimes I can't click the song I want to play it just does a bit of the song,usability,usability,complaint,complaint,3,3,False,
+48c7d85f-2e8b-4785-851b-23d9bf1147db,"It's good but there's been a glitch where at random times it pauses and plays the song multiple times, it's very irritating. I have premium. Please fix this.",playback,playback,complaint,complaint,3,3,False,
+9235f5a3-865c-481d-96e8-fe436cdb6760,"Update: It plays in my car now, but no matter how many times I turn on Gapless, it defaults back to off. Frustrating as hell. I loved Spotify... until their recent update. Now, the app won't play in m",playback,playback,cancellation,cancellation,4,4,True,
+d2e54e71-16d5-4a9a-ab3c-40e7aeef4f9d,Brilliant especially on Bluetooth,playback,other,praise,praise,1,1,False,topic
+d12a7ba3-15d6-40d7-9dcc-50a030def77b,It requires premium for basic features also,billing,billing,complaint,complaint,2,2,False,
+05bed559-bf93-4f3f-972c-a16118781599,Very nice playlists and useful app for listeners,usability,other,praise,praise,1,1,False,topic
+73efb3b6-4e0e-4426-84fa-db8a9c8712a8,I just downloaded spotify.All I did was read the comments afterwards... and I deleted it . Sounds like it's not worth it until they change their ways.,other,other,cancellation,cancellation,2,1,False,severity
+811cc0c3-0084-492b-8a14-9913a67c962c,Useless piece of software.,other,other,complaint,complaint,2,2,False,
+0e3d0113-0860-4b29-80ed-02de5192a47b,Sub standard for Android pretty dope for Apple,other,playback,complaint,complaint,2,2,False,topic
+39feac26-2639-4ffd-a7b3-fdb2f37c7bdb,The lyrics of music doesn't appear below,catalog,catalog,complaint,complaint,4,3,True,severity
+41150caa-ee3f-4872-8b23-96f4961d4d09,Spotify is simply the best music app in the world 🌎,other,other,praise,praise,1,1,False,
+c622f697-47e1-4cdd-aece-5a428f4403bb,Chal nikal,other,other,cancellation,unclear,1,1,True,intent
+b574d7c3-4519-45e5-aefb-9cf5743b25cd,"I use this for podcasts. When I ask Alexa to ""play my podcast"", she will play from wherever I got up to on my phone, but when I go back to the phone, it plays whatever I listened to on Alexa again and",usability,playback,complaint,complaint,3,3,False,topic
+2f7f142b-8a76-4e13-9d46-a4cdef7ded1e,Fix your adds,usability,usability,complaint,complaint,2,2,True,
+87e70506-e5fa-461e-9755-485d0773bb0a,Nice for learning. Interesting podcast channels,other,other,praise,praise,1,1,True,
+01b292ff-5991-443d-8a32-0e1cae3455a0,Cant see friend activity in mobile ios and android.i neeed it.plsss fix tat bug,usability,usability,complaint,request,3,3,True,intent
+c088ec94-7494-432c-8315-4dea0910d594,"After update It's nothing more than a fraud trying to extract money by whatever means it can, just deleted it cuz i got soo pi££ed off because i can't play the song i searched, it's in a playlist okay",playback,playback,cancellation,cancellation,4,4,True,
+0b689da0-7cca-4ad5-b1c3-5e01a296ed7b,I've been a regular Spotify user but the reason I give it 2 stars is that I'm unable to login in my Spotify account after I accidentally deleted it. I am continuosly entering my mobile number and then,access,access,complaint,complaint,4,4,False,
+950a361d-590a-4a00-97c7-a8661438e68e,"Just randomly does whatever the hell it wants. Closes, starts playing something else, won't play whenever it feels like it, inconsistently switches audio sources. Pretty much an ad per song these days",playback,playback,complaint,complaint,3,4,False,severity
+8fa6d594-c085-405d-a4de-eb355c2dcf9a,I was just downloaded this app and i can't even sign in!!i really don't wanna give even a star,access,access,complaint,complaint,4,4,False,
+bb9f8686-f23b-4b4a-aec8-625d7c3fc284,Overload ads🤯 All the premium don't download Spotify,downloads,usability,complaint,complaint,3,2,True,topic;severity
+7be80c3a-b5b2-4018-bab7-0c3209e17b5f,Awesome sound quality...,playback,playback,praise,praise,1,1,False,
+afba7e40-2ede-4622-986c-1a3f7dadc72e,"Since the new upgrade, using this app has become very frustrating. Why is the shuffle always on? Why in the world would you remove the loop feature? And why the hell are random songs (which I didn't a",usability,usability,cancellation,cancellation,3,3,False,
+f26df718-07d3-434c-bcb5-608ada260bf0,App me network problem he solv karo,playback,playback,complaint,complaint,4,2,True,severity
+18735c23-f906-4b43-bb44-24a29d6366e0,"It would probably be 5 stars if there weren't so many features missing from the free version. You can't choose what song you want to listen to, only what Playlist; you can't go back to the song you ju",billing,billing,complaint,complaint,3,3,False,
+d8cb638e-845c-47a6-b248-1db9eb8d88ea,جميل جداااا,other,other,praise,praise,1,1,False,
+97829941-dfce-4ef0-8568-6256699deb05,This is just dum I click on a song and it puts some random song on and I can't listen to what I want to.,playback,playback,complaint,complaint,4,4,True,
+25fb53b4-ed16-44bb-a9a9-9153e2220d68,It's getting worst 😫 brooooo,other,other,complaint,complaint,2,2,False,
+2f52ed9b-3fdb-4ad1-8f8a-ed3d829b8321,Said its every 30 minutes a advertise. But i get it within 5 songs even its only 2 mins. So that means its every 15 to 20 mins its getting me annoyed,usability,usability,complaint,complaint,2,2,False,
+9308a216-5182-4be9-b3b0-25e83b71038e,Expensive Premium plan,billing,billing,unclear,complaint,1,2,False,intent;severity
+92cbf5f3-16ec-4430-b6d8-687222896a82,"Worst Music App in my opinion , after the update it has become the worst app ever used ,You cannot listen songs in loop of your choice and asks for premium subscription in every thing",billing,billing,complaint,complaint,3,3,False,
+bb701376-1c07-46ac-8938-db8901dec2af,Really buggy and generally unreliable. Constantly needs to be restarted. Unacceptable performance for a premium service.,playback,playback,complaint,complaint,3,3,False,
+5c907ffa-de04-4c24-9761-deeee8816185,Screw you Spotify. You want me to take your premium! Even if I become a billionaire I won't take it. Worst app in the play store. Government should ban it like tiktok. I rate you in minus(-).,other,billing,complaint,complaint,2,2,False,topic
+86fa3e8a-5ba8-40dd-a925-811dd1e83598,Why did the app developers had to this. I don't want to just pay to repeat my songs.,billing,billing,complaint,complaint,3,2,True,severity
+a81721da-1cec-4175-91a0-bfaa7a65d98a,super music app l love it,other,other,praise,praise,1,1,False,
+372d0d10-0242-4db8-89b5-b0e1eedbe2ea,It's always had constant glitches but I just kept on using it. Now it won't change the song display even though I'm literally listening to something else. Right now it's still playing a podcast and th,playback,playback,complaint,complaint,3,4,True,severity
+749d1eac-e510-440f-a4e5-1df9d637452d,Has alot of bugs especially if you use spotify along with spotify lite other than that itd good 👍,other,playback,complaint,complaint,2,2,False,topic
+3a825896-d5ea-4b26-ba6f-29ce5cd12e36,If I knew how to give half stars I would've done 2.5 cuz instead if continously playing it plays one song and then messes up even on Playlists,playback,playback,complaint,complaint,3,4,False,severity
+e0fab18d-2b28-4d60-813d-9416ef340866,Podcast is awesome,other,other,praise,praise,1,1,False,
+1b97dd82-3945-4741-bca7-5ec8ef071e16,Best music app to learn lyrics with song,catalog,catalog,request,praise,1,1,False,intent
+6aec022e-360b-4f74-9cac-cccfda30281e,Luv the music !,other,other,praise,praise,1,1,False,
+44740748-2c85-425b-a8ad-ef02e8229459,Overwhelming,other,usability,complaint,complaint,1,2,True,topic;severity
+d28b393a-1fd4-46a8-bacc-14109f52b28d,"Very good selection of music cluttered with silly recommendations for political podcasts, playlists for non-existent genres like 'gaming' and ceaseless paid promotions for music obviously ill suited f",catalog,catalog,complaint,complaint,2,2,False,
+7727f055-da25-41ad-8232-be2e0208a5fd,"Very glad the old UI is restored, makes the app usable again.",usability,usability,praise,praise,1,1,False,
+45efb8cf-7703-4e0c-89df-02be0df47085,I think with new update Spotify era is ended... We have better alternatives than this with free of cost.,other,other,complaint,cancellation,2,2,False,intent
+411c7bee-1d37-4115-adaf-eec3e6ac86c9,Veery useful app,other,other,praise,praise,1,1,False,
+7a62f220-f111-40ed-bcd2-2f03a8e930ce,Remove that playback changes,playback,playback,request,request,1,1,True,
+473da2c1-63cf-4400-a3d0-090cbae6ca95,Not too good now,other,other,complaint,complaint,2,2,False,
+4bf92bc4-ba63-44a8-90e2-d9af8a599992,"Listen to BTS on Spotify! I recommend you: Fake Love, The Truth Untold,  Airplane pt.2, MIC Drop Remix DNA, Dope, Fire Cyper 2,3 and 4 Save me, No  more dream, House of cards, I Need You +more",catalog,other,praise,praise,1,1,True,topic
+8dd977e5-62fd-4ed6-a078-6ab528fd345b,Boycott all sweden apps,other,other,unclear,unclear,1,1,False,
+3ad3730a-a6d2-4651-8124-72275ea7d9a3,Has always been great for all my music!!!,other,other,praise,praise,1,1,False,
+68fcc4b2-d86d-429a-abdc-b8023e4cac66,So after the recent update I'm now able to log into my account & my rating has reflected accordingly.,access,access,praise,praise,1,1,False,
+e893d062-1bbf-403e-8ed5-372d2c4210b7,Easy to find music and add to a play list for later...,usability,usability,praise,praise,1,1,False,
+4312478e-d021-450f-8f2e-43f6524afd15,It's so frustrating now if I just want to replay or listen the song in order I have to buy premium + does not work efficiently I'm uninstalling this and never going to use Spotify ever in my life 😡😡😡,billing,billing,cancellation,cancellation,3,4,False,severity
+a12fc456-a961-4e7f-aca3-5289d8e83c9a,Worst experience in this new update Only they asking for money listen a song ?...now a day it's getting worst...,billing,billing,complaint,complaint,3,3,True,
+f41cd39a-79a3-45da-b354-fd5678ed3bb7,Hate the new updates,other,other,complaint,complaint,2,2,False,
+c02cebbf-8031-4bcd-9c34-55f3a770993b,This app used to be the best music app but nowadays they are removing all the features to premium. I know that you need profit but please give us lyrics back. Otherwise this app is of no use.. Guys ji,billing,catalog,complaint,complaint,3,3,False,topic
+9ed0cc9b-555b-48c5-8385-3323410527f7,Free but always not..,billing,billing,unclear,complaint,1,2,False,intent;severity
+0f78ef7d-1ed7-4de3-b426-41aa358bb759,Fix your faulty progress bar when playing a song. And don't reply telling me to restart my device because it's clearly your incompetent app,usability,playback,complaint,complaint,3,3,False,topic
+78e3502c-0b2a-4342-a182-05c6f6be6dc0,You make me feel happy 😊,other,other,praise,praise,1,1,False,
+c369a8c8-478e-4722-b189-f01a6c0ebb04,The new update can't even load lyrics,catalog,catalog,complaint,complaint,4,3,False,severity
+45ed9d36-3e91-4fa3-9633-c0e1536837a7,Ads!,usability,usability,unclear,complaint,1,2,False,intent;severity
+983bc809-11ce-4c69-975c-5af38d837bae,"Love Spotify ❤️ and my bill hasn't changed. No surprises, which is a bonus.",billing,other,praise,praise,1,1,False,topic
+7e5ebaf4-16a1-472c-b6e7-176a05aedcaa,Yr <uh,other,other,unclear,unclear,1,1,False,
+03ea8afc-bf82-4ade-b74f-70b4d156a6b9,"My experience with Spotify premium since I have the app I discovered most amazing experience in my music and other learning program,what I can say everything I get everything I needed and I don't see ",other,other,praise,praise,1,1,True,
+9ff152a8-17fb-497c-8842-88fa0bfbaac1,its a really good app,other,other,praise,praise,1,1,False,
+40f64b83-3518-4d26-8fc9-74694073eece,🤬🤬🤬🤬🤬🤬😭😭😭🫵🫵🫵🫵🫵🫵🫵🫵🫵🫵🫵🫵🫵🫵🫵,other,other,complaint,unclear,1,1,False,intent
+f63f09ea-db8b-4e68-996a-873421bf8aed,👌,other,other,unclear,praise,1,1,False,intent
+2ad966a4-c95f-4923-a5e5-f78449728558,"I love spotify! I use it almost every day. I used to get annoyed with all the adds, then I joined a family account and now I get no adds. Its pretty awesome! I highly recomend!",usability,usability,praise,praise,1,1,False,
+e2eb1fe5-8f6b-4f5a-ac9c-8725659db444,I can't pay for subscription. The option to enter my card details is not displaying,billing,billing,complaint,complaint,4,4,False,
+5c0a368e-3fec-464d-8c4d-519c3453b9e8,Quran jhalnae wale hum tuj ko mita de gae,other,other,cancellation,unclear,1,1,True,intent
+769a9c46-b8fe-44b6-bc1b-b07195dc947c,The update 😒😒,other,other,complaint,complaint,2,2,True,
+0864970d-c1b0-407f-bbee-8177e59a52fb,fixed all the issues i had,other,other,praise,praise,1,1,False,
+90474aea-da01-4f77-ba7b-259f8d483c6a,Nice covers and original songs Love including them to my playlist,catalog,catalog,praise,praise,1,1,False,
+94e4a9a8-0d6f-4dc3-88a2-1c3bb09c745c,Spotify is so good because you can listen to anything,catalog,catalog,praise,praise,1,1,False,
+2663a494-38d0-42db-aa8f-29797a794f23,This is where I listen to my music offline and I can Actually see the captions.,downloads,downloads,praise,praise,1,1,False,
+5f9d56b4-c1b8-4b6b-9f2b-82fd2ee63361,Why my Spotify app doesn't open 😑 every time just show no internet connection available,playback,playback,complaint,complaint,4,4,False,
+c8fe3016-cbae-41b8-8bab-de27430a0fc2,"I recommend to use Spotify, because is great App to learn languages and to listen podcasts all types and is perfect to better your pronounce in english or whatever language. Use this App",other,catalog,praise,praise,1,1,False,topic
+92804629-632c-46c6-9bcc-a1eee0286384,By doing stuff you've degraded the app,other,usability,complaint,complaint,3,2,True,topic;severity
+9ceba509-6469-4df1-a1ac-3f0ca0c8e23f,You have been the institution that help build a better tomorrow today,other,other,praise,praise,1,1,False,
+7ec5ea00-062b-40ca-810c-b55b95d9ddfc,"Spotify doesn't seem to listen much to user suggestions and removes/adds features seemingly at random. Until there is a a way to queue after current album instead of after current song, review will st",usability,usability,complaint,request,3,2,True,intent;severity
+df070a40-1ce1-45de-828c-509beb407770,The current update is not so better,other,other,complaint,complaint,2,2,False,
+0aa228f0-ebc7-4a0d-8a70-9465a9a1a58a,They should change there service from music streaming to ad streaming service.,other,usability,request,complaint,1,2,False,topic;intent;severity
+0fb48abe-6bd7-4ed6-acfa-b7323b950eae,perfect app even with ads,other,usability,praise,praise,1,1,False,topic
+15b3a61f-bfb8-4a8f-9bb4-e8dddae0595d,Its the Best thing it has all my favorite songs,catalog,catalog,praise,praise,1,1,False,
+81245838-560a-4c97-9593-108fe5117f6a,It's just mythical! I love the content it has in store and It is just great. Many wonders can happen here,other,catalog,praise,praise,1,1,False,topic
+afefc238-7389-4eb5-906b-e242ee485781,Very goood,other,other,praise,praise,1,1,False,
+39621415-84bc-47ce-85c8-1a5c66046688,I have purchase mini premium but I didn't get the features of listen to offline music. Please fix this problem,downloads,downloads,complaint,complaint,3,4,False,severity
+3ebf9905-7f61-41b6-b84b-2880b5d854bf,great for listening to music,other,other,praise,praise,1,1,False,
+dbacf0b1-5f2a-4b2b-b468-a1759b027a6e,I love spotify again best if u have pre anyways its amizing i listen to it on the bus only thing is that some songs u cant find on here but most u can so overall its a great app,catalog,catalog,complaint,praise,3,1,True,intent;severity
+afd1d521-d065-460f-9f49-c0db2fd74b1d,Love,other,other,praise,praise,1,1,False,
+c7c0e408-1d73-45b3-a346-0154e2ae2264,It is terrible..please upgrade it,other,other,complaint,complaint,2,2,False,
+071d2947-8f5a-435e-8b16-c9e95766b5c3,What do you mean I have to pay to listen to the song I want?,billing,billing,complaint,complaint,2,2,True,
+6a0b49ec-02f4-4726-82c7-b5e726fa6968,It's amazing I love to jam and sing to my favourite songs,other,other,praise,praise,1,1,False,
+ac7cce75-e966-496a-b114-3eb830fe4a98,Brilliant love the podcasts and the access to music,other,other,praise,praise,1,1,False,
+50421caf-fa81-4828-a7e4-bcf315a73d69,Trying to use it for podcasts and it keeps having issues with stopping and not showing the play/track bar,playback,playback,complaint,complaint,4,3,False,severity
+64b65092-4ae4-4917-9d3a-67ab8d67be8d,Good use L,other,other,praise,praise,1,1,False,
+8f6aca7c-579f-4a64-8f9a-24450d614a7d,very bad app!! don't use it.....,other,other,complaint,complaint,2,2,False,
+198e4c66-f6ad-421b-a63f-e9781577e6fe,"Love the experience Could be better yes, but it's good",other,other,complaint,praise,2,1,True,intent;severity
+750f6aae-e21f-48cc-8f2e-255499a3b68c,So sad about the premium updates,billing,billing,complaint,complaint,2,2,False,
+579d7863-4fec-4c9b-b952-ad2e473b2a08,The new desktop dual-window interface is horrific to navigate as an entire half of the screen changes every time you click something. Flipping back and forth between the panes is unintuitive and frust,usability,usability,cancellation,cancellation,3,4,True,severity
+8791f948-ba01-4cfd-b0aa-49e617612d77,I can't listen podcast😭😭 this app is littrelly broked,playback,playback,complaint,complaint,4,4,False,
+8ca3b954-2a0e-4487-af43-65ed6e0994ee,"Don't know why I keep coming back to Spotify Premium, probably because I spent hours finding music to add to my library. The random play feature is awful, it continually brings in the same artists. Th",playback,access,complaint,complaint,4,3,False,topic;severity
+c02b0d52-3991-468a-9ba3-0b5e2820822d,It is best music app,other,other,praise,praise,1,1,False,
+284e450b-5779-4ca4-a683-797d22869558,So mss,other,other,unclear,unclear,1,1,False,
+8d9cbe9b-2f8a-4b8d-a7fe-b3074e68668c,I love this song,other,other,praise,unclear,1,1,False,intent
+a107df8f-38dd-452d-8591-a1f1d7e4678a,Repeating songs and can't skip song,playback,playback,complaint,complaint,3,4,True,severity
+31ca2110-9a65-4818-a288-e504654cdadc,Chronological order makes this way better than YouTube. Uses less battery too. Fantastic,usability,other,praise,praise,1,1,False,topic
+a2932199-8074-4b9b-94e1-ae6d5761c9c8,Very good app #young stunner,other,other,praise,praise,1,1,False,
+0969c2ba-886e-47fb-bd9f-0bae1bf9e5f2,3 dollars is a small price to pay to listen to good quality music and download...its fast too,playback,billing,praise,praise,1,1,False,topic
+18929b51-5e7b-4156-b0c1-898f638765fc,banyak iklan,usability,usability,complaint,complaint,2,2,False,
+2ca238f9-9f26-489b-b019-1676a53cb414,"A very good app, just a few adds otherwise it is a very good app to listen to all you're favorite artists and even small apartment singers, rappers, instrumentals .etc.but i recommend this app to you.",usability,usability,praise,praise,2,1,False,severity
+80f10eaf-fe0b-427b-9660-e4ab0aac831c,It was great...I love old songs...so cool...👍👌,other,other,praise,praise,1,1,False,
+dde00a4e-bc3f-4540-9292-f8670935dcd5,Love the ability to choose your music and is able to organize it and have options to create and pick.,usability,usability,praise,praise,1,1,False,
+489b046d-ff96-4d6d-9dfb-a5b989d726f1,You have made spotify the worst music app for free users,other,billing,complaint,complaint,2,3,False,topic;severity
+88b29714-810b-4f35-932c-6a40d50acfdf,It's really good... Now I have no problem to find best music,other,catalog,praise,praise,1,1,False,topic
+196ff287-a3e7-490d-9d5f-ce33f2df6259,"This new update is so boring I've been using this app since last 2 years now everything was good but now this update just ask to purchase premium to listen,change the songs etc this is such a dissatis",billing,billing,complaint,complaint,3,4,False,severity
+3469102f-375a-4eb6-a01b-d328b11a2f99,Subscription needed to playback song😂 Miser app and founders too There are too many apps and YT too who provide free services.,billing,billing,complaint,complaint,4,4,True,
+922ff755-daa2-40b5-b9da-3e20eef86396,Best app so far <3,other,other,praise,praise,1,1,False,
+700131ba-0324-48ac-b7d4-3460eee5994a,The best music streaming platform 🙌,other,other,praise,praise,1,1,False,
+9a024c85-29f4-4169-a9bd-a135e0b79f34,"I have been using this app since forever. I never had a problem with any ads. However, since the recent update my experience has been terrible. Ive made several playlista with my personal songs and wh",playback,usability,complaint,complaint,3,3,False,topic
+7ef2ddde-e725-4855-8976-9bf7a1108361,I can't my favourite songs 😟😟,playback,downloads,complaint,complaint,4,4,True,topic
+e4371e2b-7208-4c1d-bec9-d4e6f860bf7d,"No songs, only home option only their",catalog,catalog,unclear,complaint,3,4,True,intent;severity
+3f9afb7d-9f21-4f3a-9aa8-dabfc84e38cd,This used to be the only music app I used but the recent updates are going way too far. Like they want us to pay for every feature. Now you cannot even play a song of your choice until you buy premium,billing,billing,complaint,cancellation,4,4,False,intent
+731abd5e-7410-4192-86cd-99c9ca9be9b6,Bestttttttttttttttttttttttttttttttttttttttttttttttt everrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr!,other,other,praise,praise,1,1,False,
+3d43a973-75ce-4e2d-9d45-4d98085ea6cf,Hate this applicatio,other,other,complaint,complaint,2,2,False,
+ff784eb6-b6e1-473f-976e-94600c389521,Kon rangna,other,other,unclear,unclear,1,1,False,
+00de1ad4-f69d-455a-b3a3-f471cfc1fee0,"Amazing app, accurate recommendations",catalog,catalog,praise,praise,1,1,False,
+728bb2ed-3937-489b-9753-441d39e39e1e,Kua. Sat,other,other,unclear,unclear,1,1,False,
+9a25c899-16fe-4b3a-bcc4-ec7ad555817c,Omg I can't believe I've waisted 4gig searching for a music downloader All along It was right here,downloads,downloads,complaint,praise,2,1,False,intent;severity
+e08f31a3-5040-4239-9087-806bf9e286b9,"I am unable to login by any means whether it is mobile number, mail id or Google login Now even I am unable to deactivate my account from your app. I think playstore should also start negative rating ",access,access,complaint,complaint,4,4,False,
+ed95aac0-45b4-4830-a9a3-c269f2876676,+ve moods bro,other,other,praise,praise,1,1,False,
+ca57f80b-c7ab-4475-b15d-c6fab06ddf97,This app is now cash grabber which made it garbage.,billing,billing,complaint,complaint,2,2,True,
+d7be74ab-b0aa-47db-a041-06f34d80d3fb,Delayed paying when changing songs sometimes,billing,playback,complaint,complaint,2,2,True,topic
+d5c37297-ce1f-47e0-a446-593b1a0e4eb1,It's great I get service anywhere and almost no commercials.,usability,usability,praise,praise,1,1,False,
+6af50f7d-fe2a-441b-83fe-625ee9385e60,This app reminds of the past,other,other,unclear,unclear,1,1,False,
+aef0da4a-40eb-41b0-8e5b-54cfb97f5d2a,sana may light mode na po sa android para maging stable na ang mental health ko,usability,usability,request,request,1,1,False,
+4f769e07-0b5e-4b09-b0c0-5c218ec71a57,Very worst app I used in my entire life only adds and you can not choose your favourite song very bad,billing,usability,complaint,complaint,3,3,True,topic
+898c9978-7369-42e1-afbc-10f5872ad09f,It's too good..,other,other,praise,praise,1,1,False,

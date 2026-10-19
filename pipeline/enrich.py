@@ -243,9 +243,17 @@ def run_enrich(run_dir, cfg, *, workers=1, limit=None, stop_after=None, phase=No
     fail_path = run_dir / "enrich" / "failures.jsonl"
     done = _load_done(out_path)
     failed = _load_done(fail_path)
-    phase = phase or ("resume" if done else "initial")
-    rt = Runtime(run_dir, cfg["budget"]["spend_cap_usd"], cfg["enrich"]["max_requests_per_second"], phase)
+    rt = Runtime(run_dir, cfg["budget"]["spend_cap_usd"], cfg["enrich"]["max_requests_per_second"], "initial")
     en = Enricher(run_dir, cfg, rt)
+    # saved results count as done only under the same label_config; changed settings mean new work
+    stale = {ts for ts, r in done.items() if r.get("label_config") != en.lc}
+    stale |= {ts for ts, r in failed.items() if r.get("label_config") != en.lc}
+    if stale:
+        log(f"[enrich] {len(stale):,} saved results use a different label_config: they will be redone")
+        done = {ts: r for ts, r in done.items() if ts not in stale}
+        failed = {ts: r for ts, r in failed.items() if ts not in stale}
+    phase = phase or ("resume" if done or failed else "initial")
+    rt.phase = phase
     pending = [it for it in read_jsonl(texts_path) if it["text_sha"] not in done and it["text_sha"] not in failed]
     if limit is not None:
         pending = pending[:max(0, limit - len(done))] if limit > len(done) else []
@@ -316,8 +324,9 @@ def run_enrich(run_dir, cfg, *, workers=1, limit=None, stop_after=None, phase=No
                     kind, row = f.result()
                     append_jsonl(out_path if kind == "ok" else fail_path, row)
                     completed_now += kind == "ok"
-                except Exception:
-                    pass
+                    failed_now += kind != "ok"
+                except Exception as ex:  # an in flight call that failed stays pending for the next run
+                    log(f"[enrich] in flight request not saved, left pending: {type(ex).__name__}: {ex}")
     secs = time.monotonic() - t0
     summary = {"stage": "enrich", "run_id": rt.run_id, "phase": phase, "label_config": en.lc,
                "completed_before": len(done), "completed_now": completed_now, "quarantined_now": failed_now,

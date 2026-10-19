@@ -1,3 +1,7 @@
-anthropic>=0.40
-python-dotenv>=1.0
-typesafe-sdk
+# Python 3.12+ (developed and run on 3.14.7). Pinned to the versions used for every saved run.
+anthropic==1.11.0
+openai==3.35.1
+python-dotenv==1.2.4
+typesafe-sdk==0.7.2
+# offline tests only
+pytest==9.1.1

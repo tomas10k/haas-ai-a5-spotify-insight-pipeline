@@ -1,0 +1,17 @@
+{
+  "what": "Same 50 golden review texts labeled twice with fresh paid calls under the same label_config: golden_v1 (2026-10-05) and final_100k (2026-10-19).",
+  "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01",
+  "label_config_equal": true,
+  "n": 50,
+  "identical_by_field": {
+    "topic": 50,
+    "intent": 50,
+    "severity": 50,
+    "sentiment": 33,
+    "evidence_quote": 50,
+    "entities": 50,
+    "needs_review": 49
+  },
+  "max_abs_sentiment_change": 0.11,
+  "reading": "Categorical labels and quotes reproduce exactly; Jev's continuous sentiment score varies slightly between calls (it is not used in ranking)."
+}

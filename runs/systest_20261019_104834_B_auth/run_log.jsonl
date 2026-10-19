@@ -1,0 +1,2 @@
+{"stage": "prepare", "seconds": 0.0, "at": "2026-10-19T10:48:39-0700"}
+{"stage": "enrich", "run_id": "systest_20261019_104834_B_auth", "phase": "initial", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 0, "completed_now": 0, "quarantined_now": 0, "haiku_fallbacks": 0, "workers": 1, "seconds": 0.0, "spent_usd_total": 0.0, "stop_reason": "fatal: InjectedAuthenticationError: injected 401 invalid API key (synthetic fault, no request sent)", "at": "2026-10-19T10:48:39-0700"}

@@ -1,0 +1,2 @@
+{"review_id": "SYN-E1", "source_sha256": "a1ea87b2496bb7459ff962202c1f0b5f01a3dc60c124d977bab5a3cd9e786447", "status": "quarantined", "reason": "empty_review_text", "attempts": 0, "stage": "prepare"}
+{"review_id": "SYN-E2", "source_sha256": "08b70249293e154980dcb021f8a0a42f33be3d83adf37efa1997f3dee525adeb", "status": "quarantined", "reason": "empty_review_text", "attempts": 0, "stage": "prepare"}

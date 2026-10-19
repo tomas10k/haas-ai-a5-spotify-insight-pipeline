@@ -1,0 +1,76 @@
+{
+  "complaint_and_cancellation_records": 44413,
+  "labels_by_intent": {
+    "cancellation": 4145,
+    "complaint": 40268,
+    "praise": 42489,
+    "request": 2902,
+    "unclear": 10196
+  },
+  "topics": [
+    {
+      "cancellations": 1031,
+      "complaint_count": 14108,
+      "mean_severity": "1.980224",
+      "severity_sum": 27937,
+      "share_of_all_complaints": "31.8%",
+      "topic": "other"
+    },
+    {
+      "cancellations": 919,
+      "complaint_count": 10748,
+      "mean_severity": "2.592110",
+      "severity_sum": 27860,
+      "share_of_all_complaints": "24.2%",
+      "topic": "usability"
+    },
+    {
+      "cancellations": 1330,
+      "complaint_count": 8600,
+      "mean_severity": "2.881512",
+      "severity_sum": 24781,
+      "share_of_all_complaints": "19.4%",
+      "topic": "billing"
+    },
+    {
+      "cancellations": 578,
+      "complaint_count": 6069,
+      "mean_severity": "3.445708",
+      "severity_sum": 20912,
+      "share_of_all_complaints": "13.7%",
+      "topic": "playback"
+    },
+    {
+      "cancellations": 128,
+      "complaint_count": 2249,
+      "mean_severity": "2.808804",
+      "severity_sum": 6317,
+      "share_of_all_complaints": "5.1%",
+      "topic": "catalog"
+    },
+    {
+      "cancellations": 75,
+      "complaint_count": 1473,
+      "mean_severity": "3.941616",
+      "severity_sum": 5806,
+      "share_of_all_complaints": "3.3%",
+      "topic": "access"
+    },
+    {
+      "cancellations": 72,
+      "complaint_count": 1054,
+      "mean_severity": "3.462998",
+      "severity_sum": 3650,
+      "share_of_all_complaints": "2.4%",
+      "topic": "downloads"
+    },
+    {
+      "cancellations": 12,
+      "complaint_count": 112,
+      "mean_severity": "2.767857",
+      "severity_sum": 310,
+      "share_of_all_complaints": "0.3%",
+      "topic": "support"
+    }
+  ]
+}

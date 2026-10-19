@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-10-19T10:37:06-0700",
+  "empty_text_rows_appended": 13,
+  "full_input": "spotify_reviews_18months.csv",
+  "full_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+  "method": "Lowest SHA-256(seed + ':' + review_id) values among unique nonempty valid-rating records.",
+  "nests_official_samples": {
+    "analysis_10000.csv": true,
+    "golden_50_to_label.csv": true
+  },
+  "order": "rank order (golden 50, then analysis_10000, then the next lowest hashes), empty texts last",
+  "output": "data/scope_100k.csv",
+  "output_sha256": "4e356111c8f680155ef782727f9aaa2d5ba0b39b53fe13a600e2bb3c217c83f0",
+  "rows": 100013,
+  "sampled_nonempty": 100000,
+  "seed": "berkeley-fall-2026-assignment-5-v1"
+}

@@ -1,0 +1,16 @@
+{
+  "declared_fraction": 0.01,
+  "max": 2000,
+  "min": 20,
+  "n": 7,
+  "origin_review_ids": [
+    "SYN-OK2",
+    "SYN-T1",
+    "SYN-INJ1",
+    "SYN-OK1",
+    "SYN-INJ3",
+    "SYN-M1",
+    "SYN-INJ2"
+  ],
+  "seed": "verify-2026"
+}

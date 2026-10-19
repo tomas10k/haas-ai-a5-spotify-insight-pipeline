@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-19T10:45:57-0700",
+  "calls_by_stage": [
+    {
+      "attempts": 8450,
+      "cost_usd": 0.405874,
+      "failed": 2,
+      "input_tokens": 9663622,
+      "model": "jev-1.13.0",
+      "output_tokens": 1853484,
+      "role": "enrich",
+      "step": "jev_classify",
+      "succeeded": 8448
+    },
+    {
+      "attempts": 86,
+      "cost_usd": 0.067311,
+      "failed": 0,
+      "input_tokens": 44221,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 4618,
+      "role": "enrich",
+      "step": "haiku_fallback",
+      "succeeded": 86
+    },
+    {
+      "attempts": 9,
+      "cost_usd": 0.024899,
+      "failed": 0,
+      "input_tokens": 7134,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 3553,
+      "role": "verify",
+      "step": "verify",
+      "succeeded": 9
+    },
+    {
+      "attempts": 1,
+      "cost_usd": 0.013157,
+      "failed": 0,
+      "input_tokens": 5637,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 1504,
+      "role": "group",
+      "step": "group",
+      "succeeded": 1
+    }
+  ],
+  "run_id": "dev_10000",
+  "status": {
+    "completed": 10000,
+    "completed_via_exact_text_reuse": 1552
+  },
+  "total_cost_usd": 0.511241
+}

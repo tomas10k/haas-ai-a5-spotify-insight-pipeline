@@ -1,0 +1,8 @@
+^D[prepare] already done in /Users/tomasdiezca/Documents/MBA/Fall 2026/Fundamentals of Agentic AI/Final Assignment/spotify_insight_pipeline/runs/final_100k/prepare, reusing saved handoff
+[enrich] run=final_100k phase=resume already_done=78099 pending_now=0 workers=4 label_config=jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01 spent_so_far=$4.3925 cap=$7.00
+[enrich] finished: +0 completed, 0 quarantined, 0.0s, total spent $4.3925
+[checkpoint] saved 100,000 completed review IDs
+[records] {'quarantined': 13, 'completed': 100000, 'completed_via_exact_text_reuse': 21901}
+[verify] {'n': 781, 'topic_agreement': 0.8284, 'intent_agreement': 0.895, 'severity_exact': 0.8079, 'severity_mae': 0.2177, 'sentiment_mae': 0.1543, 'disagreements': 296, 'disagreements_flagged_needs_review': 98, 'at': '2026-10-19T13:40:23-0700'}
+[group] 32 issues, 44,413 memberships
+[rank] 32 issues ranked; top 3: ISS_OTHER_GENERAL=27937, ISS_USABILITY_ADS=13662, ISS_BILLING_PREMIUM_PUSH=9673

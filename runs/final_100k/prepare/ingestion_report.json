@@ -1,0 +1,120 @@
+{
+  "created_at": "2026-10-19T10:47:14-0700",
+  "distinct_nonempty_texts": 78099,
+  "distinct_text_length_chars": {
+    "max": 615,
+    "p50": 50,
+    "p90": 241,
+    "p99": 494,
+    "total": 7280687
+  },
+  "duplicate_review_ids": 0,
+  "empty_review_text": 13,
+  "initial_status_counts": {
+    "completed": 0,
+    "pending": 100000,
+    "quarantined": 13
+  },
+  "input_bytes": 14734591,
+  "input_file": "scope_100k.csv",
+  "input_sha256": "4e356111c8f680155ef782727f9aaa2d5ba0b39b53fe13a600e2bb3c217c83f0",
+  "matches_official_file": null,
+  "missing_app_version": 24251,
+  "nonempty_review_text": 100000,
+  "records": 100013,
+  "reviews_by_month": {
+    "2022-05": 2379,
+    "2022-06": 4605,
+    "2022-07": 4915,
+    "2022-08": 4715,
+    "2022-09": 4063,
+    "2022-10": 4118,
+    "2022-11": 4071,
+    "2022-12": 4813,
+    "2023-01": 4324,
+    "2023-02": 3130,
+    "2023-03": 4144,
+    "2023-04": 3833,
+    "2023-05": 4260,
+    "2023-06": 4067,
+    "2023-07": 12849,
+    "2023-08": 4769,
+    "2023-09": 6380,
+    "2023-10": 13398,
+    "2023-11": 5180
+  },
+  "reviews_by_rating": {
+    "1": 36544,
+    "2": 4638,
+    "3": 5093,
+    "4": 8017,
+    "5": 45721
+  },
+  "reviews_covered_by_exact_text_reuse": 21901,
+  "seconds": 1.0,
+  "stage": "prepare",
+  "top_duplicate_texts": [
+    {
+      "count": 2021,
+      "text": "Good"
+    },
+    {
+      "count": 827,
+      "text": "Nice"
+    },
+    {
+      "count": 637,
+      "text": "Great"
+    },
+    {
+      "count": 588,
+      "text": "Excellent"
+    },
+    {
+      "count": 498,
+      "text": "Awesome"
+    },
+    {
+      "count": 452,
+      "text": "Love it"
+    },
+    {
+      "count": 405,
+      "text": "Very good"
+    },
+    {
+      "count": 309,
+      "text": "Nice app"
+    },
+    {
+      "count": 290,
+      "text": "Super"
+    },
+    {
+      "count": 284,
+      "text": "Worst app"
+    },
+    {
+      "count": 283,
+      "text": "Good app"
+    },
+    {
+      "count": 275,
+      "text": "Amazing"
+    },
+    {
+      "count": 258,
+      "text": "Great app"
+    },
+    {
+      "count": 253,
+      "text": "Best"
+    },
+    {
+      "count": 204,
+      "text": "Hate this application 👎"
+    }
+  ],
+  "unique_review_ids": 100013,
+  "unparseable_timestamps": 0
+}

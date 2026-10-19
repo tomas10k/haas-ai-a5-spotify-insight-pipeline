@@ -1,0 +1,7 @@
+{
+  "completed_ids": [],
+  "phase": "initial",
+  "run_id": "systest_20261019_104727_C_spendcap",
+  "saved_at": "2026-10-19T10:47:32-0700",
+  "stop_reason": "spend_cap: spent 0.0000 + reserved 0.0000 + next 0.0045 > cap 0.00"
+}

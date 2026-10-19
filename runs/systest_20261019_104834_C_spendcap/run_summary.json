@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-19T10:48:40-0700",
+  "calls_by_stage": [
+    {
+      "attempts": 8,
+      "cost_usd": 0.000373,
+      "failed": 0,
+      "input_tokens": 8886,
+      "model": "jev-1.13.0",
+      "output_tokens": 1708,
+      "role": "enrich",
+      "step": "jev_classify",
+      "succeeded": 8
+    }
+  ],
+  "run_id": "systest_20261019_104834_C_spendcap",
+  "status": {
+    "completed": 8
+  },
+  "total_cost_usd": 0.000373
+}

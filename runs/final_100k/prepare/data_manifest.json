@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-19T10:47:14-0700",
+  "fields": [
+    "review_id",
+    "review_text",
+    "review_rating",
+    "review_likes",
+    "app_version",
+    "review_timestamp"
+  ],
+  "input_bytes": 14734591,
+  "input_file": "scope_100k.csv",
+  "input_sha256": "4e356111c8f680155ef782727f9aaa2d5ba0b39b53fe13a600e2bb3c217c83f0",
+  "records": 100013
+}

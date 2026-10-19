@@ -181,3 +181,6 @@ details.fold[open]>summary{margin-bottom:12px}
 .card>.btn,.card>details{justify-self:start}
 label.inline{display:flex !important;gap:8px;align-items:flex-start;font-size:13px;color:var(--muted)}
 label.inline input{margin-top:3px;width:auto}
+
+.linkbtn{all:unset;cursor:pointer;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.linkbtn:hover{text-decoration-color:var(--ink)}

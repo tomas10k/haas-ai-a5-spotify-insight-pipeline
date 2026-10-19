@@ -1,0 +1,6 @@
+{"stage": "prepare", "seconds": 0.0, "at": "2026-10-19T10:47:32-0700"}
+{"stage": "enrich", "run_id": "systest_20261019_104727_C_spendcap", "phase": "initial", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 0, "completed_now": 0, "quarantined_now": 0, "haiku_fallbacks": 1, "workers": 1, "seconds": 0.19, "spent_usd_total": 4.7e-05, "stop_reason": "spend_cap: spent 0.0000 + reserved 0.0000 + next 0.0045 > cap 0.00", "at": "2026-10-19T10:47:32-0700"}
+{"stage": "prepare", "seconds": 0.0, "at": "2026-10-19T10:47:32-0700"}
+{"stage": "enrich", "run_id": "systest_20261019_104727_C_spendcap", "phase": "initial", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 0, "completed_now": 8, "quarantined_now": 0, "haiku_fallbacks": 1, "workers": 1, "seconds": 1.88, "spent_usd_total": 0.00117, "stop_reason": "finished", "at": "2026-10-19T10:47:34-0700"}
+{"stage": "enrich", "seconds": 1.88, "at": "2026-10-19T10:47:34-0700"}
+{"stage": "records", "seconds": 0.0, "at": "2026-10-19T10:47:34-0700"}

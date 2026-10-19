@@ -1,0 +1,9 @@
+review_id,review_text,review_rating,review_likes,app_version,review_timestamp
+SYN-CAP0,Shuffle plays the same ten songs every day.,1,0,8.8.0.0,2023-10-01 12:00:00
+SYN-CAP1,Lyrics are missing for most songs now.,2,0,8.8.0.0,2023-10-02 12:00:00
+SYN-CAP2,The widget on my lock screen does nothing.,3,0,8.8.0.0,2023-10-03 12:00:00
+SYN-CAP3,"Love the daily mixes, they are spot on.",4,0,8.8.0.0,2023-10-04 12:00:00
+SYN-CAP4,Car mode is confusing and the buttons are tiny.,5,0,8.8.0.0,2023-10-05 12:00:00
+SYN-CAP5,Search can't find podcasts I already follow.,1,0,8.8.0.0,2023-10-06 12:00:00
+SYN-CAP6,Premium price went up again and I got nothing new.,2,0,8.8.0.0,2023-10-07 12:00:00
+SYN-CAP7,My downloaded albums vanished after the update.,3,0,8.8.0.0,2023-10-08 12:00:00

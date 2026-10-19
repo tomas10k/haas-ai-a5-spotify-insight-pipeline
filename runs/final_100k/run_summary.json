@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-19T13:40:41-0700",
+  "calls_by_stage": [
+    {
+      "attempts": 78106,
+      "cost_usd": 3.760067,
+      "failed": 7,
+      "input_tokens": 89525224,
+      "model": "jev-1.13.0",
+      "output_tokens": 17155430,
+      "role": "enrich",
+      "step": "jev_classify",
+      "succeeded": 78099
+    },
+    {
+      "attempts": 790,
+      "cost_usd": 0.620069,
+      "failed": 1,
+      "input_tokens": 406759,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 42662,
+      "role": "enrich",
+      "step": "haiku_fallback",
+      "succeeded": 789
+    },
+    {
+      "attempts": 84,
+      "cost_usd": 0.223874,
+      "failed": 5,
+      "input_tokens": 63919,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 31991,
+      "role": "verify",
+      "step": "verify",
+      "succeeded": 79
+    },
+    {
+      "attempts": 1,
+      "cost_usd": 0.01366,
+      "failed": 0,
+      "input_tokens": 5535,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 1625,
+      "role": "group",
+      "step": "group",
+      "succeeded": 1
+    }
+  ],
+  "run_id": "final_100k",
+  "status": {
+    "completed": 100000,
+    "completed_via_exact_text_reuse": 21901,
+    "quarantined": 13
+  },
+  "total_cost_usd": 4.61767
+}

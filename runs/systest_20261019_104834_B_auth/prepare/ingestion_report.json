@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-10-19T10:48:39-0700",
+  "distinct_nonempty_texts": 1,
+  "distinct_text_length_chars": {
+    "max": 39,
+    "p50": 39,
+    "p90": 39,
+    "p99": 39,
+    "total": 39
+  },
+  "duplicate_review_ids": 0,
+  "empty_review_text": 0,
+  "initial_status_counts": {
+    "completed": 0,
+    "pending": 1,
+    "quarantined": 0
+  },
+  "input_bytes": 159,
+  "input_file": "synthetic_auth.csv",
+  "input_sha256": "753d015c90c33bf75809972b5daedd137248654e307e8fce6fe0791ec7ceb883",
+  "matches_official_file": null,
+  "missing_app_version": 0,
+  "nonempty_review_text": 1,
+  "records": 1,
+  "reviews_by_month": {
+    "2023-10": 1
+  },
+  "reviews_by_rating": {
+    "1": 1
+  },
+  "reviews_covered_by_exact_text_reuse": 0,
+  "seconds": 0.0,
+  "stage": "prepare",
+  "top_duplicate_texts": [],
+  "unique_review_ids": 1,
+  "unparseable_timestamps": 0
+}

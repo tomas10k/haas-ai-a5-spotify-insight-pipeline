@@ -37,16 +37,16 @@
     "max_output_tokens": 2500
   },
   "memo": {
-    "model": "claude-sonnet-5",
+    "provider": "openai",
+    "model": "gpt-6-luna",
     "prompt_version": "memo_v2",
     "top_issues": 10,
     "examples_per_issue": 3,
-    "max_output_tokens": 8000,
-    "why": "One call per run, the only free text reasoning step: Sonnet 5 with adaptive thinking at low effort (the lowest setting that still reasons). Thinking tokens are billed as output and logged.",
-    "thinking": "adaptive",
+    "max_output_tokens": 6000,
+    "why": "One call per run, the only free text reasoning step: OpenAI GPT-6 Luna with reasoning.effort=low (the lowest setting that still reasons). Replaced claude-sonnet-5 on 2026-10-19 to cut cost about 20x; reasoning tokens are billed as output and logged.",
     "effort": "low"
   },
   "budget": {
-    "spend_cap_usd": 45.0
+    "spend_cap_usd": 10.0
   }
 }

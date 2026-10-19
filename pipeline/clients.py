@@ -51,7 +51,7 @@ class Ledger:
     def reserve(self, amount):
         with self.lock:
             if self.spent + self.reserved + amount > self.cap:
-                raise SpendCapReached(f"spent {self.spent:.4f} + reserved {self.reserved:.4f} + next {amount:.4f} > cap {self.cap:.2f}")
+                raise SpendCapReached(f"spent {self.spent:.4f} + reserved {self.reserved:.4f} + next {amount:.4f} > cap {self.cap:.4f}")
             self.reserved += amount
 
     def settle(self, reserved, actual):
@@ -96,6 +96,27 @@ def anthropic_call(rt, *, model, max_tokens, system, user, thinking=None, effort
     return text, usage, m.id
 
 
+def openai_call(rt, *, model, max_tokens, system, user, effort=None):
+    """One Responses API call. Returns (reply_text, usage, request_id).
+    OpenAI reports input_tokens INCLUDING cached and cache-write tokens, so code splits them into mutually
+    exclusive billing items. Reasoning tokens are already inside output_tokens (billed as output once)."""
+    kw = {"reasoning": {"effort": effort}} if effort else {}
+    r = rt.openai().responses.create(model=model, instructions=system, input=user, max_output_tokens=max_tokens,
+                                     store=False, **kw)
+    u = r.usage
+    itd, otd = getattr(u, "input_tokens_details", None), getattr(u, "output_tokens_details", None)
+    cached = getattr(itd, "cached_tokens", 0) or 0
+    cwrite = getattr(itd, "cache_write_tokens", 0) or 0
+    usage = {"input": max(0, u.input_tokens - cached - cwrite), "cached_input": cached, "cache_write": cwrite,
+             "output": u.output_tokens, "reasoning_in_output": getattr(otd, "reasoning_tokens", 0) or 0,
+             "raw_input_tokens": u.input_tokens}
+    text = (r.output_text or "").strip()
+    if r.status != "completed" or not text:
+        why = getattr(getattr(r, "incomplete_details", None), "reason", None)
+        raise ReplyError(f"unusable reply: status={r.status}, reason={why}, text_chars={len(text)}", usage, r.id)
+    return text, usage, r.id
+
+
 class Transient(Exception):
     """Rate limit, timeout, connection or server error: retry with backoff."""
 
@@ -121,7 +142,7 @@ class Runtime:
         self.limiter = RateLimiter(rps)
         self.phase = phase
         self.log_lock = threading.Lock()
-        self._jev = self._anthropic = None
+        self._jev = self._anthropic = self._openai = None
 
     def log(self, rec):
         with self.log_lock:
@@ -139,6 +160,12 @@ class Runtime:
             import anthropic
             self._anthropic = anthropic.Anthropic(max_retries=0, timeout=60.0)
         return self._anthropic
+
+    def openai(self):
+        if self._openai is None and not FAKE:
+            import openai
+            self._openai = openai.OpenAI(max_retries=0, timeout=120.0)
+        return self._openai
 
     def call(self, *, provider, model, role, review_ids, label_config, prompt_version, fn, worst_case_usd,
              max_attempts=4, extra=None):
@@ -161,6 +188,8 @@ class Runtime:
                            input_tokens=usage.get("input"), output_tokens=usage.get("output"),
                            cached_input_tokens=usage.get("cached_input", 0), cache_write_tokens=usage.get("cache_write", 0),
                            cost_usd=round(cost, 8), usage_missing=bool(usage.get("usage_missing")))
+                if "reasoning_in_output" in usage:
+                    rec["reasoning_tokens_in_output"] = usage["reasoning_in_output"]
                 self.log(rec)
                 return result, rec
             except Exception as e:  # classify the failure
@@ -168,15 +197,19 @@ class Runtime:
                 usage = getattr(e, "_usage", None) or {}
                 cost = call_cost(self.rates, model, usage)
                 self.ledger.settle(worst_case_usd, cost)
+                # exponential backoff with jitter, only if another attempt is allowed
+                delay = min(30, 0.5 * 2 ** (attempt - 1)) * (1 - 0.5 * random.random()) if transient and attempt < max_attempts else None
                 rec.update(request_id=getattr(e, "_rid", None) or f"local-{uuid.uuid4().hex[:12]}", outcome="failed",
                            error=f"{type(e).__name__}: {str(e)[:300]}", transient=transient,
                            seconds=round(time.monotonic() - t0, 3), input_tokens=usage.get("input"),
-                           output_tokens=usage.get("output"), cost_usd=round(cost, 8))
+                           output_tokens=usage.get("output"), cost_usd=round(cost, 8),
+                           retry_in_s=round(delay, 3) if delay else None)
                 self.log(rec)
                 last = e
                 if not transient:
                     raise
-                time.sleep(min(30, 0.5 * 2 ** (attempt - 1)) * (1 - 0.5 * random.random()))  # backoff with jitter
+                if delay:
+                    time.sleep(delay)
         raise last
 
 

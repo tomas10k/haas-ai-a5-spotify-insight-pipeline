@@ -11,8 +11,12 @@ CALL_KEYS = ("request_id", "role", "review_ids", "model", "phase", "outcome", "l
 def export(run_dir, out=None, log=print):
     run_dir, out = Path(run_dir), Path(out or ROOT / "grading")
     out.mkdir(exist_ok=True)
-    write_json(out / "run.json", {"version": "a5-audit-v1", "analysis_count": 660622,
-               "analysis_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+    ing = json.loads((run_dir / "prepare" / "ingestion_report.json").read_text())
+    if not (out / "ingestion.json").exists():
+        log("[export] grading/ingestion.json missing: run  python3 check_submission.py profile --full data/spotify_reviews_18months.csv --out grading/ingestion.json")
+    # declared scope = the exact CSV this run classified (the full file, or the 100k scope built by `pipeline scope`)
+    write_json(out / "run.json", {"version": "a5-audit-v1", "analysis_count": ing["records"],
+               "analysis_sha256": ing["input_sha256"], "analysis_file": ing["input_file"], "run_id": run_dir.name,
                "classification_input_fields": ["review_text"], "allow_multi_issue": False})
     n = 0
     with gzip.open(out / "records.jsonl.gz", "wt", encoding="utf-8") as f:
@@ -27,6 +31,10 @@ def export(run_dir, out=None, log=print):
     with gzip.open(out / "calls.jsonl.gz", "wt", encoding="utf-8") as f:
         for c in read_jsonl(run_dir / "calls.jsonl"):
             row = {k: c.get(k) for k in CALL_KEYS}
+            # failed attempts that never got a provider response have no usage: kept as null, never invented
+            row["usage_available"] = c.get("input_tokens") is not None and not c.get("usage_missing")
+            if c.get("error"):
+                row["error"] = c["error"][:200]
             if row["role"] != "enrich":
                 row["phase"] = c.get("phase", "initial")
             f.write(json.dumps(row) + "\n")

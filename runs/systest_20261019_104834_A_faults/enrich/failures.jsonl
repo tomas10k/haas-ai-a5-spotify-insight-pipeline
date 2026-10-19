@@ -1,0 +1,1 @@
+{"text_sha": "f096eaa1b60acfcf035b936c79f256048612127cbbd20b528746b12a2e323837", "origin_review_id": "SYN-M2", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "status": "quarantined", "reason": "invalid_output_after_retry: topic 'music' not allowed", "attempts": 2, "at": "2026-10-19T10:48:36-0700"}

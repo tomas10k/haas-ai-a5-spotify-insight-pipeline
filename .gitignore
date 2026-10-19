@@ -12,10 +12,19 @@ self-check.json
 local-reference.json
 runs/*/tmp/
 # full file ingestion (337 MB, rebuilt in 25 s by the prepare stage)
-runs/dev_full/
+runs/dev_full/prepare/*
+!runs/dev_full/prepare/ingestion_report.json
+!runs/dev_full/prepare/data_manifest.json
+!runs/dev_full/prepare/quarantine.jsonl
 runs/dev_100/
 runs/_doctor/
 ~$*
 .venv/
 runs/smoke/
 runs/smoke_all/
+# final run: raw JSONL handoffs are committed as .gz (python3 -m pipeline pack); unpack restores them
+runs/final_100k/**/*.jsonl
+runs/final_100k/**/*.txt
+runs/_pytest_*/
+# the declared 100k scope is committed so the checker can use it (14 MB, rebuild: python3 -m pipeline scope)
+!data/scope_100k.csv

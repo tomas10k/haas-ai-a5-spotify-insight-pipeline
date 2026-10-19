@@ -1,0 +1,33 @@
+rank,issue_id,name,topic,complaint_count,severity_sum,mean_severity,priority_score,cancellations,share_of_all_complaints
+1,ISS_OTHER_GENERAL,General dissatisfaction with app,other,1392,2716,1.951149,2716,104,30.9%
+2,ISS_USABILITY_ADS,Too many or repetitive ads,usability,598,1386,2.317726,1386,42,13.3%
+3,ISS_BILLING_PREMIUM_PUSH,Aggressive premium feature restrictions,billing,373,1072,2.873995,1072,55,8.3%
+4,ISS_PLAYBACK_GENERAL,General playback and loading issues,playback,247,864,3.497976,864,25,5.5%
+5,ISS_USABILITY_UPDATE_LAYOUT,New update breaks features or layout,usability,188,556,2.957447,556,33,4.2%
+6,ISS_PLAYBACK_STOPS_PAUSES,Music playback stops unexpectedly,playback,121,417,3.446281,417,16,2.7%
+7,ISS_PLAYBACK_CRASH_OPEN,App crashes or fails to open,playback,109,397,3.642202,397,7,2.4%
+8,ISS_ACCESS_LOGIN,Login and authentication failures,access,98,387,3.948980,387,8,2.2%
+9,ISS_USABILITY_GENERAL,General user interface problems,usability,141,378,2.680851,378,10,3.1%
+10,ISS_USABILITY_QUEUE_PLAYLIST,Queue and playlist management issues,usability,124,368,2.967742,368,5,2.8%
+11,ISS_BILLING_SKIP_LIMIT,Skip limit requires premium upgrade,billing,119,361,3.033613,361,17,2.6%
+12,ISS_BILLING_SONG_CHOICE,Song selection restricted to premium,billing,110,343,3.118182,343,25,2.4%
+13,ISS_PLAYBACK_CONNECTION,Connection and streaming problems,playback,82,286,3.487805,286,7,1.8%
+14,ISS_DOWNLOADS_DOWNLOADS,Unable to download songs,downloads,82,285,3.475610,285,5,1.8%
+15,ISS_BILLING_SHUFFLE_FORCED,Shuffle and loop locked to premium,billing,78,226,2.897436,226,12,1.7%
+16,ISS_BILLING_PRICE,Subscription pricing too expensive,billing,87,220,2.528736,220,11,1.9%
+17,ISS_BILLING_GENERAL,General billing and pricing concerns,billing,78,219,2.807692,219,5,1.7%
+18,ISS_USABILITY_CONTROLS,Difficult or non-functional controls,usability,70,199,2.842857,199,4,1.6%
+19,ISS_CATALOG_LYRICS,Song lyrics not loading or missing,catalog,61,174,2.852459,174,3,1.4%
+20,ISS_CATALOG_GENERAL,General music catalog issues,catalog,60,169,2.816667,169,2,1.3%
+21,ISS_ACCESS_GENERAL,General app access problems,access,35,139,3.971429,139,1,0.8%
+22,ISS_PLAYBACK_RESOURCES,App lag and resource performance issues,playback,37,114,3.081081,114,1,0.8%
+23,ISS_PLAYBACK_AUDIO,Audio quality and volume issues,playback,34,95,2.794118,95,3,0.8%
+24,ISS_CATALOG_MISSING_CONTENT,Songs removed from catalog,catalog,30,91,3.033333,91,2,0.7%
+25,ISS_BILLING_LYRICS_PAYWALL,Lyrics restricted behind paywall,billing,31,90,2.903226,90,5,0.7%
+26,ISS_ACCESS_ACCOUNT,Account access and settings issues,access,24,88,3.666667,88,2,0.5%
+27,ISS_CATALOG_RECOMMENDATIONS,Unwanted song recommendations in playlists,catalog,30,79,2.633333,79,3,0.7%
+28,ISS_CATALOG_SEARCH,Search function not working properly,catalog,20,67,3.350000,67,2,0.4%
+29,ISS_DOWNLOADS_GENERAL,Downloaded content deleted unexpectedly,downloads,19,64,3.368421,64,0,0.4%
+30,ISS_BILLING_CHARGES,Unexpected charges and payments,billing,13,48,3.692308,48,1,0.3%
+31,ISS_SUPPORT_GENERAL,Poor customer service response,support,9,24,2.666667,24,2,0.2%
+32,ISS_CATALOG_PODCASTS,Podcast content unavailable or broken,catalog,3,10,3.333333,10,1,0.1%

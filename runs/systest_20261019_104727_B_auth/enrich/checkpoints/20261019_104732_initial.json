@@ -1,0 +1,7 @@
+{
+  "completed_ids": [],
+  "phase": "initial",
+  "run_id": "systest_20261019_104727_B_auth",
+  "saved_at": "2026-10-19T10:47:32-0700",
+  "stop_reason": "fatal: InjectedAuthenticationError: injected 401 invalid API key (synthetic fault, no request sent)"
+}

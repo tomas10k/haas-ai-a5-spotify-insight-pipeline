@@ -20,7 +20,10 @@ ALL = ["prepare", "enrich", "records", "verify", "group", "rank", "memo"]
 
 def code_version():
     try:
-        return subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, stderr=subprocess.DEVNULL).decode().strip()
+        head = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, stderr=subprocess.DEVNULL).decode().strip()
+        dirty = subprocess.check_output(["git", "status", "--porcelain", "--", "pipeline", "prompts", "config"], cwd=ROOT,
+                                        stderr=subprocess.DEVNULL).decode().strip()
+        return head + ("-dirty" if dirty else "")  # -dirty: code differs from that commit (uncommitted edits)
     except Exception:
         h = hashlib.sha256()
         for p in sorted((ROOT / "pipeline").glob("*.py")):
@@ -28,8 +31,10 @@ def code_version():
         return "nogit-" + h.hexdigest()[:10]
 
 
-def run(input_csv, run_id, stages=None, workers=None, limit=None, stop_after=None, spend_cap=None, log=print):
+def run(input_csv, run_id, stages=None, workers=None, limit=None, stop_after=None, spend_cap=None, log=print, overrides=None):
     cfg = load_config()
+    for section, vals in (overrides or {}).items():  # used by system tests only; recorded in the run manifest
+        cfg[section].update(vals)
     if spend_cap is not None:
         cfg["budget"]["spend_cap_usd"] = spend_cap
     workers = workers or cfg["enrich"]["workers"]
@@ -60,7 +65,13 @@ def run(input_csv, run_id, stages=None, workers=None, limit=None, stop_after=Non
         elif st == "records":
             build_records(run_dir, log)
         elif st == "verify":
-            run_verify(run_dir, cfg, log)
+            vs = run_verify(run_dir, cfg, log)
+            if vs.get("stopped"):
+                manifest["stopped"] = "verify: " + vs["stopped"]
+                timings[st] = round(time.monotonic() - t0, 2)
+                append_jsonl(run_dir / "run_log.jsonl", {"stage": st, "stop_reason": vs["stopped"], "saved_predictions": vs["n"], "at": now()})
+                log("[run] stopped during verify; saved predictions are kept, rerun the same command to resume")
+                break
         elif st == "group":
             run_group(run_dir, cfg, log)
         elif st == "rank":

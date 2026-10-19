@@ -1,0 +1,15 @@
+{
+  "completed_ids": [
+    "SYN-INJ1",
+    "SYN-INJ2",
+    "SYN-INJ3",
+    "SYN-M1",
+    "SYN-OK1",
+    "SYN-OK2",
+    "SYN-T1"
+  ],
+  "phase": "initial",
+  "run_id": "systest_20261019_104834_A_faults",
+  "saved_at": "2026-10-19T10:48:36-0700",
+  "stop_reason": "finished"
+}

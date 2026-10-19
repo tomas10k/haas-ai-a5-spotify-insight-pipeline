@@ -6,7 +6,7 @@ Out: runs/<run>/memo/{evidence_pack.json, claims.csv, memo.md, memo_check.json}
 import csv, hashlib, json, re
 from pathlib import Path
 from .common import ROOT, read_jsonl, write_json
-from .clients import Runtime, FAKE, anthropic_call
+from .clients import Runtime, FAKE, anthropic_call, openai_call
 
 
 def build_pack(run_dir, cfg):
@@ -143,13 +143,16 @@ def run_memo(run_dir, cfg, log=print, phase="initial"):
                 top = pack["ranked_issues"][0] if pack["ranked_issues"] else None
                 t = "# Fake memo\n\n## Recommendation\n" + (f"Fix {top['issue_id']}: {top['complaint_count']} complaints [{top['claim_ids']['complaint_count']}]." if top else "No issues.")
                 return t, {"input": len(msg) // 4, "output": 300}, "fake-memo"
+            if m.get("provider") == "openai":
+                return openai_call(rt, model=m["model"], max_tokens=m["max_output_tokens"], system=system, user=msg,
+                                   effort=m.get("effort"))
             return anthropic_call(rt, model=m["model"], max_tokens=m["max_output_tokens"], system=system, user=msg,
                                   thinking=m.get("thinking"), effort=m.get("effort"))
         try:
-            text, _ = rt.call(provider="anthropic", model=m["model"], role="memo", review_ids=[], label_config=f"{m['model']}:{m['prompt_version']}",
+            text, _ = rt.call(provider=m.get("provider", "anthropic"), model=m["model"], role="memo", review_ids=[], label_config=f"{m['model']}:{m['prompt_version']}",
                           prompt_version=m["prompt_version"], fn=fn, worst_case_usd=worst, max_attempts=4,
                           extra={"input_artifact": "memo/evidence_pack.json", "attempt_kind": "draft" if attempt == 1 else "fix",
-                                 "thinking": m.get("thinking"), "effort": m.get("effort")})
+                                 "thinking": m.get("thinking"), "reasoning_effort": m.get("effort")})
         except ValueError as ex:  # billed but unusable reply: logged by rt.call; try once more, then save the failure
             errors, text = [f"no usable memo text: {ex}"], ""
             continue

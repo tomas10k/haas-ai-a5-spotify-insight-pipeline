@@ -1,0 +1,16 @@
+{
+  "completed_ids": [
+    "SYN-CAP0",
+    "SYN-CAP1",
+    "SYN-CAP2",
+    "SYN-CAP3",
+    "SYN-CAP4",
+    "SYN-CAP5",
+    "SYN-CAP6",
+    "SYN-CAP7"
+  ],
+  "phase": "initial",
+  "run_id": "systest_20261019_104727_C_spendcap",
+  "saved_at": "2026-10-19T10:47:34-0700",
+  "stop_reason": "finished"
+}

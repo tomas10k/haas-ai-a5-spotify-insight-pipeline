@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-05T01:50:16+0000",
+  "fields": [
+    "review_id",
+    "review_text",
+    "review_rating",
+    "review_likes",
+    "app_version",
+    "review_timestamp"
+  ],
+  "input_bytes": 97400616,
+  "input_file": "spotify_reviews_18months.csv",
+  "input_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+  "records": 660622
+}
