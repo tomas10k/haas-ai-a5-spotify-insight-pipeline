@@ -65,7 +65,7 @@ MBA 290T final assignment (Tomas Diez Canedo). A staged, multi-role program that
 | **T2 Independent verification, planted errors, injection** | Verifier results in `runs/final_100k/verify/`; [`evals/system_tests/report.md`](evals/system_tests/report.md) covers planted wrong labels, a planted memo error and three prompt injection reviews |
 | **T3 Real cold/warm pilot, offline calculator, retry, spend and recovery controls** | [`cost/report.md`](cost/report.md) (`python3 cost/calculator.py`, `... check`); [`cost/`](cost/); [`evals/system_tests/report.md`](evals/system_tests/report.md) covers injected 529s, a 401, malformed output, the spend cap and resume; real 502 errors were retried in `runs/dev_10000/calls.jsonl` |
 | **W1 Full ingestion, record coverage, classification** | [`grading/ingestion.json`](grading/ingestion.json) (full file profile, checker helper); [`runs/dev_full/prepare/ingestion_report.json`](runs/dev_full/prepare/ingestion_report.json); `runs/final_100k/records/status.json`; coverage section of [`grading_check/self-check.json`](grading_check/self-check.json) |
-| **W2 Staged program, bounded calls, saved handoffs, demonstrated resume** | `python3 -m pipeline run --input <csv>`; [Interruption and resume](#interruption-and-resume): recordings, checkpoints and [`grading/checkpoint_before.json`](grading/checkpoint_before.json) / [`checkpoint_after.json`](grading/checkpoint_after.json) |
+| **W2 Staged program, bounded calls, saved handoffs, demonstrated resume** | `python3 -m pipeline run --input <csv>`; [screen recording](https://drive.google.com/file/d/1pMleGuY7WNcjZznoMf1LIN9h-5viLjO8/view?usp=sharing); [Interruption and resume](#interruption-and-resume): terminal recordings, checkpoints and [`grading/checkpoint_before.json`](grading/checkpoint_before.json) / [`checkpoint_after.json`](grading/checkpoint_after.json) |
 | **W3 Reproducible ranking, deployed dashboard, backend, database, grounded AI recommendation** | `python3 -m pipeline rank --run-id final_100k` (no model); [Database, backend and dashboard](#database-backend-and-dashboard); live URL above |
 
 ---
@@ -373,7 +373,7 @@ Resume is built into enrichment ([`pipeline/enrich.py`](pipeline/enrich.py)):
 1. It replays the final run's interruption and resume from its saved logs, checkpoints and checker result (free).
 2. It runs a fresh, live stop-and-resume on `cost_100.csv` (real Jev calls, less than $0.01). It proves that zero reviews were sent again.
 
-A screen recording of this script is linked here: *(video link to be added)*.
+**Screen recording (about 3 min): https://drive.google.com/file/d/1pMleGuY7WNcjZznoMf1LIN9h-5viLjO8/view?usp=sharing**. The live part of the recording is saved as [`runs/demo_resume_20261020_192351`](runs/demo_resume_20261020_192351/): 100 completed, 0 reviews re-sent, $0.0064.
 
 The 10,000 review budget run (`runs/dev_10000`) also stopped at 2,000 texts with 2 workers and resumed with 4. Its two real `502 Bad Gateway` errors were retried successfully.
 
@@ -539,7 +539,7 @@ flowchart LR
   - Severity tends to be one level high for premium restrictions, which slightly favors billing and usability on severity sums.
   - 2,243 complaints and cancellations carry severity 1, which is inconsistent with the definition that 1 means no problem. They were not patched after the fact, because that would break provenance; the next `label_config` should add a code rule.
   - Sentiment is on a different scale from the human labels and is not used in ranking.
-- **Issue grouping is rule-based**, one issue per complaint by keyword patterns. "chose" vs "choose" shows a pattern can miss a subtopic: the review then falls into its topic's broader issue, never outside its topic. Issue names are model suggestions; the #1 name, "General app performance issues", overstates what is a generic bucket.
+- **Issue grouping is rule-based**, one issue per complaint by keyword patterns. "chose" vs "choose" shows a pattern can miss a subtopic: the review then falls into its topic's broader issue, never outside its topic. Issue names are model suggestions. The model named #1 "General app performance issues", which overstates a generic bucket, so the dashboard shows an owner correction, "Generic dissatisfaction (no specific area)" ([`config/issue_name_overrides.json`](config/issue_name_overrides.json)). Membership, counts and ranking are unchanged; `group/issues.json` keeps the model's name.
 - **Edited reviews** that contain an old complaint and a later resolution are labeled by their complaint.
 - **Provenance note on code version.** The final, 10k and system test runs were executed from the working tree on 2026-10-19 before those code changes were committed. Their manifests record the parent commit `763eb67`; the code that ran is in the next commit. New manifests now mark this case as `-dirty`.
 - **Unavailable usage.** The 13 failed attempts that got no response have no token counts (see Cost).

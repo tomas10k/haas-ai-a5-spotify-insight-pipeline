@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-20T19:24:39-0700",
+  "calls_by_stage": [
+    {
+      "attempts": 100,
+      "cost_usd": 0.004788,
+      "failed": 0,
+      "input_tokens": 113991,
+      "model": "jev-1.13.0",
+      "output_tokens": 21886,
+      "role": "enrich",
+      "step": "jev_classify",
+      "succeeded": 100
+    },
+    {
+      "attempts": 2,
+      "cost_usd": 0.001594,
+      "failed": 0,
+      "input_tokens": 1034,
+      "model": "claude-haiku-4-5-20251001",
+      "output_tokens": 112,
+      "role": "enrich",
+      "step": "haiku_fallback",
+      "succeeded": 2
+    }
+  ],
+  "run_id": "demo_resume_20261020_192351",
+  "status": {
+    "completed": 100
+  },
+  "total_cost_usd": 0.006382
+}

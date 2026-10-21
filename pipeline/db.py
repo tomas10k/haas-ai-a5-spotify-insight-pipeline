@@ -68,7 +68,14 @@ def build_db(log=print, out=OUT):
         if s["run_id"] == "@pilot":
             s = {**s, "run_id": pilot["run_id"] if pilot else "none"}
         b = site_export.run_block(s, golden)
+        ov = json.loads((ROOT / "config" / "issue_name_overrides.json").read_text())["overrides"] if (ROOT / "config" / "issue_name_overrides.json").exists() else {}
+        for iid, o in ov.items():  # owner name corrections, display only
+            if iid in b.get("issues", {}):
+                b["issues"][iid].update(name=o["name"], description=o["description"], named_by="owner", model_name=o["model_name"])
         items = b.pop("reviews", [])
+        for i in items:
+            if i.get("issue") in ov:
+                i["issue_name"] = ov[i["issue"]]["name"]
         b["reviews_total"] = len(items)
         db.execute("INSERT INTO runs VALUES (?,?,?,?,?,?)", (s["key"], ord_, s["run_id"], s["label"], b["status"], json.dumps(b, ensure_ascii=False)))
         if b["status"] != "done":

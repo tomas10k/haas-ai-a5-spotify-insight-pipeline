@@ -1,0 +1,6 @@
+{"stage": "prepare", "seconds": 0.01, "at": "2026-10-20T19:24:04-0700"}
+{"stage": "enrich", "run_id": "demo_resume_20261020_192351", "phase": "initial", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 0, "completed_now": 40, "quarantined_now": 0, "haiku_fallbacks": 1, "workers": 1, "seconds": 6.23, "spent_usd_total": 0.002631, "stop_reason": "stop_after (deliberate interruption)", "at": "2026-10-20T19:24:10-0700"}
+{"stage": "prepare", "seconds": 0.0, "at": "2026-10-20T19:24:30-0700"}
+{"stage": "enrich", "run_id": "demo_resume_20261020_192351", "phase": "resume", "label_config": "jev-1.13.0+claude-haiku-4-5-20251001:enrich_v1+enrich_haiku_v1+s1+fb0.01", "completed_before": 40, "completed_now": 60, "quarantined_now": 0, "haiku_fallbacks": 1, "workers": 1, "seconds": 8.89, "spent_usd_total": 0.006382, "stop_reason": "finished", "at": "2026-10-20T19:24:39-0700"}
+{"stage": "enrich", "seconds": 8.9, "at": "2026-10-20T19:24:39-0700"}
+{"stage": "records", "seconds": 0.0, "at": "2026-10-20T19:24:39-0700"}

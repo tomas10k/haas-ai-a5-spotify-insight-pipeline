@@ -1,0 +1,11 @@
+{
+  "note": "Owner corrections to model-suggested issue NAMES (display only). Membership, counts and ranking are unchanged; group/issues.json keeps the model's original name.",
+  "overrides": {
+    "ISS_OTHER_GENERAL": {
+      "name": "Generic dissatisfaction (no specific area)",
+      "description": "Complaints with no specific product defect: 'bad app', update backlash, boycott and political posts.",
+      "model_name": "General app performance issues",
+      "why": "The model name implied a performance defect the reviews do not describe."
+    }
+  }
+}
